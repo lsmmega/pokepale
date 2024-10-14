@@ -11,11 +11,6 @@ DoubleSpeed::
 	jr z, SwitchSpeed
 	ret
 
-NormalSpeed::
-	ld hl, rKEY1
-	bit 7, [hl]
-	ret z
-
 SwitchSpeed::
 	set 0, [hl]
 	xor a
