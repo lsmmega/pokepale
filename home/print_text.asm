@@ -17,7 +17,7 @@ PrintLetterDelay::
 	ld a, [wTextboxFlags]
 	bit TEXT_DELAY_F, a
 	ret z
-
+	ldh [hBGMapThird], a
 	push hl
 	push de
 	push bc
@@ -65,6 +65,7 @@ PrintLetterDelay::
 	jr z, .wait
 
 .delay
+	
 	call DelayFrame
 	jr .end
 
