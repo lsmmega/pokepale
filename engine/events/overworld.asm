@@ -412,7 +412,7 @@ UsedSurfScript:
 
 	special UpdatePlayerSprite
 	special PlayMapMusic
-; step into the water (slow_step DIR, step_end)
+; step into the water (slow_step DIR, step_wait_end)
 	special SurfStartStep
 	applymovement PLAYER, wMovementBuffer
 	end
@@ -696,7 +696,7 @@ Script_UsedWaterfall:
 
 .WaterfallStep:
 	turn_waterfall UP
-	step_end
+	step_wait_end
 
 .UseWaterfallText:
 	text_far _UseWaterfallText
@@ -864,12 +864,12 @@ EscapeRopeOrDig:
 .DigOut:
 	step_dig 32
 	hide_object
-	step_end
+	step_wait_end
 
 .DigReturn:
 	show_object
 	return_dig 32
-	step_end
+	step_wait_end
 
 TeleportFunction:
 	call FieldMoveJumptableReset
@@ -948,11 +948,11 @@ TeleportFunction:
 
 .TeleportFrom:
 	teleport_from
-	step_end
+	step_wait_end
 
 .TeleportTo:
 	teleport_to
-	step_end
+	step_wait_end
 
 StrengthFunction:
 	call .TryStrength
@@ -1379,7 +1379,7 @@ RockSmashScript:
 
 MovementData_RockSmash:
 	rock_smash 10
-	step_end
+	step_wait_end
 
 UseRockSmashText:
 	text_far _UseRockSmashText
@@ -1553,7 +1553,7 @@ Script_GotABite:
 	fish_got_bite
 	fish_got_bite
 	show_emote
-	step_end
+	step_wait_end
 
 .Movement_FacingUp:
 	fish_got_bite
@@ -1562,12 +1562,12 @@ Script_GotABite:
 	fish_got_bite
 	step_sleep 1
 	show_emote
-	step_end
+	step_wait_end
 
 .Movement_RestoreRod:
 	hide_emote
 	fish_cast_rod
-	step_end
+	step_wait_end
 
 Fishing_CheckFacingUp:
 	ld a, [wPlayerDirection]
@@ -1594,7 +1594,7 @@ Script_FishCastRod:
 
 MovementData_CastRod:
 	fish_cast_rod
-	step_end
+	step_wait_end
 
 PutTheRodAway:
 	xor a

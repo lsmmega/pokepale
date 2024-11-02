@@ -179,7 +179,7 @@ wTempObjectCopyY:: db
 wTempObjectCopyRadius:: db
 ENDU
 
-	ds 1
+wLastStepDirection:: db
 
 wTileDown::  db
 wTileUp::    db
