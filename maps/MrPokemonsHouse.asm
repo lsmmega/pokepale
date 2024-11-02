@@ -50,8 +50,6 @@ MrPokemonsHouseMrPokemonEventScript:
 MrPokemonsHouse_MrPokemonScript:
 	faceplayer
 	opentext
-	checkitem RED_SCALE
-	iftrue .RedScale
 	checkevent EVENT_GAVE_MYSTERY_EGG_TO_ELM
 	iftrue .AlwaysNewDiscoveries
 	writetext MrPokemonText_ImDependingOnYou
@@ -62,22 +60,6 @@ MrPokemonsHouse_MrPokemonScript:
 .AlwaysNewDiscoveries:
 	writetext MrPokemonText_AlwaysNewDiscoveries
 	waitbutton
-	closetext
-	end
-
-.RedScale:
-	writetext MrPokemonText_GimmeTheScale
-	yesorno
-	iffalse .refused
-	verbosegiveitem EXP_SHARE
-	iffalse .full
-	takeitem RED_SCALE
-	sjump .AlwaysNewDiscoveries
-
-.refused
-	writetext MrPokemonText_Disappointed
-	waitbutton
-.full
 	closetext
 	end
 
@@ -324,28 +306,6 @@ MrPokemonsHouse_OakText2:
 
 	para "<PLAY_G>, I'm"
 	line "counting on you!"
-	done
-
-MrPokemonText_GimmeTheScale:
-	text "Hm? That SCALE!"
-	line "What's that?"
-	cont "A red GYARADOS?"
-
-	para "That's rare! "
-	line "I, I want it…"
-
-	para "<PLAY_G>, would you"
-	line "care to trade it?"
-
-	para "I can offer this"
-	line "EXP.SHARE I got"
-	cont "from PROF.OAK."
-	done
-
-MrPokemonText_Disappointed:
-	text "That's disappoint-"
-	line "ing. That happens"
-	cont "to be very rare."
 	done
 
 MrPokemonsHouse_ForeignMagazinesText:

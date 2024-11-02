@@ -57,7 +57,7 @@ ItemDescriptions:
 	dw CoinCaseDesc
 	dw ItemfinderDesc
 	dw TeruSama5Desc
-	dw ExpShareDesc
+	dw TeruSama5Desc
 	dw OldRodDesc
 	dw GoodRodDesc
 	dw SilverLeafDesc
@@ -477,10 +477,6 @@ ItemfinderDesc:
 
 TeruSama5Desc:
 	db   "?@"
-
-ExpShareDesc:
-	db   "Shares battle EXP."
-	next "Points. (HOLD)@"
 
 OldRodDesc:
 	db   "Use by water to"
