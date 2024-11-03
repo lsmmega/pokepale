@@ -1012,7 +1012,7 @@ FallIntoMapScript:
 
 .SkyfallMovement:
 	skyfall
-	step_wait_end
+	step_end
 
 LandAfterPitfallScript:
 	earthquake 16
