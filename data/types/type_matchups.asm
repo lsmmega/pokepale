@@ -66,6 +66,7 @@ TypeMatchups:
 	db POISON,       ROCK,         NOT_VERY_EFFECTIVE
 	db POISON,       GHOST,        NOT_VERY_EFFECTIVE
 	db POISON,       DRAGON,       NOT_VERY_EFFECTIVE
+	db POISON,       DARK,         NOT_VERY_EFFECTIVE
 	db POISON,       STEEL,        NOT_VERY_EFFECTIVE
 	db POISON,       FAIRY,        SUPER_EFFECTIVE
 	db GROUND,       FIRE,         SUPER_EFFECTIVE
@@ -111,6 +112,7 @@ TypeMatchups:
 	db ROCK,         STEEL,        NOT_VERY_EFFECTIVE
 	db GHOST,        NORMAL,       NO_EFFECT
 	db GHOST,        FIGHTING,     NO_EFFECT
+	db GHOST,        POISON,       NOT_VERY_EFFECTIVE
 	db GHOST,        GHOST,        SUPER_EFFECTIVE
 	db GHOST,        DARK,         NOT_VERY_EFFECTIVE
 	db DRAGON,       POISON,       NOT_VERY_EFFECTIVE
@@ -118,6 +120,7 @@ TypeMatchups:
 	db DRAGON,       FAIRY,        NO_EFFECT
 	db DARK,         NORMAL,       SUPER_EFFECTIVE
 	db DARK,         FIGHTING,     NOT_VERY_EFFECTIVE
+	db DARK,         POISON,       NOT_VERY_EFFECTIVE
 	db DARK,         PSYCHIC_TYPE, SUPER_EFFECTIVE
 	db DARK,         GHOST,        SUPER_EFFECTIVE
 	db DARK,         DARK,         SUPER_EFFECTIVE
