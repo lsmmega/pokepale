@@ -7,10 +7,10 @@ TypeMatchups:
 	db FIRE,         WATER,        NOT_VERY_EFFECTIVE
 	db FIRE,         GRASS,        SUPER_EFFECTIVE
 	db FIRE,         ICE,          SUPER_EFFECTIVE
-	db FIRE,         POISON,       SUPER_EFFECTIVE
 	db FIRE,         GROUND,       NOT_VERY_EFFECTIVE
 	db FIRE,         BUG,          SUPER_EFFECTIVE
 	db FIRE,         ROCK,         NOT_VERY_EFFECTIVE
+	db FIRE,         GHOST,        SUPER_EFFECTIVE
 	db FIRE,         STEEL,        SUPER_EFFECTIVE
 	db FIRE,         FAIRY,        SUPER_EFFECTIVE
 	db WATER,        FIRE,         SUPER_EFFECTIVE
@@ -20,18 +20,14 @@ TypeMatchups:
 	db WATER,        POISON,       NOT_VERY_EFFECTIVE
 	db WATER,        GROUND,       SUPER_EFFECTIVE
 	db WATER,        ROCK,         SUPER_EFFECTIVE
-	db WATER,        DRAGON,       SUPER_EFFECTIVE
 	db WATER,        STEEL,        SUPER_EFFECTIVE
 	db ELECTRIC,     WATER,        SUPER_EFFECTIVE
 	db ELECTRIC,     ELECTRIC,     NO_EFFECT
-	db ELECTRIC,     GRASS,        NOT_VERY_EFFECTIVE
 	db ELECTRIC,     GROUND,       NO_EFFECT
 	db ELECTRIC,     FLYING,       SUPER_EFFECTIVE
-	db ELECTRIC,     GHOST,        SUPER_EFFECTIVE
 	db ELECTRIC,     STEEL,        SUPER_EFFECTIVE
 	db GRASS,        FIRE,         NOT_VERY_EFFECTIVE
 	db GRASS,        WATER,        SUPER_EFFECTIVE
-	db GRASS,        ELECTRIC,     SUPER_EFFECTIVE
 	db GRASS,        GRASS,        NOT_VERY_EFFECTIVE
 	db GRASS,        ICE,          NOT_VERY_EFFECTIVE
 	db GRASS,        POISON,       NOT_VERY_EFFECTIVE
@@ -39,10 +35,8 @@ TypeMatchups:
 	db GRASS,        FLYING,       NOT_VERY_EFFECTIVE
 	db GRASS,        BUG,          NOT_VERY_EFFECTIVE
 	db GRASS,        ROCK,         SUPER_EFFECTIVE
-	db GRASS,        DRAGON,       SUPER_EFFECTIVE
-	db ICE,          FIRE,         NOT_VERY_EFFECTIVE
+	db GRASS,        GHOST,        SUPER_EFFECTIVE
 	db ICE,          GRASS,        SUPER_EFFECTIVE
-	db ICE,          ICE,          NOT_VERY_EFFECTIVE
 	db ICE,          FIGHTING,     NOT_VERY_EFFECTIVE
 	db ICE,          GROUND,       SUPER_EFFECTIVE
 	db ICE,          FLYING,       SUPER_EFFECTIVE
@@ -67,6 +61,7 @@ TypeMatchups:
 	db POISON,       GROUND,       NO_EFFECT
 	db POISON,       BUG,          SUPER_EFFECTIVE
 	db POISON,       ROCK,         NOT_VERY_EFFECTIVE
+	db POISON,       GHOST,        SUPER_EFFECTIVE
 	db POISON,       DRAGON,       NOT_VERY_EFFECTIVE
 	db POISON,       STEEL,        SUPER_EFFECTIVE
 	db POISON,       FAIRY,        SUPER_EFFECTIVE
@@ -101,7 +96,6 @@ TypeMatchups:
 	db BUG,          STEEL,        NOT_VERY_EFFECTIVE
 	db BUG,          FAIRY,        SUPER_EFFECTIVE
 	db ROCK,         FIRE,         SUPER_EFFECTIVE
-	db ROCK,         GRASS,        NOT_VERY_EFFECTIVE
 	db ROCK,         ICE,          SUPER_EFFECTIVE
 	db ROCK,         FIGHTING,     NOT_VERY_EFFECTIVE
 	db ROCK,         POISON,       SUPER_EFFECTIVE
@@ -112,10 +106,10 @@ TypeMatchups:
 	db ROCK,         DRAGON,       NOT_VERY_EFFECTIVE
 	db ROCK,         STEEL,        NOT_VERY_EFFECTIVE
 	db GHOST,        NORMAL,       NO_EFFECT
-	db GHOST,        ELECTRIC,     NOT_VERY_EFFECTIVE
 	db GHOST,        FIGHTING,     NO_EFFECT
-	db DRAGON,       WATER,        NOT_VERY_EFFECTIVE
-	db DRAGON,       GRASS,        NOT_VERY_EFFECTIVE
+	db GHOST,        POISON,       SUPER_EFFECTIVE
+	db GHOST,        STEEL,        SUPER_EFFECTIVE
+	db DRAGON,       POISON,       SUPER_EFFECTIVE
 	db DRAGON,       PSYCHIC_TYPE, NOT_VERY_EFFECTIVE
 	db DRAGON,       FAIRY,        NO_EFFECT
 	db DARK,         FIGHTING,     NOT_VERY_EFFECTIVE
@@ -129,6 +123,7 @@ TypeMatchups:
 	db STEEL,        ROCK,         SUPER_EFFECTIVE
 	db STEEL,        STEEL,        NOT_VERY_EFFECTIVE
 	db STEEL,        FAIRY,        SUPER_EFFECTIVE
+	db FAIRY,        FIRE,         NOT_VERY_EFFECTIVE
 	db FAIRY,        ICE,          NOT_VERY_EFFECTIVE
 	db FAIRY,        FIGHTING,     SUPER_EFFECTIVE
 	db FAIRY,        POISON,       NOT_VERY_EFFECTIVE
