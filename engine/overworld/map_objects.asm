@@ -1993,7 +1993,7 @@ ApplyMovementToFollower:
 	ret z
 	cp movement_step_end
 	ret z
-	cp movement_step_wait_end
+	cp movement_step_stop
 	ret z
 	cp movement_step_bump
 	ret z
@@ -2056,7 +2056,7 @@ GetFollowerNextMovementIndex:
 .nope
 	ld a, -1
 	ld [wObjectFollow_Follower], a
-	ld a, movement_step_wait_end
+	ld a, movement_step_end
 	scf
 	ret
 
