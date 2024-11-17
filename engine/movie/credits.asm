@@ -332,7 +332,7 @@ ParseCredits:
 
 .music
 ; Play the credits music.
-	ld de, MUSIC_CREDITS
+	ld de, MUSIC_DORIDORI
 	push de
 	ld de, MUSIC_NONE
 	call PlayMusic
