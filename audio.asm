@@ -149,6 +149,9 @@ SECTION "Extra Songs 2", ROMX
 
 INCLUDE "audio/music/postcredits.asm"
 
+SECTION "Custom Song", ROMX
+
+INCLUDE "audio/music/doridori.asm"
 
 SECTION "Sound Effects", ROMX
 
