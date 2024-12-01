@@ -87,7 +87,7 @@ PlayBattleMusic:
 	jr .done
 
 .trainermusic
-	ld de, MUSIC_CHAMPION_BATTLE
+	ld de, MUSIC_TERARAIDBATTLE
 	cp CHAMPION
 	jr z, .done
 	cp RED
@@ -120,7 +120,7 @@ PlayBattleMusic:
 	ld a, [wOtherTrainerID]
 	cp RIVAL2_2_CHIKORITA ; Rival in Indigo Plateau
 	jr c, .done
-	ld de, MUSIC_CHAMPION_BATTLE
+	ld de, MUSIC_TERARAIDBATTLE
 	jr .done
 
 .othertrainer

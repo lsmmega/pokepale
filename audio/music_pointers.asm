@@ -109,4 +109,5 @@ Music:
 	dba Music_MobileCenter
 ;custom
 	dba Music_doridori
+	dba Music_teraraidbattle
 	assert_table_length NUM_MUSIC_SONGS

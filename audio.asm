@@ -152,6 +152,7 @@ INCLUDE "audio/music/postcredits.asm"
 SECTION "Custom Song", ROMX
 
 INCLUDE "audio/music/doridori.asm"
+INCLUDE "audio/music/teraraidbattle.asm"
 
 SECTION "Sound Effects", ROMX
 

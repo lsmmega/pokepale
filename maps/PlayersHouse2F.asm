@@ -38,7 +38,8 @@ PlayersHouseTestScript:
 	writetext PlayersHouseTestText
 	waitbutton
 	closetext
-	credits
+	loadtrainer CHAMPION, LANCE
+	startbattle
 	end
 
 PlayersHouseDoll1Script::
