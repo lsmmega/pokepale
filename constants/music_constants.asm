@@ -108,6 +108,7 @@
 ; custom
 	const MUSIC_DORIDORI                     ; 67
 	const MUSIC_TERARAIDBATTLE               ; 68
+	const MUSIC_ROUTES4                      ; 69
 DEF NUM_MUSIC_SONGS EQU const_value
 
 ; GetMapMusic picks music for this value (see home/map.asm)

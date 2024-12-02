@@ -5,6 +5,7 @@ Drumkits:
 	dw Drumkit3
 	dw Drumkit4
 	dw Drumkit5
+	dw Drumkit6
 
 Drumkit0:
 	dw Drum00
@@ -90,6 +91,20 @@ Drumkit5:
 	dw Snare14
 	dw Snare13
 	dw Kick2
+Drumkit6:
+	dw Drum00
+	dw Noise17
+	dw Noise18
+	dw Noise19
+	dw Drum00
+	dw Drum00
+	dw Drum00
+	dw Drum00
+	dw Drum00
+	dw Drum00
+	dw Drum00
+	dw Drum00
+	dw Drum00
 
 Drum00:
 	noise_note 32, 1, 1, 0
@@ -257,4 +272,16 @@ Drum36:
 Kick2:
 	noise_note 32, 10, 8, 107
 	noise_note 32, 7, 1, 0
+	sound_ret
+
+Noise17:
+	noise_note 0, 9, 1, 34
+	sound_ret
+
+Noise18:
+	noise_note 0, 7, 1, 34
+	sound_ret
+
+Noise19:
+	noise_note 0, 6, 1, 34
 	sound_ret

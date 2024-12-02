@@ -110,4 +110,5 @@ Music:
 ;custom
 	dba Music_doridori
 	dba Music_teraraidbattle
+	dba Music_Routes4
 	assert_table_length NUM_MUSIC_SONGS
