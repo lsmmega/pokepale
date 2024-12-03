@@ -111,4 +111,5 @@ Music:
 	dba Music_doridori
 	dba Music_teraraidbattle
 	dba Music_Routes4
+	dba Music_Cinnabar
 	assert_table_length NUM_MUSIC_SONGS

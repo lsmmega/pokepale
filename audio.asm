@@ -154,6 +154,7 @@ SECTION "Custom Song", ROMX
 INCLUDE "audio/music/doridori.asm"
 INCLUDE "audio/music/teraraidbattle.asm"
 INCLUDE "audio/music/routes4.asm"
+INCLUDE "audio/music/cinnabar.asm"
 
 SECTION "Sound Effects", ROMX
 
