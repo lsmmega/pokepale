@@ -117,7 +117,7 @@ ENDM
 	ret
 
 .PlayHealMusic:
-	ld de, MUSIC_HEAL
+	ld de, MUSIC_NONE
 	call PlayMusic
 	jp .FlashPalettes8Times
 

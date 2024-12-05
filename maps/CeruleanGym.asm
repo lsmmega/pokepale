@@ -24,7 +24,7 @@ CeruleanGymGruntRunsOutScript:
 	applymovement CERULEANGYM_ROCKET, CeruleanGymGruntRunsDownMovement
 	playsound SFX_TACKLE
 	applymovement CERULEANGYM_ROCKET, CeruleanGymGruntRunsIntoYouMovement
-	playmusic MUSIC_ROCKET_ENCOUNTER
+	playmusic MUSIC_NONE
 	opentext
 	writetext CeruleanGymGruntIntroText
 	waitbutton

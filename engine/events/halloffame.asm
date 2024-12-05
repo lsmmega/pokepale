@@ -84,7 +84,7 @@ AnimateHallOfFame:
 	ld [wJumptableIndex], a
 	call LoadHOFTeam
 	jr c, .done
-	ld de, MUSIC_HALL_OF_FAME
+	ld de, MUSIC_NONE
 	call HallOfFame_PlayMusicDE
 	xor a
 	ld [wHallOfFameMonCounter], a

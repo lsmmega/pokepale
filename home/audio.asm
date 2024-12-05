@@ -368,7 +368,7 @@ PlayMapMusicBike::
 
 	xor a
 	ld [wDontPlayMapMusicOnReload], a
-	ld de, MUSIC_BICYCLE
+	ld de, MUSIC_NONE
 	ld a, [wPlayerState]
 	cp PLAYER_BIKE
 	jr z, .play
@@ -437,12 +437,12 @@ SpecialMapMusic::
 	ret
 
 .bike ; unreferenced
-	ld de, MUSIC_BICYCLE
+	ld de, MUSIC_NONE
 	scf
 	ret
 
 .surf
-	ld de, MUSIC_SURF
+	ld de, MUSIC_NONE
 	scf
 	ret
 
@@ -457,7 +457,7 @@ SpecialMapMusic::
 	jr nz, .no
 
 .ranking
-	ld de, MUSIC_BUG_CATCHING_CONTEST_RANKING
+	ld de, MUSIC_NONE
 	scf
 	ret
 

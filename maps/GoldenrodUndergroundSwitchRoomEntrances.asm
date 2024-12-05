@@ -161,7 +161,7 @@ UndergroundRivalBattleScript:
 	setevent EVENT_RIVAL_BURNED_TOWER
 	setmapscene BURNED_TOWER_1F, SCENE_BURNEDTOWER1F_RIVAL_BATTLE
 .Continue:
-	playmusic MUSIC_RIVAL_ENCOUNTER
+	playmusic MUSIC_NONE
 	opentext
 	writetext UndergroundRivalBeforeText
 	waitbutton
@@ -198,7 +198,7 @@ UndergroundRivalBattleScript:
 	sjump .FinishRivalBattle
 
 .FinishRivalBattle:
-	playmusic MUSIC_RIVAL_AFTER
+	playmusic MUSIC_NONE
 	opentext
 	writetext UndergroundRivalAfterText
 	waitbutton

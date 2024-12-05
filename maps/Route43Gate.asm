@@ -31,7 +31,7 @@ Route43GateCheckIfRocketsCallback:
 	endcallback
 
 Route43GateRocketTakeoverScript:
-	playmusic MUSIC_ROCKET_ENCOUNTER
+	playmusic MUSIC_NONE
 	readvar VAR_FACING
 	ifequal DOWN, RocketScript_Southbound
 	ifequal UP, RocketScript_Northbound

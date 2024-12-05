@@ -54,7 +54,7 @@ AzaleaTownRivalBattleScene2:
 	applymovement AZALEATOWN_RIVAL, AzaleaTownRivalBattleApproachMovement2
 	turnobject PLAYER, UP
 AzaleaTownRivalBattleScript:
-	playmusic MUSIC_RIVAL_ENCOUNTER
+	playmusic MUSIC_NONE
 	opentext
 	writetext AzaleaTownRivalBeforeText
 	waitbutton
@@ -91,7 +91,7 @@ AzaleaTownRivalBattleScript:
 	sjump .AfterBattle
 
 .AfterBattle:
-	playmusic MUSIC_RIVAL_AFTER
+	playmusic MUSIC_NONE
 	opentext
 	writetext AzaleaTownRivalAfterText
 	waitbutton

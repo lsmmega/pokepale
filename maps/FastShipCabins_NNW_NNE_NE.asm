@@ -79,7 +79,7 @@ TrainerBurglarCorey:
 	end
 
 FastShipLazySailorScript:
-	playmusic MUSIC_HIKER_ENCOUNTER
+	playmusic MUSIC_NONE
 	faceplayer
 	opentext
 	writetext SailorStanlySeenText

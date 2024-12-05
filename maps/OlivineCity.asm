@@ -31,7 +31,7 @@ OlivineCityRivalSceneTop:
 	appear OLIVINECITY_OLIVINE_RIVAL
 	waitsfx
 	applymovement OLIVINECITY_OLIVINE_RIVAL, OlivineCityRivalApproachesTopMovement
-	playmusic MUSIC_RIVAL_ENCOUNTER
+	playmusic MUSIC_NONE
 	opentext
 	writetext OlivineCityRivalText
 	waitbutton
@@ -55,7 +55,7 @@ OlivineCityRivalSceneBottom:
 	appear OLIVINECITY_OLIVINE_RIVAL
 	waitsfx
 	applymovement OLIVINECITY_OLIVINE_RIVAL, OlivineCityRivalApproachesBottomMovement
-	playmusic MUSIC_RIVAL_ENCOUNTER
+	playmusic MUSIC_NONE
 	opentext
 	writetext OlivineCityRivalText
 	waitbutton

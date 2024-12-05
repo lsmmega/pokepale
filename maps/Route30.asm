@@ -18,7 +18,7 @@ Route30_MapScripts:
 
 YoungsterJoey_ImportantBattleScript:
 	waitsfx
-	playmusic MUSIC_JOHTO_TRAINER_BATTLE
+	playmusic MUSIC_NONE
 	opentext
 	writetext Text_UseTackle
 	pause 30

@@ -64,7 +64,7 @@ RocketBaseBossFScript:
 	turnobject PLAYER, DOWN
 	showemote EMOTE_SHOCK, PLAYER, 15
 	applymovement PLAYER, RocketBasePlayerApproachesBossFMovement
-	playmusic MUSIC_ROCKET_ENCOUNTER
+	playmusic MUSIC_NONE
 	applymovement TEAMROCKETBASEB2F_ROCKET_GIRL, RocketBaseBossFApproachesPlayerMovement
 	turnobject PLAYER, UP
 	applymovement TEAMROCKETBASEB2F_ROCKET1, RocketBaseGruntApproachesPlayerMovement

@@ -95,7 +95,7 @@ MoomooScript:
 	end
 
 .SevenBerries:
-	playmusic MUSIC_HEAL
+	playmusic MUSIC_NONE
 	writetext Route39BarnGaveBerryText
 	pause 60
 	promptbutton

@@ -355,7 +355,7 @@ OfficerKeithScript:
 	iffalse .NoFight
 	checkevent EVENT_BEAT_OFFICER_KEITH
 	iftrue .AfterScript
-	playmusic MUSIC_OFFICER_ENCOUNTER
+	playmusic MUSIC_NONE
 	writetext OfficerKeithSeenText
 	waitbutton
 	closetext

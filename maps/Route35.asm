@@ -241,7 +241,7 @@ TrainerOfficerDirk:
 	iffalse .NotNight
 	checkevent EVENT_BEAT_OFFICER_DIRK
 	iftrue .AfterBattle
-	playmusic MUSIC_OFFICER_ENCOUNTER
+	playmusic MUSIC_NONE
 	writetext OfficerDirkSeenText
 	waitbutton
 	closetext

@@ -234,7 +234,7 @@ OlderHaircutBrotherScript:
 	waitbutton
 	closetext
 	special FadeOutToWhite
-	playmusic MUSIC_HEAL
+	playmusic MUSIC_NONE
 	pause 60
 	special FadeInFromWhite
 	special RestartMapMusic
@@ -317,7 +317,7 @@ YoungerHaircutBrotherScript:
 	waitbutton
 	closetext
 	special FadeOutToWhite
-	playmusic MUSIC_HEAL
+	playmusic MUSIC_NONE
 	pause 60
 	special FadeInFromWhite
 	special RestartMapMusic

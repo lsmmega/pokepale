@@ -15,7 +15,7 @@ Route26HealHouseTeacherScript:
 	special FadeOutToBlack
 	special ReloadSpritesNoPalettes
 	special StubbedTrainerRankings_Healings
-	playmusic MUSIC_HEAL
+	playmusic MUSIC_NONE
 	special HealParty
 	pause 60
 	special FadeInFromBlack

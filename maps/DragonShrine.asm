@@ -119,7 +119,7 @@ DragonShrineTakeTestScript:
 	closetext
 	playsound SFX_ENTER_DOOR
 	showemote EMOTE_SHOCK, PLAYER, 15
-	playmusic MUSIC_CLAIR
+	playmusic MUSIC_NONE
 	appear DRAGONSHRINE_CLAIR
 	waitsfx
 	turnobject PLAYER, DOWN

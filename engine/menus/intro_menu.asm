@@ -2,7 +2,7 @@ Intro_MainMenu:
 	ld de, MUSIC_NONE
 	call PlayMusic
 	call DelayFrame
-	ld de, MUSIC_MAIN_MENU
+	ld de, MUSIC_NONE
 	ld a, e
 	ld [wMapMusic], a
 	call PlayMusic
@@ -407,9 +407,9 @@ Continue_MobileAdapterMenu: ; unused
 	ret nz
 	ld a, 5
 	ld [wMusicFade], a
-	ld a, LOW(MUSIC_MOBILE_ADAPTER_MENU)
+	ld a, LOW(MUSIC_NONE)
 	ld [wMusicFadeID], a
-	ld a, HIGH(MUSIC_MOBILE_ADAPTER_MENU)
+	ld a, HIGH(MUSIC_NONE)
 	ld [wMusicFadeID + 1], a
 	ld c, 20
 	call DelayFrames
@@ -633,7 +633,7 @@ OakSpeech:
 	call RotateFourPalettesLeft
 	call ClearTilemap
 
-	ld de, MUSIC_ROUTE_30
+	ld de, MUSIC_NONE
 	call PlayMusic
 
 	call RotateFourPalettesRight
@@ -1119,7 +1119,7 @@ TitleScreenEntrance:
 	ldh [hLCDCPointer], a
 
 ; Play the title screen music.
-	ld de, MUSIC_TITLE
+	ld de, MUSIC_NONE
 	call PlayMusic
 
 	ld a, $88

@@ -22,7 +22,7 @@ MeetMomLeftScript:
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 
 MeetMomRightScript:
-	playmusic MUSIC_MOM
+	playmusic MUSIC_NONE
 	showemote EMOTE_SHOCK, PLAYERSHOUSE1F_MOM1, 15
 	turnobject PLAYER, LEFT
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
@@ -100,7 +100,7 @@ MeetMomScript:
 	end
 
 MeetMomTalkedScript:
-	playmusic MUSIC_MOM
+	playmusic MUSIC_NONE
 	sjump MeetMomScript
 
 PokegearName:

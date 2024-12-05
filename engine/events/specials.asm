@@ -330,7 +330,7 @@ SnorlaxAwake:
 
 ; check background music
 	ld a, [wMapMusic]
-	cp MUSIC_POKE_FLUTE_CHANNEL
+	cp MUSIC_NONE
 	jr nz, .nope
 
 	ld a, [wXCoord]

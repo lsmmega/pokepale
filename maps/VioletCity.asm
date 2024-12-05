@@ -37,7 +37,7 @@ VioletCityEarlScript:
 	writetext Text_FollowEarl
 	waitbutton
 	closetext
-	playmusic MUSIC_SHOW_ME_AROUND
+	playmusic MUSIC_NONE
 	follow VIOLETCITY_EARL, PLAYER
 	applymovement VIOLETCITY_EARL, VioletCityFollowEarl_MovementData
 	turnobject PLAYER, UP

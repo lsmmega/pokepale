@@ -32,7 +32,7 @@ MobileBattleRoomConsoleScript:
 	pause 20
 	closetext
 	special FadeOutToWhite
-	playmusic MUSIC_HEAL
+	playmusic MUSIC_NONE
 	special LoadMapPalettes
 	pause 60
 	special FadeInFromWhite

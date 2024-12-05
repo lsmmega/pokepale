@@ -34,7 +34,7 @@ CherrygroveCityGuideGent:
 	writetext GuideGentTourText1
 	waitbutton
 	closetext
-	playmusic MUSIC_SHOW_ME_AROUND
+	playmusic MUSIC_NONE
 	follow CHERRYGROVECITY_GRAMPS, PLAYER
 	applymovement CHERRYGROVECITY_GRAMPS, GuideGentMovement1
 	opentext
@@ -108,7 +108,7 @@ CherrygroveRivalSceneNorth:
 	appear CHERRYGROVECITY_RIVAL
 	applymovement CHERRYGROVECITY_RIVAL, CherrygroveCity_RivalWalksToYou
 	turnobject PLAYER, RIGHT
-	playmusic MUSIC_RIVAL_ENCOUNTER
+	playmusic MUSIC_NONE
 	opentext
 	writetext CherrygroveRivalText_Seen
 	waitbutton
@@ -150,7 +150,7 @@ CherrygroveRivalSceneNorth:
 	sjump .AfterYourDefeat
 
 .AfterVictorious:
-	playmusic MUSIC_RIVAL_AFTER
+	playmusic MUSIC_NONE
 	opentext
 	writetext CherrygroveRivalText_YouWon
 	waitbutton
@@ -158,7 +158,7 @@ CherrygroveRivalSceneNorth:
 	sjump .FinishRival
 
 .AfterYourDefeat:
-	playmusic MUSIC_RIVAL_AFTER
+	playmusic MUSIC_NONE
 	opentext
 	writetext CherrygroveRivalText_YouLost
 	waitbutton

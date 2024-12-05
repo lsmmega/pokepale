@@ -46,7 +46,7 @@ Script_BattleRoomLoop:
 	writetext Text_YourMonWillBeHealedToFullHealth
 	waitbutton
 	closetext
-	playmusic MUSIC_HEAL
+	playmusic MUSIC_NONE
 	special FadeOutToWhite
 	special LoadMapPalettes
 	pause 60

@@ -32,7 +32,7 @@ Route25MistyDate1Script:
 	applymovement ROUTE25_COOLTRAINER_M1, Route25MistysDateLeavesMovement1
 	disappear ROUTE25_COOLTRAINER_M1
 	pause 15
-	playmusic MUSIC_BEAUTY_ENCOUNTER
+	playmusic MUSIC_NONE
 	turnobject ROUTE25_MISTY, UP
 	pause 10
 	applymovement ROUTE25_MISTY, Route25MistyApproachesPlayerMovement1
@@ -58,7 +58,7 @@ Route25MistyDate2Script:
 	applymovement ROUTE25_COOLTRAINER_M1, Route25MistysDateLeavesMovement2
 	disappear ROUTE25_COOLTRAINER_M1
 	pause 15
-	playmusic MUSIC_BEAUTY_ENCOUNTER
+	playmusic MUSIC_NONE
 	turnobject ROUTE25_MISTY, UP
 	pause 10
 	applymovement ROUTE25_MISTY, Route25MistyApproachesPlayerMovement2

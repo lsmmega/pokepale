@@ -1,8 +1,8 @@
 MainMenu_Mobile:
 	call ClearBGPalettes
-	ld a, MUSIC_MOBILE_ADAPTER_MENU
+	ld a, MUSIC_NONE
 	ld [wMapMusic], a
-	ld de, MUSIC_MOBILE_ADAPTER_MENU
+	ld de, MUSIC_NONE
 	call Function4a6c5
 Function49f0a:
 	call ClearBGPalettes
@@ -66,9 +66,9 @@ Function49f16:
 	pop bc
 	call ClearBGPalettes
 	call ClearTilemap
-	ld a, MUSIC_MAIN_MENU
+	ld a, MUSIC_NONE
 	ld [wMapMusic], a
-	ld de, MUSIC_MAIN_MENU
+	ld de, MUSIC_NONE
 	call Function4a6c5
 	ret
 

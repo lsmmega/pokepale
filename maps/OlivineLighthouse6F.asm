@@ -38,7 +38,7 @@ OlivineLighthouseJasmine:
 	pause 15
 	turnobject OLIVINELIGHTHOUSE6F_MONSTER, LEFT
 	opentext
-	playmusic MUSIC_HEAL
+	playmusic MUSIC_NONE
 	writetext JasmineAmphyHowAreYouFeelingText
 	pause 60
 	promptbutton

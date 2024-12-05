@@ -332,7 +332,7 @@ ParseCredits:
 
 .music
 ; Play the credits music.
-	ld de, MUSIC_DORIDORI
+	ld de, MUSIC_NONE
 	push de
 	ld de, MUSIC_NONE
 	call PlayMusic
@@ -366,9 +366,9 @@ ParseCredits:
 	set 7, [hl]
 	ld a, 32
 	ld [wMusicFade], a
-	ld a, LOW(MUSIC_POST_CREDITS)
+	ld a, LOW(MUSIC_NONE)
 	ld [wMusicFadeID], a
-	ld a, HIGH(MUSIC_POST_CREDITS)
+	ld a, HIGH(MUSIC_NONE)
 	ld [wMusicFadeID + 1], a
 	ret
 

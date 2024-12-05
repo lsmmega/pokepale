@@ -71,7 +71,7 @@ FastShipBed:
 	special ReloadSpritesNoPalettes
 	special StubbedTrainerRankings_Healings
 	special HealParty
-	playmusic MUSIC_HEAL
+	playmusic MUSIC_NONE
 	pause 60
 	special RestartMapMusic
 	special FadeInFromBlack

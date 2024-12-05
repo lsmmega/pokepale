@@ -41,7 +41,7 @@ SproutTower3FRivalScene:
 	turnobject SPROUTTOWER3F_RIVAL, DOWN
 	pause 15
 	applymovement SPROUTTOWER3F_RIVAL, SproutTower3FRivalLeavesElderMovement
-	playmusic MUSIC_RIVAL_ENCOUNTER
+	playmusic MUSIC_NONE
 	opentext
 	writetext SproutTowerRivalOnlyCareAboutStrongText
 	waitbutton

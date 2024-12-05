@@ -60,7 +60,7 @@ PlayBattleMusic:
 
 	ld a, [wBattleType]
 	cp BATTLETYPE_SUICUNE
-	ld de, MUSIC_SUICUNE_BATTLE
+	ld de, MUSIC_NONE
 	jp z, .done
 	cp BATTLETYPE_ROAMING
 	jp z, .done
@@ -75,42 +75,42 @@ PlayBattleMusic:
 	and a
 	jr nz, .kantowild
 
-	ld de, MUSIC_JOHTO_WILD_BATTLE
+	ld de, MUSIC_NONE
 	ld a, [wTimeOfDay]
 	cp NITE_F
 	jr nz, .done
-	ld de, MUSIC_JOHTO_WILD_BATTLE_NIGHT
+	ld de, MUSIC_NONE
 	jr .done
 
 .kantowild
-	ld de, MUSIC_KANTO_WILD_BATTLE
+	ld de, MUSIC_NONE
 	jr .done
 
 .trainermusic
-	ld de, MUSIC_TERARAIDBATTLE
+	ld de, MUSIC_NONE
 	cp CHAMPION
 	jr z, .done
 	cp RED
 	jr z, .done
 
 ; BUG: Team Rocket battle music is not used for Executives or Scientists (see docs/bugs_and_glitches.md)
-	ld de, MUSIC_ROCKET_BATTLE
+	ld de, MUSIC_NONE
 	cp GRUNTM
 	jr z, .done
 	cp GRUNTF
 	jr z, .done
 
-	ld de, MUSIC_KANTO_GYM_LEADER_BATTLE
+	ld de, MUSIC_NONE
 	farcall IsKantoGymLeader
 	jr c, .done
 
 	; IsGymLeader also counts CHAMPION, RED, and the Kanto gym leaders
 	; but they have been taken care of before this
-	ld de, MUSIC_JOHTO_GYM_LEADER_BATTLE
+	ld de, MUSIC_NONE
 	farcall IsGymLeader
 	jr c, .done
 
-	ld de, MUSIC_RIVAL_BATTLE
+	ld de, MUSIC_NONE
 	ld a, [wOtherTrainerClass]
 	cp RIVAL1
 	jr z, .done
@@ -120,7 +120,7 @@ PlayBattleMusic:
 	ld a, [wOtherTrainerID]
 	cp RIVAL2_2_CHIKORITA ; Rival in Indigo Plateau
 	jr c, .done
-	ld de, MUSIC_TERARAIDBATTLE
+	ld de, MUSIC_NONE
 	jr .done
 
 .othertrainer
@@ -134,11 +134,11 @@ PlayBattleMusic:
 	jr nz, .kantotrainer
 
 .johtotrainer
-	ld de, MUSIC_JOHTO_TRAINER_BATTLE
+	ld de, MUSIC_NONE
 	jr .done
 
 .kantotrainer
-	ld de, MUSIC_KANTO_TRAINER_BATTLE
+	ld de, MUSIC_NONE
 
 .done
 	call PlayMusic

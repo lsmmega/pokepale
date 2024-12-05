@@ -82,7 +82,7 @@ MrPokemonsHouse_MrPokemonScript:
 	end
 
 MrPokemonsHouse_OakScript:
-	playmusic MUSIC_PROF_OAK
+	playmusic MUSIC_NONE
 	applymovement MRPOKEMONSHOUSE_OAK, MrPokemonsHouse_OakWalksToPlayer
 	turnobject PLAYER, RIGHT
 	opentext
@@ -110,7 +110,7 @@ MrPokemonsHouse_OakScript:
 	closetext
 	special FadeOutToBlack
 	special ReloadSpritesNoPalettes
-	playmusic MUSIC_HEAL
+	playmusic MUSIC_NONE
 	special StubbedTrainerRankings_Healings
 	special HealParty
 	pause 60

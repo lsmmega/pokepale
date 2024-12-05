@@ -50,7 +50,7 @@ VictoryRoadRivalRight:
 
 VictoryRoadRivalNext:
 	turnobject PLAYER, DOWN
-	playmusic MUSIC_RIVAL_ENCOUNTER
+	playmusic MUSIC_NONE
 	opentext
 	writetext VictoryRoadRivalBeforeText
 	waitbutton
@@ -87,7 +87,7 @@ VictoryRoadRivalNext:
 	sjump .AfterBattle
 
 .AfterBattle:
-	playmusic MUSIC_RIVAL_AFTER
+	playmusic MUSIC_NONE
 	opentext
 	writetext VictoryRoadRivalAfterText
 	waitbutton

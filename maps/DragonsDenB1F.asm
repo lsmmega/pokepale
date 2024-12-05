@@ -49,7 +49,7 @@ DragonsDenB1F_ClairScene:
 	closetext
 	showemote EMOTE_SHOCK, PLAYER, 15
 	turnobject PLAYER, LEFT
-	playmusic MUSIC_CLAIR
+	playmusic MUSIC_NONE
 	applymovement DRAGONSDENB1F_CLAIR, MovementDragonsDen_ClairWalksToYou
 	opentext
 	writetext ClairText_GiveDragonbreathDragonDen
@@ -152,7 +152,7 @@ DragonsDenB1FDragonFangScript:
 	end
 
 DragonsDenB1FRivalScript:
-	playmusic MUSIC_RIVAL_ENCOUNTER
+	playmusic MUSIC_NONE
 	faceplayer
 	opentext
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1

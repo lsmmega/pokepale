@@ -71,7 +71,7 @@ LancesRoomLanceScript:
 	refreshmap
 	closetext
 	setevent EVENT_LANCES_ROOM_ENTRANCE_CLOSED
-	musicfadeout MUSIC_BEAUTY_ENCOUNTER, 16
+	musicfadeout MUSIC_NONE, 16
 	pause 30
 	showemote EMOTE_SHOCK, LANCESROOM_LANCE, 15
 	turnobject LANCESROOM_LANCE, DOWN

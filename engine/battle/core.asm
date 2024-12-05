@@ -2482,7 +2482,7 @@ PlayVictoryMusic:
 	ld de, MUSIC_NONE
 	call PlayMusic
 	call DelayFrame
-	ld de, MUSIC_WILD_VICTORY
+	ld de, MUSIC_NONE
 	ld a, [wBattleMode]
 	dec a
 	jr nz, .trainer_victory
@@ -2496,10 +2496,10 @@ PlayVictoryMusic:
 	jr .play_music
 
 .trainer_victory
-	ld de, MUSIC_GYM_VICTORY
+	ld de, MUSIC_NONE
 	call IsGymLeader
 	jr c, .play_music
-	ld de, MUSIC_TRAINER_VICTORY
+	ld de, MUSIC_NONE
 
 .play_music
 	call PlayMusic

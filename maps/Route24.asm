@@ -8,7 +8,7 @@ Route24_MapScripts:
 
 Route24RocketScript:
 	faceplayer
-	playmusic MUSIC_ROCKET_ENCOUNTER
+	playmusic MUSIC_NONE
 	opentext
 	writetext Route24RocketSeenText
 	waitbutton
@@ -18,7 +18,7 @@ Route24RocketScript:
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
-	playmusic MUSIC_ROCKET_ENCOUNTER
+	playmusic MUSIC_NONE
 	opentext
 	writetext Route24RocketAfterBattleText
 	promptbutton
