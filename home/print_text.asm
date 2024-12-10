@@ -15,13 +15,14 @@ PrintLetterDelay::
 
 ; non-scrolling text?
 	ld a, [wTextboxFlags]
+	ldh [hBGMapThird], a
 	bit TEXT_DELAY_F, a
 	ret z
 
 	push hl
 	push de
 	push bc
-
+	
 	ld hl, hOAMUpdate
 	ld a, [hl]
 	push af
@@ -38,6 +39,7 @@ PrintLetterDelay::
 ; text speed
 	ld a, [wOptions]
 	and %111
+	jr z, .end
 	jr .updatedelay
 
 .fast
