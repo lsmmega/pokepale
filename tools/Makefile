@@ -7,7 +7,6 @@ tools := \
 	gbcpal \
 	gfx \
 	lzcomp \
-	make_patch \
 	png_dimensions \
 	pokemon_animation \
 	pokemon_animation_graphics \
