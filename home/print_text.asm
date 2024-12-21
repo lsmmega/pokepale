@@ -17,7 +17,7 @@ PrintLetterDelay::
 	ld a, [wTextboxFlags]
 	bit TEXT_DELAY_F, a
 	ret z
-
+	ldh [hBGMapThird], a
 	push hl
 	push de
 	push bc
@@ -38,6 +38,7 @@ PrintLetterDelay::
 ; text speed
 	ld a, [wOptions]
 	and %111
+	jr z, .end
 	jr .updatedelay
 
 .fast

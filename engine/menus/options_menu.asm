@@ -75,21 +75,21 @@ _Option:
 	ret
 
 StringOptions:
-	db "TEXT SPEED<LF>"
+	db "Text Speed<LF>"
 	db "        :<LF>"
-	db "BATTLE SCENE<LF>"
+	db "Battle Scene<LF>"
 	db "        :<LF>"
-	db "BATTLE STYLE<LF>"
+	db "Battle Style<LF>"
 	db "        :<LF>"
-	db "SOUND<LF>"
+	db "Sound<LF>"
 	db "        :<LF>"
-	db "PRINT<LF>"
+	db "Print<LF>"
 	db "        :<LF>"
-	db "MENU ACCOUNT<LF>"
+	db "Menu Account<LF>"
 	db "        :<LF>"
-	db "FRAME<LF>"
-	db "        :TYPE<LF>"
-	db "CANCEL@"
+	db "Frame<LF>"
+	db "        :Type<LF>"
+	db "Cancel@"
 
 GetOptionPointer:
 	jumptable .Pointers, wJumptableIndex
@@ -106,9 +106,10 @@ GetOptionPointer:
 	dw Options_Cancel
 
 	const_def
-	const OPT_TEXT_SPEED_FAST ; 0
-	const OPT_TEXT_SPEED_MED  ; 1
-	const OPT_TEXT_SPEED_SLOW ; 2
+	const OPT_TEXT_SPEED_FAST    ; 0
+	const OPT_TEXT_SPEED_MED     ; 1
+	const OPT_TEXT_SPEED_SLOW    ; 2
+	const OPT_TEXT_SPEED_INSTANT ; 3
 
 Options_TextSpeed:
 	call GetTextSpeed
@@ -118,7 +119,7 @@ Options_TextSpeed:
 	bit D_RIGHT_F, a
 	jr z, .NonePressed
 	ld a, c ; right pressed
-	cp OPT_TEXT_SPEED_SLOW
+	cp OPT_TEXT_SPEED_INSTANT
 	jr c, .Increase
 	ld c, OPT_TEXT_SPEED_FAST - 1
 
@@ -131,7 +132,7 @@ Options_TextSpeed:
 	ld a, c
 	and a
 	jr nz, .Decrease
-	ld c, OPT_TEXT_SPEED_SLOW + 1
+	ld c, OPT_TEXT_SPEED_INSTANT + 1
 
 .Decrease:
 	dec c
@@ -162,10 +163,12 @@ Options_TextSpeed:
 	dw .Fast
 	dw .Mid
 	dw .Slow
+	dw .Instant
 
-.Fast: db "FAST@"
-.Mid:  db "MID @"
-.Slow: db "SLOW@"
+.Fast:    db "Fast   @"
+.Mid:     db "Mid    @"
+.Slow:    db "Slow   @"
+.Instant: db "Instant@"
 
 GetTextSpeed:
 ; converts TEXT_DELAY_* value in a to OPT_TEXT_SPEED_* value in c,
@@ -176,6 +179,8 @@ GetTextSpeed:
 	jr z, .slow
 	cp TEXT_DELAY_FAST
 	jr z, .fast
+	cp TEXT_DELAY_INSTANT
+	jr z, .instant
 	; none of the above
 	ld c, OPT_TEXT_SPEED_MED
 	lb de, TEXT_DELAY_FAST, TEXT_DELAY_SLOW
@@ -183,12 +188,17 @@ GetTextSpeed:
 
 .slow
 	ld c, OPT_TEXT_SPEED_SLOW
-	lb de, TEXT_DELAY_MED, TEXT_DELAY_FAST
+	lb de, TEXT_DELAY_MED, TEXT_DELAY_INSTANT
 	ret
 
 .fast
 	ld c, OPT_TEXT_SPEED_FAST
-	lb de, TEXT_DELAY_SLOW, TEXT_DELAY_MED
+	lb de, TEXT_DELAY_INSTANT, TEXT_DELAY_MED
+	ret
+
+.instant
+	ld c, OPT_TEXT_SPEED_INSTANT
+	lb de, TEXT_DELAY_SLOW, TEXT_DELAY_FAST
 	ret
 
 Options_BattleScene:
@@ -227,8 +237,8 @@ Options_BattleScene:
 	and a
 	ret
 
-.On:  db "ON @"
-.Off: db "OFF@"
+.On:  db "On @"
+.Off: db "Off@"
 
 Options_BattleStyle:
 	ld hl, wOptions
@@ -265,8 +275,8 @@ Options_BattleStyle:
 	and a
 	ret
 
-.Shift: db "SHIFT@"
-.Set:   db "SET  @"
+.Shift: db "Shift@"
+.Set:   db "Set  @"
 
 Options_Sound:
 	ld hl, wOptions
@@ -310,8 +320,8 @@ Options_Sound:
 	and a
 	ret
 
-.Mono:   db "MONO  @"
-.Stereo: db "STEREO@"
+.Mono:   db "Mono  @"
+.Stereo: db "Stereo@"
 
 	const_def
 	const OPT_PRINT_LIGHTEST ; 0
@@ -372,11 +382,11 @@ Options_Print:
 	dw .Darker
 	dw .Darkest
 
-.Lightest: db "LIGHTEST@"
-.Lighter:  db "LIGHTER @"
-.Normal:   db "NORMAL  @"
-.Darker:   db "DARKER  @"
-.Darkest:  db "DARKEST @"
+.Lightest: db "Lightest@"
+.Lighter:  db "Lighter @"
+.Normal:   db "Normal  @"
+.Darker:   db "Darker  @"
+.Darkest:  db "Darkest @"
 
 GetPrinterSetting:
 ; converts GBPRINTER_* value in a to OPT_PRINT_* value in c,
@@ -450,8 +460,8 @@ Options_MenuAccount:
 	and a
 	ret
 
-.Off: db "OFF@"
-.On:  db "ON @"
+.Off: db "Off@"
+.On:  db "On @"
 
 Options_Frame:
 	ld hl, wTextboxFrame
