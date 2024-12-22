@@ -5683,6 +5683,7 @@ MoveInfoBox:
 	ld b, a
 	farcall GetMoveCategoryName
 	hlcoord 1, 9
+	ld de, wStringBuffer1
 	call PlaceString
 
 	ld h, b
