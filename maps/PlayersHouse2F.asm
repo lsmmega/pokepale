@@ -98,6 +98,7 @@ PlayersHouseTestScript:
 	writetext PlayersTestText
 	waitbutton
 	closetext
+	halloffame 
 	end
 
 PlayersRadioText1:
