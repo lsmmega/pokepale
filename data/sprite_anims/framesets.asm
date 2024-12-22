@@ -54,17 +54,6 @@ SpriteAnimFrameData:
 	dw .Frameset_MobileTradeSentPulse
 	dw .Frameset_MobileTradeOTPulse
 	dw .Frameset_MobileTradePing
-	dw .Frameset_IntroSuicune
-	dw .Frameset_IntroSuicune2
-	dw .Frameset_IntroPichu
-	dw .Frameset_IntroWooper
-	dw .Frameset_IntroUnown1
-	dw .Frameset_IntroUnown2
-	dw .Frameset_IntroUnown3
-	dw .Frameset_IntroUnown4
-	dw .Frameset_IntroUnownF2
-	dw .Frameset_IntroSuicuneAway
-	dw .Frameset_IntroUnownF
 	dw .Frameset_CelebiLeft
 	dw .Frameset_CelebiRight
 	assert_table_length NUM_SPRITE_ANIM_FRAMESETS
@@ -425,68 +414,6 @@ SpriteAnimFrameData:
 	oamframe SPRITE_ANIM_OAMSET_MOBILE_TRADE_PING_2,  2
 	oamframe SPRITE_ANIM_OAMSET_MOBILE_TRADE_PING_3,  2
 	oamdelete
-
-.Frameset_IntroSuicune:
-	oamframe SPRITE_ANIM_OAMSET_INTRO_SUICUNE_1,  3
-	oamframe SPRITE_ANIM_OAMSET_INTRO_SUICUNE_2,  3
-	oamframe SPRITE_ANIM_OAMSET_INTRO_SUICUNE_3,  3
-	oamframe SPRITE_ANIM_OAMSET_INTRO_SUICUNE_4,  3
-	oamrestart
-
-.Frameset_IntroSuicune2:
-	oamframe SPRITE_ANIM_OAMSET_INTRO_SUICUNE_4,  3
-	oamframe SPRITE_ANIM_OAMSET_INTRO_SUICUNE_1,  7
-	oamend
-
-.Frameset_IntroPichu:
-	oamframe SPRITE_ANIM_OAMSET_INTRO_PICHU_1, 32
-	oamframe SPRITE_ANIM_OAMSET_INTRO_PICHU_2,  7
-	oamframe SPRITE_ANIM_OAMSET_INTRO_PICHU_3,  7
-	oamend
-
-.Frameset_IntroWooper:
-	oamframe SPRITE_ANIM_OAMSET_INTRO_WOOPER,  3
-	oamend
-
-.Frameset_IntroUnown1:
-	oamframe SPRITE_ANIM_OAMSET_INTRO_UNOWN_1,  3
-	oamframe SPRITE_ANIM_OAMSET_INTRO_UNOWN_2,  3
-	oamframe SPRITE_ANIM_OAMSET_INTRO_UNOWN_3,  7
-	oamdelete
-
-.Frameset_IntroUnown2:
-	oamframe SPRITE_ANIM_OAMSET_INTRO_UNOWN_1,  3, OAM_X_FLIP
-	oamframe SPRITE_ANIM_OAMSET_INTRO_UNOWN_2,  3, OAM_X_FLIP
-	oamframe SPRITE_ANIM_OAMSET_INTRO_UNOWN_3,  7, OAM_X_FLIP
-	oamdelete
-
-.Frameset_IntroUnown3:
-	oamframe SPRITE_ANIM_OAMSET_INTRO_UNOWN_1,  3, OAM_Y_FLIP
-	oamframe SPRITE_ANIM_OAMSET_INTRO_UNOWN_2,  3, OAM_Y_FLIP
-	oamframe SPRITE_ANIM_OAMSET_INTRO_UNOWN_3,  7, OAM_Y_FLIP
-	oamdelete
-
-.Frameset_IntroUnown4:
-	oamframe SPRITE_ANIM_OAMSET_INTRO_UNOWN_1,  3, OAM_X_FLIP, OAM_Y_FLIP
-	oamframe SPRITE_ANIM_OAMSET_INTRO_UNOWN_2,  3, OAM_X_FLIP, OAM_Y_FLIP
-	oamframe SPRITE_ANIM_OAMSET_INTRO_UNOWN_3,  7, OAM_X_FLIP, OAM_Y_FLIP
-	oamdelete
-
-.Frameset_IntroUnownF2:
-	oamframe SPRITE_ANIM_OAMSET_INTRO_UNOWN_F_2_1,  3
-	oamframe SPRITE_ANIM_OAMSET_INTRO_UNOWN_F_2_2,  3
-	oamframe SPRITE_ANIM_OAMSET_INTRO_UNOWN_F_2_3,  3
-	oamframe SPRITE_ANIM_OAMSET_INTRO_UNOWN_F_2_4,  7
-	oamframe SPRITE_ANIM_OAMSET_INTRO_UNOWN_F_2_5,  7
-	oamend
-
-.Frameset_IntroSuicuneAway:
-	oamframe SPRITE_ANIM_OAMSET_INTRO_SUICUNE_AWAY,  3
-	oamend
-
-.Frameset_IntroUnownF:
-	oamwait 0
-	oamend
 
 .Frameset_CelebiLeft:
 	oamframe SPRITE_ANIM_OAMSET_CELEBI_1,  8
