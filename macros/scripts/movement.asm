@@ -127,7 +127,6 @@ ENDM
 	const movement_step_wait_end ; $48
 MACRO step_wait_end
 	db movement_step_wait_end
-	db \1 ; length
 ENDM
 
 	const movement_remove_object ; $49
@@ -217,6 +216,26 @@ ENDM
 	const movement_skyfall_top ; $59
 MACRO skyfall_top
 	db movement_skyfall_top
+ENDM
+
+	const movement_run_step_down ; $5a
+MACRO run_step_down
+	db movement_run_step_down
+ENDM
+
+	const movement_run_step_up ; $5b
+MACRO run_step_up
+	db movement_run_step_up
+ENDM
+
+	const movement_run_step_left ; $5c
+MACRO run_step_left
+	db movement_run_step_left
+ENDM
+
+	const movement_run_step_right ; $5d
+MACRO run_step_right
+	db movement_run_step_right
 ENDM
 
 DEF NUM_MOVEMENT_CMDS EQU const_value

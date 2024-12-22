@@ -179,8 +179,6 @@ wTempObjectCopyY:: db
 wTempObjectCopyRadius:: db
 ENDU
 
-	ds 1
-
 wTileDown::  db
 wTileUp::    db
 wTileLeft::  db
