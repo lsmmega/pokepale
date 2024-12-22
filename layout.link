@@ -304,7 +304,6 @@ ROMX $77
 	"Pokégear GFX"
 	"European Mail"
 ROMX $78
-	"Debug Room"
 	"Tileset Data 8"
 ROMX $7b
 	"Battle Tower Text"
@@ -314,9 +313,6 @@ ROMX $7d
 	"Mobile News Data"
 ROMX $7e
 	"Crystal Events"
-ROMX $7f
-	org $7de0
-	"Stadium 2 Checksums"
 WRAM0
 	"Stack"
 	"Audio RAM"

@@ -2377,13 +2377,7 @@ WinTrainerBattle:
 	jr nz, .skip_heal
 	predef HealParty
 .skip_heal
-
-	ld a, [wDebugFlags]
-	bit DEBUG_BATTLE_F, a
-	jr nz, .skip_win_loss_text
 	call PrintWinLossText
-.skip_win_loss_text
-
 	jp .give_money
 
 .mobile
@@ -2928,12 +2922,7 @@ LostBattle:
 
 	ld c, 40
 	call DelayFrames
-
-	ld a, [wDebugFlags]
-	bit DEBUG_BATTLE_F, a
-	jr nz, .skip_win_loss_text
 	call PrintWinLossText
-.skip_win_loss_text
 	ret
 
 .battle_tower
@@ -8937,7 +8926,6 @@ InitBattleDisplay:
 	predef PlaceGraphic
 	xor a
 	ldh [hWY], a
-	vc_hook Unknown_InitBattleDisplay
 	ldh [rWY], a
 	call WaitBGMap
 	call HideSprites
