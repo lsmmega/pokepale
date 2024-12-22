@@ -3,7 +3,6 @@
 	const PLAYERSHOUSE2F_DOLL_1
 	const PLAYERSHOUSE2F_DOLL_2
 	const PLAYERSHOUSE2F_BIG_DOLL
-	const PLAYERSHOUSE2F_KRIS
 
 PlayersHouse2F_MapScripts:
 	def_scene_scripts
