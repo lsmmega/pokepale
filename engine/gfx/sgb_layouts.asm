@@ -30,18 +30,13 @@ SGBLayoutJumptable:
 	dw .SGB_StatsScreenHPPals
 	dw .SGB_Pokedex
 	dw .SGB_SlotMachine
-	dw .SGB_BetaTitleScreen
-	dw .SGB_GSIntro
 	dw .SGB_Diploma
 	dw .SGB_MapPals
 	dw .SGB_PartyMenu
 	dw .SGB_Evolution
-	dw .SGB_GSTitleScreen
 	dw .SGB_Unused0D
 	dw .SGB_MoveList
-	dw .SGB_BetaPikachuMinigame
 	dw .SGB_PokedexSearchOption
-	dw .SGB_BetaPoker
 	dw .SGB_Pokepic
 	dw .SGB_MagnetTrain
 	dw .SGB_PackPals
@@ -286,61 +281,15 @@ SGBLayoutJumptable:
 	ld de, BlkPacket_SlotMachine
 	ret
 
-.SGB_BetaTitleScreen:
-	ld hl, PalPacket_BetaTitleScreen
-	ld de, BlkPacket_BetaTitleScreen
-	ret
-
 .SGB_Diploma:
 .SGB_MysteryGift:
 	ld hl, PalPacket_Diploma
 	ld de, BlkPacket_AllPal0
 	ret
 
-.SGB_GSIntro:
-	ld b, 0
-	ld hl, .BlkPacketTable_GSIntro
-rept 4
-	add hl, bc
-endr
-	ld e, [hl]
-	inc hl
-	ld d, [hl]
-	inc hl
-	ld a, [hli]
-	ld h, [hl]
-	ld l, a
-	ret
-
-.BlkPacketTable_GSIntro:
-	dw BlkPacket_AllPal0, PalPacket_GSIntroShellderLapras
-	dw BlkPacket_GSIntroJigglypuffPikachu, PalPacket_GSIntroJigglypuffPikachu
-	dw BlkPacket_AllPal0, PalPacket_GSIntroStartersTransition
-
-.SGB_GSTitleScreen:
-	ld hl, PalPacket_GSTitleScreen
-	ld de, BlkPacket_GSTitleScreen
-	ld a, SCGB_DIPLOMA
-	ld [wDefaultSGBLayout], a
-	ret
-
 .SGB_MagnetTrain:
 	ld hl, PalPacket_MagnetTrain
 	ld de, BlkPacket_MagnetTrain
-	ret
-
-.SGB_BetaPikachuMinigame:
-	ld hl, PalPacket_BetaPikachuMinigame
-	ld de, BlkPacket_AllPal0
-	ret
-
-.SGB_BetaPoker:
-	ld hl, BlkPacket_AllPal0
-	ld de, wBetaPokerSGBPals
-	ld bc, PALPACKET_LENGTH
-	call CopyBytes
-	ld hl, PalPacket_BetaPoker
-	ld de, BlkPacket_AllPal0
 	ret
 
 .SGB_MapPals:

@@ -9,9 +9,6 @@ Intro_MainMenu:
 	farcall MainMenu
 	jp StartTitleScreen
 
-IntroMenu_DummyFunction: ; unreferenced
-	ret
-
 PrintDayOfWeek:
 	push de
 	ld hl, .Days
@@ -1263,38 +1260,6 @@ DeleteSaveData:
 ResetClock:
 	farcall _ResetClock
 	jp Init
-
-UpdateTitleTrailSprite: ; unreferenced
-	; Only update every 4 seconds, when the low 2 bits of [wTitleScreenTimer] are 0.
-	ld a, [wTitleScreenTimer]
-	and %00000011
-	ret nz
-	ld bc, wSpriteAnim10
-	ld hl, SPRITEANIMSTRUCT_FRAME
-	add hl, bc
-	ld l, [hl]
-	ld h, 0
-	add hl, hl
-	add hl, hl
-	ld de, .TitleTrailCoords
-	add hl, de
-	; Every 8 seconds (i.e. every other update), get the second coords; else, get the first coords
-	ld a, [wTitleScreenTimer]
-	and %00000100
-	srl a
-	srl a
-	ld e, a
-	ld d, 0
-	add hl, de
-	add hl, de
-	ld a, [hli]
-	and a
-	ret z
-	ld e, a
-	ld d, [hl]
-	ld a, SPRITE_ANIM_OBJ_GS_TITLE_TRAIL
-	call InitSpriteAnimStruct
-	ret
 
 .TitleTrailCoords:
 MACRO trail_coords

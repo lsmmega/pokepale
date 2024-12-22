@@ -18,11 +18,6 @@ BlkPacket_AllPal0:
 	attr_blk_data %011, 0,0,0, 00,00, 19,17
 	ds 8, 0
 
-BlkPacket_GSIntroJigglypuffPikachu:
-	attr_blk 1
-	attr_blk_data %111, 1,1,0, 00,10, 19,13
-	ds 8, 0
-
 BlkPacket_Battle:
 	attr_blk 5
 	attr_blk_data %111, 2,2,0, 00,12, 19,17 ; text box: pal 2

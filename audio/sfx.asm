@@ -2950,39 +2950,6 @@ Sfx_EggHatch_Ch5:
 	note B_, 7
 	sound_ret
 
-Sfx_GsIntroCharizardFireball:
-	channel_count 1
-	channel 8, Sfx_GsIntroCharizardFireball_Ch8
-
-Sfx_GsIntroCharizardFireball_Ch8:
-	noise_note 8, 12, -7, 77
-	noise_note 8, 15, 1, 55
-.loop1:
-	noise_note 1, 15, 8, 79
-	noise_note 0, 12, 8, 38
-	noise_note 1, 13, 8, 95
-	noise_note 0, 10, 8, 55
-	sound_loop 12, .loop1
-	noise_note 3, 15, 8, 111
-	noise_note 4, 13, 8, 95
-	noise_note 12, 13, 8, 92
-	noise_note 40, 13, 3, 79
-	sound_ret
-
-Sfx_GsIntroPokemonAppears:
-	channel_count 1
-	channel 8, Sfx_GsIntroPokemonAppears_Ch8
-
-Sfx_GsIntroPokemonAppears_Ch8:
-	noise_note 1, 8, 8, 79
-	noise_note 2, 8, -7, 2
-	noise_note 2, 5, -7, 18
-	noise_note 2, 3, -7, 34
-	noise_note 0, 15, 8, 39
-	noise_note 1, 15, 8, 79
-	noise_note 8, 15, 1, 0
-	sound_ret
-
 Sfx_Flash:
 	channel_count 1
 	channel 5, Sfx_Flash_Ch5

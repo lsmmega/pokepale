@@ -167,37 +167,35 @@
 	const SFX_EVOLVED                     ; a4
 	const SFX_MASTER_BALL                 ; a5
 	const SFX_EGG_HATCH                   ; a6
-	const SFX_GS_INTRO_CHARIZARD_FIREBALL ; a7
-	const SFX_GS_INTRO_POKEMON_APPEARS    ; a8
-	const SFX_FLASH                       ; a9
-	const SFX_GAME_FREAK_LOGO_GS          ; aa
-	const SFX_NOT_VERY_EFFECTIVE          ; ab
-	const SFX_DAMAGE                      ; ac
-	const SFX_SUPER_EFFECTIVE             ; ad
-	const SFX_BALL_BOUNCE                 ; ae
-	const SFX_MOONLIGHT                   ; af
-	const SFX_ENCORE                      ; b0
-	const SFX_BEAT_UP                     ; b1
-	const SFX_BATON_PASS                  ; b2
-	const SFX_BALL_WOBBLE                 ; b3
-	const SFX_SWEET_SCENT                 ; b4
-	const SFX_SWEET_SCENT_2               ; b5
-	const SFX_HIT_END_OF_EXP_BAR          ; b6
-	const SFX_GIVE_TRADEMON               ; b7
-	const SFX_GET_TRADEMON                ; b8
-	const SFX_TRAIN_ARRIVED               ; b9
-	const SFX_STOP_SLOT                   ; ba
-	const SFX_2_BOOPS                     ; bb
+	const SFX_FLASH                       ; a7
+	const SFX_GAME_FREAK_LOGO_GS          ; a8
+	const SFX_NOT_VERY_EFFECTIVE          ; a9
+	const SFX_DAMAGE                      ; aa
+	const SFX_SUPER_EFFECTIVE             ; ab
+	const SFX_BALL_BOUNCE                 ; ac
+	const SFX_MOONLIGHT                   ; ad
+	const SFX_ENCORE                      ; ae
+	const SFX_BEAT_UP                     ; af
+	const SFX_BATON_PASS                  ; b0
+	const SFX_BALL_WOBBLE                 ; b1
+	const SFX_SWEET_SCENT                 ; b2
+	const SFX_SWEET_SCENT_2               ; b3
+	const SFX_HIT_END_OF_EXP_BAR          ; b4
+	const SFX_GIVE_TRADEMON               ; b5
+	const SFX_GET_TRADEMON                ; b6
+	const SFX_TRAIN_ARRIVED               ; b7
+	const SFX_STOP_SLOT                   ; b8
+	const SFX_2_BOOPS                     ; b9
 ; new to Crystal
-	const SFX_GLASS_TING                  ; bc
-	const SFX_GLASS_TING_2                ; bd
-	const SFX_DITTO_POP_UP                ; be
-	const SFX_DITTO_TRANSFORM             ; bf
-	const SFX_DITTO_BOUNCE                ; c0
-	const SFX_GAME_FREAK_PRESENTS         ; c1
-	const SFX_TINGLE                      ; c2
-	const SFX_INTRO_WHOOSH                ; c3
-	const SFX_TWO_PC_BEEPS                ; c4
-	const SFX_4_NOTE_DITTY                ; c5
-	const SFX_TWINKLE                     ; c6
+	const SFX_GLASS_TING                  ; ba
+	const SFX_GLASS_TING_2                ; bb
+	const SFX_DITTO_POP_UP                ; bc
+	const SFX_DITTO_TRANSFORM             ; bd
+	const SFX_DITTO_BOUNCE                ; be
+	const SFX_GAME_FREAK_PRESENTS         ; bf
+	const SFX_TINGLE                      ; c0
+	const SFX_INTRO_WHOOSH                ; c1
+	const SFX_TWO_PC_BEEPS                ; c2
+	const SFX_4_NOTE_DITTY                ; c3
+	const SFX_TWINKLE                     ; c4
 DEF NUM_SFX EQU const_value

@@ -37,18 +37,13 @@ CGBLayoutJumptable:
 	dw _CGB_StatsScreenHPPals
 	dw _CGB_Pokedex
 	dw _CGB_SlotMachine
-	dw _CGB_BetaTitleScreen
-	dw _CGB_GSIntro
 	dw _CGB_Diploma
 	dw _CGB_MapPals
 	dw _CGB_PartyMenu
 	dw _CGB_Evolution
-	dw _CGB_GSTitleScreen
 	dw _CGB_Unused0D
 	dw _CGB_MoveList
-	dw _CGB_BetaPikachuMinigame
 	dw _CGB_PokedexSearchOption
-	dw _CGB_BetaPoker
 	dw _CGB_Pokepic
 	dw _CGB_MagnetTrain
 	dw _CGB_PackPals
@@ -421,72 +416,6 @@ _CGB_SlotMachine:
 	ldh [hCGBPalUpdate], a
 	ret
 
-_CGB_BetaTitleScreen:
-	ld hl, PalPacket_BetaTitleScreen + 1
-	call CopyFourPalettes
-	call WipeAttrmap
-	ld de, wOBPals1
-	ld a, PREDEFPAL_PACK
-	call GetPredefPal
-	call LoadHLPaletteIntoDE
-	hlcoord 0, 6, wAttrmap
-	lb bc, 12, SCREEN_WIDTH
-	ld a, $1
-	call FillBoxCGB
-	call ApplyAttrmap
-	call ApplyPals
-	ld a, TRUE
-	ldh [hCGBPalUpdate], a
-	ret
-
-_CGB_GSIntro:
-	ld b, 0
-	ld hl, .Jumptable
-	add hl, bc
-	add hl, bc
-	ld a, [hli]
-	ld h, [hl]
-	ld l, a
-	jp hl
-
-.Jumptable:
-	dw .JigglypuffPikachuScene
-	dw .StartersCharizardScene
-
-.JigglypuffPikachuScene:
-	ld de, wBGPals1
-	ld a, PREDEFPAL_GS_INTRO_JIGGLYPUFF_PIKACHU_BG
-	call GetPredefPal
-	call LoadHLPaletteIntoDE
-
-	ld de, wOBPals1
-	ld a, PREDEFPAL_GS_INTRO_JIGGLYPUFF_PIKACHU_OB
-	call GetPredefPal
-	call LoadHLPaletteIntoDE
-	call WipeAttrmap
-	ret
-
-.StartersCharizardScene:
-	ld hl, PalPacket_Pack + 1
-	call CopyFourPalettes
-	ld de, wOBPals1
-	ld a, PREDEFPAL_GS_INTRO_STARTERS_TRANSITION
-	call GetPredefPal
-	call LoadHLPaletteIntoDE
-	call WipeAttrmap
-	ret
-
-_CGB_BetaPoker:
-	ld hl, BetaPokerPals
-	ld de, wBGPals1
-	ld bc, 5 palettes
-	ld a, BANK(wBGPals1)
-	call FarCopyWRAM
-	call ApplyPals
-	call WipeAttrmap
-	call ApplyAttrmap
-	ret
-
 _CGB_Diploma:
 	ld hl, DiplomaPalettes
 	ld de, wBGPals1
@@ -544,24 +473,6 @@ _CGB_Evolution:
 .got_palette
 	call WipeAttrmap
 	call ApplyAttrmap
-	call ApplyPals
-	ld a, TRUE
-	ldh [hCGBPalUpdate], a
-	ret
-
-_CGB_GSTitleScreen:
-	ld hl, UnusedGSTitleBGPals
-	ld de, wBGPals1
-	ld bc, 5 palettes
-	ld a, BANK(wBGPals1)
-	call FarCopyWRAM
-	ld hl, UnusedGSTitleOBPals
-	ld de, wOBPals1
-	ld bc, 2 palettes
-	ld a, BANK(wOBPals1)
-	call FarCopyWRAM
-	ld a, SCGB_DIPLOMA
-	ld [wDefaultSGBLayout], a
 	call ApplyPals
 	ld a, TRUE
 	ldh [hCGBPalUpdate], a
@@ -719,16 +630,6 @@ _CGB_MoveList:
 	lb bc, 2, 9
 	ld a, $1
 	call FillBoxCGB
-	call ApplyAttrmap
-	call ApplyPals
-	ld a, TRUE
-	ldh [hCGBPalUpdate], a
-	ret
-
-_CGB_BetaPikachuMinigame:
-	ld hl, PalPacket_BetaPikachuMinigame + 1
-	call CopyFourPalettes
-	call WipeAttrmap
 	call ApplyAttrmap
 	call ApplyPals
 	ld a, TRUE

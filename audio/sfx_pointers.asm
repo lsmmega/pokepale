@@ -168,8 +168,6 @@ SFX:
 	dba Sfx_Evolved
 	dba Sfx_MasterBall
 	dba Sfx_EggHatch
-	dba Sfx_GsIntroCharizardFireball
-	dba Sfx_GsIntroPokemonAppears
 	dba Sfx_Flash
 	dba Sfx_GameFreakLogoGs
 	dba Sfx_NotVeryEffective
