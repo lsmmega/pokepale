@@ -98,7 +98,7 @@ PlayersHouseTestScript:
 	writetext PlayersTestText
 	waitbutton
 	closetext
-	warp VIOLET_GYM, 4, 1
+	warp BLACKTHORN_CITY, 9, 32
 	end
 
 PlayersRadioText1:
