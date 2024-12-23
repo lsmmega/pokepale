@@ -98,7 +98,7 @@ PlayersHouseTestScript:
 	writetext PlayersTestText
 	waitbutton
 	closetext
-	halloffame 
+	warp VIOLET_GYM, 4, 1
 	end
 
 PlayersRadioText1:
