@@ -283,6 +283,8 @@ BattleAnimations::
 	dw BattleAnim_Shake
 	dw BattleAnim_HitConfusion
 	dw BattleAnim_InHail
+	dw BattleAnim_RainDance
+	dw BattleAnim_SunnyDay
 	assert_table_length NUM_BATTLE_ANIMS + 1
 
 BattleAnim_Dummy:

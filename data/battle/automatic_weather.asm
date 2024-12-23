@@ -25,7 +25,7 @@ MACRO auto_weather_effect
 	dw \2
 	dw \3
 ENDM
-	auto_weather_effect WEATHER_SUN, SUNNY_DAY, SunGotBrightText
-	auto_weather_effect WEATHER_RAIN, RAIN_DANCE, DownpourText
+	auto_weather_effect WEATHER_SUN, ANIM_IN_SUN, SunGotBrightText
+	auto_weather_effect WEATHER_RAIN, ANIM_IN_RAIN, DownpourText
 	auto_weather_effect WEATHER_SANDSTORM, ANIM_IN_SANDSTORM, SandstormBrewedText
 	auto_weather_effect WEATHER_HAIL, ANIM_IN_HAIL, ItStartedToHailText
