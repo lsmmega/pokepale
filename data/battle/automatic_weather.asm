@@ -12,7 +12,7 @@ MACRO auto_weather_map
 	map_id \1
 	db \2
 ENDM
-	auto_weather_map ROUTE_29, AUTOMATIC_RAIN
+
 	db 0 ; end
 
 AutomaticWeatherEffects:
