@@ -4,7 +4,7 @@ PokemonPicPointers::
 ; entries correspond to Pokémon species
 	table_width 3 * 2, PokemonPicPointers
 	dba_pics TurtwigFrontpic, TurtwigBackpic
-	dba_pics IvysaurFrontpic, IvysaurBackpic
+	dba_pics GrotleFrontpic, GrotleBackpic
 	dba_pics VenusaurFrontpic, VenusaurBackpic
 	dba_pics CharmanderFrontpic, CharmanderBackpic
 	dba_pics CharmeleonFrontpic, CharmeleonBackpic

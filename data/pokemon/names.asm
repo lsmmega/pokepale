@@ -1,7 +1,7 @@
 PokemonNames::
 	table_width NAME_LENGTH - 1, PokemonNames
 	db "Turtwig@@@"
-	db "IVYSAUR@@@"
+	db "Grotle@@@@"
 	db "VENUSAUR@@"
 	db "CHARMANDER"
 	db "CHARMELEON"

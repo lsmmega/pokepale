@@ -20,22 +20,9 @@ TurtwigEvosAttacks:
 	db 0 ; no more evolutions
 	db 0 ; no more level-up moves
 
-IvysaurEvosAttacks:
-	db EVOLVE_LEVEL, 32, VENUSAUR
+GrotleEvosAttacks:
+	db EVOLVE_LEVEL, 32, Torterra
 	db 0 ; no more evolutions
-	db 1, TACKLE
-	db 1, GROWL
-	db 1, LEECH_SEED
-	db 4, GROWL
-	db 7, LEECH_SEED
-	db 10, VINE_WHIP
-	db 15, POISONPOWDER
-	db 15, SLEEP_POWDER
-	db 22, RAZOR_LEAF
-	db 29, SWEET_SCENT
-	db 38, GROWTH
-	db 47, SYNTHESIS
-	db 56, SOLARBEAM
 	db 0 ; no more level-up moves
 
 VenusaurEvosAttacks:

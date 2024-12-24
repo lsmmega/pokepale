@@ -3,7 +3,7 @@
 EvosAttacksPointers::
 	table_width 2, EvosAttacksPointers
 	dw TurtwigEvosAttacks
-	dw IvysaurEvosAttacks
+	dw GrotleEvosAttacks
 	dw VenusaurEvosAttacks
 	dw CharmanderEvosAttacks
 	dw CharmeleonEvosAttacks

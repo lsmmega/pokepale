@@ -1,5 +1,5 @@
 TurtwigAnimation:    INCLUDE "gfx/pokemon/001_turtwig/anim.asm"
-IvysaurAnimation:    INCLUDE "gfx/pokemon/ivysaur/anim.asm"
+GrotleAnimation:     INCLUDE "gfx/pokemon/002_grotle/anim.asm"
 VenusaurAnimation:   INCLUDE "gfx/pokemon/venusaur/anim.asm"
 CharmanderAnimation: INCLUDE "gfx/pokemon/charmander/anim.asm"
 CharmeleonAnimation: INCLUDE "gfx/pokemon/charmeleon/anim.asm"

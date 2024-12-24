@@ -228,7 +228,7 @@ NewPokedexOrder:
 	db AERODACTYL
 	db SNORLAX
 	db Turtwig
-	db IVYSAUR
+	db Grotle
 	db VENUSAUR
 	db CHARMANDER
 	db CHARMELEON

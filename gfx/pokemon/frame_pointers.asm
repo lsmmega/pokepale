@@ -1,7 +1,7 @@
 FramesPointers:
 	table_width 2, FramesPointers
 	dw TurtwigFrames
-	dw IvysaurFrames
+	dw GrotleFrames
 	dw VenusaurFrames
 	dw CharmanderFrames
 	dw CharmeleonFrames

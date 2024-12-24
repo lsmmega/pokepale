@@ -1,7 +1,7 @@
 AnimationIdlePointers:
 	table_width 2, AnimationIdlePointers
 	dw TurtwigAnimationIdle
-	dw IvysaurAnimationIdle
+	dw GrotleAnimationIdle
 	dw VenusaurAnimationIdle
 	dw CharmanderAnimationIdle
 	dw CharmeleonAnimationIdle
