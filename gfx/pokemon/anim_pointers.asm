@@ -5,7 +5,7 @@ AnimationPointers:
 	dw TorterraAnimation
 	dw FennekinAnimation
 	dw BraixenAnimation
-	dw CharizardAnimation
+	dw DelphoxAnimation
 	dw SquirtleAnimation
 	dw WartortleAnimation
 	dw BlastoiseAnimation

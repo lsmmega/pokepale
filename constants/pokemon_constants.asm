@@ -24,7 +24,7 @@
 	const Torterra   ; 03
 	const Fennekin ; 04
 	const Braixen ; 05
-	const CHARIZARD  ; 06
+	const Delphox  ; 06
 	const SQUIRTLE   ; 07
 	const WARTORTLE  ; 08
 	const BLASTOISE  ; 09

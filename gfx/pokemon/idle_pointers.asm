@@ -5,7 +5,7 @@ AnimationIdlePointers:
 	dw TorterraAnimationIdle
 	dw FennekinAnimationIdle
 	dw BraixenAnimationIdle
-	dw CharizardAnimationIdle
+	dw DelphoxAnimationIdle
 	dw SquirtleAnimationIdle
 	dw WartortleAnimationIdle
 	dw BlastoiseAnimationIdle

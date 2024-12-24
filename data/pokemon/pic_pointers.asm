@@ -8,7 +8,7 @@ PokemonPicPointers::
 	dba_pics TorterraFrontpic, TorterraBackpic
 	dba_pics FennekinFrontpic, FennekinBackpic
 	dba_pics BraixenFrontpic, BraixenBackpic
-	dba_pics CharizardFrontpic, CharizardBackpic
+	dba_pics DelphoxFrontpic, DelphoxBackpic
 	dba_pics SquirtleFrontpic, SquirtleBackpic
 	dba_pics WartortleFrontpic, WartortleBackpic
 	dba_pics BlastoiseFrontpic, BlastoiseBackpic

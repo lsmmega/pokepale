@@ -7,7 +7,7 @@ MonMenuIcons:
 	db ICON_BULBASAUR   ; Torterra
 	db ICON_CHARMANDER  ; Fennekin
 	db ICON_CHARMANDER  ; Braixen
-	db ICON_BIGMON      ; CHARIZARD
+	db ICON_BIGMON      ; Delphox
 	db ICON_SQUIRTLE    ; SQUIRTLE
 	db ICON_SQUIRTLE    ; WARTORTLE
 	db ICON_SQUIRTLE    ; BLASTOISE

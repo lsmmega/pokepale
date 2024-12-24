@@ -23,7 +23,6 @@ AlphabeticalPokedexOrder:
 	db CATERPIE
 	db CELEBI
 	db CHANSEY
-	db CHARIZARD
 	db CHIKORITA
 	db CHINCHOU
 	db CLEFABLE
@@ -36,6 +35,7 @@ AlphabeticalPokedexOrder:
 	db CUBONE
 	db CYNDAQUIL
 	db DELIBIRD
+	db Delphox
 	db DEWGONG
 	db DIGLETT
 	db DITTO

@@ -6,7 +6,7 @@ PokedexDataPointerTable:
 	dw TorterraPokedexEntry
 	dw FennekinPokedexEntry
 	dw BraixenPokedexEntry
-	dw CharizardPokedexEntry
+	dw DelphoxPokedexEntry
 	dw SquirtlePokedexEntry
 	dw WartortlePokedexEntry
 	dw BlastoisePokedexEntry

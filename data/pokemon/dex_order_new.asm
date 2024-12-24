@@ -232,7 +232,7 @@ NewPokedexOrder:
 	db Torterra
 	db Fennekin
 	db Braixen
-	db CHARIZARD
+	db Delphox
 	db SQUIRTLE
 	db WARTORTLE
 	db BLASTOISE
