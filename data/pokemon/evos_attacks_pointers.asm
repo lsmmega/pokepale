@@ -6,7 +6,7 @@ EvosAttacksPointers::
 	dw GrotleEvosAttacks
 	dw TorterraEvosAttacks
 	dw FennekinEvosAttacks
-	dw CharmeleonEvosAttacks
+	dw BraixenEvosAttacks
 	dw CharizardEvosAttacks
 	dw SquirtleEvosAttacks
 	dw WartortleEvosAttacks

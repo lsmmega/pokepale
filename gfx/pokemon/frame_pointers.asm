@@ -4,7 +4,7 @@ FramesPointers:
 	dw GrotleFrames
 	dw TorterraFrames
 	dw FennekinFrames
-	dw CharmeleonFrames
+	dw BraixenFrames
 	dw CharizardFrames
 	dw SquirtleFrames
 	dw WartortleFrames

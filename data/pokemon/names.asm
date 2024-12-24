@@ -4,7 +4,7 @@ PokemonNames::
 	db "Grotle@@@@"
 	db "Torterra@@"
 	db "Fennekin@@"
-	db "CHARMELEON"
+	db "Braixen@@@"
 	db "CHARIZARD@"
 	db "SQUIRTLE@@"
 	db "WARTORTLE@"

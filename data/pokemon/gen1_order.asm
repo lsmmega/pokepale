@@ -177,7 +177,7 @@ Pokered_MonIndices:
 	db SUICUNE ; MISSINGNO.
 	db Fennekin
 	db SQUIRTLE
-	db CHARMELEON
+	db Braixen
 	db WARTORTLE
 	db CHARIZARD
 	db LARVITAR ; MISSINGNO.

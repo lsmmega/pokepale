@@ -18,12 +18,12 @@ AlphabeticalPokedexOrder:
 	db BELLSPROUT
 	db BLASTOISE
 	db BLISSEY
+	db Braixen
 	db BUTTERFREE
 	db CATERPIE
 	db CELEBI
 	db CHANSEY
 	db CHARIZARD
-	db CHARMELEON
 	db CHIKORITA
 	db CHINCHOU
 	db CLEFABLE

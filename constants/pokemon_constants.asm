@@ -23,7 +23,7 @@
 	const Grotle    ; 02
 	const Torterra   ; 03
 	const Fennekin ; 04
-	const CHARMELEON ; 05
+	const Braixen ; 05
 	const CHARIZARD  ; 06
 	const SQUIRTLE   ; 07
 	const WARTORTLE  ; 08

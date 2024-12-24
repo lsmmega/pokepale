@@ -4,7 +4,7 @@ AnimationIdlePointers:
 	dw GrotleAnimationIdle
 	dw TorterraAnimationIdle
 	dw FennekinAnimationIdle
-	dw CharmeleonAnimationIdle
+	dw BraixenAnimationIdle
 	dw CharizardAnimationIdle
 	dw SquirtleAnimationIdle
 	dw WartortleAnimationIdle
