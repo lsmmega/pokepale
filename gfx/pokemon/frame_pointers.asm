@@ -3,7 +3,7 @@ FramesPointers:
 	dw TurtwigFrames
 	dw GrotleFrames
 	dw TorterraFrames
-	dw CharmanderFrames
+	dw FennekinFrames
 	dw CharmeleonFrames
 	dw CharizardFrames
 	dw SquirtleFrames

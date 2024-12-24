@@ -1,7 +1,7 @@
 TurtwigAnimationIdle:    INCLUDE "gfx/pokemon/001_turtwig/anim_idle.asm"
 GrotleAnimationIdle:     INCLUDE "gfx/pokemon/002_grotle/anim_idle.asm"
 TorterraAnimationIdle:   INCLUDE "gfx/pokemon/003_torterra/anim_idle.asm"
-CharmanderAnimationIdle: INCLUDE "gfx/pokemon/charmander/anim_idle.asm"
+FennekinAnimationIdle:   INCLUDE "gfx/pokemon/004_fennekin/anim_idle.asm"
 CharmeleonAnimationIdle: INCLUDE "gfx/pokemon/charmeleon/anim_idle.asm"
 CharizardAnimationIdle:  INCLUDE "gfx/pokemon/charizard/anim_idle.asm"
 SquirtleAnimationIdle:   INCLUDE "gfx/pokemon/squirtle/anim_idle.asm"

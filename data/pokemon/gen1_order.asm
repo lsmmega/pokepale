@@ -175,7 +175,7 @@ Pokered_MonIndices:
 	db MAGNEMITE
 	db ENTEI ; MISSINGNO.
 	db SUICUNE ; MISSINGNO.
-	db CHARMANDER
+	db Fennekin
 	db SQUIRTLE
 	db CHARMELEON
 	db WARTORTLE

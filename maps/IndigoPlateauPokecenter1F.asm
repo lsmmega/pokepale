@@ -113,7 +113,7 @@ PlateauRivalBattleCommon:
 .Turtwig:
 	winlosstext PlateauRivalWinText, PlateauRivalLoseText
 	setlasttalked INDIGOPLATEAUPOKECENTER1F_RIVAL
-	loadtrainer RIVAL2, RIVAL2_2_CYNDAQUIL
+	loadtrainer RIVAL2, RIVAL2_2_FENNEKIN
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle

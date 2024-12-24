@@ -3,7 +3,7 @@ AnimationPointers:
 	dw TurtwigAnimation
 	dw GrotleAnimation
 	dw TorterraAnimation
-	dw CharmanderAnimation
+	dw FennekinAnimation
 	dw CharmeleonAnimation
 	dw CharizardAnimation
 	dw SquirtleAnimation

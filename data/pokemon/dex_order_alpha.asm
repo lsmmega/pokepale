@@ -23,7 +23,6 @@ AlphabeticalPokedexOrder:
 	db CELEBI
 	db CHANSEY
 	db CHARIZARD
-	db CHARMANDER
 	db CHARMELEON
 	db CHIKORITA
 	db CHINCHOU
@@ -60,6 +59,7 @@ AlphabeticalPokedexOrder:
 	db EXEGGUTOR
 	db FARFETCH_D
 	db FEAROW
+	db Fennekin
 	db FERALIGATR
 	db FLAAFFY
 	db FLAREON

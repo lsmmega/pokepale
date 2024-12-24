@@ -3,7 +3,7 @@ PokemonNames::
 	db "Turtwig@@@"
 	db "Grotle@@@@"
 	db "Torterra@@"
-	db "CHARMANDER"
+	db "Fennekin@@"
 	db "CHARMELEON"
 	db "CHARIZARD@"
 	db "SQUIRTLE@@"

@@ -4,7 +4,7 @@ PokedexDataPointerTable:
 	dw TurtwigPokedexEntry
 	dw GrotlePokedexEntry
 	dw TorterraPokedexEntry
-	dw CharmanderPokedexEntry
+	dw FennekinPokedexEntry
 	dw CharmeleonPokedexEntry
 	dw CharizardPokedexEntry
 	dw SquirtlePokedexEntry

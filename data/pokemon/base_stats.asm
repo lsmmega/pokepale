@@ -26,7 +26,7 @@ BaseData::
 INCLUDE "data/pokemon/base_stats/001_turtwig.asm"
 INCLUDE "data/pokemon/base_stats/002_grotle.asm"
 INCLUDE "data/pokemon/base_stats/003_torterra.asm"
-INCLUDE "data/pokemon/base_stats/charmander.asm"
+INCLUDE "data/pokemon/base_stats/004_fennekin.asm"
 INCLUDE "data/pokemon/base_stats/charmeleon.asm"
 INCLUDE "data/pokemon/base_stats/charizard.asm"
 INCLUDE "data/pokemon/base_stats/squirtle.asm"

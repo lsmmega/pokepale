@@ -6,7 +6,7 @@ PokemonPicPointers::
 	dba_pics TurtwigFrontpic, TurtwigBackpic
 	dba_pics GrotleFrontpic, GrotleBackpic
 	dba_pics TorterraFrontpic, TorterraBackpic
-	dba_pics CharmanderFrontpic, CharmanderBackpic
+	dba_pics FennekinFrontpic, FennekinBackpic
 	dba_pics CharmeleonFrontpic, CharmeleonBackpic
 	dba_pics CharizardFrontpic, CharizardBackpic
 	dba_pics SquirtleFrontpic, SquirtleBackpic

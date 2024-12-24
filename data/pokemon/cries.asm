@@ -9,7 +9,7 @@ PokemonCries::
 	mon_cry CRY_BULBASAUR,   128,  129 ; Turtwig
 	mon_cry CRY_BULBASAUR,    32,  256 ; Grotle
 	mon_cry CRY_BULBASAUR,     0,  320 ; Torterra
-	mon_cry CRY_CHARMANDER,   96,  192 ; CHARMANDER
+	mon_cry CRY_CHARMANDER,   96,  192 ; Fennekin
 	mon_cry CRY_CHARMANDER,   32,  192 ; CHARMELEON
 	mon_cry CRY_CHARMANDER,    0,  256 ; CHARIZARD
 	mon_cry CRY_SQUIRTLE,     96,  192 ; SQUIRTLE

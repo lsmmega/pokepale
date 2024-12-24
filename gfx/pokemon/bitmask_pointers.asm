@@ -3,7 +3,7 @@ BitmasksPointers:
 	dw TurtwigBitmasks
 	dw GrotleBitmasks
 	dw TorterraBitmasks
-	dw CharmanderBitmasks
+	dw FennekinBitmasks
 	dw CharmeleonBitmasks
 	dw CharizardBitmasks
 	dw SquirtleBitmasks

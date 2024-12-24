@@ -1,7 +1,7 @@
 TurtwigAnimation:    INCLUDE "gfx/pokemon/001_turtwig/anim.asm"
 GrotleAnimation:     INCLUDE "gfx/pokemon/002_grotle/anim.asm"
 TorterraAnimation:   INCLUDE "gfx/pokemon/003_torterra/anim.asm"
-CharmanderAnimation: INCLUDE "gfx/pokemon/charmander/anim.asm"
+FennekinAnimation:   INCLUDE "gfx/pokemon/004_fennekin/anim.asm"
 CharmeleonAnimation: INCLUDE "gfx/pokemon/charmeleon/anim.asm"
 CharizardAnimation:  INCLUDE "gfx/pokemon/charizard/anim.asm"
 SquirtleAnimation:   INCLUDE "gfx/pokemon/squirtle/anim.asm"

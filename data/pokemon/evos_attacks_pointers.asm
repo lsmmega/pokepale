@@ -5,7 +5,7 @@ EvosAttacksPointers::
 	dw TurtwigEvosAttacks
 	dw GrotleEvosAttacks
 	dw TorterraEvosAttacks
-	dw CharmanderEvosAttacks
+	dw FennekinEvosAttacks
 	dw CharmeleonEvosAttacks
 	dw CharizardEvosAttacks
 	dw SquirtleEvosAttacks
