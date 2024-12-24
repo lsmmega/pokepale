@@ -227,7 +227,7 @@ NewPokedexOrder:
 	db KABUTOPS
 	db AERODACTYL
 	db SNORLAX
-	db BULBASAUR
+	db Turtwig
 	db IVYSAUR
 	db VENUSAUR
 	db CHARMANDER

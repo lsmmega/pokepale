@@ -20,7 +20,6 @@ SpriteMons:
 	db CHARMANDER
 	db JYNX
 	db STARMIE
-	db BULBASAUR
 	db JIGGLYPUFF
 	db GRIMER
 	db EKANS

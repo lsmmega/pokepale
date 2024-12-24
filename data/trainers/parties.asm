@@ -76,7 +76,7 @@ ClairGroup:
 Rival1Group:
 	; RIVAL1 (1)
 	db "?@", TRAINERTYPE_NORMAL
-	db  5, CHIKORITA
+	db  5, Turtwig
 	db -1 ; end
 
 	; RIVAL1 (2)
@@ -206,7 +206,7 @@ WillGroup:
 PKMNTrainerGroup:
 	; CAL (1)
 	db "CAL@", TRAINERTYPE_NORMAL
-	db 10, CHIKORITA
+	db 10, Turtwig
 	db 10, CYNDAQUIL
 	db 10, TOTODILE
 	db -1 ; end
@@ -719,7 +719,7 @@ LassGroup:
 
 	; LASS (6)
 	db "LINDA@", TRAINERTYPE_NORMAL
-	db 30, BULBASAUR
+	db 30, Turtwig
 	db 32, IVYSAUR
 	db 34, VENUSAUR
 	db -1 ; end
@@ -806,7 +806,7 @@ CooltrainerMGroup:
 	db "NICK@", TRAINERTYPE_MOVES
 	db 26, CHARMANDER, EMBER, SMOKESCREEN, RAGE, SCARY_FACE
 	db 26, SQUIRTLE,   WITHDRAW, WATER_GUN, BITE, CURSE
-	db 26, BULBASAUR,  LEECH_SEED, POISONPOWDER, SLEEP_POWDER, RAZOR_LEAF
+	db 26, Turtwig,  LEECH_SEED, POISONPOWDER, SLEEP_POWDER, RAZOR_LEAF
 	db -1 ; end
 
 	; COOLTRAINERM (2)
@@ -881,21 +881,21 @@ CooltrainerMGroup:
 
 	; COOLTRAINERM (13)
 	db "ERICK@", TRAINERTYPE_NORMAL
-	db 10, BULBASAUR
+	db 10, Turtwig
 	db 10, CHARMANDER
 	db 10, SQUIRTLE
 	db -1 ; end
 
 	; COOLTRAINERM (14)
 	db "ANDY@", TRAINERTYPE_NORMAL
-	db 10, BULBASAUR
+	db 10, Turtwig
 	db 10, CHARMANDER
 	db 10, SQUIRTLE
 	db -1 ; end
 
 	; COOLTRAINERM (15)
 	db "TYLER@", TRAINERTYPE_NORMAL
-	db 10, BULBASAUR
+	db 10, Turtwig
 	db 10, CHARMANDER
 	db 10, SQUIRTLE
 	db -1 ; end
@@ -916,7 +916,7 @@ CooltrainerMGroup:
 
 	; COOLTRAINERM (18)
 	db "STEVE@", TRAINERTYPE_NORMAL
-	db 14, BULBASAUR
+	db 14, Turtwig
 	db 14, CHARMANDER
 	db 14, SQUIRTLE
 	db -1 ; end
@@ -996,7 +996,7 @@ CooltrainerFGroup:
 
 	; COOLTRAINERF (11)
 	db "MEGAN@", TRAINERTYPE_MOVES
-	db 32, BULBASAUR,  GROWL, LEECH_SEED, POISONPOWDER, RAZOR_LEAF
+	db 32, Turtwig,  GROWL, LEECH_SEED, POISONPOWDER, RAZOR_LEAF
 	db 32, IVYSAUR,    GROWL, LEECH_SEED, POISONPOWDER, RAZOR_LEAF
 	db 32, VENUSAUR,   BODY_SLAM, SLEEP_POWDER, RAZOR_LEAF, SWEET_SCENT
 	db -1 ; end
@@ -2769,7 +2769,7 @@ PicnickerGroup:
 	db "GINA@", TRAINERTYPE_NORMAL
 	db  9, HOPPIP
 	db  9, HOPPIP
-	db 12, BULBASAUR
+	db 12, Turtwig
 	db -1 ; end
 
 	; PICNICKER (3)
@@ -3239,7 +3239,7 @@ PokefanMGroup:
 
 	; POKEFANM (5)
 	db "CARTER@", TRAINERTYPE_ITEM
-	db 29, BULBASAUR,  BERRY
+	db 29, Turtwig,  BERRY
 	db 29, CHARMANDER, BERRY
 	db 29, SQUIRTLE,   BERRY
 	db -1 ; end
