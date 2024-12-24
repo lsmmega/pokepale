@@ -226,6 +226,7 @@ AlphabeticalPokedexOrder:
 	db TENTACRUEL
 	db TOGEPI
 	db TOGETIC
+	db Torterra
 	db TOTODILE
 	db Turtwig
 	db TYPHLOSION
@@ -237,7 +238,6 @@ AlphabeticalPokedexOrder:
 	db VAPOREON
 	db VENOMOTH
 	db VENONAT
-	db VENUSAUR
 	db VICTREEBEL
 	db VILEPLUME
 	db VOLTORB

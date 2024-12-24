@@ -2,7 +2,7 @@ KantoFrames: ; used only for BANK(KantoFrames)
 
 TurtwigFrames:    INCLUDE "gfx/pokemon/001_turtwig/frames.asm"
 GrotleFrames:     INCLUDE "gfx/pokemon/002_grotle/frames.asm"
-VenusaurFrames:   INCLUDE "gfx/pokemon/venusaur/frames.asm"
+TorterraFrames:   INCLUDE "gfx/pokemon/003_torterra/frames.asm"
 CharmanderFrames: INCLUDE "gfx/pokemon/charmander/frames.asm"
 CharmeleonFrames: INCLUDE "gfx/pokemon/charmeleon/frames.asm"
 CharizardFrames:  INCLUDE "gfx/pokemon/charizard/frames.asm"

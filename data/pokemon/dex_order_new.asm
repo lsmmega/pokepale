@@ -229,7 +229,7 @@ NewPokedexOrder:
 	db SNORLAX
 	db Turtwig
 	db Grotle
-	db VENUSAUR
+	db Torterra
 	db CHARMANDER
 	db CHARMELEON
 	db CHARIZARD

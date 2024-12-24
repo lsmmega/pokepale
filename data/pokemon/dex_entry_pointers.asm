@@ -3,7 +3,7 @@ PokedexDataPointerTable:
 	table_width 2, PokedexDataPointerTable
 	dw TurtwigPokedexEntry
 	dw GrotlePokedexEntry
-	dw VenusaurPokedexEntry
+	dw TorterraPokedexEntry
 	dw CharmanderPokedexEntry
 	dw CharmeleonPokedexEntry
 	dw CharizardPokedexEntry

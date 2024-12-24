@@ -21,7 +21,7 @@
 	const_def 1
 	const Turtwig  ; 01
 	const Grotle    ; 02
-	const VENUSAUR   ; 03
+	const Torterra   ; 03
 	const CHARMANDER ; 04
 	const CHARMELEON ; 05
 	const CHARIZARD  ; 06

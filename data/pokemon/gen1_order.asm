@@ -153,7 +153,7 @@ Pokered_MonIndices:
 	db PIDGEOT
 	db STARMIE
 	db Turtwig
-	db VENUSAUR
+	db Torterra
 	db TENTACRUEL
 	db SMOOCHUM ; MISSINGNO.
 	db GOLDEEN

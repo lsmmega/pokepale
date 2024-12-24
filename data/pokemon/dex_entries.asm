@@ -2,7 +2,7 @@ SECTION "Pokedex Entries 001-064", ROMX
 
 TurtwigPokedexEntry::    INCLUDE "data/pokemon/dex_entries/001_turtwig.asm"
 GrotlePokedexEntry::     INCLUDE "data/pokemon/dex_entries/002_grotle.asm"
-VenusaurPokedexEntry::   INCLUDE "data/pokemon/dex_entries/venusaur.asm"
+TorterraPokedexEntry::   INCLUDE "data/pokemon/dex_entries/003_torterra.asm"
 CharmanderPokedexEntry:: INCLUDE "data/pokemon/dex_entries/charmander.asm"
 CharmeleonPokedexEntry:: INCLUDE "data/pokemon/dex_entries/charmeleon.asm"
 CharizardPokedexEntry::  INCLUDE "data/pokemon/dex_entries/charizard.asm"

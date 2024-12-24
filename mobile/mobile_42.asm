@@ -1703,7 +1703,6 @@ DebugMobileTrade: ; unreferenced
 	ret
 
 .DebugTradeData:
-	db VENUSAUR
 	db "ゲーフり@@"
 	dw $0123
 	db "かびーん@@"

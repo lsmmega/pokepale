@@ -4,7 +4,7 @@ MonMenuIcons:
 	table_width 1, MonMenuIcons
 	db ICON_BULBASAUR   ; Turtwig
 	db ICON_BULBASAUR   ; Grotle
-	db ICON_BULBASAUR   ; VENUSAUR
+	db ICON_BULBASAUR   ; Torterra
 	db ICON_CHARMANDER  ; CHARMANDER
 	db ICON_CHARMANDER  ; CHARMELEON
 	db ICON_BIGMON      ; CHARIZARD

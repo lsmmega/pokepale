@@ -1,6 +1,6 @@
 TurtwigBitmasks:    INCLUDE "gfx/pokemon/001_turtwig/bitmask.asm"
 GrotleBitmasks:     INCLUDE "gfx/pokemon/002_grotle/bitmask.asm"
-VenusaurBitmasks:   INCLUDE "gfx/pokemon/venusaur/bitmask.asm"
+TorterraBitmasks:   INCLUDE "gfx/pokemon/003_torterra/bitmask.asm"
 CharmanderBitmasks: INCLUDE "gfx/pokemon/charmander/bitmask.asm"
 CharmeleonBitmasks: INCLUDE "gfx/pokemon/charmeleon/bitmask.asm"
 CharizardBitmasks:  INCLUDE "gfx/pokemon/charizard/bitmask.asm"

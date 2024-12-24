@@ -14,7 +14,7 @@ Footprints:
 ; 001-008 top halves
 INCBIN "gfx/footprints/none.1bpp",  footprint_top
 INCBIN "gfx/footprints/none.1bpp",  footprint_top
-INCBIN "gfx/footprints/venusaur.1bpp",   footprint_top
+INCBIN "gfx/footprints/none.1bpp",  footprint_top
 INCBIN "gfx/footprints/charmander.1bpp", footprint_top
 INCBIN "gfx/footprints/charmeleon.1bpp", footprint_top
 INCBIN "gfx/footprints/charizard.1bpp",  footprint_top
@@ -23,7 +23,7 @@ INCBIN "gfx/footprints/wartortle.1bpp",  footprint_top
 ; 001-008 bottom halves
 INCBIN "gfx/footprints/none.1bpp",  footprint_bottom
 INCBIN "gfx/footprints/none.1bpp",  footprint_bottom
-INCBIN "gfx/footprints/venusaur.1bpp",   footprint_bottom
+INCBIN "gfx/footprints/none.1bpp",  footprint_bottom
 INCBIN "gfx/footprints/charmander.1bpp", footprint_bottom
 INCBIN "gfx/footprints/charmeleon.1bpp", footprint_bottom
 INCBIN "gfx/footprints/charizard.1bpp",  footprint_bottom
