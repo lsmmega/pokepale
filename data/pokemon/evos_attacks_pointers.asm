@@ -9,7 +9,7 @@ EvosAttacksPointers::
 	dw BraixenEvosAttacks
 	dw DelphoxEvosAttacks
 	dw QuaxlyEvosAttacks
-	dw WartortleEvosAttacks
+	dw QuaxwellEvosAttacks
 	dw BlastoiseEvosAttacks
 	dw CaterpieEvosAttacks
 	dw MetapodEvosAttacks

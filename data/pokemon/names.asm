@@ -7,7 +7,7 @@ PokemonNames::
 	db "Braixen@@@"
 	db "Delphox@@@"
 	db "Quaxly@@@@"
-	db "WARTORTLE@"
+	db "Quaxwell@@"
 	db "BLASTOISE@"
 	db "CATERPIE@@"
 	db "METAPOD@@@"

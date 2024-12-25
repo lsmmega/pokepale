@@ -234,7 +234,7 @@ NewPokedexOrder:
 	db Braixen
 	db Delphox
 	db Quaxly
-	db WARTORTLE
+	db Quaxwell
 	db BLASTOISE
 	db ARTICUNO
 	db ZAPDOS

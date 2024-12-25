@@ -8,7 +8,7 @@ PokedexDataPointerTable:
 	dw BraixenPokedexEntry
 	dw DelphoxPokedexEntry
 	dw QuaxlyPokedexEntry
-	dw WartortlePokedexEntry
+	dw QuaxwellPokedexEntry
 	dw BlastoisePokedexEntry
 	dw CaterpiePokedexEntry
 	dw MetapodPokedexEntry

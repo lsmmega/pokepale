@@ -177,6 +177,7 @@ AlphabeticalPokedexOrder:
 	db PUPITAR
 	db QUAGSIRE
 	db Quaxly
+	db Quaxwell
 	db QUILAVA
 	db QWILFISH
 	db RAICHU
@@ -242,7 +243,6 @@ AlphabeticalPokedexOrder:
 	db VILEPLUME
 	db VOLTORB
 	db VULPIX
-	db WARTORTLE
 	db WEEDLE
 	db WEEPINBELL
 	db WEEZING

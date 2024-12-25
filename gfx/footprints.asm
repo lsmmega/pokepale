@@ -19,7 +19,7 @@ INCBIN "gfx/footprints/none.1bpp",  footprint_top
 INCBIN "gfx/footprints/none.1bpp",  footprint_top
 INCBIN "gfx/footprints/none.1bpp",  footprint_top
 INCBIN "gfx/footprints/none.1bpp",  footprint_top
-INCBIN "gfx/footprints/wartortle.1bpp",  footprint_top
+INCBIN "gfx/footprints/none.1bpp",  footprint_top
 ; 001-008 bottom halves
 INCBIN "gfx/footprints/none.1bpp",  footprint_bottom
 INCBIN "gfx/footprints/none.1bpp",  footprint_bottom
@@ -28,7 +28,7 @@ INCBIN "gfx/footprints/none.1bpp",  footprint_bottom
 INCBIN "gfx/footprints/none.1bpp",  footprint_bottom
 INCBIN "gfx/footprints/none.1bpp",  footprint_bottom
 INCBIN "gfx/footprints/none.1bpp",  footprint_bottom
-INCBIN "gfx/footprints/wartortle.1bpp",  footprint_bottom
+INCBIN "gfx/footprints/none.1bpp",  footprint_bottom
 ; 009-016 top halves
 INCBIN "gfx/footprints/blastoise.1bpp",  footprint_top
 INCBIN "gfx/footprints/caterpie.1bpp",   footprint_top

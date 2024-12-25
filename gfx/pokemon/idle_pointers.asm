@@ -7,7 +7,7 @@ AnimationIdlePointers:
 	dw BraixenAnimationIdle
 	dw DelphoxAnimationIdle
 	dw QuaxlyAnimationIdle
-	dw WartortleAnimationIdle
+	dw QuaxwellAnimationIdle
 	dw BlastoiseAnimationIdle
 	dw CaterpieAnimationIdle
 	dw MetapodAnimationIdle

@@ -178,7 +178,7 @@ Pokered_MonIndices:
 	db Fennekin
 	db Quaxly
 	db Braixen
-	db WARTORTLE
+	db Quaxwell
 	db Delphox
 	db LARVITAR ; MISSINGNO.
 	db PUPITAR ; MISSINGNO. KABUTOPS FOSSIL
