@@ -8,7 +8,7 @@ MonMenuIcons:
 	db ICON_CHARMANDER  ; Fennekin
 	db ICON_CHARMANDER  ; Braixen
 	db ICON_BIGMON      ; Delphox
-	db ICON_SQUIRTLE    ; SQUIRTLE
+	db ICON_SQUIRTLE    ; Quaxly
 	db ICON_SQUIRTLE    ; WARTORTLE
 	db ICON_SQUIRTLE    ; BLASTOISE
 	db ICON_CATERPILLAR ; CATERPIE

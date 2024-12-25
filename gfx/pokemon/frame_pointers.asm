@@ -6,7 +6,7 @@ FramesPointers:
 	dw FennekinFrames
 	dw BraixenFrames
 	dw DelphoxFrames
-	dw SquirtleFrames
+	dw QuaxlyFrames
 	dw WartortleFrames
 	dw BlastoiseFrames
 	dw CaterpieFrames

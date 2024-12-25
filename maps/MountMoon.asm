@@ -26,19 +26,19 @@ MountMoonRivalBattleScript:
 	writetext MountMoonRivalTextBefore
 	waitbutton
 	closetext
-	checkevent EVENT_GOT_TOTODILE_FROM_ELM
-	iftrue .Totodile
+	checkevent EVENT_GOT_QUAXLY_FROM_ELM
+	iftrue .Quaxly
 	checkevent EVENT_GOT_TURTWIG_FROM_ELM
 	iftrue .Turtwig
 	winlosstext MountMoonRivalTextWin, MountMoonRivalTextLoss
 	setlasttalked MOUNTMOON_RIVAL
-	loadtrainer RIVAL2, RIVAL2_1_TOTODILE
+	loadtrainer RIVAL2, RIVAL2_1_QUAXLY
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
 	sjump .FinishBattle
 
-.Totodile:
+.Quaxly:
 	winlosstext MountMoonRivalTextWin, MountMoonRivalTextLoss
 	setlasttalked MOUNTMOON_RIVAL
 	loadtrainer RIVAL2, RIVAL2_1_TURTWIG

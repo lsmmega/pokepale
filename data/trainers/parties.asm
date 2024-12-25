@@ -805,7 +805,7 @@ CooltrainerMGroup:
 	; COOLTRAINERM (1)
 	db "NICK@", TRAINERTYPE_MOVES
 	db 26, Fennekin, EMBER, SMOKESCREEN, RAGE, SCARY_FACE
-	db 26, SQUIRTLE,   WITHDRAW, WATER_GUN, BITE, CURSE
+	db 26, Quaxly,   WITHDRAW, WATER_GUN, BITE, CURSE
 	db 26, Turtwig,  LEECH_SEED, POISONPOWDER, SLEEP_POWDER, RAZOR_LEAF
 	db -1 ; end
 
@@ -883,21 +883,21 @@ CooltrainerMGroup:
 	db "ERICK@", TRAINERTYPE_NORMAL
 	db 10, Turtwig
 	db 10, Fennekin
-	db 10, SQUIRTLE
+	db 10, Quaxly
 	db -1 ; end
 
 	; COOLTRAINERM (14)
 	db "ANDY@", TRAINERTYPE_NORMAL
 	db 10, Turtwig
 	db 10, Fennekin
-	db 10, SQUIRTLE
+	db 10, Quaxly
 	db -1 ; end
 
 	; COOLTRAINERM (15)
 	db "TYLER@", TRAINERTYPE_NORMAL
 	db 10, Turtwig
 	db 10, Fennekin
-	db 10, SQUIRTLE
+	db 10, Quaxly
 	db -1 ; end
 
 	; COOLTRAINERM (16)
@@ -918,7 +918,7 @@ CooltrainerMGroup:
 	db "STEVE@", TRAINERTYPE_NORMAL
 	db 14, Turtwig
 	db 14, Fennekin
-	db 14, SQUIRTLE
+	db 14, Quaxly
 	db -1 ; end
 
 	; COOLTRAINERM (19)
@@ -3241,7 +3241,7 @@ PokefanMGroup:
 	db "CARTER@", TRAINERTYPE_ITEM
 	db 29, Turtwig,  BERRY
 	db 29, Fennekin, BERRY
-	db 29, SQUIRTLE,   BERRY
+	db 29, Quaxly,   BERRY
 	db -1 ; end
 
 	; POKEFANM (6)

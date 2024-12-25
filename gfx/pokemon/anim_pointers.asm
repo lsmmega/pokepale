@@ -6,7 +6,7 @@ AnimationPointers:
 	dw FennekinAnimation
 	dw BraixenAnimation
 	dw DelphoxAnimation
-	dw SquirtleAnimation
+	dw QuaxlyAnimation
 	dw WartortleAnimation
 	dw BlastoiseAnimation
 	dw CaterpieAnimation

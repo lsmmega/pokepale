@@ -186,32 +186,32 @@ FennekinPokeBallScript:
 	applymovement PLAYER, AfterFennekinMovement
 	sjump ElmDirectionsScript
 
-TotodilePokeBallScript:
+QuaxlyPokeBallScript:
 	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
 	iftrue LookAtElmPokeBallScript
 	turnobject ELMSLAB_ELM, DOWN
 	reanchormap
-	pokepic TOTODILE
-	cry TOTODILE
+	pokepic Quaxly
+	cry Quaxly
 	waitbutton
 	closepokepic
 	opentext
-	writetext TakeTotodileText
+	writetext TakeQuaxlyText
 	yesorno
 	iffalse DidntChooseStarterScript
 	disappear ELMSLAB_POKE_BALL2
-	setevent EVENT_GOT_TOTODILE_FROM_ELM
+	setevent EVENT_GOT_QUAXLY_FROM_ELM
 	writetext ChoseStarterText
 	promptbutton
 	waitsfx
-	getmonname STRING_BUFFER_3, TOTODILE
+	getmonname STRING_BUFFER_3, Quaxly
 	writetext ReceivedStarterText
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	promptbutton
-	givepoke TOTODILE, 5, BERRY
+	givepoke Quaxly, 5, BERRY
 	closetext
-	applymovement PLAYER, AfterTotodileMovement
+	applymovement PLAYER, AfterQuaxlyMovement
 	sjump ElmDirectionsScript
 
 TurtwigPokeBallScript:
@@ -708,7 +708,7 @@ AfterFennekinMovement:
 	turn_head UP
 	step_end
 
-AfterTotodileMovement:
+AfterQuaxlyMovement:
 	step LEFT
 	step LEFT
 	step UP
@@ -862,9 +862,9 @@ TakeFennekinText:
 	cont "fire #MON?"
 	done
 
-TakeTotodileText:
+TakeQuaxlyText:
 	text "ELM: Do you want"
-	line "TOTODILE, the"
+	line "Quaxly, the"
 	cont "water #MON?"
 	done
 
@@ -1407,6 +1407,6 @@ ElmsLab_MapEvents:
 	object_event  5,  2, SPRITE_ELM, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ProfElmScript, -1
 	object_event  2,  9, SPRITE_SCIENTIST, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ElmsAideScript, EVENT_ELMS_AIDE_IN_LAB
 	object_event  6,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, FennekinPokeBallScript, EVENT_FENNEKIN_POKEBALL_IN_ELMS_LAB
-	object_event  7,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TotodilePokeBallScript, EVENT_TOTODILE_POKEBALL_IN_ELMS_LAB
+	object_event  7,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, QuaxlyPokeBallScript, EVENT_QUAXLY_POKEBALL_IN_ELMS_LAB
 	object_event  8,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TurtwigPokeBallScript, EVENT_TURTWIG_POKEBALL_IN_ELMS_LAB
 	object_event  5,  3, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CopScript, EVENT_COP_IN_ELMS_LAB

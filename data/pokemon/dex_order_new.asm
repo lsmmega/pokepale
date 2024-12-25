@@ -233,7 +233,7 @@ NewPokedexOrder:
 	db Fennekin
 	db Braixen
 	db Delphox
-	db SQUIRTLE
+	db Quaxly
 	db WARTORTLE
 	db BLASTOISE
 	db ARTICUNO

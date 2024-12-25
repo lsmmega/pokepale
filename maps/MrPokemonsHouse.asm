@@ -128,11 +128,11 @@ MrPokemonsHouse_OakScript:
 	setmapscene ELMS_LAB, SCENE_ELMSLAB_MEET_OFFICER
 	specialphonecall SPECIALCALL_ROBBED
 	clearevent EVENT_COP_IN_ELMS_LAB
-	checkevent EVENT_GOT_TOTODILE_FROM_ELM
+	checkevent EVENT_GOT_QUAXLY_FROM_ELM
 	iftrue .RivalTakesTurtwig
 	checkevent EVENT_GOT_TURTWIG_FROM_ELM
 	iftrue .RivalTakesFennekin
-	setevent EVENT_TOTODILE_POKEBALL_IN_ELMS_LAB
+	setevent EVENT_QUAXLY_POKEBALL_IN_ELMS_LAB
 	end
 
 .RivalTakesTurtwig:

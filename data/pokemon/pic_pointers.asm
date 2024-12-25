@@ -9,7 +9,7 @@ PokemonPicPointers::
 	dba_pics FennekinFrontpic, FennekinBackpic
 	dba_pics BraixenFrontpic, BraixenBackpic
 	dba_pics DelphoxFrontpic, DelphoxBackpic
-	dba_pics SquirtleFrontpic, SquirtleBackpic
+	dba_pics QuaxlyFrontpic, QuaxlyBackpic
 	dba_pics WartortleFrontpic, WartortleBackpic
 	dba_pics BlastoiseFrontpic, BlastoiseBackpic
 	dba_pics CaterpieFrontpic, CaterpieBackpic

@@ -8,7 +8,7 @@ EvosAttacksPointers::
 	dw FennekinEvosAttacks
 	dw BraixenEvosAttacks
 	dw DelphoxEvosAttacks
-	dw SquirtleEvosAttacks
+	dw QuaxlyEvosAttacks
 	dw WartortleEvosAttacks
 	dw BlastoiseEvosAttacks
 	dw CaterpieEvosAttacks

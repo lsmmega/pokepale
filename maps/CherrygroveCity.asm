@@ -113,13 +113,13 @@ CherrygroveRivalSceneNorth:
 	writetext CherrygroveRivalText_Seen
 	waitbutton
 	closetext
-	checkevent EVENT_GOT_TOTODILE_FROM_ELM
-	iftrue .Totodile
+	checkevent EVENT_GOT_QUAXLY_FROM_ELM
+	iftrue .Quaxly
 	checkevent EVENT_GOT_TURTWIG_FROM_ELM
 	iftrue .Chikorita
 	winlosstext RivalCherrygroveWinText, RivalCherrygroveLossText
 	setlasttalked CHERRYGROVECITY_RIVAL
-	loadtrainer RIVAL1, RIVAL1_1_TOTODILE
+	loadtrainer RIVAL1, RIVAL1_1_QUAXLY
 	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
 	startbattle
 	dontrestartmapmusic
@@ -127,7 +127,7 @@ CherrygroveRivalSceneNorth:
 	iftrue .AfterVictorious
 	sjump .AfterYourDefeat
 
-.Totodile:
+.Quaxly:
 	winlosstext RivalCherrygroveWinText, RivalCherrygroveLossText
 	setlasttalked CHERRYGROVECITY_RIVAL
 	loadtrainer RIVAL1, RIVAL1_1_TURTWIG

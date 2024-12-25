@@ -60,19 +60,19 @@ AzaleaTownRivalBattleScript:
 	waitbutton
 	closetext
 	setevent EVENT_RIVAL_AZALEA_TOWN
-	checkevent EVENT_GOT_TOTODILE_FROM_ELM
-	iftrue .Totodile
+	checkevent EVENT_GOT_QUAXLY_FROM_ELM
+	iftrue .Quaxly
 	checkevent EVENT_GOT_TURTWIG_FROM_ELM
 	iftrue .Chikorita
 	winlosstext AzaleaTownRivalWinText, AzaleaTownRivalLossText
 	setlasttalked AZALEATOWN_RIVAL
-	loadtrainer RIVAL1, RIVAL1_2_TOTODILE
+	loadtrainer RIVAL1, RIVAL1_2_QUAXLY
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
 	sjump .AfterBattle
 
-.Totodile:
+.Quaxly:
 	winlosstext AzaleaTownRivalWinText, AzaleaTownRivalLossText
 	setlasttalked AZALEATOWN_RIVAL
 	loadtrainer RIVAL1, RIVAL1_2_TURTWIG

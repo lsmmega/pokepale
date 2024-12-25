@@ -56,19 +56,19 @@ VictoryRoadRivalNext:
 	waitbutton
 	closetext
 	setevent EVENT_RIVAL_VICTORY_ROAD
-	checkevent EVENT_GOT_TOTODILE_FROM_ELM
-	iftrue .GotTotodile
+	checkevent EVENT_GOT_QUAXLY_FROM_ELM
+	iftrue .GotQuaxly
 	checkevent EVENT_GOT_TURTWIG_FROM_ELM
 	iftrue .GotTurtwig
 	winlosstext VictoryRoadRivalDefeatText, VictoryRoadRivalVictoryText
 	setlasttalked VICTORYROAD_RIVAL
-	loadtrainer RIVAL1, RIVAL1_5_TOTODILE
+	loadtrainer RIVAL1, RIVAL1_5_QUAXLY
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
 	sjump .AfterBattle
 
-.GotTotodile:
+.GotQuaxly:
 	winlosstext VictoryRoadRivalDefeatText, VictoryRoadRivalVictoryText
 	setlasttalked VICTORYROAD_RIVAL
 	loadtrainer RIVAL1, RIVAL1_5_TURTWIG

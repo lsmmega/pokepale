@@ -88,20 +88,20 @@ PlateauRivalBattleCommon:
 	waitbutton
 	closetext
 	setevent EVENT_INDIGO_PLATEAU_POKECENTER_RIVAL
-	checkevent EVENT_GOT_TOTODILE_FROM_ELM
-	iftrue .Totodile
+	checkevent EVENT_GOT_QUAXLY_FROM_ELM
+	iftrue .Quaxly
 	checkevent EVENT_GOT_TURTWIG_FROM_ELM
 	iftrue .Turtwig
-	; Cyndaquil
+	; Fennekin
 	winlosstext PlateauRivalWinText, PlateauRivalLoseText
 	setlasttalked INDIGOPLATEAUPOKECENTER1F_RIVAL
-	loadtrainer RIVAL2, RIVAL2_2_TOTODILE
+	loadtrainer RIVAL2, RIVAL2_2_QUAXLY
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
 	sjump PlateauRivalPostBattle
 
-.Totodile:
+.Quaxly:
 	winlosstext PlateauRivalWinText, PlateauRivalLoseText
 	setlasttalked INDIGOPLATEAUPOKECENTER1F_RIVAL
 	loadtrainer RIVAL2, RIVAL2_2_TURTWIG

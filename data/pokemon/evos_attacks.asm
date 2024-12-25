@@ -43,20 +43,9 @@ DelphoxEvosAttacks:
 	db 0 ; no more evolutions
 	db 0 ; no more level-up moves
 
-SquirtleEvosAttacks:
-	db EVOLVE_LEVEL, 16, WARTORTLE
+QuaxlyEvosAttacks:
+	db EVOLVE_LEVEL, 16, Quaxwell
 	db 0 ; no more evolutions
-	db 1, TACKLE
-	db 4, TAIL_WHIP
-	db 7, BUBBLE
-	db 10, WITHDRAW
-	db 13, WATER_GUN
-	db 18, BITE
-	db 23, RAPID_SPIN
-	db 28, PROTECT
-	db 33, RAIN_DANCE
-	db 40, SKULL_BASH
-	db 47, HYDRO_PUMP
 	db 0 ; no more level-up moves
 
 WartortleEvosAttacks:

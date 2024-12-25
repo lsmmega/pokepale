@@ -176,7 +176,7 @@ Pokered_MonIndices:
 	db ENTEI ; MISSINGNO.
 	db SUICUNE ; MISSINGNO.
 	db Fennekin
-	db SQUIRTLE
+	db Quaxly
 	db Braixen
 	db WARTORTLE
 	db Delphox

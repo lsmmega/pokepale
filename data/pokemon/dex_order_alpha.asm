@@ -176,6 +176,7 @@ AlphabeticalPokedexOrder:
 	db PSYDUCK
 	db PUPITAR
 	db QUAGSIRE
+	db Quaxly
 	db QUILAVA
 	db QWILFISH
 	db RAICHU
@@ -209,7 +210,6 @@ AlphabeticalPokedexOrder:
 	db SNUBBULL
 	db SPEAROW
 	db SPINARAK
-	db SQUIRTLE
 	db STANTLER
 	db STARMIE
 	db STARYU

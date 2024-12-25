@@ -6,7 +6,7 @@ BitmasksPointers:
 	dw FennekinBitmasks
 	dw BraixenBitmasks
 	dw DelphoxBitmasks
-	dw SquirtleBitmasks
+	dw QuaxlyBitmasks
 	dw WartortleBitmasks
 	dw BlastoiseBitmasks
 	dw CaterpieBitmasks

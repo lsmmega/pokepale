@@ -7,7 +7,7 @@ PokedexDataPointerTable:
 	dw FennekinPokedexEntry
 	dw BraixenPokedexEntry
 	dw DelphoxPokedexEntry
-	dw SquirtlePokedexEntry
+	dw QuaxlyPokedexEntry
 	dw WartortlePokedexEntry
 	dw BlastoisePokedexEntry
 	dw CaterpiePokedexEntry

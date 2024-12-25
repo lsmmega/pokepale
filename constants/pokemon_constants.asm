@@ -25,7 +25,7 @@
 	const Fennekin ; 04
 	const Braixen ; 05
 	const Delphox  ; 06
-	const SQUIRTLE   ; 07
+	const Quaxly   ; 07
 	const WARTORTLE  ; 08
 	const BLASTOISE  ; 09
 	const CATERPIE   ; 0a

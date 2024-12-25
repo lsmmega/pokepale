@@ -12,7 +12,7 @@ PokemonCries::
 	mon_cry CRY_CHARMANDER,   96,  192 ; Fennekin
 	mon_cry CRY_CHARMANDER,   32,  192 ; Braixen
 	mon_cry CRY_CHARMANDER,    0,  256 ; Delphox
-	mon_cry CRY_SQUIRTLE,     96,  192 ; SQUIRTLE
+	mon_cry CRY_SQUIRTLE,     96,  192 ; Quaxly
 	mon_cry CRY_SQUIRTLE,     32,  192 ; WARTORTLE
 	mon_cry CRY_BLASTOISE,     0,  256 ; BLASTOISE
 	mon_cry CRY_CATERPIE,    128,  160 ; CATERPIE
