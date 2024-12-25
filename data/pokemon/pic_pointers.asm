@@ -11,7 +11,7 @@ PokemonPicPointers::
 	dba_pics DelphoxFrontpic, DelphoxBackpic
 	dba_pics QuaxlyFrontpic, QuaxlyBackpic
 	dba_pics QuaxwellFrontpic, QuaxwellBackpic
-	dba_pics BlastoiseFrontpic, BlastoiseBackpic
+	dba_pics QuaquavalFrontpic, QuaquavalBackpic
 	dba_pics CaterpieFrontpic, CaterpieBackpic
 	dba_pics MetapodFrontpic, MetapodBackpic
 	dba_pics ButterfreeFrontpic, ButterfreeBackpic

@@ -10,7 +10,7 @@ MonMenuIcons:
 	db ICON_BIGMON      ; Delphox
 	db ICON_SQUIRTLE    ; Quaxly
 	db ICON_SQUIRTLE    ; Quaxwell
-	db ICON_SQUIRTLE    ; BLASTOISE
+	db ICON_SQUIRTLE    ; Quaquaval
 	db ICON_CATERPILLAR ; CATERPIE
 	db ICON_CATERPILLAR ; METAPOD
 	db ICON_MOTH        ; BUTTERFREE

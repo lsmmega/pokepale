@@ -9,7 +9,7 @@ PokedexDataPointerTable:
 	dw DelphoxPokedexEntry
 	dw QuaxlyPokedexEntry
 	dw QuaxwellPokedexEntry
-	dw BlastoisePokedexEntry
+	dw QuaquavalPokedexEntry
 	dw CaterpiePokedexEntry
 	dw MetapodPokedexEntry
 	dw ButterfreePokedexEntry

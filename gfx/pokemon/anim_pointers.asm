@@ -8,7 +8,7 @@ AnimationPointers:
 	dw DelphoxAnimation
 	dw QuaxlyAnimation
 	dw QuaxwellAnimation
-	dw BlastoiseAnimation
+	dw QuaquavalAnimation
 	dw CaterpieAnimation
 	dw MetapodAnimation
 	dw ButterfreeAnimation

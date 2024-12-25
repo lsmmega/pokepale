@@ -8,7 +8,7 @@ BitmasksPointers:
 	dw DelphoxBitmasks
 	dw QuaxlyBitmasks
 	dw QuaxwellBitmasks
-	dw BlastoiseBitmasks
+	dw QuaquavalBitmasks
 	dw CaterpieBitmasks
 	dw MetapodBitmasks
 	dw ButterfreeBitmasks

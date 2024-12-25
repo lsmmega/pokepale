@@ -27,7 +27,7 @@ Pokered_MonIndices:
 	db GASTLY
 	db SCYTHER
 	db STARYU
-	db BLASTOISE
+	db Quaquaval
 	db PINSIR
 	db TANGELA
 	db SCIZOR ; MISSINGNO.

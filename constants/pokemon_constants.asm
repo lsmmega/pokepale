@@ -27,7 +27,7 @@
 	const Delphox  ; 06
 	const Quaxly   ; 07
 	const Quaxwell  ; 08
-	const BLASTOISE  ; 09
+	const Quaquaval  ; 09
 	const CATERPIE   ; 0a
 	const METAPOD    ; 0b
 	const BUTTERFREE ; 0c

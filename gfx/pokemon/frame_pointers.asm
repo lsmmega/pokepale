@@ -8,7 +8,7 @@ FramesPointers:
 	dw DelphoxFrames
 	dw QuaxlyFrames
 	dw QuaxwellFrames
-	dw BlastoiseFrames
+	dw QuaquavalFrames
 	dw CaterpieFrames
 	dw MetapodFrames
 	dw ButterfreeFrames

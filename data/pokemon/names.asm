@@ -8,7 +8,7 @@ PokemonNames::
 	db "Delphox@@@"
 	db "Quaxly@@@@"
 	db "Quaxwell@@"
-	db "BLASTOISE@"
+	db "Quaquaval@"
 	db "CATERPIE@@"
 	db "METAPOD@@@"
 	db "BUTTERFREE"

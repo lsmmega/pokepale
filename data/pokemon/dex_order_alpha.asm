@@ -16,7 +16,6 @@ AlphabeticalPokedexOrder:
 	db BEEDRILL
 	db BELLOSSOM
 	db BELLSPROUT
-	db BLASTOISE
 	db BLISSEY
 	db Braixen
 	db BUTTERFREE
@@ -176,6 +175,7 @@ AlphabeticalPokedexOrder:
 	db PSYDUCK
 	db PUPITAR
 	db QUAGSIRE
+	db Quaquaval
 	db Quaxly
 	db Quaxwell
 	db QUILAVA

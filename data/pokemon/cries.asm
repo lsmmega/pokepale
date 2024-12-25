@@ -14,7 +14,7 @@ PokemonCries::
 	mon_cry CRY_CHARMANDER,    0,  256 ; Delphox
 	mon_cry CRY_SQUIRTLE,     96,  192 ; Quaxly
 	mon_cry CRY_SQUIRTLE,     32,  192 ; Quaxwell
-	mon_cry CRY_BLASTOISE,     0,  256 ; BLASTOISE
+	mon_cry CRY_BLASTOISE,     0,  256 ; Quaquaval
 	mon_cry CRY_CATERPIE,    128,  160 ; CATERPIE
 	mon_cry CRY_METAPOD,     204,  129 ; METAPOD
 	mon_cry CRY_CATERPIE,    119,  192 ; BUTTERFREE
