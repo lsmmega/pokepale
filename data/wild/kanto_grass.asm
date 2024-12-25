@@ -201,21 +201,21 @@ KantoGrassWildMons:
 	def_grass_wildmons ROUTE_2
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 3, CATERPIE
+	db 3, Turtwig
 	db 3, LEDYBA
 	db 5, PIDGEY
-	db 7, BUTTERFREE
+	db 7, Turtwig
 	db 7, LEDIAN
-	db 4, PIKACHU
-	db 4, PIKACHU
+	db 4, Pikachu
+	db 4, Pikachu
 	; day
-	db 3, CATERPIE
+	db 3, Turtwig
 	db 3, PIDGEY
 	db 5, PIDGEY
-	db 7, BUTTERFREE
+	db 7, Turtwig
 	db 7, PIDGEOTTO
-	db 4, PIKACHU
-	db 4, PIKACHU
+	db 4, Pikachu
+	db 4, Pikachu
 	; nite
 	db 3, HOOTHOOT
 	db 3, SPINARAK
@@ -705,21 +705,21 @@ KantoGrassWildMons:
 	def_grass_wildmons ROUTE_24
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 8, CATERPIE
-	db 10, CATERPIE
-	db 12, METAPOD
+	db 8, Turtwig
+	db 10, Turtwig
+	db 12, Turtwig
 	db 12, ABRA
 	db 10, BELLSPROUT
-	db 14, BUTTERFREE
-	db 14, BUTTERFREE
+	db 14, Turtwig
+	db 14, Turtwig
 	; day
-	db 8, CATERPIE
+	db 8, Turtwig
 	db 12, SUNKERN
-	db 10, CATERPIE
+	db 10, Turtwig
 	db 12, ABRA
 	db 10, BELLSPROUT
-	db 14, BUTTERFREE
-	db 14, BUTTERFREE
+	db 14, Turtwig
+	db 14, Turtwig
 	; nite
 	db 10, VENONAT
 	db 10, ODDISH
@@ -733,21 +733,21 @@ KantoGrassWildMons:
 	def_grass_wildmons ROUTE_25
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 10, CATERPIE
+	db 10, Turtwig
 	db 10, PIDGEY
 	db 12, PIDGEOTTO
-	db 12, METAPOD
+	db 12, Turtwig
 	db 10, BELLSPROUT
-	db 14, BUTTERFREE
-	db 14, BUTTERFREE
+	db 14, Turtwig
+	db 14, Turtwig
 	; day
-	db 10, CATERPIE
+	db 10, Turtwig
 	db 10, PIDGEY
 	db 12, PIDGEOTTO
-	db 12, METAPOD
+	db 12, Turtwig
 	db 10, BELLSPROUT
-	db 14, BUTTERFREE
-	db 14, BUTTERFREE
+	db 14, Turtwig
+	db 14, Turtwig
 	; nite
 	db 10, ODDISH
 	db 10, HOOTHOOT

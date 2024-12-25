@@ -1,9 +1,9 @@
 ; Used by CheckSleepingTreeMon
 
 AsleepTreeMonsNite:
-	db CATERPIE
-	db METAPOD
-	db BUTTERFREE
+	db Turtwig
+	db Turtwig
+	db Turtwig
 	db WEEDLE
 	db KAKUNA
 	db BEEDRILL

@@ -33,12 +33,12 @@ INCBIN "gfx/pokemon/008_quaxwell/normal.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/008_quaxwell/shiny.pal"
 INCBIN "gfx/pokemon/009_quaquaval/normal.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/009_quaquaval/shiny.pal"
-INCBIN "gfx/pokemon/caterpie/normal.gbcpal", middle_colors
-INCLUDE "gfx/pokemon/caterpie/shiny.pal"
-INCBIN "gfx/pokemon/metapod/normal.gbcpal", middle_colors
-INCLUDE "gfx/pokemon/metapod/shiny.pal"
-INCBIN "gfx/pokemon/butterfree/normal.gbcpal", middle_colors
-INCLUDE "gfx/pokemon/butterfree/shiny.pal"
+INCBIN "gfx/pokemon/010_pichu/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/010_pichu/shiny.pal"
+INCBIN "gfx/pokemon/011_pikachu/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/011_pikachu/shiny.pal"
+INCBIN "gfx/pokemon/012_raichu/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/012_raichu/shiny.pal"
 INCBIN "gfx/pokemon/weedle/normal.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/weedle/shiny.pal"
 INCBIN "gfx/pokemon/kakuna/normal.gbcpal", middle_colors
@@ -63,10 +63,6 @@ INCBIN "gfx/pokemon/ekans/normal.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/ekans/shiny.pal"
 INCBIN "gfx/pokemon/arbok/normal.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/arbok/shiny.pal"
-INCBIN "gfx/pokemon/pikachu/normal.gbcpal", middle_colors
-INCLUDE "gfx/pokemon/pikachu/shiny.pal"
-INCBIN "gfx/pokemon/raichu/normal.gbcpal", middle_colors
-INCLUDE "gfx/pokemon/raichu/shiny.pal"
 INCBIN "gfx/pokemon/sandshrew/normal.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/sandshrew/shiny.pal"
 INCBIN "gfx/pokemon/sandslash/normal.gbcpal", middle_colors
@@ -357,8 +353,6 @@ INCBIN "gfx/pokemon/chinchou/normal.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/chinchou/shiny.pal"
 INCBIN "gfx/pokemon/lanturn/normal.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/lanturn/shiny.pal"
-INCBIN "gfx/pokemon/pichu/normal.gbcpal", middle_colors
-INCLUDE "gfx/pokemon/pichu/shiny.pal"
 INCBIN "gfx/pokemon/cleffa/normal.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/cleffa/shiny.pal"
 INCBIN "gfx/pokemon/igglybuff/normal.gbcpal", middle_colors
@@ -546,4 +540,4 @@ INCLUDE "gfx/pokemon/egg/shiny.pal"
 	RGB 23, 23, 23
 	RGB 17, 17, 17
 
-	assert_table_length $100
+	assert_table_length $fd

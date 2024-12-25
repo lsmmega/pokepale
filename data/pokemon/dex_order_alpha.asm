@@ -18,8 +18,6 @@ AlphabeticalPokedexOrder:
 	db BELLSPROUT
 	db BLISSEY
 	db Braixen
-	db BUTTERFREE
-	db CATERPIE
 	db CELEBI
 	db CHANSEY
 	db CHIKORITA
@@ -129,7 +127,6 @@ AlphabeticalPokedexOrder:
 	db MAROWAK
 	db MEGANIUM
 	db MEOWTH
-	db METAPOD
 	db MEW
 	db MEWTWO
 	db MILTANK
@@ -156,11 +153,11 @@ AlphabeticalPokedexOrder:
 	db PARASECT
 	db PERSIAN
 	db PHANPY
-	db PICHU
+	db Pichu
 	db PIDGEOT
 	db PIDGEOTTO
 	db PIDGEY
-	db PIKACHU
+	db Pikachu
 	db PILOSWINE
 	db PINECO
 	db PINSIR
@@ -180,7 +177,7 @@ AlphabeticalPokedexOrder:
 	db Quaxwell
 	db QUILAVA
 	db QWILFISH
-	db RAICHU
+	db Raichu
 	db RAIKOU
 	db RAPIDASH
 	db RATICATE

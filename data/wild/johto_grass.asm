@@ -345,7 +345,7 @@ JohtoGrassWildMons:
 	db 12, NIDORAN_F
 	db 14, LEDYBA
 	db 13, PIDGEY
-	db 10, CATERPIE
+	db 10, Turtwig
 	db 10, WEEDLE
 	db 10, WEEDLE
 	; day
@@ -353,7 +353,7 @@ JohtoGrassWildMons:
 	db 12, NIDORAN_M
 	db 14, SUNKERN
 	db 13, PIDGEY
-	db 10, CATERPIE
+	db 10, Turtwig
 	db 10, WEEDLE
 	db 10, WEEDLE
 	; nite
@@ -565,17 +565,17 @@ JohtoGrassWildMons:
 	def_grass_wildmons ILEX_FOREST
 	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
 	; morn
-	db 5, CATERPIE
+	db 5, Turtwig
 	db 5, WEEDLE
-	db 7, METAPOD
+	db 7, Turtwig
 	db 7, KAKUNA
 	db 7, PIDGEY
 	db 6, PARAS
 	db 6, PARAS
 	; day
-	db 5, CATERPIE
+	db 5, Turtwig
 	db 5, WEEDLE
-	db 7, METAPOD
+	db 7, Turtwig
 	db 7, KAKUNA
 	db 7, PIDGEY
 	db 6, PARAS
@@ -1266,16 +1266,16 @@ JohtoGrassWildMons:
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 3, LEDYBA
-	db 3, CATERPIE
-	db 4, CATERPIE
+	db 3, Turtwig
+	db 4, Turtwig
 	db 4, PIDGEY
 	db 3, WEEDLE
 	db 4, HOPPIP
 	db 4, HOPPIP
 	; day
 	db 3, PIDGEY
-	db 3, CATERPIE
-	db 4, CATERPIE
+	db 3, Turtwig
+	db 4, Turtwig
 	db 4, PIDGEY
 	db 3, WEEDLE
 	db 4, HOPPIP
@@ -1294,7 +1294,7 @@ JohtoGrassWildMons:
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 4, LEDYBA
-	db 4, CATERPIE
+	db 4, Turtwig
 	db 5, BELLSPROUT
 	db 5, PIDGEY
 	db 4, WEEDLE
@@ -1302,7 +1302,7 @@ JohtoGrassWildMons:
 	db 5, HOPPIP
 	; day
 	db 4, PIDGEY
-	db 4, CATERPIE
+	db 4, Turtwig
 	db 5, BELLSPROUT
 	db 5, PIDGEY
 	db 4, WEEDLE

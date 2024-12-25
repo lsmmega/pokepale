@@ -28,9 +28,9 @@
 	const Quaxly   ; 07
 	const Quaxwell  ; 08
 	const Quaquaval  ; 09
-	const CATERPIE   ; 0a
-	const METAPOD    ; 0b
-	const BUTTERFREE ; 0c
+	const Pichu ; 0a
+	const Pikachu ; 0b
+	const Raichu ; 0c
 	const WEEDLE     ; 0d
 	const KAKUNA     ; 0e
 	const BEEDRILL   ; 0f
@@ -43,8 +43,6 @@
 	const FEAROW     ; 16
 	const EKANS      ; 17
 	const ARBOK      ; 18
-	const PIKACHU    ; 19
-	const RAICHU     ; 1a
 	const SANDSHREW  ; 1b
 	const SANDSLASH  ; 1c
 	const NIDORAN_F  ; 1d
@@ -191,7 +189,6 @@ DEF JOHTO_POKEMON EQU const_value
 	const CROBAT     ; a9
 	const CHINCHOU   ; aa
 	const LANTURN    ; ab
-	const PICHU      ; ac
 	const CLEFFA     ; ad
 	const IGGLYBUFF  ; ae
 	const TOGEPI     ; af

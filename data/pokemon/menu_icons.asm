@@ -11,9 +11,9 @@ MonMenuIcons:
 	db ICON_SQUIRTLE    ; Quaxly
 	db ICON_SQUIRTLE    ; Quaxwell
 	db ICON_SQUIRTLE    ; Quaquaval
-	db ICON_CATERPILLAR ; CATERPIE
-	db ICON_CATERPILLAR ; METAPOD
-	db ICON_MOTH        ; BUTTERFREE
+	db ICON_PIKACHU     ; Pichu
+	db ICON_PIKACHU     ; Pikachu
+	db ICON_PIKACHU     ; Raichu
 	db ICON_CATERPILLAR ; WEEDLE
 	db ICON_CATERPILLAR ; KAKUNA
 	db ICON_BUG         ; BEEDRILL
@@ -26,8 +26,6 @@ MonMenuIcons:
 	db ICON_BIRD        ; FEAROW
 	db ICON_SERPENT     ; EKANS
 	db ICON_SERPENT     ; ARBOK
-	db ICON_PIKACHU     ; PIKACHU
-	db ICON_PIKACHU     ; RAICHU
 	db ICON_MONSTER     ; SANDSHREW
 	db ICON_MONSTER     ; SANDSLASH
 	db ICON_FOX         ; NIDORAN_F
@@ -173,7 +171,6 @@ MonMenuIcons:
 	db ICON_BAT         ; CROBAT
 	db ICON_FISH        ; CHINCHOU
 	db ICON_FISH        ; LANTURN
-	db ICON_PIKACHU     ; PICHU
 	db ICON_CLEFAIRY    ; CLEFFA
 	db ICON_JIGGLYPUFF  ; IGGLYBUFF
 	db ICON_CLEFAIRY    ; TOGEPI

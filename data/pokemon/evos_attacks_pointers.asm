@@ -11,9 +11,9 @@ EvosAttacksPointers::
 	dw QuaxlyEvosAttacks
 	dw QuaxwellEvosAttacks
 	dw QuaquavalEvosAttacks
-	dw CaterpieEvosAttacks
-	dw MetapodEvosAttacks
-	dw ButterfreeEvosAttacks
+	dw PichuEvosAttacks
+	dw PikachuEvosAttacks
+	dw RaichuEvosAttacks
 	dw WeedleEvosAttacks
 	dw KakunaEvosAttacks
 	dw BeedrillEvosAttacks
@@ -26,8 +26,6 @@ EvosAttacksPointers::
 	dw FearowEvosAttacks
 	dw EkansEvosAttacks
 	dw ArbokEvosAttacks
-	dw PikachuEvosAttacks
-	dw RaichuEvosAttacks
 	dw SandshrewEvosAttacks
 	dw SandslashEvosAttacks
 	dw NidoranFEvosAttacks
@@ -173,7 +171,6 @@ EvosAttacksPointers::
 	dw CrobatEvosAttacks
 	dw ChinchouEvosAttacks
 	dw LanturnEvosAttacks
-	dw PichuEvosAttacks
 	dw CleffaEvosAttacks
 	dw IgglybuffEvosAttacks
 	dw TogepiEvosAttacks

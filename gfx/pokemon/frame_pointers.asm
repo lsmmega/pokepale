@@ -9,9 +9,9 @@ FramesPointers:
 	dw QuaxlyFrames
 	dw QuaxwellFrames
 	dw QuaquavalFrames
-	dw CaterpieFrames
-	dw MetapodFrames
-	dw ButterfreeFrames
+	dw PichuFrames
+	dw PikachuFrames
+	dw RaichuFrames
 	dw WeedleFrames
 	dw KakunaFrames
 	dw BeedrillFrames
@@ -24,8 +24,6 @@ FramesPointers:
 	dw FearowFrames
 	dw EkansFrames
 	dw ArbokFrames
-	dw PikachuFrames
-	dw RaichuFrames
 	dw SandshrewFrames
 	dw SandslashFrames
 	dw NidoranFFrames
@@ -171,7 +169,6 @@ FramesPointers:
 	dw CrobatFrames
 	dw ChinchouFrames
 	dw LanturnFrames
-	dw PichuFrames
 	dw CleffaFrames
 	dw IgglybuffFrames
 	dw TogepiFrames

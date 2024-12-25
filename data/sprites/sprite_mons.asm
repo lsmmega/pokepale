@@ -11,10 +11,9 @@ SpriteMons:
 	db ZUBAT
 	db MAGIKARP
 	db TOGEPI
-	db BUTTERFREE
 	db DIGLETT
 	db POLIWAG
-	db PIKACHU
+	db Pikachu
 	db CLEFAIRY
 	db JYNX
 	db STARMIE

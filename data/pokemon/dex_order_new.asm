@@ -22,12 +22,6 @@ NewPokedexOrder:
 	db RATICATE
 	db SENTRET
 	db FURRET
-	db PICHU
-	db PIKACHU
-	db RAICHU
-	db CATERPIE
-	db METAPOD
-	db BUTTERFREE
 	db WEEDLE
 	db KAKUNA
 	db BEEDRILL
@@ -236,6 +230,9 @@ NewPokedexOrder:
 	db Quaxly
 	db Quaxwell
 	db Quaquaval
+	db Pichu
+	db Pikachu
+	db Raichu
 	db ARTICUNO
 	db ZAPDOS
 	db MOLTRES

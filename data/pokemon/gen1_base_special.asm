@@ -11,9 +11,9 @@ KantoMonSpecials:
 	db  50 ; SQUIRTLE
 	db  65 ; WARTORTLE
 	db  85 ; BLASTOISE
-	db  20 ; CATERPIE
-	db  25 ; METAPOD
-	db  80 ; BUTTERFREE
+	db  0  ; PICHU
+	db  50 ; PIKACHU
+	db  90 ; RAICHU
 	db  20 ; WEEDLE
 	db  25 ; KAKUNA
 	db  45 ; BEEDRILL
@@ -26,8 +26,6 @@ KantoMonSpecials:
 	db  61 ; FEAROW
 	db  40 ; EKANS
 	db  65 ; ARBOK
-	db  50 ; PIKACHU
-	db  90 ; RAICHU
 	db  30 ; SANDSHREW
 	db  55 ; SANDSLASH
 	db  40 ; NIDORAN_F

@@ -83,8 +83,9 @@ Pokered_MonIndices:
 	db OCTILLERY ; MISSINGNO.
 	db VULPIX
 	db NINETALES
-	db PIKACHU
-	db RAICHU
+	db Pichu
+	db Pikachu
+	db Raichu
 	db DELIBIRD ; MISSINGNO.
 	db MANTINE ; MISSINGNO.
 	db DRATINI
@@ -122,9 +123,6 @@ Pokered_MonIndices:
 	db DEWGONG
 	db KINGDRA ; MISSINGNO.
 	db PHANPY ; MISSINGNO.
-	db CATERPIE
-	db METAPOD
-	db BUTTERFREE
 	db MACHAMP
 	db DONPHAN ; MISSINGNO.
 	db GOLDUCK
@@ -190,7 +188,7 @@ Pokered_MonIndices:
 	db BELLSPROUT
 	db WEEPINBELL
 	db VICTREEBEL
-	assert_table_length 190 ; gen 1 mon indexes
+	assert_table_length 188 ; gen 1 mon indexes
 	db CHIKORITA
 	db BAYLEEF
 	db MEGANIUM
@@ -211,7 +209,6 @@ Pokered_MonIndices:
 	db CROBAT
 	db CHINCHOU
 	db LANTURN
-	db PICHU
 	db CLEFFA
 	db IGGLYBUFF
 	db TOGEPI

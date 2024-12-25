@@ -12,9 +12,9 @@ PokemonPicPointers::
 	dba_pics QuaxlyFrontpic, QuaxlyBackpic
 	dba_pics QuaxwellFrontpic, QuaxwellBackpic
 	dba_pics QuaquavalFrontpic, QuaquavalBackpic
-	dba_pics CaterpieFrontpic, CaterpieBackpic
-	dba_pics MetapodFrontpic, MetapodBackpic
-	dba_pics ButterfreeFrontpic, ButterfreeBackpic
+	dba_pics PichuFrontpic, PichuBackpic
+	dba_pics PikachuFrontpic, PikachuBackpic
+	dba_pics RaichuFrontpic, RaichuBackpic
 	dba_pics WeedleFrontpic, WeedleBackpic
 	dba_pics KakunaFrontpic, KakunaBackpic
 	dba_pics BeedrillFrontpic, BeedrillBackpic
@@ -27,8 +27,6 @@ PokemonPicPointers::
 	dba_pics FearowFrontpic, FearowBackpic
 	dba_pics EkansFrontpic, EkansBackpic
 	dba_pics ArbokFrontpic, ArbokBackpic
-	dba_pics PikachuFrontpic, PikachuBackpic
-	dba_pics RaichuFrontpic, RaichuBackpic
 	dba_pics SandshrewFrontpic, SandshrewBackpic
 	dba_pics SandslashFrontpic, SandslashBackpic
 	dba_pics NidoranFFrontpic, NidoranFBackpic
@@ -174,7 +172,6 @@ PokemonPicPointers::
 	dba_pics CrobatFrontpic, CrobatBackpic
 	dba_pics ChinchouFrontpic, ChinchouBackpic
 	dba_pics LanturnFrontpic, LanturnBackpic
-	dba_pics PichuFrontpic, PichuBackpic
 	dba_pics CleffaFrontpic, CleffaBackpic
 	dba_pics IgglybuffFrontpic, IgglybuffBackpic
 	dba_pics TogepiFrontpic, TogepiBackpic

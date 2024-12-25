@@ -9,9 +9,9 @@ BitmasksPointers:
 	dw QuaxlyBitmasks
 	dw QuaxwellBitmasks
 	dw QuaquavalBitmasks
-	dw CaterpieBitmasks
-	dw MetapodBitmasks
-	dw ButterfreeBitmasks
+	dw PichuBitmasks
+	dw PikachuBitmasks
+	dw RaichuBitmasks
 	dw WeedleBitmasks
 	dw KakunaBitmasks
 	dw BeedrillBitmasks
@@ -24,8 +24,6 @@ BitmasksPointers:
 	dw FearowBitmasks
 	dw EkansBitmasks
 	dw ArbokBitmasks
-	dw PikachuBitmasks
-	dw RaichuBitmasks
 	dw SandshrewBitmasks
 	dw SandslashBitmasks
 	dw NidoranFBitmasks
@@ -171,7 +169,6 @@ BitmasksPointers:
 	dw CrobatBitmasks
 	dw ChinchouBitmasks
 	dw LanturnBitmasks
-	dw PichuBitmasks
 	dw CleffaBitmasks
 	dw IgglybuffBitmasks
 	dw TogepiBitmasks

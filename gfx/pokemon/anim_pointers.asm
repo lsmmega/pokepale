@@ -9,9 +9,9 @@ AnimationPointers:
 	dw QuaxlyAnimation
 	dw QuaxwellAnimation
 	dw QuaquavalAnimation
-	dw CaterpieAnimation
-	dw MetapodAnimation
-	dw ButterfreeAnimation
+	dw PichuAnimation
+	dw PikachuAnimation
+	dw RaichuAnimation
 	dw WeedleAnimation
 	dw KakunaAnimation
 	dw BeedrillAnimation
@@ -24,8 +24,6 @@ AnimationPointers:
 	dw FearowAnimation
 	dw EkansAnimation
 	dw ArbokAnimation
-	dw PikachuAnimation
-	dw RaichuAnimation
 	dw SandshrewAnimation
 	dw SandslashAnimation
 	dw NidoranFAnimation
@@ -171,7 +169,6 @@ AnimationPointers:
 	dw CrobatAnimation
 	dw ChinchouAnimation
 	dw LanturnAnimation
-	dw PichuAnimation
 	dw CleffaAnimation
 	dw IgglybuffAnimation
 	dw TogepiAnimation

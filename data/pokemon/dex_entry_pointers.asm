@@ -10,9 +10,9 @@ PokedexDataPointerTable:
 	dw QuaxlyPokedexEntry
 	dw QuaxwellPokedexEntry
 	dw QuaquavalPokedexEntry
-	dw CaterpiePokedexEntry
-	dw MetapodPokedexEntry
-	dw ButterfreePokedexEntry
+	dw PichuPokedexEntry
+	dw PikachuPokedexEntry
+	dw RaichuPokedexEntry
 	dw WeedlePokedexEntry
 	dw KakunaPokedexEntry
 	dw BeedrillPokedexEntry
@@ -25,8 +25,6 @@ PokedexDataPointerTable:
 	dw FearowPokedexEntry
 	dw EkansPokedexEntry
 	dw ArbokPokedexEntry
-	dw PikachuPokedexEntry
-	dw RaichuPokedexEntry
 	dw SandshrewPokedexEntry
 	dw SandslashPokedexEntry
 	dw NidoranFPokedexEntry
@@ -172,7 +170,6 @@ PokedexDataPointerTable:
 	dw CrobatPokedexEntry
 	dw ChinchouPokedexEntry
 	dw LanturnPokedexEntry
-	dw PichuPokedexEntry
 	dw CleffaPokedexEntry
 	dw IgglybuffPokedexEntry
 	dw TogepiPokedexEntry
