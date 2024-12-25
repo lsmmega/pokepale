@@ -12,16 +12,15 @@ AnimationPointers:
 	dw PichuAnimation
 	dw PikachuAnimation
 	dw RaichuAnimation
-	dw WeedleAnimation
-	dw KakunaAnimation
-	dw BeedrillAnimation
-	dw PidgeyAnimation
-	dw PidgeottoAnimation
-	dw PidgeotAnimation
-	dw RattataAnimation
-	dw RaticateAnimation
-	dw SpearowAnimation
-	dw FearowAnimation
+	dw EeveeAnimation
+	dw VaporeonAnimation
+	dw JolteonAnimation
+	dw FlareonAnimation
+	dw EspeonAnimation
+	dw UmbreonAnimation
+	dw LeafeonAnimation
+	dw GlaceonAnimation
+	dw SylveonAnimation
 	dw EkansAnimation
 	dw ArbokAnimation
 	dw SandshrewAnimation
@@ -130,10 +129,6 @@ AnimationPointers:
 	dw GyaradosAnimation
 	dw LaprasAnimation
 	dw DittoAnimation
-	dw EeveeAnimation
-	dw VaporeonAnimation
-	dw JolteonAnimation
-	dw FlareonAnimation
 	dw PorygonAnimation
 	dw OmanyteAnimation
 	dw OmastarAnimation
@@ -192,8 +187,6 @@ AnimationPointers:
 	dw YanmaAnimation
 	dw WooperAnimation
 	dw QuagsireAnimation
-	dw EspeonAnimation
-	dw UmbreonAnimation
 	dw MurkrowAnimation
 	dw SlowkingAnimation
 	dw MisdreavusAnimation

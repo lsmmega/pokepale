@@ -13,16 +13,15 @@ PokedexDataPointerTable:
 	dw PichuPokedexEntry
 	dw PikachuPokedexEntry
 	dw RaichuPokedexEntry
-	dw WeedlePokedexEntry
-	dw KakunaPokedexEntry
-	dw BeedrillPokedexEntry
-	dw PidgeyPokedexEntry
-	dw PidgeottoPokedexEntry
-	dw PidgeotPokedexEntry
-	dw RattataPokedexEntry
-	dw RaticatePokedexEntry
-	dw SpearowPokedexEntry
-	dw FearowPokedexEntry
+	dw EeveePokedexEntry
+	dw VaporeonPokedexEntry
+	dw JolteonPokedexEntry
+	dw FlareonPokedexEntry
+	dw EspeonPokedexEntry
+	dw UmbreonPokedexEntry
+	dw LeafeonPokedexEntry
+	dw GlaceonPokedexEntry
+	dw SylveonPokedexEntry
 	dw EkansPokedexEntry
 	dw ArbokPokedexEntry
 	dw SandshrewPokedexEntry
@@ -131,10 +130,6 @@ PokedexDataPointerTable:
 	dw GyaradosPokedexEntry
 	dw LaprasPokedexEntry
 	dw DittoPokedexEntry
-	dw EeveePokedexEntry
-	dw VaporeonPokedexEntry
-	dw JolteonPokedexEntry
-	dw FlareonPokedexEntry
 	dw PorygonPokedexEntry
 	dw OmanytePokedexEntry
 	dw OmastarPokedexEntry
@@ -193,8 +188,6 @@ PokedexDataPointerTable:
 	dw YanmaPokedexEntry
 	dw WooperPokedexEntry
 	dw QuagsirePokedexEntry
-	dw EspeonPokedexEntry
-	dw UmbreonPokedexEntry
 	dw MurkrowPokedexEntry
 	dw SlowkingPokedexEntry
 	dw MisdreavusPokedexEntry

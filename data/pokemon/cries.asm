@@ -18,16 +18,15 @@ PokemonCries::
 	mon_cry CRY_PICHU,         0,  320 ; Pichu
 	mon_cry CRY_BULBASAUR,   238,  129 ; Pikachu
 	mon_cry CRY_RAICHU,      238,  136 ; Raichu
-	mon_cry CRY_WEEDLE,      238,  129 ; WEEDLE
-	mon_cry CRY_BLASTOISE,   255,  129 ; KAKUNA
-	mon_cry CRY_BLASTOISE,    96,  256 ; BEEDRILL
-	mon_cry CRY_PIDGEY,      223,  132 ; PIDGEY
-	mon_cry CRY_PIDGEOTTO,    40,  320 ; PIDGEOTTO
-	mon_cry CRY_PIDGEOTTO,    17,  383 ; PIDGEOT
-	mon_cry CRY_RATTATA,       0,  256 ; RATTATA
-	mon_cry CRY_RATTATA,      32,  383 ; RATICATE
-	mon_cry CRY_SPEAROW,       0,  256 ; SPEAROW
-	mon_cry CRY_FEAROW,       64,  288 ; FEAROW
+	mon_cry CRY_VENONAT,     136,  224 ; Eevee
+	mon_cry CRY_VENONAT,     170,  383 ; Vaporeon
+	mon_cry CRY_VENONAT,      61,  256 ; Jolteon
+	mon_cry CRY_VENONAT,      16,  160 ; Flareon
+	mon_cry CRY_AIPOM,       162,  320 ; Espeon
+	mon_cry CRY_VENONAT,    -233,  240 ; Umbreon
+	mon_cry CRY_VENONAT,      61,  256 ; Leafeon
+	mon_cry CRY_VENONAT,     170,  383 ; Glaceon
+	mon_cry CRY_VENONAT,     170,  383 ; Sylveon
 	mon_cry CRY_EKANS,        18,  192 ; EKANS
 	mon_cry CRY_EKANS,       224,  144 ; ARBOK
 	mon_cry CRY_NIDORAN_M,    32,  192 ; SANDSHREW
@@ -136,10 +135,6 @@ PokemonCries::
 	mon_cry CRY_EKANS,         0,  256 ; GYARADOS
 	mon_cry CRY_LAPRAS,        0,  256 ; LAPRAS
 	mon_cry CRY_PIDGEY,      255,  383 ; DITTO
-	mon_cry CRY_VENONAT,     136,  224 ; EEVEE
-	mon_cry CRY_VENONAT,     170,  383 ; VAPOREON
-	mon_cry CRY_VENONAT,      61,  256 ; JOLTEON
-	mon_cry CRY_VENONAT,      16,  160 ; FLAREON
 	mon_cry CRY_WEEPINBELL,  170,  383 ; PORYGON
 	mon_cry CRY_GROWLITHE,   240,  129 ; OMANYTE
 	mon_cry CRY_GROWLITHE,   255,  192 ; OMASTAR
@@ -198,8 +193,6 @@ PokemonCries::
 	mon_cry CRY_TOTODILE,     49,  200 ; YANMA
 	mon_cry CRY_WOOPER,      147,  175 ; WOOPER
 	mon_cry CRY_WOOPER,     -198,  320 ; QUAGSIRE
-	mon_cry CRY_AIPOM,       162,  320 ; ESPEON
-	mon_cry CRY_VENONAT,    -233,  240 ; UMBREON
 	mon_cry CRY_MARILL,      -31,  384 ; MURKROW
 	mon_cry CRY_SLOWKING,    260,  512 ; SLOWKING
 	mon_cry CRY_HOOTHOOT,    304,  232 ; MISDREAVUS
@@ -255,6 +248,13 @@ PokemonCries::
 	mon_cry CRY_AIPOM,         0,  384 ; HO_OH
 	mon_cry CRY_ENTEI,       330,  273 ; CELEBI
 	assert_table_length NUM_POKEMON
+	mon_cry CRY_NIDORAN_M,     0,    0
+	mon_cry CRY_NIDORAN_M,     0,    0
+	mon_cry CRY_NIDORAN_M,     0,    0
+	mon_cry CRY_NIDORAN_M,     0,    0
+	mon_cry CRY_NIDORAN_M,     0,    0
+	mon_cry CRY_NIDORAN_M,     0,    0
+	mon_cry CRY_NIDORAN_M,     0,    0
 	mon_cry CRY_NIDORAN_M,     0,    0 ; 249
 	mon_cry CRY_NIDORAN_M,     0,    0 ; 250
 	mon_cry CRY_NIDORAN_M,     0,    0 ; 251

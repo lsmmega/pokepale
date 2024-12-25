@@ -15,12 +15,11 @@ EggMovePointers::
 	dw NoEggMoves
 	dw NoEggMoves
 	dw NoEggMoves
-	dw PidgeyEggMoves
 	dw NoEggMoves
 	dw NoEggMoves
-	dw RattataEggMoves
 	dw NoEggMoves
-	dw SpearowEggMoves
+	dw NoEggMoves
+	dw NoEggMoves
 	dw NoEggMoves
 	dw EkansEggMoves
 	dw NoEggMoves
@@ -130,10 +129,6 @@ EggMovePointers::
 	dw NoEggMoves
 	dw LaprasEggMoves
 	dw NoEggMoves
-	dw EeveeEggMoves
-	dw NoEggMoves
-	dw NoEggMoves
-	dw NoEggMoves
 	dw NoEggMoves
 	dw OmanyteEggMoves
 	dw NoEggMoves
@@ -191,8 +186,6 @@ EggMovePointers::
 	dw NoEggMoves
 	dw YanmaEggMoves
 	dw WooperEggMoves
-	dw NoEggMoves
-	dw NoEggMoves
 	dw NoEggMoves
 	dw MurkrowEggMoves
 	dw NoEggMoves

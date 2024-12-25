@@ -24,7 +24,7 @@ BillScript:
 	writetext ReceivedEeveeText
 	playsound SFX_CAUGHT_MON
 	waitsfx
-	givepoke EEVEE, 20
+	givepoke Eevee, 20
 	setevent EVENT_GOT_EEVEE
 	writetext BillEeveeMayEvolveText
 	waitbutton
@@ -109,7 +109,7 @@ BillsHouseRadio:
 BillTakeThisEeveeText:
 	text "BILL: Hi, <PLAYER>!"
 	line "Do us a favor and"
-	cont "take this EEVEE."
+	cont "take this Eevee."
 
 	para "It came over when"
 	line "I was adjusting"
@@ -142,12 +142,12 @@ BillImCountingOnYouText:
 
 ReceivedEeveeText:
 	text "<PLAYER> received"
-	line "EEVEE!"
+	line "Eevee!"
 	done
 
 BillEeveeMayEvolveText:
 	text "BILL: PROF.ELM"
-	line "claims EEVEE may"
+	line "claims Eevee may"
 
 	para "evolve in new and"
 	line "unknown ways."

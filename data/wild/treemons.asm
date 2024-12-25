@@ -19,15 +19,15 @@ TreeMons:
 TreeMonSet_City:
 TreeMonSet_Canyon:
 ; common
-	db 50, SPEAROW,    10
-	db 15, SPEAROW,    10
-	db 15, SPEAROW,    10
+	db 50, Turtwig,    10
+	db 15, Turtwig,    10
+	db 15, Turtwig,    10
 	db 10, AIPOM,      10
 	db  5, AIPOM,      10
 	db  5, AIPOM,      10
 	db -1
 ; rare
-	db 50, SPEAROW,    10
+	db 50, Turtwig,    10
 	db 15, HERACROSS,  10
 	db 15, HERACROSS,  10
 	db 10, AIPOM,      10
@@ -37,15 +37,15 @@ TreeMonSet_Canyon:
 
 TreeMonSet_Town:
 ; common
-	db 50, SPEAROW,    10
+	db 50, Turtwig,    10
 	db 15, EKANS,      10
-	db 15, SPEAROW,    10
+	db 15, Turtwig,    10
 	db 10, AIPOM,      10
 	db  5, AIPOM,      10
 	db  5, AIPOM,      10
 	db -1
 ; rare
-	db 50, SPEAROW,    10
+	db 50, Turtwig,    10
 	db 15, HERACROSS,  10
 	db 15, HERACROSS,  10
 	db 10, AIPOM,      10
@@ -114,15 +114,15 @@ TreeMonSet_Forest:
 	db 15, PINECO,     10
 	db 10, NOCTOWL,    10
 	db  5, Turtwig, 10
-	db  5, BEEDRILL,   10
+	db  5, Turtwig,   10
 	db -1
 ; rare
 	db 50, HOOTHOOT,   10
 	db 15, Turtwig,   10
-	db 15, WEEDLE,     10
+	db 15, Turtwig,     10
 	db 10, HOOTHOOT,   10
 	db  5, Turtwig,    10
-	db  5, KAKUNA,     10
+	db  5, Turtwig,     10
 	db -1
 
 TreeMonSet_Rock:

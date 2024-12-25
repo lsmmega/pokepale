@@ -13,7 +13,6 @@ AlphabeticalPokedexOrder:
 	db ARTICUNO
 	db AZUMARILL
 	db BAYLEEF
-	db BEEDRILL
 	db BELLOSSOM
 	db BELLSPROUT
 	db BLISSEY
@@ -45,27 +44,27 @@ AlphabeticalPokedexOrder:
 	db DROWZEE
 	db DUGTRIO
 	db DUNSPARCE
-	db EEVEE
+	db Eevee
 	db EKANS
 	db ELECTABUZZ
 	db ELECTRODE
 	db ELEKID
 	db ENTEI
-	db ESPEON
+	db Espeon
 	db EXEGGCUTE
 	db EXEGGUTOR
 	db FARFETCH_D
-	db FEAROW
 	db Fennekin
 	db FERALIGATR
 	db FLAAFFY
-	db FLAREON
+	db Flareon
 	db FORRETRESS
 	db FURRET
 	db GASTLY
 	db GENGAR
 	db GEODUDE
 	db GIRAFARIG
+	db Glaceon
 	db GLIGAR
 	db GLOOM
 	db GOLBAT
@@ -92,13 +91,12 @@ AlphabeticalPokedexOrder:
 	db HYPNO
 	db IGGLYBUFF
 	db JIGGLYPUFF
-	db JOLTEON
+	db Jolteon
 	db JUMPLUFF
 	db JYNX
 	db KABUTO
 	db KABUTOPS
 	db KADABRA
-	db KAKUNA
 	db KANGASKHAN
 	db KINGDRA
 	db KINGLER
@@ -107,6 +105,7 @@ AlphabeticalPokedexOrder:
 	db LANTURN
 	db LAPRAS
 	db LARVITAR
+	db Leafeon
 	db LEDIAN
 	db LEDYBA
 	db LICKITUNG
@@ -154,9 +153,6 @@ AlphabeticalPokedexOrder:
 	db PERSIAN
 	db PHANPY
 	db Pichu
-	db PIDGEOT
-	db PIDGEOTTO
-	db PIDGEY
 	db Pikachu
 	db PILOSWINE
 	db PINECO
@@ -180,8 +176,6 @@ AlphabeticalPokedexOrder:
 	db Raichu
 	db RAIKOU
 	db RAPIDASH
-	db RATICATE
-	db RATTATA
 	db REMORAID
 	db RHYDON
 	db RHYHORN
@@ -206,7 +200,6 @@ AlphabeticalPokedexOrder:
 	db SNEASEL
 	db SNORLAX
 	db SNUBBULL
-	db SPEAROW
 	db SPINARAK
 	db STANTLER
 	db STARMIE
@@ -217,6 +210,7 @@ AlphabeticalPokedexOrder:
 	db SUNFLORA
 	db SUNKERN
 	db SWINUB
+	db Sylveon
 	db TANGELA
 	db TAUROS
 	db TEDDIURSA
@@ -230,17 +224,16 @@ AlphabeticalPokedexOrder:
 	db TYPHLOSION
 	db TYRANITAR
 	db TYROGUE
-	db UMBREON
+	db Umbreon
 	db UNOWN
 	db URSARING
-	db VAPOREON
+	db Vaporeon
 	db VENOMOTH
 	db VENONAT
 	db VICTREEBEL
 	db VILEPLUME
 	db VOLTORB
 	db VULPIX
-	db WEEDLE
 	db WEEPINBELL
 	db WEEZING
 	db WIGGLYTUFF

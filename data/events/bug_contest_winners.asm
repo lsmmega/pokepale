@@ -21,7 +21,7 @@ BugContestantPointers:
 
 BugContestant_BugCatcherDon:
 	db BUG_CATCHER, DON
-	dbw KAKUNA,     300
+	dbw Turtwig,     300
 	dbw Turtwig,    285
 	dbw Turtwig,   226
 
@@ -46,14 +46,14 @@ BugContestant_PokefanMWilliam:
 BugContestant_BugCatcherBenny:
 	db BUG_CATCHER, BUG_CATCHER_BENNY
 	dbw Turtwig, 318
-	dbw WEEDLE,     295
+	dbw Turtwig,     295
 	dbw Turtwig,   285
 
 BugContestant_CamperBarry:
 	db CAMPER, BARRY
 	dbw PINSIR,     366
 	dbw VENONAT,    329
-	dbw KAKUNA,     314
+	dbw Turtwig,     314
 
 BugContestant_PicnickerCindy:
 	db PICNICKER, CINDY
@@ -69,7 +69,7 @@ BugContestant_BugCatcherJosh:
 
 BugContestant_YoungsterSamuel:
 	db YOUNGSTER, SAMUEL
-	dbw WEEDLE,     270
+	dbw Turtwig,     270
 	dbw PINSIR,     282
 	dbw Turtwig,   251
 
@@ -77,4 +77,4 @@ BugContestant_SchoolboyKipp:
 	db SCHOOLBOY, KIPP
 	dbw VENONAT,    267
 	dbw PARAS,      254
-	dbw KAKUNA,     259
+	dbw Turtwig,     259

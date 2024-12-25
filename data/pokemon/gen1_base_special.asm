@@ -11,19 +11,18 @@ KantoMonSpecials:
 	db  50 ; SQUIRTLE
 	db  65 ; WARTORTLE
 	db  85 ; BLASTOISE
-	db  0  ; PICHU
+	db   0 ; PICHU
 	db  50 ; PIKACHU
 	db  90 ; RAICHU
-	db  20 ; WEEDLE
-	db  25 ; KAKUNA
-	db  45 ; BEEDRILL
-	db  35 ; PIDGEY
-	db  50 ; PIDGEOTTO
-	db  70 ; PIDGEOT
-	db  25 ; RATTATA
-	db  50 ; RATICATE
-	db  31 ; SPEAROW
-	db  61 ; FEAROW
+	db  65 ; EEVEE
+	db 110 ; VAPOREON
+	db 110 ; JOLTEON
+	db 110 ; FLAREON
+	db   0 ; ESPEON
+	db   0 ; UMBREON
+	db   0 ; LEAFEON
+	db   0 ; GLACEON
+	db   0 ; SYLVEON
 	db  40 ; EKANS
 	db  65 ; ARBOK
 	db  30 ; SANDSHREW
@@ -132,10 +131,6 @@ KantoMonSpecials:
 	db 100 ; GYARADOS
 	db  95 ; LAPRAS
 	db  48 ; DITTO
-	db  65 ; EEVEE
-	db 110 ; VAPOREON
-	db 110 ; JOLTEON
-	db 110 ; FLAREON
 	db  75 ; PORYGON
 	db  90 ; OMANYTE
 	db 115 ; OMASTAR

@@ -11,20 +11,10 @@ NewPokedexOrder:
 	db TOTODILE
 	db CROCONAW
 	db FERALIGATR
-	db PIDGEY
-	db PIDGEOTTO
-	db PIDGEOT
-	db SPEAROW
-	db FEAROW
 	db HOOTHOOT
 	db NOCTOWL
-	db RATTATA
-	db RATICATE
 	db SENTRET
 	db FURRET
-	db WEEDLE
-	db KAKUNA
-	db BEEDRILL
 	db LEDYBA
 	db LEDIAN
 	db SPINARAK
@@ -175,12 +165,15 @@ NewPokedexOrder:
 	db DEWGONG
 	db LICKITUNG
 	db TANGELA
-	db EEVEE
-	db VAPOREON
-	db JOLTEON
-	db FLAREON
-	db ESPEON
-	db UMBREON
+	db Eevee
+	db Vaporeon
+	db Jolteon
+	db Flareon
+	db Espeon
+	db Umbreon
+	db Leafeon
+	db Glaceon
+	db Sylveon
 	db HORSEA
 	db SEADRA
 	db KINGDRA

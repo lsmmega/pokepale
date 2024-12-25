@@ -12,16 +12,15 @@ FramesPointers:
 	dw PichuFrames
 	dw PikachuFrames
 	dw RaichuFrames
-	dw WeedleFrames
-	dw KakunaFrames
-	dw BeedrillFrames
-	dw PidgeyFrames
-	dw PidgeottoFrames
-	dw PidgeotFrames
-	dw RattataFrames
-	dw RaticateFrames
-	dw SpearowFrames
-	dw FearowFrames
+	dw EeveeFrames
+	dw VaporeonFrames
+	dw JolteonFrames
+	dw FlareonFrames
+	dw EspeonFrames
+	dw UmbreonFrames
+	dw LeafeonFrames
+	dw GlaceonFrames
+	dw SylveonFrames
 	dw EkansFrames
 	dw ArbokFrames
 	dw SandshrewFrames
@@ -130,10 +129,6 @@ FramesPointers:
 	dw GyaradosFrames
 	dw LaprasFrames
 	dw DittoFrames
-	dw EeveeFrames
-	dw VaporeonFrames
-	dw JolteonFrames
-	dw FlareonFrames
 	dw PorygonFrames
 	dw OmanyteFrames
 	dw OmastarFrames
@@ -192,8 +187,6 @@ FramesPointers:
 	dw YanmaFrames
 	dw WooperFrames
 	dw QuagsireFrames
-	dw EspeonFrames
-	dw UmbreonFrames
 	dw MurkrowFrames
 	dw SlowkingFrames
 	dw MisdreavusFrames

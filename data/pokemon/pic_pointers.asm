@@ -15,16 +15,15 @@ PokemonPicPointers::
 	dba_pics PichuFrontpic, PichuBackpic
 	dba_pics PikachuFrontpic, PikachuBackpic
 	dba_pics RaichuFrontpic, RaichuBackpic
-	dba_pics WeedleFrontpic, WeedleBackpic
-	dba_pics KakunaFrontpic, KakunaBackpic
-	dba_pics BeedrillFrontpic, BeedrillBackpic
-	dba_pics PidgeyFrontpic, PidgeyBackpic
-	dba_pics PidgeottoFrontpic, PidgeottoBackpic
-	dba_pics PidgeotFrontpic, PidgeotBackpic
-	dba_pics RattataFrontpic, RattataBackpic
-	dba_pics RaticateFrontpic, RaticateBackpic
-	dba_pics SpearowFrontpic, SpearowBackpic
-	dba_pics FearowFrontpic, FearowBackpic
+	dba_pics EeveeFrontpic, EeveeBackpic
+	dba_pics VaporeonFrontpic, VaporeonBackpic
+	dba_pics JolteonFrontpic, JolteonBackpic
+	dba_pics FlareonFrontpic, FlareonBackpic
+	dba_pics EspeonFrontpic, EspeonBackpic
+	dba_pics UmbreonFrontpic, UmbreonBackpic
+	dba_pics LeafeonFrontpic, LeafeonBackpic
+	dba_pics GlaceonFrontpic, GlaceonBackpic
+	dba_pics SylveonFrontpic, SylveonBackpic
 	dba_pics EkansFrontpic, EkansBackpic
 	dba_pics ArbokFrontpic, ArbokBackpic
 	dba_pics SandshrewFrontpic, SandshrewBackpic
@@ -133,10 +132,6 @@ PokemonPicPointers::
 	dba_pics GyaradosFrontpic, GyaradosBackpic
 	dba_pics LaprasFrontpic, LaprasBackpic
 	dba_pics DittoFrontpic, DittoBackpic
-	dba_pics EeveeFrontpic, EeveeBackpic
-	dba_pics VaporeonFrontpic, VaporeonBackpic
-	dba_pics JolteonFrontpic, JolteonBackpic
-	dba_pics FlareonFrontpic, FlareonBackpic
 	dba_pics PorygonFrontpic, PorygonBackpic
 	dba_pics OmanyteFrontpic, OmanyteBackpic
 	dba_pics OmastarFrontpic, OmastarBackpic
@@ -195,8 +190,6 @@ PokemonPicPointers::
 	dba_pics YanmaFrontpic, YanmaBackpic
 	dba_pics WooperFrontpic, WooperBackpic
 	dba_pics QuagsireFrontpic, QuagsireBackpic
-	dba_pics EspeonFrontpic, EspeonBackpic
-	dba_pics UmbreonFrontpic, UmbreonBackpic
 	dba_pics MurkrowFrontpic, MurkrowBackpic
 	dba_pics SlowkingFrontpic, SlowkingBackpic
 	dba_pics MisdreavusFrontpic, MisdreavusBackpic

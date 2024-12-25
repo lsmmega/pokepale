@@ -13,8 +13,8 @@ Trainers:
 FalknerGroup:
 	; FALKNER (1)
 	db "FALKNER@", TRAINERTYPE_MOVES
-	db  7, PIDGEY,     TACKLE, MUD_SLAP, NO_MOVE, NO_MOVE
-	db  9, PIDGEOTTO,  TACKLE, MUD_SLAP, GUST, NO_MOVE
+	db  7, Turtwig,     TACKLE, MUD_SLAP, NO_MOVE, NO_MOVE
+	db  9, Turtwig,  TACKLE, MUD_SLAP, GUST, NO_MOVE
 	db -1 ; end
 
 WhitneyGroup:
@@ -28,7 +28,7 @@ BugsyGroup:
 	; BUGSY (1)
 	db "BUGSY@", TRAINERTYPE_MOVES
 	db 14, Turtwig,    TACKLE, STRING_SHOT, HARDEN, NO_MOVE
-	db 14, KAKUNA,     POISON_STING, STRING_SHOT, HARDEN, NO_MOVE
+	db 14, Turtwig,     POISON_STING, STRING_SHOT, HARDEN, NO_MOVE
 	db 16, SCYTHER,    QUICK_ATTACK, LEER, FURY_CUTTER, NO_MOVE
 	db -1 ; end
 
@@ -238,7 +238,7 @@ BrunoGroup:
 KarenGroup:
 	; KAREN (1)
 	db "KAREN@", TRAINERTYPE_MOVES
-	db 42, UMBREON,    SAND_ATTACK, CONFUSE_RAY, FAINT_ATTACK, MEAN_LOOK
+	db 42, Umbreon,    SAND_ATTACK, CONFUSE_RAY, FAINT_ATTACK, MEAN_LOOK
 	db 42, VILEPLUME,  STUN_SPORE, ACID, MOONLIGHT, PETAL_DANCE
 	db 45, GENGAR,     LICK, SPITE, CURSE, DESTINY_BOND
 	db 44, MURKROW,    QUICK_ATTACK, WHIRLWIND, PURSUIT, FAINT_ATTACK
@@ -338,18 +338,18 @@ ErikaGroup:
 YoungsterGroup:
 	; YOUNGSTER (1)
 	db "JOEY@", TRAINERTYPE_NORMAL
-	db  4, RATTATA
+	db  4, Turtwig
 	db -1 ; end
 
 	; YOUNGSTER (2)
 	db "MIKEY@", TRAINERTYPE_NORMAL
-	db  2, PIDGEY
-	db  4, RATTATA
+	db  2, Turtwig
+	db  4, Turtwig
 	db -1 ; end
 
 	; YOUNGSTER (3)
 	db "ALBERT@", TRAINERTYPE_NORMAL
-	db  6, RATTATA
+	db  6, Turtwig
 	db  8, ZUBAT
 	db -1 ; end
 
@@ -360,10 +360,10 @@ YoungsterGroup:
 
 	; YOUNGSTER (5)
 	db "SAMUEL@", TRAINERTYPE_NORMAL
-	db  7, RATTATA
+	db  7, Turtwig
 	db 10, SANDSHREW
-	db  8, SPEAROW
-	db  8, SPEAROW
+	db  8, Turtwig
+	db  8, Turtwig
 	db -1 ; end
 
 	; YOUNGSTER (6)
@@ -374,22 +374,22 @@ YoungsterGroup:
 
 	; YOUNGSTER (7)
 	db "JOEY@", TRAINERTYPE_NORMAL
-	db 15, RATTATA
+	db 15, Turtwig
 	db -1 ; end
 
 	; YOUNGSTER (8)
 	db "JOEY@", TRAINERTYPE_MOVES
-	db 21, RATICATE,   TAIL_WHIP, QUICK_ATTACK, HYPER_FANG, SCARY_FACE
+	db 21, Turtwig,   TAIL_WHIP, QUICK_ATTACK, HYPER_FANG, SCARY_FACE
 	db -1 ; end
 
 	; YOUNGSTER (9)
 	db "WARREN@", TRAINERTYPE_NORMAL
-	db 35, FEAROW
+	db 35, Turtwig
 	db -1 ; end
 
 	; YOUNGSTER (10)
 	db "JIMMY@", TRAINERTYPE_NORMAL
-	db 33, RATICATE
+	db 33, Turtwig
 	db 33, ARBOK
 	db -1 ; end
 
@@ -406,12 +406,12 @@ YoungsterGroup:
 
 	; YOUNGSTER (13)
 	db "JOEY@", TRAINERTYPE_MOVES
-	db 30, RATICATE,   TAIL_WHIP, QUICK_ATTACK, HYPER_FANG, PURSUIT
+	db 30, Turtwig,   TAIL_WHIP, QUICK_ATTACK, HYPER_FANG, PURSUIT
 	db -1 ; end
 
 	; YOUNGSTER (14)
 	db "JOEY@", TRAINERTYPE_MOVES
-	db 37, RATICATE,   HYPER_BEAM, QUICK_ATTACK, HYPER_FANG, PURSUIT
+	db 37, Turtwig,   HYPER_BEAM, QUICK_ATTACK, HYPER_FANG, PURSUIT
 	db -1 ; end
 
 SchoolboyGroup:
@@ -462,7 +462,7 @@ SchoolboyGroup:
 	; SCHOOLBOY (8)
 	db "JOE@", TRAINERTYPE_NORMAL
 	db 33, TANGELA
-	db 33, VAPOREON
+	db 33, Vaporeon
 	db -1 ; end
 
 	; SCHOOLBOY (9)
@@ -573,28 +573,28 @@ SchoolboyGroup:
 BirdKeeperGroup:
 	; BIRD_KEEPER (1)
 	db "ROD@", TRAINERTYPE_NORMAL
-	db  7, PIDGEY
-	db  7, PIDGEY
+	db  7, Turtwig
+	db  7, Turtwig
 	db -1 ; end
 
 	; BIRD_KEEPER (2)
 	db "ABE@", TRAINERTYPE_NORMAL
-	db  9, SPEAROW
+	db  9, Turtwig
 	db -1 ; end
 
 	; BIRD_KEEPER (3)
 	db "BRYAN@", TRAINERTYPE_NORMAL
-	db 12, PIDGEY
-	db 14, PIDGEOTTO
+	db 12, Turtwig
+	db 14, Turtwig
 	db -1 ; end
 
 	; BIRD_KEEPER (4)
 	db "THEO@", TRAINERTYPE_NORMAL
-	db 17, PIDGEY
-	db 15, PIDGEY
-	db 19, PIDGEY
-	db 15, PIDGEY
-	db 15, PIDGEY
+	db 17, Turtwig
+	db 15, Turtwig
+	db 19, Turtwig
+	db 15, Turtwig
+	db 15, Turtwig
 	db -1 ; end
 
 	; BIRD_KEEPER (5)
@@ -606,27 +606,27 @@ BirdKeeperGroup:
 
 	; BIRD_KEEPER (6)
 	db "DENIS@", TRAINERTYPE_NORMAL
-	db 18, SPEAROW
-	db 20, FEAROW
-	db 18, SPEAROW
+	db 18, Turtwig
+	db 20, Turtwig
+	db 18, Turtwig
 	db -1 ; end
 
 	; BIRD_KEEPER (7)
 	db "VANCE@", TRAINERTYPE_NORMAL
-	db 25, PIDGEOTTO
-	db 25, PIDGEOTTO
+	db 25, Turtwig
+	db 25, Turtwig
 	db -1 ; end
 
 	; BIRD_KEEPER (8)
 	db "HANK@", TRAINERTYPE_NORMAL
-	db 12, PIDGEY
-	db 34, PIDGEOT
+	db 12, Turtwig
+	db 34, Turtwig
 	db -1 ; end
 
 	; BIRD_KEEPER (9)
 	db "ROY@", TRAINERTYPE_NORMAL
-	db 29, FEAROW
-	db 35, FEAROW
+	db 29, Turtwig
+	db 35, Turtwig
 	db -1 ; end
 
 	; BIRD_KEEPER (10)
@@ -648,9 +648,9 @@ BirdKeeperGroup:
 
 	; BIRD_KEEPER (13)
 	db "PETER@", TRAINERTYPE_NORMAL
-	db  6, PIDGEY
-	db  6, PIDGEY
-	db  8, SPEAROW
+	db  6, Turtwig
+	db  6, Turtwig
+	db  8, Turtwig
 	db -1 ; end
 
 	; BIRD_KEEPER (14)
@@ -665,8 +665,8 @@ BirdKeeperGroup:
 
 	; BIRD_KEEPER (16)
 	db "BRET@", TRAINERTYPE_NORMAL
-	db 32, PIDGEOTTO
-	db 32, FEAROW
+	db 32, Turtwig
+	db 32, Turtwig
 	db -1 ; end
 
 	; BIRD_KEEPER (17)
@@ -676,14 +676,14 @@ BirdKeeperGroup:
 
 	; BIRD_KEEPER (18)
 	db "VANCE@", TRAINERTYPE_NORMAL
-	db 32, PIDGEOTTO
-	db 32, PIDGEOTTO
+	db 32, Turtwig
+	db 32, Turtwig
 	db -1 ; end
 
 	; BIRD_KEEPER (19)
 	db "VANCE@", TRAINERTYPE_MOVES
-	db 38, PIDGEOT,    TOXIC, QUICK_ATTACK, WHIRLWIND, FLY
-	db 38, PIDGEOT,    SWIFT, DETECT, STEEL_WING, FLY
+	db 38, Turtwig,    TOXIC, QUICK_ATTACK, WHIRLWIND, FLY
+	db 38, Turtwig,    SWIFT, DETECT, STEEL_WING, FLY
 	db -1 ; end
 
 LassGroup:
@@ -727,7 +727,7 @@ LassGroup:
 	; LASS (7)
 	db "LAURA@", TRAINERTYPE_NORMAL
 	db 28, GLOOM
-	db 31, PIDGEOTTO
+	db 31, Turtwig
 	db 31, BELLOSSOM
 	db -1 ; end
 
@@ -838,19 +838,19 @@ CooltrainerMGroup:
 	db "GAVEN@", TRAINERTYPE_MOVES
 	db 35, VICTREEBEL, WRAP, TOXIC, ACID, RAZOR_LEAF
 	db 35, KINGLER,    BUBBLEBEAM, STOMP, GUILLOTINE, PROTECT
-	db 35, FLAREON,    SAND_ATTACK, QUICK_ATTACK, BITE, FIRE_SPIN
+	db 35, Flareon,    SAND_ATTACK, QUICK_ATTACK, BITE, FIRE_SPIN
 	db -1 ; end
 
 	; COOLTRAINERM (7)
 	db "GAVEN@", TRAINERTYPE_ITEM_MOVES
 	db 39, VICTREEBEL, NO_ITEM,      GIGA_DRAIN, TOXIC, SLUDGE_BOMB, RAZOR_LEAF
 	db 39, KINGLER,    KINGS_ROCK,   SURF, STOMP, GUILLOTINE, BLIZZARD
-	db 39, FLAREON,    NO_ITEM,      FLAMETHROWER, QUICK_ATTACK, BITE, FIRE_SPIN
+	db 39, Flareon,    NO_ITEM,      FLAMETHROWER, QUICK_ATTACK, BITE, FIRE_SPIN
 	db -1 ; end
 
 	; COOLTRAINERM (8)
 	db "RYAN@", TRAINERTYPE_MOVES
-	db 25, PIDGEOT,    SAND_ATTACK, QUICK_ATTACK, WHIRLWIND, WING_ATTACK
+	db 25, Turtwig,    SAND_ATTACK, QUICK_ATTACK, WHIRLWIND, WING_ATTACK
 	db 27, ELECTABUZZ, THUNDERPUNCH, LIGHT_SCREEN, SWIFT, SCREECH
 	db -1 ; end
 
@@ -864,7 +864,7 @@ CooltrainerMGroup:
 	db "GAVEN@", TRAINERTYPE_MOVES
 	db 32, VICTREEBEL, WRAP, TOXIC, ACID, RAZOR_LEAF
 	db 32, KINGLER,    BUBBLEBEAM, STOMP, GUILLOTINE, PROTECT
-	db 32, FLAREON,    SAND_ATTACK, QUICK_ATTACK, BITE, FIRE_SPIN
+	db 32, Flareon,    SAND_ATTACK, QUICK_ATTACK, BITE, FIRE_SPIN
 	db -1 ; end
 
 	; COOLTRAINERM (11)
@@ -902,7 +902,7 @@ CooltrainerMGroup:
 
 	; COOLTRAINERM (16)
 	db "SEAN@", TRAINERTYPE_NORMAL
-	db 35, FLAREON
+	db 35, Flareon
 	db 35, TANGELA
 	db 35, TAUROS
 	db -1 ; end
@@ -934,10 +934,10 @@ CooltrainerMGroup:
 CooltrainerFGroup:
 	; COOLTRAINERF (1)
 	db "GWEN@", TRAINERTYPE_NORMAL
-	db 26, EEVEE
-	db 22, FLAREON
-	db 22, VAPOREON
-	db 22, JOLTEON
+	db 26, Eevee
+	db 22, Flareon
+	db 22, Vaporeon
+	db 22, Jolteon
 	db -1 ; end
 
 	; COOLTRAINERF (2)
@@ -1246,15 +1246,15 @@ GruntMGroup:
 
 	; GRUNTM (2)
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db  7, RATTATA
+	db  7, Turtwig
 	db  9, ZUBAT
 	db  9, ZUBAT
 	db -1 ; end
 
 	; GRUNTM (3)
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 24, RATICATE
-	db 24, RATICATE
+	db 24, Turtwig
+	db 24, Turtwig
 	db -1 ; end
 
 	; GRUNTM (4)
@@ -1266,11 +1266,11 @@ GruntMGroup:
 
 	; GRUNTM (5)
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 21, RATTATA
-	db 21, RATTATA
-	db 23, RATTATA
-	db 23, RATTATA
-	db 23, RATTATA
+	db 21, Turtwig
+	db 21, Turtwig
+	db 23, Turtwig
+	db 23, Turtwig
+	db 23, Turtwig
 	db -1 ; end
 
 	; GRUNTM (6)
@@ -1284,7 +1284,7 @@ GruntMGroup:
 	db 23, KOFFING
 	db 23, GRIMER
 	db 23, ZUBAT
-	db 23, RATTATA
+	db 23, Turtwig
 	db -1 ; end
 
 	; GRUNTM (8)
@@ -1294,7 +1294,7 @@ GruntMGroup:
 
 	; GRUNTM (9)
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 24, RATICATE
+	db 24, Turtwig
 	db 26, KOFFING
 	db -1 ; end
 
@@ -1309,7 +1309,7 @@ GruntMGroup:
 	db "GRUNT@", TRAINERTYPE_NORMAL
 	db 23, MUK
 	db 23, KOFFING
-	db 25, RATTATA
+	db 25, Turtwig
 	db -1 ; end
 
 	; GRUNTM (12)
@@ -1319,12 +1319,12 @@ GruntMGroup:
 
 	; GRUNTM (13)
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 27, RATTATA
+	db 27, Turtwig
 	db -1 ; end
 
 	; GRUNTM (14)
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 24, RATICATE
+	db 24, Turtwig
 	db 24, GOLBAT
 	db -1 ; end
 
@@ -1336,10 +1336,10 @@ GruntMGroup:
 
 	; GRUNTM (16)
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 16, RATTATA
-	db 16, RATTATA
-	db 16, RATTATA
-	db 16, RATTATA
+	db 16, Turtwig
+	db 16, Turtwig
+	db 16, Turtwig
+	db 16, Turtwig
 	db -1 ; end
 
 	; GRUNTM (17)
@@ -1349,9 +1349,9 @@ GruntMGroup:
 
 	; GRUNTM (18)
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 17, RATTATA
+	db 17, Turtwig
 	db 17, ZUBAT
-	db 17, RATTATA
+	db 17, Turtwig
 	db -1 ; end
 
 	; GRUNTM (19)
@@ -1370,7 +1370,7 @@ GruntMGroup:
 	db "GRUNT@", TRAINERTYPE_NORMAL
 	db 16, ZUBAT
 	db 17, GRIMER
-	db 18, RATTATA
+	db 18, Turtwig
 	db -1 ; end
 
 	; GRUNTM (22)
@@ -1397,8 +1397,8 @@ GruntMGroup:
 
 	; GRUNTM (26)
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 15, RATTATA
-	db 15, RATTATA
+	db 15, Turtwig
+	db 15, Turtwig
 	db -1 ; end
 
 	; GRUNTM (27)
@@ -1408,13 +1408,13 @@ GruntMGroup:
 
 	; GRUNTM (28)
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 19, RATICATE
+	db 19, Turtwig
 	db -1 ; end
 
 	; GRUNTM (29)
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db  9, RATTATA
-	db  9, RATTATA
+	db  9, Turtwig
+	db  9, Turtwig
 	db -1 ; end
 
 	; GRUNTM (30)
@@ -1488,7 +1488,7 @@ TeacherGroup:
 SabrinaGroup:
 	; SABRINA (1)
 	db "SABRINA@", TRAINERTYPE_MOVES
-	db 46, ESPEON,     SAND_ATTACK, QUICK_ATTACK, SWIFT, PSYCHIC_M
+	db 46, Espeon,     SAND_ATTACK, QUICK_ATTACK, SWIFT, PSYCHIC_M
 	db 46, MR__MIME,   BARRIER, REFLECT, BATON_PASS, PSYCHIC_M
 	db 48, ALAKAZAM,   RECOVER, FUTURE_SIGHT, PSYCHIC_M, REFLECT
 	db -1 ; end
@@ -1502,36 +1502,36 @@ BugCatcherGroup:
 
 	; BUG_CATCHER (2)
 	db "ROB@", TRAINERTYPE_NORMAL
-	db 32, BEEDRILL
+	db 32, Turtwig
 	db 32, Turtwig
 	db -1 ; end
 
 	; BUG_CATCHER (3)
 	db "ED@", TRAINERTYPE_NORMAL
-	db 30, BEEDRILL
-	db 30, BEEDRILL
-	db 30, BEEDRILL
+	db 30, Turtwig
+	db 30, Turtwig
+	db 30, Turtwig
 	db -1 ; end
 
 	; BUG_CATCHER (4)
 	db "WADE@", TRAINERTYPE_NORMAL
 	db  2, Turtwig
 	db  2, Turtwig
-	db  3, WEEDLE
+	db  3, Turtwig
 	db  2, Turtwig
 	db -1 ; end
 
 	; BUG_CATCHER (5)
 	db "BENNY@", TRAINERTYPE_NORMAL
-	db  7, WEEDLE
-	db  9, KAKUNA
-	db 12, BEEDRILL
+	db  7, Turtwig
+	db  9, Turtwig
+	db 12, Turtwig
 	db -1 ; end
 
 	; BUG_CATCHER (6)
 	db "AL@", TRAINERTYPE_NORMAL
 	db 12, Turtwig
-	db 12, WEEDLE
+	db 12, Turtwig
 	db -1 ; end
 
 	; BUG_CATCHER (7)
@@ -1554,7 +1554,7 @@ BugCatcherGroup:
 	db "WADE@", TRAINERTYPE_NORMAL
 	db  9, Turtwig
 	db  9, Turtwig
-	db 10, KAKUNA
+	db 10, Turtwig
 	db  9, Turtwig
 	db -1 ; end
 
@@ -1562,7 +1562,7 @@ BugCatcherGroup:
 	db "WADE@", TRAINERTYPE_NORMAL
 	db 14, Turtwig
 	db 14, Turtwig
-	db 15, BEEDRILL
+	db 15, Turtwig
 	db 14, Turtwig
 	db -1 ; end
 
@@ -1585,7 +1585,7 @@ BugCatcherGroup:
 	db "WADE@", TRAINERTYPE_MOVES
 	db 24, Turtwig, CONFUSION, POISONPOWDER, SUPERSONIC, WHIRLWIND
 	db 24, Turtwig, CONFUSION, STUN_SPORE, SUPERSONIC, WHIRLWIND
-	db 25, BEEDRILL,   FURY_ATTACK, FOCUS_ENERGY, TWINEEDLE, RAGE
+	db 25, Turtwig,   FURY_ATTACK, FOCUS_ENERGY, TWINEEDLE, RAGE
 	db 24, Turtwig, CONFUSION, SLEEP_POWDER, SUPERSONIC, WHIRLWIND
 	db -1 ; end
 
@@ -1593,7 +1593,7 @@ BugCatcherGroup:
 	db "WADE@", TRAINERTYPE_MOVES
 	db 30, Turtwig, CONFUSION, POISONPOWDER, SUPERSONIC, GUST
 	db 30, Turtwig, CONFUSION, STUN_SPORE, SUPERSONIC, GUST
-	db 32, BEEDRILL,   FURY_ATTACK, PURSUIT, TWINEEDLE, DOUBLE_TEAM
+	db 32, Turtwig,   FURY_ATTACK, PURSUIT, TWINEEDLE, DOUBLE_TEAM
 	db 34, Turtwig, PSYBEAM, SLEEP_POWDER, GUST, WHIRLWIND
 	db -1 ; end
 
@@ -2030,7 +2030,7 @@ SailorGroup:
 	; SAILOR (1)
 	db "EUGENE@", TRAINERTYPE_NORMAL
 	db 17, POLIWHIRL
-	db 17, RATICATE
+	db 17, Turtwig
 	db 19, KRABBY
 	db -1 ; end
 
@@ -2060,8 +2060,8 @@ SailorGroup:
 
 	; SAILOR (6)
 	db "JEFF@", TRAINERTYPE_NORMAL
-	db 32, RATICATE
-	db 32, RATICATE
+	db 32, Turtwig
+	db 32, Turtwig
 	db -1 ; end
 
 	; SAILOR (7)
@@ -2437,7 +2437,7 @@ BikerGroup:
 
 	; BIKER (4)
 	db "HARRIS@", TRAINERTYPE_NORMAL
-	db 34, FLAREON
+	db 34, Flareon
 	db -1 ; end
 
 	; BIKER (5)
@@ -2547,7 +2547,7 @@ FirebreatherGroup:
 	; FIREBREATHER (8)
 	db "LYLE@", TRAINERTYPE_NORMAL
 	db 28, KOFFING
-	db 31, FLAREON
+	db 31, Flareon
 	db 28, KOFFING
 	db -1 ; end
 
@@ -2683,7 +2683,7 @@ ExecutiveMGroup:
 	; EXECUTIVEM (4)
 	db "EXECUTIVE@", TRAINERTYPE_NORMAL
 	db 22, ZUBAT
-	db 24, RATICATE
+	db 24, Turtwig
 	db 22, KOFFING
 	db -1 ; end
 
@@ -2736,7 +2736,7 @@ PsychicGroup:
 
 	; PSYCHIC_T (9)
 	db "RICHARD@", TRAINERTYPE_NORMAL
-	db 36, ESPEON
+	db 36, Espeon
 	db -1 ; end
 
 	; PSYCHIC_T (10)
@@ -3052,7 +3052,7 @@ CamperGroup:
 
 	; CAMPER (22)
 	db "QUENTIN@", TRAINERTYPE_NORMAL
-	db 30, FEAROW
+	db 30, Turtwig
 	db 30, PRIMEAPE
 	db 30, TAUROS
 	db -1 ; end
@@ -3134,19 +3134,19 @@ SageGroup:
 	; SAGE (10)
 	db "GAKU@", TRAINERTYPE_NORMAL
 	db 32, NOCTOWL
-	db 32, FLAREON
+	db 32, Flareon
 	db -1 ; end
 
 	; SAGE (11)
 	db "MASA@", TRAINERTYPE_NORMAL
 	db 32, NOCTOWL
-	db 32, JOLTEON
+	db 32, Jolteon
 	db -1 ; end
 
 	; SAGE (12)
 	db "KOJI@", TRAINERTYPE_NORMAL
 	db 32, NOCTOWL
-	db 32, VAPOREON
+	db 32, Vaporeon
 	db -1 ; end
 
 MediumGroup:
@@ -3303,27 +3303,27 @@ KimonoGirlGroup:
 
 	; KIMONO_GIRL (2)
 	db "NAOKO@", TRAINERTYPE_NORMAL
-	db 17, FLAREON
+	db 17, Flareon
 	db -1 ; end
 
 	; KIMONO_GIRL (3)
 	db "SAYO@", TRAINERTYPE_NORMAL
-	db 17, ESPEON
+	db 17, Espeon
 	db -1 ; end
 
 	; KIMONO_GIRL (4)
 	db "ZUKI@", TRAINERTYPE_NORMAL
-	db 17, UMBREON
+	db 17, Umbreon
 	db -1 ; end
 
 	; KIMONO_GIRL (5)
 	db "KUNI@", TRAINERTYPE_NORMAL
-	db 17, VAPOREON
+	db 17, Vaporeon
 	db -1 ; end
 
 	; KIMONO_GIRL (6)
 	db "MIKI@", TRAINERTYPE_NORMAL
-	db 17, JOLTEON
+	db 17, Jolteon
 	db -1 ; end
 
 TwinsGroup:
@@ -3426,7 +3426,7 @@ RedGroup:
 	; RED (1)
 	db "RED@", TRAINERTYPE_MOVES
 	db 81, Pikachu,    CHARM, QUICK_ATTACK, THUNDERBOLT, THUNDER
-	db 73, ESPEON,     MUD_SLAP, REFLECT, SWIFT, PSYCHIC_M
+	db 73, Espeon,     MUD_SLAP, REFLECT, SWIFT, PSYCHIC_M
 	db 75, SNORLAX,    AMNESIA, SNORE, REST, BODY_SLAM
 	db 77, Torterra,   SUNNY_DAY, GIGA_DRAIN, SYNTHESIS, SOLARBEAM
 	db 77, Delphox,  FLAMETHROWER, WING_ATTACK, SLASH, FIRE_SPIN
@@ -3436,7 +3436,7 @@ RedGroup:
 BlueGroup:
 	; BLUE (1)
 	db "BLUE@", TRAINERTYPE_MOVES
-	db 56, PIDGEOT,    QUICK_ATTACK, WHIRLWIND, WING_ATTACK, MIRROR_MOVE
+	db 56, Turtwig,    QUICK_ATTACK, WHIRLWIND, WING_ATTACK, MIRROR_MOVE
 	db 54, ALAKAZAM,   DISABLE, RECOVER, PSYCHIC_M, REFLECT
 	db 56, RHYDON,     FURY_ATTACK, SANDSTORM, ROCK_SLIDE, EARTHQUAKE
 	db 58, GYARADOS,   TWISTER, HYDRO_PUMP, RAIN_DANCE, HYPER_BEAM

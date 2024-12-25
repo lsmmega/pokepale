@@ -31,16 +31,15 @@
 	const Pichu ; 0a
 	const Pikachu ; 0b
 	const Raichu ; 0c
-	const WEEDLE     ; 0d
-	const KAKUNA     ; 0e
-	const BEEDRILL   ; 0f
-	const PIDGEY     ; 10
-	const PIDGEOTTO  ; 11
-	const PIDGEOT    ; 12
-	const RATTATA    ; 13
-	const RATICATE   ; 14
-	const SPEAROW    ; 15
-	const FEAROW     ; 16
+	const Eevee ; 0d
+	const Vaporeon ; 0e
+	const Jolteon ; 0f
+	const Flareon ; 10
+	const Espeon ; 11
+	const Umbreon ; 12
+	const Leafeon ; 13
+	const Glaceon ; 14
+	const Sylveon ; 15
 	const EKANS      ; 17
 	const ARBOK      ; 18
 	const SANDSHREW  ; 1b
@@ -149,10 +148,6 @@
 	const GYARADOS   ; 82
 	const LAPRAS     ; 83
 	const DITTO      ; 84
-	const EEVEE      ; 85
-	const VAPOREON   ; 86
-	const JOLTEON    ; 87
-	const FLAREON    ; 88
 	const PORYGON    ; 89
 	const OMANYTE    ; 8a
 	const OMASTAR    ; 8b
@@ -212,8 +207,6 @@ DEF JOHTO_POKEMON EQU const_value
 	const YANMA      ; c1
 	const WOOPER     ; c2
 	const QUAGSIRE   ; c3
-	const ESPEON     ; c4
-	const UMBREON    ; c5
 	const MURKROW    ; c6
 	const SLOWKING   ; c7
 	const MISDREAVUS ; c8

@@ -146,26 +146,26 @@ KantoGrassWildMons:
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
 	db 22, ZUBAT
-	db 22, RATICATE
+	db 22, Turtwig
 	db 24, GOLBAT
 	db 21, SLOWPOKE
-	db 20, RATTATA
+	db 20, Turtwig
 	db 23, SLOWPOKE
 	db 23, SLOWPOKE
 	; day
 	db 22, ZUBAT
-	db 22, RATICATE
+	db 22, Turtwig
 	db 24, GOLBAT
 	db 21, SLOWPOKE
-	db 20, RATTATA
+	db 20, Turtwig
 	db 23, SLOWPOKE
 	db 23, SLOWPOKE
 	; nite
 	db 22, ZUBAT
-	db 22, RATICATE
+	db 22, Turtwig
 	db 24, GOLBAT
 	db 21, SLOWPOKE
-	db 20, RATTATA
+	db 20, Turtwig
 	db 23, SLOWPOKE
 	db 23, SLOWPOKE
 	end_grass_wildmons
@@ -173,27 +173,27 @@ KantoGrassWildMons:
 	def_grass_wildmons ROUTE_1
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 2, PIDGEY
-	db 2, RATTATA
+	db 2, Turtwig
+	db 2, Turtwig
 	db 3, SENTRET
-	db 3, PIDGEY
+	db 3, Turtwig
 	db 6, FURRET
-	db 4, PIDGEY
-	db 4, PIDGEY
+	db 4, Turtwig
+	db 4, Turtwig
 	; day
-	db 2, PIDGEY
-	db 2, RATTATA
+	db 2, Turtwig
+	db 2, Turtwig
 	db 3, SENTRET
-	db 3, PIDGEY
+	db 3, Turtwig
 	db 6, FURRET
-	db 4, PIDGEY
-	db 4, PIDGEY
+	db 4, Turtwig
+	db 4, Turtwig
 	; nite
 	db 2, HOOTHOOT
-	db 2, RATTATA
-	db 3, RATTATA
+	db 2, Turtwig
+	db 3, Turtwig
 	db 3, HOOTHOOT
-	db 6, RATICATE
+	db 6, Turtwig
 	db 4, HOOTHOOT
 	db 4, HOOTHOOT
 	end_grass_wildmons
@@ -203,17 +203,17 @@ KantoGrassWildMons:
 	; morn
 	db 3, Turtwig
 	db 3, LEDYBA
-	db 5, PIDGEY
+	db 5, Turtwig
 	db 7, Turtwig
 	db 7, LEDIAN
 	db 4, Pikachu
 	db 4, Pikachu
 	; day
 	db 3, Turtwig
-	db 3, PIDGEY
-	db 5, PIDGEY
+	db 3, Turtwig
+	db 5, Turtwig
 	db 7, Turtwig
-	db 7, PIDGEOTTO
+	db 7, Turtwig
 	db 4, Pikachu
 	db 4, Pikachu
 	; nite
@@ -229,27 +229,27 @@ KantoGrassWildMons:
 	def_grass_wildmons ROUTE_3
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 5, SPEAROW
-	db 5, RATTATA
+	db 5, Turtwig
+	db 5, Turtwig
 	db 8, EKANS
-	db 10, RATICATE
+	db 10, Turtwig
 	db 10, ARBOK
 	db 10, SANDSHREW
 	db 10, SANDSHREW
 	; day
-	db 5, SPEAROW
-	db 5, RATTATA
+	db 5, Turtwig
+	db 5, Turtwig
 	db 8, EKANS
-	db 10, RATICATE
+	db 10, Turtwig
 	db 10, ARBOK
 	db 10, SANDSHREW
 	db 10, SANDSHREW
 	; nite
-	db 5, RATTATA
-	db 10, RATTATA
-	db 10, RATICATE
+	db 5, Turtwig
+	db 10, Turtwig
+	db 10, Turtwig
 	db 6, ZUBAT
-	db 5, RATTATA
+	db 5, Turtwig
 	db 6, CLEFAIRY
 	db 6, CLEFAIRY
 	end_grass_wildmons
@@ -257,27 +257,27 @@ KantoGrassWildMons:
 	def_grass_wildmons ROUTE_4
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 5, SPEAROW
-	db 5, RATTATA
+	db 5, Turtwig
+	db 5, Turtwig
 	db 8, EKANS
-	db 10, RATICATE
+	db 10, Turtwig
 	db 10, ARBOK
 	db 10, SANDSHREW
 	db 10, SANDSHREW
 	; day
-	db 5, SPEAROW
-	db 5, RATTATA
+	db 5, Turtwig
+	db 5, Turtwig
 	db 8, EKANS
-	db 10, RATICATE
+	db 10, Turtwig
 	db 10, ARBOK
 	db 10, SANDSHREW
 	db 10, SANDSHREW
 	; nite
-	db 5, RATTATA
-	db 10, RATTATA
-	db 10, RATICATE
+	db 5, Turtwig
+	db 10, Turtwig
+	db 10, Turtwig
 	db 6, ZUBAT
-	db 5, RATTATA
+	db 5, Turtwig
 	db 6, CLEFAIRY
 	db 6, CLEFAIRY
 	end_grass_wildmons
@@ -285,17 +285,17 @@ KantoGrassWildMons:
 	def_grass_wildmons ROUTE_5
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 13, PIDGEY
+	db 13, Turtwig
 	db 13, SNUBBULL
-	db 15, PIDGEOTTO
+	db 15, Turtwig
 	db 12, ABRA
 	db 14, JIGGLYPUFF
 	db 14, ABRA
 	db 14, ABRA
 	; day
-	db 13, PIDGEY
+	db 13, Turtwig
 	db 13, SNUBBULL
-	db 15, PIDGEOTTO
+	db 15, Turtwig
 	db 12, ABRA
 	db 14, JIGGLYPUFF
 	db 14, ABRA
@@ -313,18 +313,18 @@ KantoGrassWildMons:
 	def_grass_wildmons ROUTE_6
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 13, RATTATA
+	db 13, Turtwig
 	db 13, SNUBBULL
 	db 14, MAGNEMITE
-	db 15, RATICATE
+	db 15, Turtwig
 	db 12, JIGGLYPUFF
 	db 15, GRANBULL
 	db 15, GRANBULL
 	; day
-	db 13, RATTATA
+	db 13, Turtwig
 	db 13, SNUBBULL
 	db 14, MAGNEMITE
-	db 15, RATICATE
+	db 15, Turtwig
 	db 12, JIGGLYPUFF
 	db 15, GRANBULL
 	db 15, GRANBULL
@@ -334,25 +334,25 @@ KantoGrassWildMons:
 	db 14, MAGNEMITE
 	db 15, PSYDUCK
 	db 12, JIGGLYPUFF
-	db 15, RATICATE
-	db 15, RATICATE
+	db 15, Turtwig
+	db 15, Turtwig
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_7
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 17, RATTATA
-	db 17, SPEAROW
+	db 17, Turtwig
+	db 17, Turtwig
 	db 18, SNUBBULL
-	db 18, RATICATE
+	db 18, Turtwig
 	db 18, JIGGLYPUFF
 	db 16, ABRA
 	db 16, ABRA
 	; day
-	db 17, RATTATA
-	db 17, SPEAROW
+	db 17, Turtwig
+	db 17, Turtwig
 	db 18, SNUBBULL
-	db 18, RATICATE
+	db 18, Turtwig
 	db 18, JIGGLYPUFF
 	db 16, ABRA
 	db 16, ABRA
@@ -370,7 +370,7 @@ KantoGrassWildMons:
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 17, SNUBBULL
-	db 19, PIDGEOTTO
+	db 19, Turtwig
 	db 16, ABRA
 	db 17, GROWLITHE
 	db 16, JIGGLYPUFF
@@ -378,7 +378,7 @@ KantoGrassWildMons:
 	db 18, KADABRA
 	; day
 	db 17, SNUBBULL
-	db 19, PIDGEOTTO
+	db 19, Turtwig
 	db 16, ABRA
 	db 17, GROWLITHE
 	db 16, JIGGLYPUFF
@@ -397,53 +397,53 @@ KantoGrassWildMons:
 	def_grass_wildmons ROUTE_9
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 15, RATTATA
-	db 15, SPEAROW
-	db 15, RATICATE
-	db 15, FEAROW
-	db 15, FEAROW
+	db 15, Turtwig
+	db 15, Turtwig
+	db 15, Turtwig
+	db 15, Turtwig
+	db 15, Turtwig
 	db 18, MAROWAK
 	db 18, MAROWAK
 	; day
-	db 15, RATTATA
-	db 15, SPEAROW
-	db 15, RATICATE
-	db 15, FEAROW
-	db 15, FEAROW
+	db 15, Turtwig
+	db 15, Turtwig
+	db 15, Turtwig
+	db 15, Turtwig
+	db 15, Turtwig
 	db 18, MAROWAK
 	db 18, MAROWAK
 	; nite
-	db 15, RATTATA
+	db 15, Turtwig
 	db 15, VENONAT
-	db 15, RATICATE
+	db 15, Turtwig
 	db 15, VENOMOTH
 	db 15, ZUBAT
-	db 18, RATICATE
-	db 18, RATICATE
+	db 18, Turtwig
+	db 18, Turtwig
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_10_NORTH
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 15, SPEAROW
+	db 15, Turtwig
 	db 17, VOLTORB
-	db 15, RATICATE
-	db 15, FEAROW
+	db 15, Turtwig
+	db 15, Turtwig
 	db 15, MAROWAK
 	db 16, ELECTABUZZ
 	db 16, ELECTABUZZ
 	; day
-	db 15, SPEAROW
+	db 15, Turtwig
 	db 17, VOLTORB
-	db 15, RATICATE
-	db 15, FEAROW
+	db 15, Turtwig
+	db 15, Turtwig
 	db 15, MAROWAK
 	db 18, ELECTABUZZ
 	db 18, ELECTABUZZ
 	; nite
 	db 15, VENONAT
 	db 17, VOLTORB
-	db 15, RATICATE
+	db 15, Turtwig
 	db 15, VENOMOTH
 	db 15, ZUBAT
 	db 16, ELECTABUZZ
@@ -454,18 +454,18 @@ KantoGrassWildMons:
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 14, HOPPIP
-	db 13, RATICATE
+	db 13, Turtwig
 	db 15, MAGNEMITE
-	db 16, PIDGEOTTO
-	db 16, RATTATA
+	db 16, Turtwig
+	db 16, Turtwig
 	db 16, HOPPIP
 	db 16, HOPPIP
 	; day
 	db 14, HOPPIP
-	db 13, RATICATE
+	db 13, Turtwig
 	db 15, MAGNEMITE
-	db 16, PIDGEOTTO
-	db 16, RATTATA
+	db 16, Turtwig
+	db 16, Turtwig
 	db 16, HOPPIP
 	db 16, HOPPIP
 	; nite
@@ -473,7 +473,7 @@ KantoGrassWildMons:
 	db 13, MEOWTH
 	db 15, MAGNEMITE
 	db 16, NOCTOWL
-	db 16, RATICATE
+	db 16, Turtwig
 	db 16, HYPNO
 	db 16, HYPNO
 	end_grass_wildmons
@@ -483,7 +483,7 @@ KantoGrassWildMons:
 	; morn
 	db 23, NIDORINO
 	db 23, NIDORINA
-	db 25, PIDGEOTTO
+	db 25, Turtwig
 	db 25, HOPPIP
 	db 27, HOPPIP
 	db 27, HOPPIP
@@ -491,7 +491,7 @@ KantoGrassWildMons:
 	; day
 	db 23, NIDORINO
 	db 23, NIDORINA
-	db 25, PIDGEOTTO
+	db 25, Turtwig
 	db 25, HOPPIP
 	db 27, HOPPIP
 	db 27, HOPPIP
@@ -511,7 +511,7 @@ KantoGrassWildMons:
 	; morn
 	db 26, NIDORINO
 	db 26, NIDORINA
-	db 28, PIDGEOTTO
+	db 28, Turtwig
 	db 28, HOPPIP
 	db 30, SKIPLOOM
 	db 30, SKIPLOOM
@@ -519,7 +519,7 @@ KantoGrassWildMons:
 	; day
 	db 26, NIDORINO
 	db 26, NIDORINA
-	db 28, PIDGEOTTO
+	db 28, Turtwig
 	db 28, HOPPIP
 	db 30, SKIPLOOM
 	db 30, SKIPLOOM
@@ -539,7 +539,7 @@ KantoGrassWildMons:
 	; morn
 	db 23, NIDORINO
 	db 23, NIDORINA
-	db 25, PIDGEOTTO
+	db 25, Turtwig
 	db 25, HOPPIP
 	db 27, HOPPIP
 	db 27, HOPPIP
@@ -547,7 +547,7 @@ KantoGrassWildMons:
 	; day
 	db 23, NIDORINO
 	db 23, NIDORINA
-	db 25, PIDGEOTTO
+	db 25, Turtwig
 	db 25, HOPPIP
 	db 27, HOPPIP
 	db 27, HOPPIP
@@ -566,17 +566,17 @@ KantoGrassWildMons:
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 26, GRIMER
-	db 27, FEAROW
+	db 27, Turtwig
 	db 28, GRIMER
-	db 29, FEAROW
-	db 29, FEAROW
+	db 29, Turtwig
+	db 29, Turtwig
 	db 30, MUK
 	db 30, MUK
 	; day
 	db 26, GRIMER
-	db 27, FEAROW
+	db 27, Turtwig
 	db 28, GRIMER
-	db 29, FEAROW
+	db 29, Turtwig
 	db 29, SLUGMA
 	db 30, MUK
 	db 30, MUK
@@ -593,18 +593,18 @@ KantoGrassWildMons:
 	def_grass_wildmons ROUTE_17
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 30, FEAROW
+	db 30, Turtwig
 	db 29, GRIMER
 	db 31, GRIMER
-	db 32, FEAROW
+	db 32, Turtwig
 	db 33, GRIMER
 	db 33, MUK
 	db 33, MUK
 	; day
-	db 30, FEAROW
+	db 30, Turtwig
 	db 29, SLUGMA
 	db 29, GRIMER
-	db 32, FEAROW
+	db 32, Turtwig
 	db 32, SLUGMA
 	db 33, MUK
 	db 33, MUK
@@ -622,17 +622,17 @@ KantoGrassWildMons:
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 26, GRIMER
-	db 27, FEAROW
+	db 27, Turtwig
 	db 28, GRIMER
-	db 29, FEAROW
-	db 29, FEAROW
+	db 29, Turtwig
+	db 29, Turtwig
 	db 30, MUK
 	db 30, MUK
 	; day
 	db 26, GRIMER
-	db 27, FEAROW
+	db 27, Turtwig
 	db 28, GRIMER
-	db 29, FEAROW
+	db 29, Turtwig
 	db 29, SLUGMA
 	db 30, MUK
 	db 30, MUK
@@ -650,25 +650,25 @@ KantoGrassWildMons:
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
 	db 30, TANGELA
-	db 25, RATTATA
+	db 25, Turtwig
 	db 35, TANGELA
-	db 20, RATICATE
+	db 20, Turtwig
 	db 30, MR__MIME
 	db 28, MR__MIME
 	db 28, MR__MIME
 	; day
 	db 30, TANGELA
-	db 25, RATTATA
+	db 25, Turtwig
 	db 35, TANGELA
-	db 20, RATICATE
+	db 20, Turtwig
 	db 28, MR__MIME
 	db 30, MR__MIME
 	db 30, MR__MIME
 	; nite
 	db 30, TANGELA
-	db 25, RATTATA
+	db 25, Turtwig
 	db 35, TANGELA
-	db 20, RATICATE
+	db 20, Turtwig
 	db 30, TANGELA
 	db 28, TANGELA
 	db 28, TANGELA
@@ -677,29 +677,29 @@ KantoGrassWildMons:
 	def_grass_wildmons ROUTE_22
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 3, RATTATA
-	db 3, SPEAROW
-	db 5, SPEAROW
+	db 3, Turtwig
+	db 3, Turtwig
+	db 5, Turtwig
 	db 4, DODUO
 	db 6, PONYTA
-	db 7, FEAROW
-	db 7, FEAROW
+	db 7, Turtwig
+	db 7, Turtwig
 	; day
-	db 3, RATTATA
-	db 3, SPEAROW
-	db 5, SPEAROW
+	db 3, Turtwig
+	db 3, Turtwig
+	db 5, Turtwig
 	db 4, DODUO
 	db 6, PONYTA
-	db 7, FEAROW
-	db 7, FEAROW
+	db 7, Turtwig
+	db 7, Turtwig
 	; nite
-	db 3, RATTATA
+	db 3, Turtwig
 	db 3, POLIWAG
-	db 5, RATTATA
+	db 5, Turtwig
 	db 4, POLIWAG
-	db 6, RATTATA
-	db 7, RATTATA
-	db 7, RATTATA
+	db 6, Turtwig
+	db 7, Turtwig
+	db 7, Turtwig
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_24
@@ -734,16 +734,16 @@ KantoGrassWildMons:
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 10, Turtwig
-	db 10, PIDGEY
-	db 12, PIDGEOTTO
+	db 10, Turtwig
+	db 12, Turtwig
 	db 12, Turtwig
 	db 10, BELLSPROUT
 	db 14, Turtwig
 	db 14, Turtwig
 	; day
 	db 10, Turtwig
-	db 10, PIDGEY
-	db 12, PIDGEOTTO
+	db 10, Turtwig
+	db 12, Turtwig
 	db 12, Turtwig
 	db 10, BELLSPROUT
 	db 14, Turtwig
@@ -764,7 +764,7 @@ KantoGrassWildMons:
 	db 28, DODUO
 	db 28, SANDSLASH
 	db 32, PONYTA
-	db 30, RATICATE
+	db 30, Turtwig
 	db 30, DODUO
 	db 30, ARBOK
 	db 30, ARBOK
@@ -772,15 +772,15 @@ KantoGrassWildMons:
 	db 28, DODUO
 	db 28, SANDSLASH
 	db 32, PONYTA
-	db 30, RATICATE
+	db 30, Turtwig
 	db 30, DODUO
 	db 30, ARBOK
 	db 30, ARBOK
 	; nite
 	db 28, NOCTOWL
-	db 28, RATICATE
+	db 28, Turtwig
 	db 32, NOCTOWL
-	db 30, RATICATE
+	db 30, Turtwig
 	db 30, QUAGSIRE
 	db 30, QUAGSIRE
 	db 30, QUAGSIRE
@@ -791,7 +791,7 @@ KantoGrassWildMons:
 	; morn
 	db 28, DODUO
 	db 28, ARBOK
-	db 30, RATICATE
+	db 30, Turtwig
 	db 30, DODUO
 	db 32, PONYTA
 	db 30, DODRIO
@@ -799,7 +799,7 @@ KantoGrassWildMons:
 	; day
 	db 28, DODUO
 	db 28, ARBOK
-	db 30, RATICATE
+	db 30, Turtwig
 	db 30, DODUO
 	db 32, PONYTA
 	db 30, DODRIO
@@ -807,7 +807,7 @@ KantoGrassWildMons:
 	; nite
 	db 28, QUAGSIRE
 	db 28, NOCTOWL
-	db 30, RATICATE
+	db 30, Turtwig
 	db 30, QUAGSIRE
 	db 32, NOCTOWL
 	db 32, NOCTOWL

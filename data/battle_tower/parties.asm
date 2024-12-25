@@ -4,7 +4,7 @@ BattleTowerMons:
 
 ; BattleTowerMons group 1
 
-	db JOLTEON
+	db Jolteon
 	db MIRACLEBERRY
 	db THUNDERBOLT, HYPER_BEAM, SHADOW_BALL, ROAR
 	dw 0 ; OT ID
@@ -30,7 +30,7 @@ BattleTowerMons:
 	bigdw 31 ; SDef
 	db "SANDA-SU@@@"
 
-	db ESPEON
+	db Espeon
 	db LEFTOVERS
 	db MUD_SLAP, PSYCHIC_M, PSYCH_UP, TOXIC
 	dw 0 ; OT ID
@@ -56,7 +56,7 @@ BattleTowerMons:
 	bigdw 31 ; SDef
 	db "E-HUi@@@@@@"
 
-	db UMBREON
+	db Umbreon
 	db GOLD_BERRY
 	db SHADOW_BALL, IRON_TAIL, PSYCH_UP, TOXIC
 	dw 0 ; OT ID
@@ -553,7 +553,7 @@ BattleTowerMons:
 
 ; BattleTowerMons group 2
 
-	db UMBREON
+	db Umbreon
 	db LEFTOVERS
 	db PROTECT, TOXIC, MUD_SLAP, ATTRACT
 	dw 0 ; OT ID
@@ -1102,7 +1102,7 @@ BattleTowerMons:
 
 ; BattleTowerMons group 3
 
-	db JOLTEON
+	db Jolteon
 	db MIRACLEBERRY
 	db THUNDERBOLT, THUNDER_WAVE, ROAR, MUD_SLAP
 	dw 0 ; OT ID
@@ -1492,7 +1492,7 @@ BattleTowerMons:
 	bigdw 70 ; SDef
 	db "RANTA-N@@@@"
 
-	db ESPEON
+	db Espeon
 	db MIRACLEBERRY
 	db CONFUSION, SWIFT, TOXIC, PSYCH_UP
 	dw 0 ; OT ID
@@ -1596,7 +1596,7 @@ BattleTowerMons:
 	bigdw 65 ; SDef
 	db "RINGUMA@@@@"
 
-	db FEAROW
+	db Turtwig
 	db BRIGHTPOWDER
 	db MIRROR_MOVE, PURSUIT, PECK, SWIFT
 	dw 0 ; OT ID
@@ -2330,7 +2330,7 @@ BattleTowerMons:
 	bigdw 143 ; SDef
 	db "RAPURASU@@@"
 
-	db JOLTEON
+	db Jolteon
 	db KINGS_ROCK
 	db THUNDERBOLT, THUNDER_WAVE, SHADOW_BALL, HIDDEN_POWER
 	dw 0 ; OT ID
@@ -2983,7 +2983,7 @@ BattleTowerMons:
 	bigdw 172 ; SDef
 	db "KAIRIyu-@@@"
 
-	db UMBREON
+	db Umbreon
 	db GOLD_BERRY
 	db MUD_SLAP, MOONLIGHT, PSYCHIC_M, FAINT_ATTACK
 	dw 0 ; OT ID
@@ -3298,7 +3298,7 @@ BattleTowerMons:
 
 ; BattleTowerMons group 7
 
-	db JOLTEON
+	db Jolteon
 	db MIRACLEBERRY
 	db THUNDERBOLT, HYPER_BEAM, SHADOW_BALL, ROAR
 	dw 0 ; OT ID
@@ -3324,7 +3324,7 @@ BattleTowerMons:
 	bigdw 201 ; SDef
 	db "SANDA-SU@@@"
 
-	db VAPOREON
+	db Vaporeon
 	db LEFTOVERS
 	db BLIZZARD, SHADOW_BALL, SURF, MUD_SLAP
 	dw 0 ; OT ID
@@ -3350,7 +3350,7 @@ BattleTowerMons:
 	bigdw 197 ; SDef
 	db "SIyaWA-ZU@@"
 
-	db UMBREON
+	db Umbreon
 	db GOLD_BERRY
 	db FAINT_ATTACK, MOONLIGHT, PSYCH_UP, TOXIC
 	dw 0 ; OT ID
@@ -3532,7 +3532,7 @@ BattleTowerMons:
 	bigdw 151 ; SDef
 	db "NAtuSI-@@@@"
 
-	db UMBREON
+	db Umbreon
 	db GOLD_BERRY
 	db MOONLIGHT, FAINT_ATTACK, PSYCHIC_M, SHADOW_BALL
 	dw 0 ; OT ID
@@ -3847,7 +3847,7 @@ BattleTowerMons:
 
 ; BattleTowerMons group 8
 
-	db JOLTEON
+	db Jolteon
 	db MIRACLEBERRY
 	db THUNDER_WAVE, THUNDERBOLT, IRON_TAIL, ROAR
 	dw 0 ; OT ID
@@ -4396,7 +4396,7 @@ BattleTowerMons:
 
 ; BattleTowerMons group 9
 
-	db UMBREON
+	db Umbreon
 	db KINGS_ROCK
 	db FAINT_ATTACK, MUD_SLAP, MOONLIGHT, CONFUSE_RAY
 	dw 0 ; OT ID
@@ -4630,7 +4630,7 @@ BattleTowerMons:
 	bigdw 255 ; SDef
 	db "RAPURASU@@@"
 
-	db ESPEON
+	db Espeon
 	db GOLD_BERRY
 	db PSYCHIC_M, SHADOW_BALL, SUNNY_DAY, MORNING_SUN
 	dw 0 ; OT ID
@@ -4838,7 +4838,7 @@ BattleTowerMons:
 	bigdw 493 ; SDef
 	db "TUBOTUBO@@@"
 
-	db FLAREON
+	db Flareon
 	db MINT_BERRY
 	db HYPER_BEAM, FLAMETHROWER, SHADOW_BALL, ROAR
 	dw 0 ; OT ID
@@ -5023,7 +5023,7 @@ BattleTowerMons:
 	bigdw 284 ; SDef
 	db "KINGUDORA@@"
 
-	db JOLTEON
+	db Jolteon
 	db BRIGHTPOWDER
 	db THUNDERBOLT, ROAR, THUNDER_WAVE, IRON_TAIL
 	dw 0 ; OT ID
@@ -5205,7 +5205,7 @@ BattleTowerMons:
 	bigdw 218 ; SDef
 	db "HAGANE-RU@@"
 
-	db FEAROW
+	db Turtwig
 	db KINGS_ROCK
 	db DRILL_PECK, STEEL_WING, HYPER_BEAM, MUD_SLAP
 	dw 0 ; OT ID

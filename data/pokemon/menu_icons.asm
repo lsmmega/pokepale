@@ -14,16 +14,15 @@ MonMenuIcons:
 	db ICON_PIKACHU     ; Pichu
 	db ICON_PIKACHU     ; Pikachu
 	db ICON_PIKACHU     ; Raichu
-	db ICON_CATERPILLAR ; WEEDLE
-	db ICON_CATERPILLAR ; KAKUNA
-	db ICON_BUG         ; BEEDRILL
-	db ICON_BIRD        ; PIDGEY
-	db ICON_BIRD        ; PIDGEOTTO
-	db ICON_BIRD        ; PIDGEOT
-	db ICON_FOX         ; RATTATA
-	db ICON_FOX         ; RATICATE
-	db ICON_BIRD        ; SPEAROW
-	db ICON_BIRD        ; FEAROW
+	db ICON_FOX         ; EEVEE
+	db ICON_FOX         ; VAPOREON
+	db ICON_FOX         ; JOLTEON
+	db ICON_FOX         ; FLAREON
+	db ICON_FOX         ; ESPEON
+	db ICON_FOX         ; UMBREON
+	db ICON_FOX         ; LEAFEON
+	db ICON_FOX         ; GLACEON
+	db ICON_FOX         ; SYLVEON
 	db ICON_SERPENT     ; EKANS
 	db ICON_SERPENT     ; ARBOK
 	db ICON_MONSTER     ; SANDSHREW
@@ -132,10 +131,6 @@ MonMenuIcons:
 	db ICON_GYARADOS    ; GYARADOS
 	db ICON_LAPRAS      ; LAPRAS
 	db ICON_BLOB        ; DITTO
-	db ICON_FOX         ; EEVEE
-	db ICON_FOX         ; VAPOREON
-	db ICON_FOX         ; JOLTEON
-	db ICON_FOX         ; FLAREON
 	db ICON_VOLTORB     ; PORYGON
 	db ICON_SHELL       ; OMANYTE
 	db ICON_SHELL       ; OMASTAR
@@ -194,8 +189,6 @@ MonMenuIcons:
 	db ICON_BUG         ; YANMA
 	db ICON_MONSTER     ; WOOPER
 	db ICON_MONSTER     ; QUAGSIRE
-	db ICON_FOX         ; ESPEON
-	db ICON_FOX         ; UMBREON
 	db ICON_BIRD        ; MURKROW
 	db ICON_SLOWPOKE    ; SLOWKING
 	db ICON_GHOST       ; MISDREAVUS

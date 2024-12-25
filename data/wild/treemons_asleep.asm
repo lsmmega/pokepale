@@ -4,10 +4,10 @@ AsleepTreeMonsNite:
 	db Turtwig
 	db Turtwig
 	db Turtwig
-	db WEEDLE
-	db KAKUNA
-	db BEEDRILL
-	db SPEAROW
+	db Turtwig
+	db Turtwig
+	db Turtwig
+	db Turtwig
 	db EKANS
 	db EXEGGCUTE
 	db LEDYBA
