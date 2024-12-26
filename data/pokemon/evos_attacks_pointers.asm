@@ -23,6 +23,8 @@ EvosAttacksPointers::
 	dw LeafeonEvosAttacks
 	dw GlaceonEvosAttacks
 	dw SylveonEvosAttacks
+	dw VulpixEvosAttacks
+	dw NinetalesEvosAttacks
 	dw EkansEvosAttacks
 	dw ArbokEvosAttacks
 	dw SandshrewEvosAttacks
@@ -35,8 +37,6 @@ EvosAttacksPointers::
 	dw NidokingEvosAttacks
 	dw ClefairyEvosAttacks
 	dw ClefableEvosAttacks
-	dw VulpixEvosAttacks
-	dw NinetalesEvosAttacks
 	dw JigglypuffEvosAttacks
 	dw WigglytuffEvosAttacks
 	dw ZubatEvosAttacks

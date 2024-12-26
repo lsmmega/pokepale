@@ -21,6 +21,8 @@ FramesPointers:
 	dw LeafeonFrames
 	dw GlaceonFrames
 	dw SylveonFrames
+	dw VulpixFrames
+	dw NinetalesFrames
 	dw EkansFrames
 	dw ArbokFrames
 	dw SandshrewFrames
@@ -33,8 +35,6 @@ FramesPointers:
 	dw NidokingFrames
 	dw ClefairyFrames
 	dw ClefableFrames
-	dw VulpixFrames
-	dw NinetalesFrames
 	dw JigglypuffFrames
 	dw WigglytuffFrames
 	dw ZubatFrames

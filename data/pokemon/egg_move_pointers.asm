@@ -21,6 +21,8 @@ EggMovePointers::
 	dw NoEggMoves
 	dw NoEggMoves
 	dw NoEggMoves
+	dw NoEggMoves
+	dw NoEggMoves
 	dw EkansEggMoves
 	dw NoEggMoves
 	dw SandshrewEggMoves
@@ -32,8 +34,6 @@ EggMovePointers::
 	dw NoEggMoves
 	dw NoEggMoves
 	dw NoEggMoves
-	dw NoEggMoves
-	dw VulpixEggMoves
 	dw NoEggMoves
 	dw NoEggMoves
 	dw NoEggMoves

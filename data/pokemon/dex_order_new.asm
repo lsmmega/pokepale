@@ -110,8 +110,8 @@ NewPokedexOrder:
 	db AIPOM
 	db SNUBBULL
 	db GRANBULL
-	db VULPIX
-	db NINETALES
+	db Vulpix
+	db Ninetales
 	db GROWLITHE
 	db ARCANINE
 	db STANTLER

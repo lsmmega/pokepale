@@ -21,6 +21,8 @@ BitmasksPointers:
 	dw LeafeonBitmasks
 	dw GlaceonBitmasks
 	dw SylveonBitmasks
+	dw VulpixBitmasks
+	dw NinetalesBitmasks
 	dw EkansBitmasks
 	dw ArbokBitmasks
 	dw SandshrewBitmasks
@@ -33,8 +35,6 @@ BitmasksPointers:
 	dw NidokingBitmasks
 	dw ClefairyBitmasks
 	dw ClefableBitmasks
-	dw VulpixBitmasks
-	dw NinetalesBitmasks
 	dw JigglypuffBitmasks
 	dw WigglytuffBitmasks
 	dw ZubatBitmasks

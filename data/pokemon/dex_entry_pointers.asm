@@ -22,6 +22,8 @@ PokedexDataPointerTable:
 	dw LeafeonPokedexEntry
 	dw GlaceonPokedexEntry
 	dw SylveonPokedexEntry
+	dw VulpixPokedexEntry
+	dw NinetalesPokedexEntry
 	dw EkansPokedexEntry
 	dw ArbokPokedexEntry
 	dw SandshrewPokedexEntry
@@ -34,8 +36,6 @@ PokedexDataPointerTable:
 	dw NidokingPokedexEntry
 	dw ClefairyPokedexEntry
 	dw ClefablePokedexEntry
-	dw VulpixPokedexEntry
-	dw NinetalesPokedexEntry
 	dw JigglypuffPokedexEntry
 	dw WigglytuffPokedexEntry
 	dw ZubatPokedexEntry

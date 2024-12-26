@@ -19,29 +19,31 @@
 ; - FramesPointers (see gfx/pokemon/frame_pointers.asm)
 ; - EZChat_SortedPokemon (see data/pokemon/ezchat_order.asm)
 	const_def 1
-	const Turtwig  ; 01
-	const Grotle    ; 02
+	const Turtwig    ; 01
+	const Grotle     ; 02
 	const Torterra   ; 03
-	const Fennekin ; 04
-	const Braixen ; 05
-	const Delphox  ; 06
-	const Quaxly   ; 07
-	const Quaxwell  ; 08
+	const Fennekin   ; 04
+	const Braixen    ; 05
+	const Delphox    ; 06
+	const Quaxly     ; 07
+	const Quaxwell   ; 08
 	const Quaquaval  ; 09
-	const Pichu ; 0a
-	const Pikachu ; 0b
-	const Raichu ; 0c
-	const Eevee ; 0d
-	const Vaporeon ; 0e
-	const Jolteon ; 0f
-	const Flareon ; 10
-	const Espeon ; 11
-	const Umbreon ; 12
-	const Leafeon ; 13
-	const Glaceon ; 14
-	const Sylveon ; 15
-	const EKANS      ; 17
-	const ARBOK      ; 18
+	const Pichu      ; 0a
+	const Pikachu    ; 0b
+	const Raichu     ; 0c
+	const Eevee      ; 0d
+	const Vaporeon   ; 0e
+	const Jolteon    ; 0f
+	const Flareon    ; 10
+	const Espeon     ; 11
+	const Umbreon    ; 12
+	const Leafeon    ; 13
+	const Glaceon    ; 14
+	const Sylveon    ; 15
+	const Vulpix     ; 16
+	const Ninetales  ; 17
+	const EKANS      ; 18
+	const ARBOK      ; 19
 	const SANDSHREW  ; 1b
 	const SANDSLASH  ; 1c
 	const NIDORAN_F  ; 1d
@@ -52,8 +54,6 @@
 	const NIDOKING   ; 22
 	const CLEFAIRY   ; 23
 	const CLEFABLE   ; 24
-	const VULPIX     ; 25
-	const NINETALES  ; 26
 	const JIGGLYPUFF ; 27
 	const WIGGLYTUFF ; 28
 	const ZUBAT      ; 29

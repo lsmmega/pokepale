@@ -23,6 +23,8 @@ MonMenuIcons:
 	db ICON_FOX         ; LEAFEON
 	db ICON_FOX         ; GLACEON
 	db ICON_FOX         ; SYLVEON
+	db ICON_FOX         ; VULPIX
+	db ICON_FOX         ; NINETALES	
 	db ICON_SERPENT     ; EKANS
 	db ICON_SERPENT     ; ARBOK
 	db ICON_MONSTER     ; SANDSHREW
@@ -35,8 +37,6 @@ MonMenuIcons:
 	db ICON_MONSTER     ; NIDOKING
 	db ICON_CLEFAIRY    ; CLEFAIRY
 	db ICON_CLEFAIRY    ; CLEFABLE
-	db ICON_FOX         ; VULPIX
-	db ICON_FOX         ; NINETALES
 	db ICON_JIGGLYPUFF  ; JIGGLYPUFF
 	db ICON_JIGGLYPUFF  ; WIGGLYTUFF
 	db ICON_BAT         ; ZUBAT

@@ -943,7 +943,7 @@ CooltrainerFGroup:
 	; COOLTRAINERF (2)
 	db "LOIS@", TRAINERTYPE_MOVES
 	db 25, SKIPLOOM,   SYNTHESIS, POISONPOWDER, MEGA_DRAIN, LEECH_SEED
-	db 25, NINETALES,  EMBER, QUICK_ATTACK, CONFUSE_RAY, SAFEGUARD
+	db 25, Ninetales,  EMBER, QUICK_ATTACK, CONFUSE_RAY, SAFEGUARD
 	db -1 ; end
 
 	; COOLTRAINERF (3)
@@ -1010,7 +1010,7 @@ CooltrainerFGroup:
 	db "CAROL@", TRAINERTYPE_NORMAL
 	db 35, ELECTRODE
 	db 35, STARMIE
-	db 35, NINETALES
+	db 35, Ninetales
 	db -1 ; end
 
 	; COOLTRAINERF (14)
@@ -2541,7 +2541,7 @@ FirebreatherGroup:
 
 	; FIREBREATHER (7)
 	db "RAY@", TRAINERTYPE_NORMAL
-	db  9, VULPIX
+	db  9, Vulpix
 	db -1 ; end
 
 	; FIREBREATHER (8)
@@ -2779,7 +2779,7 @@ PicnickerGroup:
 
 	; PICNICKER (4)
 	db "KIM@", TRAINERTYPE_NORMAL
-	db 15, VULPIX
+	db 15, Vulpix
 	db -1 ; end
 
 	; PICNICKER (5)
@@ -3297,7 +3297,7 @@ KimonoGirlGroup:
 	; KIMONO_GIRL (1)
 	db "NAOKO@", TRAINERTYPE_NORMAL
 	db 20, SKIPLOOM
-	db 20, VULPIX
+	db 20, Vulpix
 	db 18, SKIPLOOM
 	db -1 ; end
 

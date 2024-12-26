@@ -141,7 +141,7 @@ AlphabeticalPokedexOrder:
 	db NIDORAN_M
 	db NIDORINA
 	db NIDORINO
-	db NINETALES
+	db Ninetales
 	db NOCTOWL
 	db OCTILLERY
 	db ODDISH
@@ -233,7 +233,7 @@ AlphabeticalPokedexOrder:
 	db VICTREEBEL
 	db VILEPLUME
 	db VOLTORB
-	db VULPIX
+	db Vulpix
 	db WEEPINBELL
 	db WEEZING
 	db WIGGLYTUFF

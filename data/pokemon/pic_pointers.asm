@@ -24,6 +24,8 @@ PokemonPicPointers::
 	dba_pics LeafeonFrontpic, LeafeonBackpic
 	dba_pics GlaceonFrontpic, GlaceonBackpic
 	dba_pics SylveonFrontpic, SylveonBackpic
+	dba_pics VulpixFrontpic, VulpixBackpic
+	dba_pics NinetalesFrontpic, NinetalesBackpic
 	dba_pics EkansFrontpic, EkansBackpic
 	dba_pics ArbokFrontpic, ArbokBackpic
 	dba_pics SandshrewFrontpic, SandshrewBackpic
@@ -36,8 +38,6 @@ PokemonPicPointers::
 	dba_pics NidokingFrontpic, NidokingBackpic
 	dba_pics ClefairyFrontpic, ClefairyBackpic
 	dba_pics ClefableFrontpic, ClefableBackpic
-	dba_pics VulpixFrontpic, VulpixBackpic
-	dba_pics NinetalesFrontpic, NinetalesBackpic
 	dba_pics JigglypuffFrontpic, JigglypuffBackpic
 	dba_pics WigglytuffFrontpic, WigglytuffBackpic
 	dba_pics ZubatFrontpic, ZubatBackpic

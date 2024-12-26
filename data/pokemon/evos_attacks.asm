@@ -190,6 +190,15 @@ SylveonEvosAttacks:
 	db 0 ; no more evolutions
 	db 0 ; no more level-up moves
 
+VulpixEvosAttacks:
+	db EVOLVE_ITEM, FIRE_STONE, Ninetales
+	db 0 ; no more evolutions
+	db 0 ; no more level-up moves
+
+NinetalesEvosAttacks:
+	db 0 ; no more evolutions
+	db 0 ; no more level-up moves
+
 EkansEvosAttacks:
 	db EVOLVE_LEVEL, 22, ARBOK
 	db 0 ; no more evolutions
@@ -335,28 +344,6 @@ ClefableEvosAttacks:
 	db 1, DOUBLESLAP
 	db 1, METRONOME
 	db 1, MOONLIGHT
-	db 0 ; no more level-up moves
-
-VulpixEvosAttacks:
-	db EVOLVE_ITEM, FIRE_STONE, NINETALES
-	db 0 ; no more evolutions
-	db 1, EMBER
-	db 1, TAIL_WHIP
-	db 7, QUICK_ATTACK
-	db 13, ROAR
-	db 19, CONFUSE_RAY
-	db 25, SAFEGUARD
-	db 31, FLAMETHROWER
-	db 37, FIRE_SPIN
-	db 0 ; no more level-up moves
-
-NinetalesEvosAttacks:
-	db 0 ; no more evolutions
-	db 1, EMBER
-	db 1, QUICK_ATTACK
-	db 1, CONFUSE_RAY
-	db 1, SAFEGUARD
-	db 43, FIRE_SPIN
 	db 0 ; no more level-up moves
 
 JigglypuffEvosAttacks:

@@ -21,6 +21,8 @@ AnimationPointers:
 	dw LeafeonAnimation
 	dw GlaceonAnimation
 	dw SylveonAnimation
+	dw VulpixAnimation
+	dw NinetalesAnimation
 	dw EkansAnimation
 	dw ArbokAnimation
 	dw SandshrewAnimation
@@ -33,8 +35,6 @@ AnimationPointers:
 	dw NidokingAnimation
 	dw ClefairyAnimation
 	dw ClefableAnimation
-	dw VulpixAnimation
-	dw NinetalesAnimation
 	dw JigglypuffAnimation
 	dw WigglytuffAnimation
 	dw ZubatAnimation

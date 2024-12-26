@@ -21,6 +21,8 @@ AnimationIdlePointers:
 	dw LeafeonAnimationIdle
 	dw GlaceonAnimationIdle
 	dw SylveonAnimationIdle
+	dw VulpixAnimationIdle
+	dw NinetalesAnimationIdle
 	dw EkansAnimationIdle
 	dw ArbokAnimationIdle
 	dw SandshrewAnimationIdle
@@ -33,8 +35,6 @@ AnimationIdlePointers:
 	dw NidokingAnimationIdle
 	dw ClefairyAnimationIdle
 	dw ClefableAnimationIdle
-	dw VulpixAnimationIdle
-	dw NinetalesAnimationIdle
 	dw JigglypuffAnimationIdle
 	dw WigglytuffAnimationIdle
 	dw ZubatAnimationIdle

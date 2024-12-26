@@ -78,8 +78,8 @@ Pokered_MonIndices:
 	db CORSOLA ; MISSINGNO.
 	db REMORAID ; MISSINGNO.
 	db OCTILLERY ; MISSINGNO.
-	db VULPIX
-	db NINETALES
+	db Vulpix
+	db Ninetales
 	db Pichu
 	db Pikachu
 	db Raichu
