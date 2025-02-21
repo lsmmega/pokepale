@@ -71,10 +71,6 @@ tools:
 
 
 RGBASMFLAGS = -Q8 -P includes.asm -Weverything -Wtruncation=1
-# Create a sym/map for debug purposes if `make` run with `DEBUG=1`
-ifeq ($(DEBUG),1)
-RGBASMFLAGS += -E
-endif
 
 $(pokepale_obj): RGBASMFLAGS +=
 
