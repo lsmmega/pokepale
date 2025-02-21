@@ -8,7 +8,6 @@ INCLUDE "macros/data.asm"
 INCLUDE "macros/code.asm"
 INCLUDE "macros/gfx.asm"
 INCLUDE "macros/coords.asm"
-INCLUDE "macros/vc.asm"
 
 INCLUDE "macros/scripts/audio.asm"
 INCLUDE "macros/scripts/maps.asm"
@@ -69,7 +68,3 @@ INCLUDE "constants/trainer_constants.asm"
 INCLUDE "constants/trainer_data_constants.asm"
 INCLUDE "constants/type_constants.asm"
 INCLUDE "constants/battle_tower_constants.asm"
-
-if DEF(_CRYSTAL11_VC)
-INCLUDE "vc/pokecrystal11.constants.asm"
-endc
