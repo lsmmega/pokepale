@@ -100,11 +100,10 @@
 	const MUSIC_MOBILE_ADAPTER               ; 5f
 	const MUSIC_BUENAS_PASSWORD              ; 60
 	const MUSIC_MYSTICALMAN_ENCOUNTER        ; 61
-	const MUSIC_CRYSTAL_OPENING              ; 62
-	const MUSIC_BATTLE_TOWER_THEME           ; 63
-	const MUSIC_SUICUNE_BATTLE               ; 64
-	const MUSIC_BATTLE_TOWER_LOBBY           ; 65
-	const MUSIC_MOBILE_CENTER                ; 66
+	const MUSIC_BATTLE_TOWER_THEME           ; 62
+	const MUSIC_SUICUNE_BATTLE               ; 63
+	const MUSIC_BATTLE_TOWER_LOBBY           ; 64
+	const MUSIC_MOBILE_CENTER                ; 65
 DEF NUM_MUSIC_SONGS EQU const_value
 
 ; GetMapMusic picks music for this value (see home/map.asm)
