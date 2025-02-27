@@ -57,7 +57,6 @@ ItemDescriptions:
 	dw CoinCaseDesc
 	dw ItemfinderDesc
 	dw TeruSama5Desc
-	dw ExpShareDesc
 	dw OldRodDesc
 	dw GoodRodDesc
 	dw SilverLeafDesc
@@ -257,7 +256,7 @@ ItemDescriptions:
 	dw TeruSama31Desc
 	dw TeruSama32Desc
 	dw TeruSama33Desc
-	assert_table_length $ff
+	assert_table_length $fe
 
 MasterBallDesc:
 	db   "The best BALL. It"
@@ -477,10 +476,6 @@ ItemfinderDesc:
 
 TeruSama5Desc:
 	db   "?@"
-
-ExpShareDesc:
-	db   "Shares battle EXP."
-	next "Points. (HOLD)@"
 
 OldRodDesc:
 	db   "Use by water to"
