@@ -56,7 +56,6 @@ ItemNames::
 	li "COIN CASE"
 	li "ITEMFINDER"
 	li "TERU-SAMA"
-	li "EXP.SHARE"
 	li "OLD ROD"
 	li "GOOD ROD"
 	li "SILVER LEAF"
@@ -259,4 +258,4 @@ ItemNames::
 	li "TERU-SAMA"
 	li "TERU-SAMA"
 	li "?"
-	assert_list_length $100
+	assert_list_length $ff
