@@ -734,14 +734,8 @@ wDexListingCursorBackup:: db
 wBackupDexListingCursor:: db
 wBackupDexListingPage:: db
 wDexCurLocation:: db
-if DEF(_CRYSTAL11)
-wPokedexStatus:: db
 wPokedexDataEnd::
-else
-wPokedexDataEnd::
-	ds 1
-endc
-	ds 2
+	ds 3
 
 NEXTU
 ; pokegear
@@ -1251,49 +1245,6 @@ wccb8:: ds 1
 wccb9:: ds 1
 wccba:: ds 90
 
-
-if DEF(_DEBUG)
-SECTION UNION "Overworld Map", WRAM0
-
-; debug room RTC values
-wDebugRoomRTCSec::  db
-wDebugRoomRTCMin::  db
-wDebugRoomRTCHour:: db
-wDebugRoomRTCDay::  dw
-wDebugRoomRTCCurSec::  db
-wDebugRoomRTCCurMin::  db
-wDebugRoomRTCCurHour:: db
-wDebugRoomRTCCurDay::  dw
-
-; debug room paged values
-wDebugRoomCurPage::        db
-wDebugRoomCurValue::       db
-wDebugRoomAFunction::      dw
-wDebugRoomStartFunction::  dw
-wDebugRoomSelectFunction:: dw
-wDebugRoomAutoFunction::   dw
-wDebugRoomPageCount::      db
-wDebugRoomPagesPointer::   dw
-
-wDebugRoomROMChecksum:: dw
-wDebugRoomCurChecksumBank:: db
-
-UNION
-; debug room new item values
-wDebugRoomItemID::       db
-wDebugRoomItemQuantity:: db
-NEXTU
-; debug room new pokemon values
-wDebugRoomMon::    box_struct wDebugRoomMon
-wDebugRoomMonBox:: db
-NEXTU
-; debug room GB ID values
-wDebugRoomGBID:: dw
-ENDU
-
-endc
-
-
 SECTION "Video", WRAM0
 
 UNION
@@ -1528,14 +1479,10 @@ wCreditsLYOverride:: db
 NEXTU
 ; pokedex
 wPrevDexEntryJumptableIndex:: db
-if DEF(_CRYSTAL11)
-wPrevDexEntryBackup:: db
-else
 ; BUG: Crystal 1.0 reused the same byte in WRAM for
 ; wPokedexStatus and wPrevDexEntryBackup.
 wPokedexStatus::
 wPrevDexEntryBackup:: db
-endc
 wUnusedPokedexByte:: db
 
 NEXTU

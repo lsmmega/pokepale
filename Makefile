@@ -1,10 +1,5 @@
 roms := \
-	pokepale.gbc \
-	pokecrystal11.gbc \
-	pokecrystal_au.gbc \
-	pokecrystal_debug.gbc \
-	pokecrystal11_debug.gbc
-patches := pokecrystal11.patch
+	pokepale.gbc
 
 rom_obj := \
 	audio.o \
@@ -25,21 +20,10 @@ rom_obj := \
 	lib/mobile/main.o \
 	lib/mobile/mail.o
 
-pokepale_obj            := $(rom_obj:.o=.o)
-pokecrystal11_obj       := $(rom_obj:.o=11.o)
-pokecrystal_au_obj      := $(rom_obj:.o=_au.o)
-pokecrystal_debug_obj   := $(rom_obj:.o=_debug.o)
-pokecrystal11_debug_obj := $(rom_obj:.o=11_debug.o)
-pokecrystal11_vc_obj    := $(rom_obj:.o=11_vc.o)
+pokepale_obj := $(rom_obj:.o=.o)
 
 
 ### Build tools
-
-ifeq (,$(shell which sha1sum))
-SHA1 := shasum
-else
-SHA1 := sha1sum
-endif
 
 RGBDS ?=
 RGBASM  ?= $(RGBDS)rgbasm
@@ -51,18 +35,13 @@ RGBLINK ?= $(RGBDS)rgblink
 ### Build targets
 
 .SUFFIXES:
-.PHONY: all pale crystal11 crystal_au crystal_debug crystal11_debug clean tidy compare tools
+.PHONY: all pale clean tidy tools
 .SECONDEXPANSION:
 .PRECIOUS:
 .SECONDARY:
 
 all: pale
-pale:            pokepale.gbc
-crystal11:       pokecrystal11.gbc
-crystal_au:      pokecrystal_au.gbc
-crystal_debug:   pokecrystal_debug.gbc
-crystal11_debug: pokecrystal11_debug.gbc
-crystal11_vc:    pokecrystal11.patch
+pale: pokepale.gbc
 
 clean: tidy
 	find gfx \
@@ -83,42 +62,17 @@ tidy:
 	$(RM) $(roms) \
 	      $(roms:.gbc=.sym) \
 	      $(roms:.gbc=.map) \
-	      $(patches) \
-	      $(patches:.patch=_vc.gbc) \
-	      $(patches:.patch=_vc.sym) \
-	      $(patches:.patch=_vc.map) \
-	      $(patches:%.patch=vc/%.constants.sym) \
 	      $(pokepale_obj) \
-	      $(pokecrystal11_obj) \
-	      $(pokecrystal11_vc_obj) \
-	      $(pokecrystal_au_obj) \
-	      $(pokecrystal_debug_obj) \
-	      $(pokecrystal11_debug_obj) \
 	      rgbdscheck.o
 	$(MAKE) clean -C tools/
-
-compare: $(roms) $(patches)
-	@$(SHA1) -c roms.sha1
 
 tools:
 	$(MAKE) -C tools/
 
 
 RGBASMFLAGS = -Q8 -P includes.asm -Weverything -Wtruncation=1
-# Create a sym/map for debug purposes if `make` run with `DEBUG=1`
-ifeq ($(DEBUG),1)
-RGBASMFLAGS += -E
-endif
 
-$(pokepale_obj):            RGBASMFLAGS +=
-$(pokecrystal11_obj):       RGBASMFLAGS += -D _CRYSTAL11
-$(pokecrystal_au_obj):      RGBASMFLAGS += -D _CRYSTAL11 -D _CRYSTAL_AU
-$(pokecrystal_debug_obj):   RGBASMFLAGS += -D _DEBUG
-$(pokecrystal11_debug_obj): RGBASMFLAGS += -D _CRYSTAL11 -D _DEBUG
-$(pokecrystal11_vc_obj):    RGBASMFLAGS += -D _CRYSTAL11 -D _CRYSTAL11_VC
-
-%.patch: %_vc.gbc %.gbc vc/%.patch.template
-	tools/make_patch $*_vc.sym $^ $@
+$(pokepale_obj): RGBASMFLAGS +=
 
 rgbdscheck.o: rgbdscheck.asm
 	$(RGBASM) -o $@ $<
@@ -140,27 +94,15 @@ endef
 
 # Dependencies for shared objects objects
 $(foreach obj, $(pokepale_obj), $(eval $(call DEP,$(obj),$(obj:.o=.asm))))
-$(foreach obj, $(pokecrystal11_obj), $(eval $(call DEP,$(obj),$(obj:11.o=.asm))))
-$(foreach obj, $(pokecrystal_au_obj), $(eval $(call DEP,$(obj),$(obj:_au.o=.asm))))
-$(foreach obj, $(pokecrystal_debug_obj), $(eval $(call DEP,$(obj),$(obj:_debug.o=.asm))))
-$(foreach obj, $(pokecrystal11_debug_obj), $(eval $(call DEP,$(obj),$(obj:11_debug.o=.asm))))
-$(foreach obj, $(pokecrystal11_vc_obj), $(eval $(call DEP,$(obj),$(obj:11_vc.o=.asm))))
 
 endif
 
 
-pokepale_opt            = -Cjv -t PM_PALE -i BYTE -n 0 -k 01 -l 0x33 -m MBC3+TIMER+RAM+BATTERY -r 3 -p 0
-pokecrystal11_opt       = -Cjv -t PM_CRYSTAL -i BYTE -n 1 -k 01 -l 0x33 -m MBC3+TIMER+RAM+BATTERY -r 3 -p 0
-pokecrystal_au_opt      = -Cjv -t PM_CRYSTAL -i BYTU -n 0 -k 01 -l 0x33 -m MBC3+TIMER+RAM+BATTERY -r 3 -p 0
-pokecrystal_debug_opt   = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m MBC3+TIMER+RAM+BATTERY -r 3 -p 0
-pokecrystal11_debug_opt = -Cjv -t PM_CRYSTAL -i BYTE -n 1 -k 01 -l 0x33 -m MBC3+TIMER+RAM+BATTERY -r 3 -p 0
-pokecrystal11_vc_opt    = -Cjv -t PM_CRYSTAL -i BYTE -n 1 -k 01 -l 0x33 -m MBC3+TIMER+RAM+BATTERY -r 3 -p 0
+pokepale_opt = -Cjv -t PM_PALE -i BYTE -n 0 -k 01 -l 0x33 -m MBC3+TIMER+RAM+BATTERY -r 3 -p 0
 
 %.gbc: $$(%_obj) layout.link
 	$(RGBLINK) -n $*.sym -m $*.map -l layout.link -o $@ $(filter %.o,$^)
 	$(RGBFIX) $($*_opt) $@
-	tools/stadium $@
-
 
 ### LZ compression rules
 

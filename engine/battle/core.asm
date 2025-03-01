@@ -5612,18 +5612,15 @@ MoveInfoBox:
 	and PP_MASK
 	ld [wStringBuffer1], a
 	call .PrintPP
-	farcall UpdateMoveData
-	ld a, [wPlayerMoveStruct + MOVE_ANIM]
-	ld b, a
-	farcall GetMoveCategoryName
+
 	hlcoord 1, 9
-	ld de, wStringBuffer1
+	ld de, .Type
 	call PlaceString
 
-	ld h, b
-	ld l, c
+	hlcoord 7, 11
 	ld [hl], "/"
 
+	callfar UpdateMoveData
 	ld a, [wPlayerMoveStruct + MOVE_ANIM]
 	ld b, a
 	hlcoord 2, 10
@@ -5634,6 +5631,8 @@ MoveInfoBox:
 
 .Disabled:
 	db "Disabled!@"
+.Type:
+	db "TYPE/@"
 
 .PrintPP:
 	hlcoord 5, 11
@@ -8834,7 +8833,6 @@ InitBattleDisplay:
 	predef PlaceGraphic
 	xor a
 	ldh [hWY], a
-	vc_hook Unknown_InitBattleDisplay
 	ldh [rWY], a
 	call WaitBGMap
 	call HideSprites

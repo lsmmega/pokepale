@@ -1243,7 +1243,6 @@ BattleCommand_Stab:
 .go
 	ld a, BATTLE_VARS_MOVE_TYPE
 	call GetBattleVarAddr
-	and TYPE_MASK
 	ld [wCurType], a
 
 	push hl
@@ -1291,7 +1290,6 @@ BattleCommand_Stab:
 .SkipStab:
 	ld a, BATTLE_VARS_MOVE_TYPE
 	call GetBattleVar
-	and TYPE_MASK
 	ld b, a
 	ld hl, TypeMatchups
 
@@ -1411,7 +1409,6 @@ CheckTypeMatchup:
 	push bc
 	ld a, BATTLE_VARS_MOVE_TYPE
 	call GetBattleVar
-	and TYPE_MASK
 	ld d, a
 	ld b, [hl]
 	inc hl
@@ -3006,7 +3003,6 @@ BattleCommand_DamageCalc:
 	ld b, a
 	ld a, BATTLE_VARS_MOVE_TYPE
 	call GetBattleVar
-	and TYPE_MASK
 	cp b
 	jr nz, .DoneItem
 
@@ -3392,24 +3388,7 @@ DoEnemyDamage:
 	ld [wHPBuffer2 + 1], a
 	sbc b
 	ld [wEnemyMonHP], a
-if DEF(_DEBUG)
-	push af
-	ld a, BANK(sSkipBattle)
-	call OpenSRAM
-	ld a, [sSkipBattle]
-	call CloseSRAM
-	or a
-	; If [sSkipBattle] is nonzero, skip the "jr nc, .no_underflow" check,
-	; so any attack deals maximum damage to the enemy.
-	jr nz, .debug_skip
-	pop af
 	jr nc, .no_underflow
-	push af
-.debug_skip
-	pop af
-else
-	jr nc, .no_underflow
-endc
 
 	ld a, [wHPBuffer2 + 1]
 	ld [hli], a
@@ -5926,7 +5905,6 @@ CheckMoveTypeMatchesTarget:
 
 	ld a, BATTLE_VARS_MOVE_TYPE
 	call GetBattleVar
-	and TYPE_MASK
 	cp NORMAL
 	jr z, .normal
 
