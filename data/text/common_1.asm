@@ -1334,11 +1334,6 @@ _JustSawSomeRareMonText::
 	cont "#MON, OK?"
 	prompt
 
-_SavingRecordText::
-	text "SAVING RECORD…"
-	line "DON'T TURN OFF!"
-	done
-
 _ReceiveItemText::
 	text_ram wPlayerName
 	text " received"
