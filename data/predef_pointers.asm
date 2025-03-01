@@ -27,7 +27,6 @@ PredefPointers::
 	add_predef PrintMoveDescription
 	add_predef UpdatePlayerHUD
 	add_predef PlaceGraphic
-	add_predef CheckPlayerPartyForFitMon
 	add_predef UpdateEnemyHUD
 	add_predef StartBattle
 	add_predef FillInExpBar
@@ -53,7 +52,6 @@ PredefPointers::
 	add_predef PrintType
 	add_predef PrintMonTypes
 	add_predef GetUnownLetter
-	add_predef LoadPoisonBGPals
 	add_predef DummyPredef2F
 	add_predef InitSGBBorder
 	add_predef LoadSGBLayout

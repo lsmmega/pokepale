@@ -2226,17 +2226,9 @@ NEXTU
 	ds 7
 wMenuCursorPositionBackup:: db
 wMenuScrollPositionBackup:: db
-
-NEXTU
-; poison step data
-wPoisonStepData::
-wPoisonStepFlagSum:: db
-wPoisonStepPartyFlags:: ds PARTY_LENGTH
-wPoisonStepDataEnd::
 ENDU
 
 	ds 23
-
 
 SECTION "More WRAM 1", WRAMX
 
@@ -3241,8 +3233,7 @@ wdc60:: db
 	ds 18
 
 wStepCount:: db
-wPoisonStepCount:: db
-	ds 2
+	ds 3
 wHappinessStepCount:: db
 	ds 1
 

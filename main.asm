@@ -230,7 +230,6 @@ INCLUDE "engine/events/poke_seer.asm"
 SECTION "bank14", ROMX
 
 INCLUDE "engine/pokemon/party_menu.asm"
-INCLUDE "engine/events/poisonstep.asm"
 INCLUDE "engine/events/sweet_scent.asm"
 INCLUDE "engine/events/squirtbottle.asm"
 INCLUDE "engine/events/card_key.asm"
@@ -407,8 +406,6 @@ SECTION "bank32", ROMX
 
 INCLUDE "engine/battle_anims/bg_effects.asm"
 INCLUDE "data/moves/animations.asm"
-INCLUDE "engine/events/poisonstep_pals.asm"
-
 
 SECTION "Move Animations", ROMX
 

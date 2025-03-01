@@ -557,20 +557,6 @@ _ItemfinderNopeText::
 	line "isn't responding."
 	prompt
 
-_PoisonFaintText::
-	text_ram wStringBuffer3
-	text_start
-	line "fainted!"
-	prompt
-
-_PoisonWhiteoutText::
-	text "<PLAYER> is out of"
-	line "useable #MON!"
-
-	para "<PLAYER> whited"
-	line "out!"
-	prompt
-
 _UseSweetScentText::
 	text_ram wStringBuffer3
 	text " used"
