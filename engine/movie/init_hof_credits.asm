@@ -17,15 +17,9 @@ InitDisplayForHallOfFame:
 	ldh [hSCY], a
 	ldh [hSCX], a
 	call EnableLCD
-	ld hl, .SavingRecordText
-	call PrintText
 	call WaitBGMap2
 	call SetDefaultBGPAndOBP
 	ret
-
-.SavingRecordText:
-	text_far _SavingRecordText
-	text_end
 
 InitDisplayForRedCredits:
 	call ClearBGPalettes
