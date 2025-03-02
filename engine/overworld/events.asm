@@ -915,6 +915,9 @@ CountStep:
 	ret
 
 DoSprayStep:
+	ld a, [wSprayEffect]
+	and a
+	ret z
 	ld hl, wSprays
 	ld a, [wSprays + 1]
 	or [hl]
