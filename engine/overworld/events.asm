@@ -868,8 +868,8 @@ CountStep:
 	farcall CheckSpecialPhoneCall
 	jr c, .doscript
 
-	; If Repel wore off, don't count the step.
-	call DoRepelStep
+	; If Spray step is out, don't count the step.
+	call DoSprayStep
 	jr c, .doscript
 
 	ld hl, wStepCount
@@ -914,17 +914,27 @@ CountStep:
 	scf
 	ret
 
-DoRepelStep:
-	ld a, [wRepelEffect]
-	and a
+DoSprayStep:
+	ld hl, wSprays
+	ld a, [wSprays + 1]
+	or [hl]
 	ret z
-
+	ld a, [wSprays + 1]
 	dec a
-	ld [wRepelEffect], a
+	ld [wSprays + 1], a
+	or [hl]
+	jr z, .Off
+	ld a, [wSprays + 1]
+	xor %11111111
 	ret nz
+	ld hl, wSprays
+	dec [hl]
+	ret
 
-	ld a, BANK(RepelWoreOffScript)
-	ld hl, RepelWoreOffScript
+.Off
+	ld [wSprayEffect], a
+	ld a, BANK(SprayWoreOffScript)
+	ld hl, SprayWoreOffScript
 	call CallScript
 	scf
 	ret
@@ -1180,7 +1190,7 @@ _TryWildEncounter_BugContest:
 	call TryWildEncounter_BugContest
 	ret nc
 	call ChooseWildEncounter_BugContest
-	farcall CheckRepelEffect
+	farcall CheckSprayEffect
 	ret
 
 ChooseWildEncounter_BugContest::

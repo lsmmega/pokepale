@@ -20,7 +20,7 @@ ItemDescriptions:
 	dw SuperPotionDesc
 	dw PotionDesc
 	dw EscapeRopeDesc
-	dw RepelDesc
+	dw SprayDesc
 	dw MaxElixerDesc
 	dw FireStoneDesc
 	dw ThunderStoneDesc
@@ -42,8 +42,6 @@ ItemDescriptions:
 	dw ReviveDesc
 	dw MaxReviveDesc
 	dw GuardSpecDesc
-	dw SuperRepelDesc
-	dw MaxRepelDesc
 	dw DireHitDesc
 	dw TeruSama3Desc
 	dw FreshWaterDesc
@@ -256,7 +254,7 @@ ItemDescriptions:
 	dw TeruSama31Desc
 	dw TeruSama32Desc
 	dw TeruSama33Desc
-	assert_table_length $fe
+	assert_table_length $fc
 
 MasterBallDesc:
 	db   "The best BALL. It"
@@ -333,9 +331,9 @@ EscapeRopeDesc:
 	db   "Use for escaping"
 	next "from caves, etc.@"
 
-RepelDesc:
-	db   "Repels weak #-"
-	next "MON for 100 steps.@"
+SprayDesc:
+	db   "Spray weak #-"
+	next "MON.@"
 
 MaxElixerDesc:
 	db   "Fully restores the"
@@ -419,14 +417,6 @@ MaxReviveDesc:
 GuardSpecDesc:
 	db   "Prevents stats"
 	next "reduction. (1 BTL)@"
-
-SuperRepelDesc:
-	db   "Repels weak #-"
-	next "MON for 200 steps.@"
-
-MaxRepelDesc:
-	db   "Repels weak #-"
-	next "MON for 250 steps.@"
 
 DireHitDesc:
 	db   "Ups critical hit"

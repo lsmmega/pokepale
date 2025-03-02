@@ -72,7 +72,6 @@ MartAzalea:
 	db POTION
 	db SUPER_POTION
 	db ESCAPE_ROPE
-	db REPEL
 	db ANTIDOTE
 	db PARLYZ_HEAL
 	db FLOWER_MAIL
@@ -103,7 +102,6 @@ MartGoldenrod2F2:
 	db POKE_BALL
 	db GREAT_BALL
 	db ESCAPE_ROPE
-	db REPEL
 	db REVIVE
 	db FULL_HEAL
 	db POKE_DOLL
@@ -146,7 +144,6 @@ MartOlivine:
 	db PARLYZ_HEAL
 	db AWAKENING
 	db ICE_HEAL
-	db SUPER_REPEL
 	db SURF_MAIL
 	db -1 ; end
 
@@ -180,7 +177,6 @@ MartMahogany2:
 	db HYPER_POTION
 	db ANTIDOTE
 	db PARLYZ_HEAL
-	db SUPER_REPEL
 	db REVIVE
 	db FLOWER_MAIL
 	db -1 ; end
@@ -193,7 +189,6 @@ MartBlackthorn:
 	db MAX_POTION
 	db FULL_HEAL
 	db REVIVE
-	db MAX_REPEL
 	db X_DEFEND
 	db X_ATTACK
 	db -1 ; end
@@ -215,7 +210,6 @@ MartPewter:
 	db 7 ; # items
 	db GREAT_BALL
 	db SUPER_POTION
-	db SUPER_REPEL
 	db ANTIDOTE
 	db PARLYZ_HEAL
 	db AWAKENING
@@ -227,7 +221,6 @@ MartCerulean:
 	db GREAT_BALL
 	db ULTRA_BALL
 	db SUPER_POTION
-	db SUPER_REPEL
 	db FULL_HEAL
 	db X_DEFEND
 	db X_ATTACK
@@ -240,7 +233,6 @@ MartLavender:
 	db GREAT_BALL
 	db POTION
 	db SUPER_POTION
-	db MAX_REPEL
 	db ANTIDOTE
 	db PARLYZ_HEAL
 	db AWAKENING
@@ -266,8 +258,6 @@ MartCeladon2F1:
 	db HYPER_POTION
 	db MAX_POTION
 	db REVIVE
-	db SUPER_REPEL
-	db MAX_REPEL
 	db -1 ; end
 
 MartCeladon2F2:
@@ -327,7 +317,6 @@ MartFuchsia:
 	db SUPER_POTION
 	db HYPER_POTION
 	db FULL_HEAL
-	db MAX_REPEL
 	db FLOWER_MAIL
 	db -1 ; end
 
@@ -349,14 +338,12 @@ MartMtMoon:
 	db FRESH_WATER
 	db SODA_POP
 	db LEMONADE
-	db REPEL
 	db PORTRAITMAIL
 	db -1 ; end
 
 MartIndigoPlateau:
 	db 7 ; # items
 	db ULTRA_BALL
-	db MAX_REPEL
 	db HYPER_POTION
 	db MAX_POTION
 	db FULL_RESTORE

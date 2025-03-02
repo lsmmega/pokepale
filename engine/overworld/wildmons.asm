@@ -179,7 +179,7 @@ TryWildEncounter::
 	jr nc, .no_battle
 	call ChooseWildEncounter
 	jr nz, .no_battle
-	call CheckRepelEffect
+	call CheckSprayEffect
 	jr nc, .no_battle
 	xor a
 	ret
@@ -346,9 +346,9 @@ ChooseWildEncounter:
 
 INCLUDE "data/wild/probabilities.asm"
 
-CheckRepelEffect::
-; If there is no active Repel, there's no need to be here.
-	ld a, [wRepelEffect]
+CheckSprayEffect::
+; If there is no active Spray, there's no need to be here.
+	ld a, [wSprayEffect]
 	and a
 	jr z, .encounter
 ; Get the first Pokemon in your party that isn't fainted.

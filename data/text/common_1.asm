@@ -1303,8 +1303,8 @@ _BugCatchingContestIsOverText::
 	line "Contest is over!"
 	done
 
-_RepelWoreOffText::
-	text "REPEL's effect"
+_SprayWoreOffText::
+	text "SPRAY's effect"
 	line "wore off."
 	done
 

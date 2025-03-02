@@ -12,7 +12,6 @@
 	const ROUTE32_POKE_BALL1
 	const ROUTE32_FISHER5
 	const ROUTE32_FRIEDA
-	const ROUTE32_POKE_BALL2
 
 Route32_MapScripts:
 	def_scene_scripts
@@ -488,9 +487,6 @@ FriedaScript:
 Route32GreatBall:
 	itemball GREAT_BALL
 
-Route32Repel:
-	itemball REPEL
-
 Route32Sign:
 	jumptext Route32SignText
 
@@ -955,4 +951,3 @@ Route32_MapEvents:
 	object_event  6, 53, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route32GreatBall, EVENT_ROUTE_32_GREAT_BALL
 	object_event 15, 13, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route32RoarTMGuyScript, -1
 	object_event 12, 67, SPRITE_LASS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, FriedaScript, EVENT_ROUTE_32_FRIEDA_OF_FRIDAY
-	object_event  3, 30, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route32Repel, EVENT_ROUTE_32_REPEL

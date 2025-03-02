@@ -33,7 +33,7 @@ ItemEffects:
 	dw RestoreHPEffect     ; SUPER_POTION
 	dw RestoreHPEffect     ; POTION
 	dw EscapeRopeEffect    ; ESCAPE_ROPE
-	dw RepelEffect         ; REPEL
+	dw SprayEffect         ; SPRAY
 	dw RestorePPEffect     ; MAX_ELIXER
 	dw EvoStoneEffect      ; FIRE_STONE
 	dw EvoStoneEffect      ; THUNDERSTONE
@@ -55,15 +55,13 @@ ItemEffects:
 	dw ReviveEffect        ; REVIVE
 	dw ReviveEffect        ; MAX_REVIVE
 	dw GuardSpecEffect     ; GUARD_SPEC
-	dw SuperRepelEffect    ; SUPER_REPEL
-	dw MaxRepelEffect      ; MAX_REPEL
 	dw DireHitEffect       ; DIRE_HIT
-	dw NoEffect            ; ITEM_2D
+	dw NoEffect            ; ITEM_2B
 	dw RestoreHPEffect     ; FRESH_WATER
 	dw RestoreHPEffect     ; SODA_POP
 	dw RestoreHPEffect     ; LEMONADE
 	dw XItemEffect         ; X_ATTACK
-	dw NoEffect            ; ITEM_32
+	dw NoEffect            ; ITEM_30
 	dw XItemEffect         ; X_DEFEND
 	dw XItemEffect         ; X_SPEED
 	dw XItemEffect         ; X_SPECIAL
@@ -102,7 +100,7 @@ ItemEffects:
 	dw NoEffect            ; BIG_MUSHROOM
 	dw NoEffect            ; SILVERPOWDER
 	dw NoEffect            ; BLU_APRICORN
-	dw NoEffect            ; ITEM_59
+	dw NoEffect            ; ITEM_57
 	dw NoEffect            ; AMULET_COIN
 	dw NoEffect            ; YLW_APRICORN
 	dw NoEffect            ; GRN_APRICORN
@@ -112,7 +110,7 @@ ItemEffects:
 	dw NoEffect            ; WHT_APRICORN
 	dw NoEffect            ; BLACKBELT_I
 	dw NoEffect            ; BLK_APRICORN
-	dw NoEffect            ; ITEM_63
+	dw NoEffect            ; ITEM_61
 	dw NoEffect            ; PNK_APRICORN
 	dw NoEffect            ; BLACKGLASSES
 	dw NoEffect            ; SLOWPOKETAIL
@@ -132,7 +130,7 @@ ItemEffects:
 	dw NoEffect            ; MIRACLE_SEED
 	dw NoEffect            ; THICK_CLUB
 	dw NoEffect            ; FOCUS_BAND
-	dw NoEffect            ; ITEM_77
+	dw NoEffect            ; ITEM_75
 	dw EnergypowderEffect  ; ENERGYPOWDER
 	dw EnergyRootEffect    ; ENERGY_ROOT
 	dw HealPowderEffect    ; HEAL_POWDER
@@ -147,34 +145,34 @@ ItemEffects:
 	dw NoEffect            ; STAR_PIECE
 	dw BasementKeyEffect   ; BASEMENT_KEY
 	dw NoEffect            ; PASS
+	dw NoEffect            ; ITEM_84
+	dw NoEffect            ; ITEM_85
 	dw NoEffect            ; ITEM_86
-	dw NoEffect            ; ITEM_87
-	dw NoEffect            ; ITEM_88
 	dw NoEffect            ; CHARCOAL
 	dw RestoreHPEffect     ; BERRY_JUICE
 	dw NoEffect            ; SCOPE_LENS
-	dw NoEffect            ; ITEM_8C
-	dw NoEffect            ; ITEM_8D
+	dw NoEffect            ; ITEM_8A
+	dw NoEffect            ; ITEM_8B
 	dw NoEffect            ; METAL_COAT
 	dw NoEffect            ; DRAGON_FANG
-	dw NoEffect            ; ITEM_90
+	dw NoEffect            ; ITEM_8E
 	dw NoEffect            ; LEFTOVERS
+	dw NoEffect            ; ITEM_90
+	dw NoEffect            ; ITEM_91
 	dw NoEffect            ; ITEM_92
-	dw NoEffect            ; ITEM_93
-	dw NoEffect            ; ITEM_94
 	dw RestorePPEffect     ; MYSTERYBERRY
 	dw NoEffect            ; DRAGON_SCALE
 	dw NoEffect            ; BERSERK_GENE
+	dw NoEffect            ; ITEM_96
+	dw NoEffect            ; ITEM_97
 	dw NoEffect            ; ITEM_98
-	dw NoEffect            ; ITEM_99
-	dw NoEffect            ; ITEM_9A
 	dw SacredAshEffect     ; SACRED_ASH
 	dw PokeBallEffect      ; HEAVY_BALL
 	dw NoEffect            ; FLOWER_MAIL
 	dw PokeBallEffect      ; LEVEL_BALL
 	dw PokeBallEffect      ; LURE_BALL
 	dw PokeBallEffect      ; FAST_BALL
-	dw NoEffect            ; ITEM_A1
+	dw NoEffect            ; ITEM_9F
 	dw NoEffect            ; LIGHT_BALL
 	dw PokeBallEffect      ; FRIEND_BALL
 	dw PokeBallEffect      ; MOON_BALL
@@ -183,16 +181,16 @@ ItemEffects:
 	dw GorgeousBoxEffect   ; GORGEOUS_BOX
 	dw EvoStoneEffect      ; SUN_STONE
 	dw NoEffect            ; POLKADOT_BOW
-	dw NoEffect            ; ITEM_AA
+	dw NoEffect            ; ITEM_A8
 	dw NoEffect            ; UP_GRADE
 	dw RestoreHPEffect     ; BERRY
 	dw RestoreHPEffect     ; GOLD_BERRY
 	dw SquirtbottleEffect  ; SQUIRTBOTTLE
-	dw NoEffect            ; ITEM_AF
+	dw NoEffect            ; ITEM_AD
 	dw PokeBallEffect      ; PARK_BALL
 	dw NoEffect            ; RAINBOW_WING
-	dw NoEffect            ; ITEM_B2
-	assert_table_length ITEM_B2
+	dw NoEffect            ; ITEM_B0
+	assert_table_length ITEM_B0
 ; The items past ITEM_B3 do not have effect entries:
 ;	BRICK_PIECE
 ;	SURF_MAIL
@@ -2059,29 +2057,45 @@ EscapeRopeEffect:
 	call z, UseDisposableItem
 	ret
 
-SuperRepelEffect:
-	ld b, 200
-	jr UseRepel
-
-MaxRepelEffect:
-	ld b, 250
-	jr UseRepel
-
-RepelEffect:
-	ld b, 100
-
-UseRepel:
-	ld a, [wRepelEffect]
+SprayEffect:
+	ld hl, .SprayCountText
+	call MenuTextboxWaitButton
+	ld hl, wSprays
+	ld a, [wSprays + 1]
+	or [hl]
+	ret z
+	ld a, [wSprayEffect]
 	and a
-	ld hl, RepelUsedEarlierIsStillInEffectText
-	jp nz, PrintText
+	jr nz, .Off
+	ld hl, .SprayTurnOnText
+	call PrintText
+	call YesNoBox
+	jr c, .No
+	ld [wSprayEffect], a
+	ld de, SFX_FULL_HEAL
+	jp PlaySFX
 
-	ld a, b
-	ld [wRepelEffect], a
-	jp UseItemText
+.Off
+	ld hl, .SprayTurnOffText
+	call PrintText
+	call YesNoBox
+	jr c, .No
+	xor a
+	ld [wSprayEffect], a
 
-RepelUsedEarlierIsStillInEffectText:
-	text_far _RepelUsedEarlierIsStillInEffectText
+.No
+	ret
+
+.SprayCountText:
+	text_far _SprayCountText
+	text_end
+
+.SprayTurnOnText:
+	text_far _SprayTurnOnText
+	text_end
+
+.SprayTurnOffText:
+	text_far _SprayTurnOffText
 	text_end
 
 XAccuracyEffect:

@@ -1261,11 +1261,21 @@ _ItemCantUseOnMonText::
 	line "on this #MON."
 	prompt
 
-_RepelUsedEarlierIsStillInEffectText::
-	text "The REPEL used"
-	line "earlier is still"
-	cont "in effect."
-	prompt
+_SprayCountText::
+	text "Sprays:"
+	line "@"
+	text_decimal wSprays, 2, 4
+	text_end
+
+_SprayTurnOnText::
+	text "SPRAY is off."
+	line "turn it on?"
+	done
+
+_SprayTurnOffText::
+	text "SPRAY is on."
+	line "turn it off?"
+	done
 
 _PlayedFluteText::
 	text "Played the #"

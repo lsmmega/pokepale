@@ -19,7 +19,7 @@ ItemNames::
 	li "SUPER POTION"
 	li "POTION"
 	li "ESCAPE ROPE"
-	li "REPEL"
+	li "SPRAY"
 	li "MAX ELIXER"
 	li "FIRE STONE"
 	li "THUNDERSTONE"
@@ -41,8 +41,6 @@ ItemNames::
 	li "REVIVE"
 	li "MAX REVIVE"
 	li "GUARD SPEC."
-	li "SUPER REPEL"
-	li "MAX REPEL"
 	li "DIRE HIT"
 	li "TERU-SAMA"
 	li "FRESH WATER"
@@ -258,4 +256,4 @@ ItemNames::
 	li "TERU-SAMA"
 	li "TERU-SAMA"
 	li "?"
-	assert_list_length $ff
+	assert_list_length $fd
