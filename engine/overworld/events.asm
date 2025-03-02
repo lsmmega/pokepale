@@ -920,9 +920,6 @@ DoSprayStep:
 	ret z
 	ld hl, wSprays
 	ld a, [wSprays + 1]
-	or [hl]
-	ret z
-	ld a, [wSprays + 1]
 	dec a
 	ld [wSprays + 1], a
 	or [hl]
