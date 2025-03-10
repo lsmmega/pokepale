@@ -1750,11 +1750,9 @@ wGBPrinterBrightness::
 ;   darkest:  $7F
 	db
 wOptions2::
-; bit 1: menu account off/on
-	db
 	ds 2
 wOptionsEnd::
-
+	ds 1
 ; Time buffer, for counting the amount of time since
 ; an event began.
 wSecondsSince:: db
