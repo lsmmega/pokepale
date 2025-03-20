@@ -1,4 +1,4 @@
-DEF MAP_NAME_SIGN_START   EQU $60
+DEF MAP_NAME_SIGN_START   EQU $c0
 DEF POPUP_MAP_NAME_SIZE   EQU 18
 DEF POPUP_MAP_FRAME_START EQU $f3
 DEF POPUP_MAP_FRAME_SIZE  EQU 8
@@ -53,9 +53,9 @@ InitMapNameSign::
 ; Landmark sign timer: descends $74-$00
 ; $73-$68: Sliding out (old sign)
 ; $67-$65: Loading new graphics
-; $64-$59: Sliding in
-; $58-$0c: Remains visible
-; $0b-$00: Sliding out
+; $64-$50: Sliding in
+; $4f-$10: Remains visible
+; $0f-$00: Sliding out
 	ld a, [wLandmarkSignTimer]
 	sub MAPSIGNSTAGE_2_LOADGFX
 	jr nc, .stage_1_sliding_out
@@ -148,7 +148,6 @@ PlaceMapNameSign::
 	ret nc
 	sub MAPSIGNSTAGE_3_SLIDEIN
 	jr c, .graphics_ok
-	jr nz, LoadMapNameSignGFX
 	push hl
 	call InitMapNameFrame
 	call PlaceMapNameCenterAlign
@@ -182,13 +181,6 @@ PlaceMapNameSign::
 	ld hl, rIE
 	res LCD_STAT, [hl]
 	ldh [hLCDCPointer], a
-	ret
-
-LoadMapNameSignGFX:
-	ld de, MapEntryFrameGFX
-	ld hl, vTiles2 tile MAP_NAME_SIGN_START
-	lb bc, BANK(MapEntryFrameGFX), 14
-	call Get2bpp
 	ret
 
 InitMapNameFrame:
