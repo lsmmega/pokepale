@@ -64,7 +64,7 @@ SproutTower3FRivalScene:
 SageLiScript:
 	faceplayer
 	opentext
-	checkevent EVENT_GOT_HM05_FLASH
+	checkevent EVENT_GOT_TM55_FLASH
 	iftrue .GotFlash
 	writetext SageLiSeenText
 	waitbutton
@@ -76,8 +76,8 @@ SageLiScript:
 	opentext
 	writetext SageLiTakeThisFlashText
 	promptbutton
-	verbosegiveitem HM_FLASH
-	setevent EVENT_GOT_HM05_FLASH
+	verbosegiveitem TM_FLASH
+	setevent EVENT_GOT_TM55_FLASH
 	setevent EVENT_BEAT_SAGE_LI
 	writetext SageLiFlashExplanationText
 	waitbutton
@@ -157,7 +157,7 @@ SproutTowerElderLecturesRivalText:
 	cont "trainer."
 
 	para "As promised, here"
-	line "is your HM."
+	line "is your TM."
 
 	para "But let me say"
 	line "this: You should"
@@ -238,7 +238,7 @@ SageLiTakeThisFlashText:
 	line "this move."
 
 	para "Take this FLASH"
-	line "HM."
+	line "TM."
 	done
 
 SageLiFlashExplanationText:
@@ -299,7 +299,7 @@ SageTroyAfterBattleText:
 	done
 
 SageNealSeenText:
-	text "The ELDER's HM"
+	text "The ELDER's TM"
 	line "lights even pitch-"
 	cont "black darkness."
 	done

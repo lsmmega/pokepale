@@ -285,8 +285,8 @@ RocketBaseElectrodeScript:
 	opentext
 	writetext RocketBaseLanceElectrodeDoneText
 	promptbutton
-	verbosegiveitem HM_WHIRLPOOL
-	setevent EVENT_GOT_HM06_WHIRLPOOL
+	verbosegiveitem TM_WHIRLPOOL
+	setevent EVENT_GOT_TM56_WHIRLPOOL
 	writetext RocketBaseLanceWhirlpoolText
 	waitbutton
 	closetext
@@ -731,9 +731,9 @@ RocketBaseLanceElectrodeDoneText:
 	cont "any need for it."
 	done
 
-RocketBaseReceivedHM06Text: ; unreferenced
+RocketBaseReceivedTM56Text: ; unreferenced
 	text "<PLAYER> received"
-	line "HM06."
+	line "TM56."
 	done
 
 RocketBaseLanceWhirlpoolText:
