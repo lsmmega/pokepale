@@ -1,7 +1,7 @@
 KnowsMove:
 	ld a, MON_MOVES
 	call GetPartyParamLocation
-	ld a, [wPutativeTMHMMove]
+	ld a, [wPutativeTMMove]
 	ld b, a
 	ld c, NUM_MOVES
 .loop

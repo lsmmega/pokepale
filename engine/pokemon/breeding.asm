@@ -450,7 +450,7 @@ GetEggMove:
 	jr z, .found_eggmove
 	inc hl
 	dec b
-	jr z, .inherit_tmhm
+	jr z, .inherit_tm
 	jr .loop2
 
 .found_eggmove
@@ -473,7 +473,7 @@ GetEggMove:
 	ld a, BANK("Evolutions and Attacks")
 	call GetFarByte
 	and a
-	jr z, .inherit_tmhm
+	jr z, .inherit_tm
 	inc hl
 	ld a, BANK("Evolutions and Attacks")
 	call GetFarByte
@@ -484,10 +484,10 @@ GetEggMove:
 	inc hl
 	jr .loop4
 
-.inherit_tmhm
-	ld hl, TMHMMoves
+.inherit_tm
+	ld hl, TMMoves
 .loop5
-	ld a, BANK(TMHMMoves)
+	ld a, BANK(TMMoves)
 	call GetFarByte
 	inc hl
 	and a
@@ -496,8 +496,8 @@ GetEggMove:
 	ld a, [de]
 	cp b
 	jr nz, .loop5
-	ld [wPutativeTMHMMove], a
-	predef CanLearnTMHMMove
+	ld [wPutativeTMMove], a
+	predef CanLearnTMMove
 	ld a, c
 	and a
 	jr z, .done

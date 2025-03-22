@@ -1,14 +1,14 @@
-CanLearnTMHMMove:
+CanLearnTMMove:
 	ld a, [wCurPartySpecies]
 	ld [wCurSpecies], a
 	call GetBaseData
-	ld hl, wBaseTMHM
+	ld hl, wBaseTM
 	push hl
 
-	ld a, [wPutativeTMHMMove]
+	ld a, [wPutativeTMMove]
 	ld b, a
 	ld c, 0
-	ld hl, TMHMMoves
+	ld hl, TMMoves
 .loop
 	ld a, [hli]
 	and a
@@ -32,15 +32,15 @@ CanLearnTMHMMove:
 	ld c, 0
 	ret
 
-GetTMHMMove:
-	ld a, [wTempTMHM]
+GetTMMove:
+	ld a, [wTempTM]
 	dec a
-	ld hl, TMHMMoves
+	ld hl, TMMoves
 	ld b, 0
 	ld c, a
 	add hl, bc
 	ld a, [hl]
-	ld [wTempTMHM], a
+	ld [wTempTM], a
 	ret
 
-INCLUDE "data/moves/tmhm_moves.asm"
+INCLUDE "data/moves/tm_moves.asm"

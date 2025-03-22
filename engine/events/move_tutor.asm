@@ -9,15 +9,15 @@ MoveTutor:
 	ld [wItemAttributeValue], a
 	call .GetMoveTutorMove
 	ld [wNamedObjectIndex], a
-	ld [wPutativeTMHMMove], a
+	ld [wPutativeTMMove], a
 	call GetMoveName
 	call CopyName1
-	farcall ChooseMonToLearnTMHM
+	farcall ChooseMonToLearnTM
 	jr c, .cancel
 	jr .enter_loop
 
 .loop
-	farcall ChooseMonToLearnTMHM_NoRefresh
+	farcall ChooseMonToLearnTM_NoRefresh
 	jr c, .cancel
 .enter_loop
 	call CheckCanLearnMoveTutorMove
@@ -55,7 +55,7 @@ CheckCanLearnMoveTutorMove:
 	ld hl, .MenuHeader
 	call LoadMenuHeader
 
-	predef CanLearnTMHMMove
+	predef CanLearnTMMove
 
 	push bc
 	ld a, [wCurPartyMon]
@@ -70,8 +70,8 @@ CheckCanLearnMoveTutorMove:
 	ld de, SFX_WRONG
 	call PlaySFX
 	pop de
-	ld a, BANK(TMHMNotCompatibleText)
-	ld hl, TMHMNotCompatibleText
+	ld a, BANK(TMNotCompatibleText)
+	ld hl, TMNotCompatibleText
 	call FarPrintText
 	jr .didnt_learn
 

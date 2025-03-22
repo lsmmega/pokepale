@@ -197,24 +197,24 @@
 	const ITEM_BD      ; bd
 DEF NUM_ITEMS EQU const_value - 1
 
-DEF __tmhm_value__ = 1
+DEF __tm_value__ = 1
 
 MACRO add_tmnum
-	DEF \1_TMNUM EQU __tmhm_value__
-	DEF __tmhm_value__ += 1
+	DEF \1_TMNUM EQU __tm_value__
+	DEF __tm_value__ += 1
 ENDM
 
 MACRO add_tm
 ; Defines three constants:
 ; - TM_\1: the item id, starting at $bf
-; - \1_TMNUM: the learnable TM/HM flag, starting at 1
+; - \1_TMNUM: the learnable TM flag, starting at 1
 ; - TM##_MOVE: alias for the move id, equal to the value of \1
 	const TM_\1
-	DEF TM{02d:__tmhm_value__}_MOVE = \1
+	DEF TM{02d:__tm_value__}_MOVE = \1
 	add_tmnum \1
 ENDM
 
-; see data/moves/tmhm_moves.asm for moves
+; see data/moves/tm_moves.asm for moves
 DEF TM01 EQU const_value
 	add_tm DYNAMICPUNCH ; bf
 	add_tm HEADBUTT     ; c0
@@ -275,28 +275,13 @@ DEF TM01 EQU const_value
 	add_tm FLASH        ; f7
 	add_tm WHIRLPOOL    ; f8
 	add_tm WATERFALL    ; f9
-DEF NUM_TMS EQU __tmhm_value__ - 1
-
-MACRO add_hm
-; Defines three constants:
-; - HM_\1: the item id, starting at $f3
-; - \1_TMNUM: the learnable TM/HM flag, starting at 51
-; - HM##_MOVE: alias for the move id, equal to the value of \1
-	const HM_\1
-	DEF HM_VALUE = __tmhm_value__ - NUM_TMS
-	DEF HM{02d:HM_VALUE}_MOVE = \1
-	add_tmnum \1
-ENDM
-
-DEF HM01 EQU const_value
-
-DEF NUM_HMS EQU __tmhm_value__ - NUM_TMS - 1
+DEF NUM_TMS EQU __tm_value__ - 1
 
 MACRO add_mt
 ; Defines two constants:
-; - \1_TMNUM: the learnable TM/HM flag, starting at 58
+; - \1_TMNUM: the learnable TM flag, starting at 58
 ; - MT##_MOVE: alias for the move id, equal to the value of \1
-	DEF MT_VALUE = __tmhm_value__ - NUM_TMS - NUM_HMS
+	DEF MT_VALUE = __tm_value__ - NUM_TMS
 	DEF MT{02d:MT_VALUE}_MOVE = \1
 	add_tmnum \1
 ENDM
@@ -305,9 +290,9 @@ DEF MT01 EQU const_value
 	add_mt FLAMETHROWER
 	add_mt THUNDERBOLT
 	add_mt ICE_BEAM
-DEF NUM_TUTORS = __tmhm_value__ - NUM_TMS - NUM_HMS - 1
+DEF NUM_TUTORS = __tm_value__ - NUM_TMS - 1
 
-DEF NUM_TM_HM_TUTOR EQU NUM_TMS + NUM_HMS + NUM_TUTORS
+DEF NUM_TM_TUTOR EQU NUM_TMS + NUM_TUTORS
 
 	const ITEM_FA       ; fa
 

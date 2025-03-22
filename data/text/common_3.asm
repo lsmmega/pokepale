@@ -1003,11 +1003,6 @@ _MoveForgotText::
 	para "And…"
 	prompt
 
-_MoveCantForgetHMText::
-	text "HM moves can't be"
-	line "forgotten now."
-	prompt
-
 _CardFlipPlayWithThreeCoinsText::
 	text "Play with three"
 	line "coins?"

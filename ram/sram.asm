@@ -231,7 +231,7 @@ sTrainerRankingHealingsHOF:: ds 4
 sTrainerRankingBattlesHOF:: ds 3
 sTrainerRankingStepCount:: ds 4
 sTrainerRankingBattleTowerWins:: ds 4
-sTrainerRankingTMsHMsTaught:: ds 3
+sTrainerRankingTMsTaught:: ds 3
 sTrainerRankingBattles:: ds 3
 sTrainerRankingWildBattles:: ds 3
 sTrainerRankingTrainerBattles:: ds 3

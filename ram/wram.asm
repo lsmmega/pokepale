@@ -2013,7 +2013,6 @@ SECTION UNION "Miscellaneous WRAM 1", WRAMX
 ; debug color picker
 wDebugColorIsTrainer:: db
 wDebugColorIsShiny:: db
-wDebugColorCurTMHM:: db
 
 
 SECTION UNION "Miscellaneous WRAM 1", WRAMX
@@ -2169,7 +2168,7 @@ ENDU
 
 SECTION "More WRAM 1", WRAMX
 
-wTMHMMoveNameBackup:: ds MOVE_NAME_LENGTH
+wTMMoveNameBackup:: ds MOVE_NAME_LENGTH
 
 wStringBuffer1:: ds STRING_BUFFER_LENGTH
 wStringBuffer2:: ds STRING_BUFFER_LENGTH
@@ -2194,14 +2193,14 @@ wPartyMenuCursor::      db
 wItemsPocketCursor::    db
 wKeyItemsPocketCursor:: db
 wBallsPocketCursor::    db
-wTMHMPocketCursor::     db
+wTMPocketCursor::     db
 
 wPCItemsScrollPosition::        db
 	ds 1
 wItemsPocketScrollPosition::    db
 wKeyItemsPocketScrollPosition:: db
 wBallsPocketScrollPosition::    db
-wTMHMPocketScrollPosition::     db
+wTMPocketScrollPosition::     db
 
 wSwitchMon::
 wSwitchItem::
@@ -2614,7 +2613,7 @@ wBaseUnusedFrontpic:: dw
 wBaseUnusedBackpic:: dw
 wBaseGrowthRate:: db
 wBaseEggGroups:: db
-wBaseTMHM:: flag_array NUM_TM_HM_TUTOR
+wBaseTM:: flag_array NUM_TM_TUTOR
 wCurBaseDataEnd::
 	assert wCurBaseDataEnd - wCurBaseData == BASE_DATA_SIZE
 
@@ -2626,7 +2625,7 @@ wDayEncounterRate::   db
 wNiteEncounterRate::  db
 wWaterEncounterRate:: db
 wListMoves_MoveIndicesBuffer:: ds NUM_MOVES
-wPutativeTMHMMove:: db
+wPutativeTMMove:: db
 wInitListType:: db
 wBattleHasJustStarted:: db
 
@@ -2638,7 +2637,7 @@ wTypeMatchup::
 wCurType::
 wTempSpecies::
 wTempIconSpecies::
-wTempTMHM::
+wTempTM::
 wTempPP::
 wNextBoxOrPartyIndex::
 wChosenCableClubRoom::
@@ -2921,7 +2920,7 @@ wBadges::
 wJohtoBadges:: flag_array NUM_JOHTO_BADGES
 wKantoBadges:: flag_array NUM_KANTO_BADGES
 
-wTMsHMs:: ds NUM_TMS + NUM_HMS
+wTMs:: ds NUM_TMS
 
 wNumItems:: db
 wItems:: ds MAX_ITEMS * 2 + 1

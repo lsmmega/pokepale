@@ -73,7 +73,7 @@ WritePartyMenuTilemap:
 	dw PlacePartyMenuHPDigits
 	dw PlacePartyMonLevel
 	dw PlacePartyMonStatus
-	dw PlacePartyMonTMHMCompatibility
+	dw PlacePartyMonTMCompatibility
 	dw PlacePartyMonEvoStoneCompatibility
 	dw PlacePartyMonGender
 	dw PlacePartyMonMobileBattleSelection
@@ -295,7 +295,7 @@ PlacePartyMonStatus:
 	jr nz, .loop
 	ret
 
-PlacePartyMonTMHMCompatibility:
+PlacePartyMonTMCompatibility:
 	ld a, [wPartyCount]
 	and a
 	ret z
@@ -314,7 +314,7 @@ PlacePartyMonTMHMCompatibility:
 	add hl, de
 	ld a, [hl]
 	ld [wCurPartySpecies], a
-	predef CanLearnTMHMMove
+	predef CanLearnTMMove
 	pop hl
 	call .PlaceAbleNotAble
 	call PlaceString

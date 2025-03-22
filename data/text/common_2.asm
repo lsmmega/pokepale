@@ -168,10 +168,6 @@ _BootedTMText::
 	text "Booted up a TM."
 	prompt
 
-_BootedHMText::
-	text "Booted up an HM."
-	prompt
-
 _ContainedMoveText::
 	text "It contained"
 	line "@"
@@ -184,7 +180,7 @@ _ContainedMoveText::
 	line "to a #MON?"
 	done
 
-_TMHMNotCompatibleText::
+_TMNotCompatibleText::
 	text_ram wStringBuffer2
 	text " is"
 	line "not compatible"
@@ -198,7 +194,7 @@ _TMHMNotCompatibleText::
 	text "."
 	prompt
 
-_NoRoomTMHMText::
+_NoRoomTMText::
 	text "You have no room"
 	line "for any more"
 	cont "@"
@@ -206,7 +202,7 @@ _NoRoomTMHMText::
 	text "S."
 	prompt
 
-_ReceivedTMHMText::
+_ReceivedTMText::
 	text "You received"
 	line "@"
 	text_ram wStringBuffer1
