@@ -296,9 +296,45 @@ JoyWaitAorB::
 	ldh a, [hJoyPressed]
 	and A_BUTTON | B_BUTTON
 	ret nz
+	call CheckAutoscroll
+	ret nz
 	call UpdateTimeAndPals
 	jr .loop
 
+CheckIfAOrBPressed:
+	call JoyTextDelay
+	ldh a, [hJoyLast]
+_Autoscroll:
+	and A_BUTTON | B_BUTTON
+	ret nz
+	; fallthrough
+CheckAutoscroll:
+; Returns nz if we should autoscroll
+	ld a, [wOptions]
+	and AUTOSCROLL_MASK
+	ret z
+
+	cp AUTOSCROLL_START
+	jr z, .start
+
+	; Check A+B. If both are held, autoscroll for both A&B and A|B.
+	; Otherwise, autoscroll if the option is set to A or B, not A and B
+	ldh a, [hJoyDown]
+	and A_BUTTON | B_BUTTON
+	ret z
+	cp A_BUTTON | B_BUTTON
+	jr z, _Autoscroll
+	ld a, [wOptions]
+	; nz if AORB, z if AANDB
+	and %100
+	ret
+
+.start
+	ld a, [hJoyDown]
+	and START
+	ret
+
+Script_waitbutton::
 WaitButton::
 	ldh a, [hOAMUpdate]
 	push af
@@ -361,9 +397,7 @@ WaitPressAorB_BlinkCursor::
 	call BlinkCursor
 	pop hl
 
-	call JoyTextDelay
-	ldh a, [hJoyLast]
-	and A_BUTTON | B_BUTTON
+	call CheckIfAOrBPressed
 	jr z, .loop
 
 	pop af
@@ -374,11 +408,10 @@ WaitPressAorB_BlinkCursor::
 
 SimpleWaitPressAorB::
 .loop
-	call JoyTextDelay
-	ldh a, [hJoyLast]
-	and A_BUTTON | B_BUTTON
-	jr z, .loop
-	ret
+	call CheckIfAOrBPressed
+	ret nz
+	call DelayFrame
+	jr .loop
 
 PromptButton::
 ; Show a blinking cursor in the lower right-hand
@@ -410,9 +443,7 @@ PromptButton::
 
 .input_wait_loop
 	call .blink_cursor
-	call JoyTextDelay
-	ldh a, [hJoyPressed]
-	and A_BUTTON | B_BUTTON
+	call CheckIfAOrBPressed
 	jr nz, .received_input
 	call UpdateTimeAndPals
 	ld a, $1
