@@ -10,7 +10,7 @@ PrintLetterDelay::
 ; wOptions[4] and wTextboxFlags[!1] disable the delay.
 
 	ld a, [wOptions]
-	bit NO_TEXT_SCROLL, a
+	bit 5, a
 	ret nz
 
 ; non-scrolling text?
