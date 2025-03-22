@@ -527,7 +527,7 @@ Script_pocketisfull:
 Script_specialsound:
 	farcall CheckItemPocket
 	ld a, [wItemAttributeValue]
-	cp TM_HM
+	cp TM
 	ld de, SFX_GET_TM
 	jr z, .play
 	ld de, SFX_ITEM

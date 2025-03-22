@@ -256,9 +256,9 @@ StubbedTrainerRankings_BattleTowerWins: ; unreferenced
 	ld hl, sTrainerRankingBattleTowerWins
 	jp StubbedTrainerRankings_Increment2Byte
 
-StubbedTrainerRankings_TMsHMsTaught:
+StubbedTrainerRankings_TMsTaught:
 	ret
-	ld hl, sTrainerRankingTMsHMsTaught
+	ld hl, sTrainerRankingTMsTaught
 	jp StubbedTrainerRankings_Increment3Byte
 
 StubbedTrainerRankings_Battles:

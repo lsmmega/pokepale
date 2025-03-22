@@ -8,8 +8,8 @@ HasNoItems:
 	ld a, [wNumBalls]
 	and a
 	ret nz
-	ld hl, wTMsHMs
-	ld b, NUM_TMS + NUM_HMS
+	ld hl, wTMs
+	ld b, NUM_TMS
 .loop
 	ld a, [hli]
 	and a
