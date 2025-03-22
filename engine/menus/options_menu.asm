@@ -1,13 +1,14 @@
 ; GetOptionPointer.Pointers indexes
 	const_def
-	const OPT_TEXT_SPEED    ; 0
-	const OPT_BATTLE_SCENE  ; 1
-	const OPT_BATTLE_STYLE  ; 2
-	const OPT_SOUND         ; 3
-	const OPT_PRINT         ; 4
-	const OPT_FRAME         ; 5
-	const OPT_CANCEL        ; 6
-DEF NUM_OPTIONS EQU const_value ; 7
+	const OPT_TEXT_SPEED        ; 0
+	const OPT_TEXT_AUTOSCROLL   ; 1
+	const OPT_BATTLE_SCENE      ; 2
+	const OPT_BATTLE_STYLE      ; 3
+	const OPT_SOUND             ; 4
+	const OPT_PRINT             ; 5
+	const OPT_FRAME             ; 6
+	const OPT_CANCEL            ; 7
+DEF NUM_OPTIONS EQU const_value ; 8
 
 _Option:
 ; BUG: Options menu fails to clear joypad state on initialization (see docs/bugs_and_glitches.md)
@@ -76,6 +77,8 @@ _Option:
 StringOptions:
 	db "TEXT SPEED<LF>"
 	db "        :<LF>"
+	db "TEXT AUTOSCROLL<LF>"
+	db "        :<LF>"
 	db "BATTLE SCENE<LF>"
 	db "        :<LF>"
 	db "BATTLE STYLE<LF>"
@@ -94,6 +97,7 @@ GetOptionPointer:
 .Pointers:
 ; entries correspond to OPT_* constants
 	dw Options_TextSpeed
+	dw Options_TextAutoscroll
 	dw Options_BattleScene
 	dw Options_BattleStyle
 	dw Options_Sound
@@ -108,37 +112,24 @@ GetOptionPointer:
 	const OPT_TEXT_SPEED_INSTANT ; 3
 
 Options_TextSpeed:
-	call GetTextSpeed
+	ld a, [wOptions]
+	and TEXT_DELAY_MASK
+	ld c, a
 	ldh a, [hJoyPressed]
+	dec c
 	bit D_LEFT_F, a
-	jr nz, .LeftPressed
+	jr nz, .ok
+	inc c
 	bit D_RIGHT_F, a
 	jr z, .NonePressed
-	ld a, c ; right pressed
-	cp OPT_TEXT_SPEED_INSTANT
-	jr c, .Increase
-	ld c, OPT_TEXT_SPEED_FAST - 1
-
-.Increase:
 	inc c
-	ld a, e
-	jr .Save
-
-.LeftPressed:
+.ok
 	ld a, c
-	and a
-	jr nz, .Decrease
-	ld c, OPT_TEXT_SPEED_INSTANT + 1
-
-.Decrease:
-	dec c
-	ld a, d
-
-.Save:
-	ld b, a
+	and TEXT_DELAY_MASK
+	ld c, a
 	ld a, [wOptions]
-	and $f0
-	or b
+	and ~TEXT_DELAY_MASK
+	or c
 	ld [wOptions], a
 
 .NonePressed:
@@ -146,56 +137,78 @@ Options_TextSpeed:
 	ld hl, .Strings
 	add hl, bc
 	add hl, bc
-	ld e, [hl]
-	inc hl
+	ld a, [hli]
 	ld d, [hl]
+	ld e, a
 	hlcoord 11, 3
 	call PlaceString
 	and a
 	ret
 
 .Strings:
-; entries correspond to OPT_TEXT_SPEED_* constants
-	dw .Fast
-	dw .Mid
-	dw .Slow
 	dw .Instant
+	dw .Fast
+	dw .Medium
+	dw .Slow
 
-.Fast:    db "FAST   @"
-.Mid:     db "MID    @"
-.Slow:    db "SLOW   @"
-.Instant: db "INSTANT@"
+.Fast:
+	db "FAST   @"
+.Medium:
+	db "MID    @"
+.Slow:
+	db "SLOW   @"
+.Instant:
+	db "INSTANT@"
 
-GetTextSpeed:
-; converts TEXT_DELAY_* value in a to OPT_TEXT_SPEED_* value in c,
-; with previous/next TEXT_DELAY_* values in d/e
+Options_TextAutoscroll:
+	ld a, [hJoyPressed]
+	ld b, a
 	ld a, [wOptions]
-	and TEXT_DELAY_MASK
-	cp TEXT_DELAY_SLOW
-	jr z, .slow
-	cp TEXT_DELAY_FAST
-	jr z, .fast
-	cp TEXT_DELAY_INSTANT
-	jr z, .instant
-	; none of the above
-	ld c, OPT_TEXT_SPEED_MED
-	lb de, TEXT_DELAY_FAST, TEXT_DELAY_SLOW
+	and AUTOSCROLL_MASK
+	sub 4
+	bit D_LEFT_F, b
+	jr nz, .ok
+	add 4
+	bit D_RIGHT_F, b
+	jr z, .not_changing
+	add 4
+.ok
+	and AUTOSCROLL_MASK
+	ld c, a
+	ld a, [wOptions]
+	and ~AUTOSCROLL_MASK
+	or c
+	ld [wOptions], a
+	ld a, c
+
+.not_changing
+	rrca
+	ld b, 0
+	ld c, a
+	ld hl, .Strings
+	add hl, bc
+	ld e, [hl]
+	inc hl
+	ld d, [hl]
+	hlcoord 11, 5
+	call PlaceString
+	and a
 	ret
 
-.slow
-	ld c, OPT_TEXT_SPEED_SLOW
-	lb de, TEXT_DELAY_MED, TEXT_DELAY_INSTANT
-	ret
+.Strings:
+	dw .None
+	dw .Start
+	dw .AandB
+	dw .AorB
 
-.fast
-	ld c, OPT_TEXT_SPEED_FAST
-	lb de, TEXT_DELAY_INSTANT, TEXT_DELAY_MED
-	ret
-
-.instant
-	ld c, OPT_TEXT_SPEED_INSTANT
-	lb de, TEXT_DELAY_SLOW, TEXT_DELAY_FAST
- 	ret
+.None:
+	db "NONE   @"
+.Start:
+	db "START  @"
+.AandB:
+	db "A AND B@"
+.AorB:
+	db "A OR B @"
 
 Options_BattleScene:
 	ld hl, wOptions
@@ -228,7 +241,7 @@ Options_BattleScene:
 	ld de, .Off
 
 .Display:
-	hlcoord 11, 5
+	hlcoord 11, 7
 	call PlaceString
 	and a
 	ret
@@ -266,7 +279,7 @@ Options_BattleStyle:
 	ld de, .Set
 
 .Display:
-	hlcoord 11, 7
+	hlcoord 11, 9
 	call PlaceString
 	and a
 	ret
@@ -311,7 +324,7 @@ Options_Sound:
 	ld de, .Stereo
 
 .Display:
-	hlcoord 11, 9
+	hlcoord 11, 11
 	call PlaceString
 	and a
 	ret
@@ -365,7 +378,7 @@ Options_Print:
 	ld e, [hl]
 	inc hl
 	ld d, [hl]
-	hlcoord 11, 11
+	hlcoord 11, 13
 	call PlaceString
 	and a
 	ret
@@ -445,7 +458,7 @@ Options_Frame:
 	ld [hl], a
 UpdateFrame:
 	ld a, [wTextboxFrame]
-	hlcoord 16, 13 ; where on the screen the number is drawn
+	hlcoord 16, 15 ; where on the screen the number is drawn
 	add "1"
 	ld [hl], a
 	call LoadFontsExtra
