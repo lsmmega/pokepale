@@ -466,7 +466,7 @@ PlayerDepositItemMenu:
 .TryDepositItem:
 	farcall CheckItemPocket
 	ld a, [wItemAttributeValue]
-	cp TM_HM
+	cp TM
 	jr z, .CantDeposit
 
 	ld a, [wSpriteUpdatesEnabled]

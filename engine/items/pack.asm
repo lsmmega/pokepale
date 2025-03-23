@@ -7,8 +7,8 @@
 	const PACKSTATE_BALLSPOCKETMENU    ;  4
 	const PACKSTATE_INITKEYITEMSPOCKET ;  5
 	const PACKSTATE_KEYITEMSPOCKETMENU ;  6
-	const PACKSTATE_INITTMHMPOCKET     ;  7
-	const PACKSTATE_TMHMPOCKETMENU     ;  8
+	const PACKSTATE_INITTMPOCKET       ;  7
+	const PACKSTATE_TMPOCKETMENU       ;  8
 	const PACKSTATE_QUITNOSCRIPT       ;  9
 	const PACKSTATE_QUITRUNSCRIPT      ; 10
 
@@ -47,8 +47,8 @@ Pack:
 	dw .BallsPocketMenu    ;  4
 	dw .InitKeyItemsPocket ;  5
 	dw .KeyItemsPocketMenu ;  6
-	dw .InitTMHMPocket     ;  7
-	dw .TMHMPocketMenu     ;  8
+	dw .InitTMPocket       ;  7
+	dw .TMPocketMenu       ;  8
 	dw Pack_QuitNoScript   ;  9
 	dw Pack_QuitRunScript  ; 10
 
@@ -82,7 +82,7 @@ Pack:
 	ld [wItemsPocketScrollPosition], a
 	ld a, [wMenuCursorY]
 	ld [wItemsPocketCursor], a
-	ld b, PACKSTATE_INITTMHMPOCKET ; left
+	ld b, PACKSTATE_INITTMPOCKET ; left
 	ld c, PACKSTATE_INITBALLSPOCKET ; right
 	call Pack_InterpretJoypad
 	ret c
@@ -111,14 +111,14 @@ Pack:
 	ld a, [wMenuCursorY]
 	ld [wKeyItemsPocketCursor], a
 	ld b, PACKSTATE_INITBALLSPOCKET ; left
-	ld c, PACKSTATE_INITTMHMPOCKET ; right
+	ld c, PACKSTATE_INITTMPOCKET ; right
 	call Pack_InterpretJoypad
 	ret c
 	call .ItemBallsKey_LoadSubmenu
 	ret
 
-.InitTMHMPocket:
-	ld a, TM_HM_POCKET
+.InitTMPocket:
+	ld a, TM_POCKET
 	ld [wCurPocket], a
 	call ClearPocketList
 	call DrawPocketName
@@ -128,8 +128,8 @@ Pack:
 	call Pack_JumptableNext
 	ret
 
-.TMHMPocketMenu:
-	farcall TMHMPocket
+.TMPocketMenu:
+	farcall TMPocket
 	ld b, PACKSTATE_INITKEYITEMSPOCKET ; left
 	ld c, PACKSTATE_INITITEMSPOCKET ; right
 	call Pack_InterpretJoypad
@@ -192,15 +192,15 @@ Pack:
 	dw QuitItemSubmenu
 
 .UseItem:
-	farcall AskTeachTMHM
+	farcall AskTeachTM
 	ret c
-	farcall ChooseMonToLearnTMHM
+	farcall ChooseMonToLearnTM
 	jr c, .declined
 	ld hl, wOptions
 	ld a, [hl]
 	push af
 	res NO_TEXT_SCROLL, [hl]
-	farcall TeachTMHM
+	farcall TeachTM
 	pop af
 	ld [wOptions], a
 .declined
@@ -659,8 +659,8 @@ BattlePack:
 	dw .BallsPocketMenu    ;  4
 	dw .InitKeyItemsPocket ;  5
 	dw .KeyItemsPocketMenu ;  6
-	dw .InitTMHMPocket     ;  7
-	dw .TMHMPocketMenu     ;  8
+	dw .InitTMPocket       ;  7
+	dw .TMPocketMenu       ;  8
 	dw Pack_QuitNoScript   ;  9
 	dw Pack_QuitRunScript  ; 10
 
@@ -694,7 +694,7 @@ BattlePack:
 	ld [wItemsPocketScrollPosition], a
 	ld a, [wMenuCursorY]
 	ld [wItemsPocketCursor], a
-	ld b, PACKSTATE_INITTMHMPOCKET ; left
+	ld b, PACKSTATE_INITTMPOCKET ; left
 	ld c, PACKSTATE_INITBALLSPOCKET ; right
 	call Pack_InterpretJoypad
 	ret c
@@ -723,14 +723,14 @@ BattlePack:
 	ld a, [wMenuCursorY]
 	ld [wKeyItemsPocketCursor], a
 	ld b, PACKSTATE_INITBALLSPOCKET ; left
-	ld c, PACKSTATE_INITTMHMPOCKET ; right
+	ld c, PACKSTATE_INITTMPOCKET ; right
 	call Pack_InterpretJoypad
 	ret c
 	call ItemSubmenu
 	ret
 
-.InitTMHMPocket:
-	ld a, TM_HM_POCKET
+.InitTMPocket:
+	ld a, TM_POCKET
 	ld [wCurPocket], a
 	call ClearPocketList
 	call DrawPocketName
@@ -742,14 +742,14 @@ BattlePack:
 	call Pack_JumptableNext
 	ret
 
-.TMHMPocketMenu:
-	farcall TMHMPocket
+.TMPocketMenu:
+	farcall TMPocket
 	ld b, PACKSTATE_INITKEYITEMSPOCKET ; left
 	ld c, PACKSTATE_INITITEMSPOCKET ; right
 	call Pack_InterpretJoypad
 	ret c
 	xor a
-	call TMHMSubmenu
+	call TMSubmenu
 	ret
 
 .InitBallsPocket:
@@ -783,7 +783,7 @@ BattlePack:
 ItemSubmenu:
 	farcall CheckItemContext
 	ld a, [wItemAttributeValue]
-TMHMSubmenu:
+TMSubmenu:
 	and a
 	jr z, .NoUse
 	ld hl, .UsableMenuHeader
@@ -946,7 +946,7 @@ DepositSellPack:
 	dw .ItemsPocket
 	dw .BallsPocket
 	dw .KeyItemsPocket
-	dw .TMHMPocket
+	dw .TMPocket
 
 .ItemsPocket:
 	xor a ; ITEM_POCKET
@@ -980,11 +980,11 @@ DepositSellPack:
 	ld [wKeyItemsPocketCursor], a
 	ret
 
-.TMHMPocket:
-	ld a, TM_HM_POCKET
+.TMPocket:
+	ld a, TM_POCKET
 	call InitPocket
 	call WaitBGMap_DrawPackGFX
-	farcall TMHMPocket
+	farcall TMPocket
 	ld a, [wCurItem]
 	ld [wCurItem], a
 	ret
@@ -1090,7 +1090,7 @@ TutorialPack:
 	dw .Items
 	dw .Balls
 	dw .KeyItems
-	dw .TMHM
+	dw .TM
 
 .Items:
 	xor a ; ITEM_POCKET
@@ -1132,11 +1132,11 @@ TutorialPack:
 	dba PlaceMenuItemQuantity
 	dba UpdateItemDescription
 
-.TMHM:
-	ld a, TM_HM_POCKET
+.TM:
+	ld a, TM_POCKET
 	call InitPocket
 	call WaitBGMap_DrawPackGFX
-	farcall TMHMPocket
+	farcall TMPocket
 	ld a, [wCurItem]
 	ld [wCurItem], a
 	ret
@@ -1241,7 +1241,7 @@ PackGFXPointers:
 	dw PackGFX + (15 tiles) * 1 ; ITEM_POCKET
 	dw PackGFX + (15 tiles) * 3 ; BALL_POCKET
 	dw PackGFX + (15 tiles) * 0 ; KEY_ITEM_POCKET
-	dw PackGFX + (15 tiles) * 2 ; TM_HM_POCKET
+	dw PackGFX + (15 tiles) * 2 ; TM_POCKET
 
 Pack_InterpretJoypad:
 	ld hl, wMenuJoypad

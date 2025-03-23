@@ -16,6 +16,6 @@
 	db GROWTH_MEDIUM_FAST ; growth rate
 	dn EGG_INDETERMINATE, EGG_INDETERMINATE ; egg groups
 
-	; tm/hm learnset
-	tmhm
+	; tm learnset
+	tm
 	; end

@@ -21,8 +21,8 @@ PredefPointers::
 	add_predef AnimateHPBar
 	add_predef CalcMonStats
 	add_predef CalcMonStatC
-	add_predef CanLearnTMHMMove
-	add_predef GetTMHMMove
+	add_predef CanLearnTMMove
+	add_predef GetTMMove
 	add_predef LinkTextboxAtHL
 	add_predef PrintMoveDescription
 	add_predef UpdatePlayerHUD

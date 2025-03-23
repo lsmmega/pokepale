@@ -28,7 +28,7 @@ DEF BASE_FRONTPIC    rw
 DEF BASE_BACKPIC     rw
 DEF BASE_GROWTH_RATE rb
 DEF BASE_EGG_GROUPS  rb
-DEF BASE_TMHM        rb (NUM_TM_HM_TUTOR + 7) / 8
+DEF BASE_TM          rb (NUM_TM_TUTOR + 7) / 8
 DEF BASE_DATA_SIZE EQU _RS
 
 ; gender ratio constants
@@ -49,6 +49,8 @@ DEF GENDER_UNKNOWN EQU -1
 	const GROWTH_MEDIUM_SLOW
 	const GROWTH_FAST
 	const GROWTH_SLOW
+	const GROWTH_ERRATIC
+	const GROWTH_FLUCTUATING
 DEF NUM_GROWTH_RATES EQU const_value
 
 ; wBaseEggGroups values

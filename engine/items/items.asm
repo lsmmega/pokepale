@@ -15,7 +15,7 @@ _ReceiveItem::
 	dw .Item
 	dw .KeyItem
 	dw .Ball
-	dw .TMHM
+	dw .TM
 
 .Item:
 	ld h, d
@@ -31,13 +31,13 @@ _ReceiveItem::
 	ld hl, wNumBalls
 	jp PutItemInPocket
 
-.TMHM:
+.TM:
 	ld h, d
 	ld l, e
 	ld a, [wCurItem]
 	ld c, a
-	call GetTMHMNumber
-	jp ReceiveTMHM
+	call GetTMNumber
+	jp ReceiveTM
 
 _TossItem::
 	call DoesHLEqualNumItems
@@ -56,19 +56,19 @@ _TossItem::
 	dw .Item
 	dw .KeyItem
 	dw .Ball
-	dw .TMHM
+	dw .TM
 
 .Ball:
 	ld hl, wNumBalls
 	jp RemoveItemFromPocket
 
-.TMHM:
+.TM:
 	ld h, d
 	ld l, e
 	ld a, [wCurItem]
 	ld c, a
-	call GetTMHMNumber
-	jp TossTMHM
+	call GetTMNumber
+	jp TossTM
 
 .KeyItem:
 	ld h, d
@@ -99,19 +99,19 @@ _CheckItem::
 	dw .Item
 	dw .KeyItem
 	dw .Ball
-	dw .TMHM
+	dw .TM
 
 .Ball:
 	ld hl, wNumBalls
 	jp CheckTheItem
 
-.TMHM:
+.TM:
 	ld h, d
 	ld l, e
 	ld a, [wCurItem]
 	ld c, a
-	call GetTMHMNumber
-	jp CheckTMHM
+	call GetTMNumber
+	jp CheckTM
 
 .KeyItem:
 	ld h, d
@@ -401,10 +401,10 @@ CheckKeyItems:
 	scf
 	ret
 
-ReceiveTMHM:
+ReceiveTM:
 	dec c
 	ld b, 0
-	ld hl, wTMsHMs
+	ld hl, wTMs
 	add hl, bc
 	ld a, [wItemQuantityChange]
 	add [hl]
@@ -418,10 +418,10 @@ ReceiveTMHM:
 	and a
 	ret
 
-TossTMHM:
+TossTM:
 	dec c
 	ld b, 0
-	ld hl, wTMsHMs
+	ld hl, wTMs
 	add hl, bc
 	ld a, [wItemQuantityChange]
 	ld b, a
@@ -431,11 +431,11 @@ TossTMHM:
 	ld [hl], a
 	ld [wItemQuantity], a
 	jr nz, .yup
-	ld a, [wTMHMPocketScrollPosition]
+	ld a, [wTMPocketScrollPosition]
 	and a
 	jr z, .yup
 	dec a
-	ld [wTMHMPocketScrollPosition], a
+	ld [wTMPocketScrollPosition], a
 
 .yup
 	scf
@@ -445,10 +445,10 @@ TossTMHM:
 	and a
 	ret
 
-CheckTMHM:
+CheckTM:
 	dec c
 	ld b, $0
-	ld hl, wTMsHMs
+	ld hl, wTMs
 	add hl, bc
 	ld a, [hl]
 	and a
@@ -456,8 +456,8 @@ CheckTMHM:
 	scf
 	ret
 
-GetTMHMNumber::
-; Return the number of a TM/HM by item id c.
+GetTMNumber::
+; Return the number of a TM by item id c.
 	ld a, c
 ; Skip any dummy items.
 	cp ITEM_C3 ; TM04-05
@@ -473,8 +473,8 @@ GetTMHMNumber::
 	ld c, a
 	ret
 
-GetNumberedTMHM:
-; Return the item id of a TM/HM by number c.
+GetNumberedTM:
+; Return the item id of a TM by number c.
 	ld a, c
 ; Skip any gaps.
 	cp ITEM_C3 - (TM01 - 1)

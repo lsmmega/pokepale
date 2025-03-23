@@ -1,7 +1,7 @@
 ; used in data/pokemon/base_stats/*.asm
-MACRO tmhm
+MACRO tm
 	; initialize bytes to 0
-	for n, (NUM_TM_HM_TUTOR + 7) / 8
+	for n, (NUM_TM_TUTOR + 7) / 8
 		DEF _tm{d:n} = 0
 	endr
 	; set bits of bytes
@@ -11,12 +11,12 @@ MACRO tmhm
 			DEF i = (\1_TMNUM - 1) % 8
 			DEF _tm{d:n} |= 1 << i
 		else
-			fail "\1 is not a TM, HM, or tutor move"
+			fail "\1 is not a TM, or tutor move"
 		endc
 		shift
 	endr
 	; output bytes
-	for n, (NUM_TM_HM_TUTOR + 7) / 8
+	for n, (NUM_TM_TUTOR + 7) / 8
 		db _tm{d:n}
 	endr
 ENDM

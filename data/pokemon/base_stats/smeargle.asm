@@ -16,6 +16,6 @@
 	db GROWTH_FAST ; growth rate
 	dn EGG_GROUND, EGG_GROUND ; egg groups
 
-	; tm/hm learnset
-	tmhm
+	; tm learnset
+	tm
 	; end

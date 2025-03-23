@@ -7,9 +7,9 @@ PrintItemDescription:
 
 	ld [wCurItem], a
 	push de
-	farcall GetTMHMItemMove
+	farcall GetTMItemMove
 	pop hl
-	ld a, [wTempTMHM]
+	ld a, [wTempTM]
 	ld [wCurSpecies], a
 	predef PrintMoveDescription
 	ret

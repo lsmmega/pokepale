@@ -1,13 +1,13 @@
 ; GetOptionPointer.Pointers indexes
 	const_def
-	const OPT_TEXT_SPEED    ; 0
-	const OPT_BATTLE_SCENE  ; 1
-	const OPT_BATTLE_STYLE  ; 2
-	const OPT_SOUND         ; 3
-	const OPT_PRINT         ; 4
-	const OPT_MENU_ACCOUNT  ; 5
-	const OPT_FRAME         ; 6
-	const OPT_CANCEL        ; 7
+	const OPT_TEXT_SPEED        ; 0
+	const OPT_TEXT_AUTOSCROLL   ; 1
+	const OPT_BATTLE_SCENE      ; 2
+	const OPT_BATTLE_STYLE      ; 3
+	const OPT_SOUND             ; 4
+	const OPT_PRINT             ; 5
+	const OPT_FRAME             ; 6
+	const OPT_CANCEL            ; 7
 DEF NUM_OPTIONS EQU const_value ; 8
 
 _Option:
@@ -77,6 +77,8 @@ _Option:
 StringOptions:
 	db "TEXT SPEED<LF>"
 	db "        :<LF>"
+	db "TEXT AUTOSCROLL<LF>"
+	db "        :<LF>"
 	db "BATTLE SCENE<LF>"
 	db "        :<LF>"
 	db "BATTLE STYLE<LF>"
@@ -84,8 +86,6 @@ StringOptions:
 	db "SOUND<LF>"
 	db "        :<LF>"
 	db "PRINT<LF>"
-	db "        :<LF>"
-	db "MENU ACCOUNT<LF>"
 	db "        :<LF>"
 	db "FRAME<LF>"
 	db "        :TYPE<LF>"
@@ -97,11 +97,11 @@ GetOptionPointer:
 .Pointers:
 ; entries correspond to OPT_* constants
 	dw Options_TextSpeed
+	dw Options_TextAutoscroll
 	dw Options_BattleScene
 	dw Options_BattleStyle
 	dw Options_Sound
 	dw Options_Print
-	dw Options_MenuAccount
 	dw Options_Frame
 	dw Options_Cancel
 
@@ -112,37 +112,24 @@ GetOptionPointer:
 	const OPT_TEXT_SPEED_INSTANT ; 3
 
 Options_TextSpeed:
-	call GetTextSpeed
+	ld a, [wOptions]
+	and TEXT_DELAY_MASK
+	ld c, a
 	ldh a, [hJoyPressed]
+	dec c
 	bit D_LEFT_F, a
-	jr nz, .LeftPressed
+	jr nz, .ok
+	inc c
 	bit D_RIGHT_F, a
 	jr z, .NonePressed
-	ld a, c ; right pressed
-	cp OPT_TEXT_SPEED_INSTANT
-	jr c, .Increase
-	ld c, OPT_TEXT_SPEED_FAST - 1
-
-.Increase:
 	inc c
-	ld a, e
-	jr .Save
-
-.LeftPressed:
+.ok
 	ld a, c
-	and a
-	jr nz, .Decrease
-	ld c, OPT_TEXT_SPEED_INSTANT + 1
-
-.Decrease:
-	dec c
-	ld a, d
-
-.Save:
-	ld b, a
+	and TEXT_DELAY_MASK
+	ld c, a
 	ld a, [wOptions]
-	and $f0
-	or b
+	and ~TEXT_DELAY_MASK
+	or c
 	ld [wOptions], a
 
 .NonePressed:
@@ -150,56 +137,78 @@ Options_TextSpeed:
 	ld hl, .Strings
 	add hl, bc
 	add hl, bc
-	ld e, [hl]
-	inc hl
+	ld a, [hli]
 	ld d, [hl]
+	ld e, a
 	hlcoord 11, 3
 	call PlaceString
 	and a
 	ret
 
 .Strings:
-; entries correspond to OPT_TEXT_SPEED_* constants
-	dw .Fast
-	dw .Mid
-	dw .Slow
 	dw .Instant
+	dw .Fast
+	dw .Medium
+	dw .Slow
 
-.Fast:    db "FAST   @"
-.Mid:     db "MID    @"
-.Slow:    db "SLOW   @"
-.Instant: db "INSTANT@"
+.Fast:
+	db "FAST   @"
+.Medium:
+	db "MID    @"
+.Slow:
+	db "SLOW   @"
+.Instant:
+	db "INSTANT@"
 
-GetTextSpeed:
-; converts TEXT_DELAY_* value in a to OPT_TEXT_SPEED_* value in c,
-; with previous/next TEXT_DELAY_* values in d/e
+Options_TextAutoscroll:
+	ld a, [hJoyPressed]
+	ld b, a
 	ld a, [wOptions]
-	and TEXT_DELAY_MASK
-	cp TEXT_DELAY_SLOW
-	jr z, .slow
-	cp TEXT_DELAY_FAST
-	jr z, .fast
-	cp TEXT_DELAY_INSTANT
-	jr z, .instant
-	; none of the above
-	ld c, OPT_TEXT_SPEED_MED
-	lb de, TEXT_DELAY_FAST, TEXT_DELAY_SLOW
+	and AUTOSCROLL_MASK
+	sub 4
+	bit D_LEFT_F, b
+	jr nz, .ok
+	add 4
+	bit D_RIGHT_F, b
+	jr z, .not_changing
+	add 4
+.ok
+	and AUTOSCROLL_MASK
+	ld c, a
+	ld a, [wOptions]
+	and ~AUTOSCROLL_MASK
+	or c
+	ld [wOptions], a
+	ld a, c
+
+.not_changing
+	rrca
+	ld b, 0
+	ld c, a
+	ld hl, .Strings
+	add hl, bc
+	ld e, [hl]
+	inc hl
+	ld d, [hl]
+	hlcoord 11, 5
+	call PlaceString
+	and a
 	ret
 
-.slow
-	ld c, OPT_TEXT_SPEED_SLOW
-	lb de, TEXT_DELAY_MED, TEXT_DELAY_INSTANT
-	ret
+.Strings:
+	dw .None
+	dw .Start
+	dw .AandB
+	dw .AorB
 
-.fast
-	ld c, OPT_TEXT_SPEED_FAST
-	lb de, TEXT_DELAY_INSTANT, TEXT_DELAY_MED
-	ret
-
-.instant
-	ld c, OPT_TEXT_SPEED_INSTANT
-	lb de, TEXT_DELAY_SLOW, TEXT_DELAY_FAST
- 	ret
+.None:
+	db "NONE   @"
+.Start:
+	db "START  @"
+.AandB:
+	db "A AND B@"
+.AorB:
+	db "A OR B @"
 
 Options_BattleScene:
 	ld hl, wOptions
@@ -232,7 +241,7 @@ Options_BattleScene:
 	ld de, .Off
 
 .Display:
-	hlcoord 11, 5
+	hlcoord 11, 7
 	call PlaceString
 	and a
 	ret
@@ -270,7 +279,7 @@ Options_BattleStyle:
 	ld de, .Set
 
 .Display:
-	hlcoord 11, 7
+	hlcoord 11, 9
 	call PlaceString
 	and a
 	ret
@@ -315,7 +324,7 @@ Options_Sound:
 	ld de, .Stereo
 
 .Display:
-	hlcoord 11, 9
+	hlcoord 11, 11
 	call PlaceString
 	and a
 	ret
@@ -369,7 +378,7 @@ Options_Print:
 	ld e, [hl]
 	inc hl
 	ld d, [hl]
-	hlcoord 11, 11
+	hlcoord 11, 13
 	call PlaceString
 	and a
 	ret
@@ -424,44 +433,6 @@ GetPrinterSetting:
 	ld c, OPT_PRINT_DARKEST
 	lb de, GBPRINTER_DARKER, GBPRINTER_LIGHTEST
 	ret
-
-Options_MenuAccount:
-	ld hl, wOptions2
-	ldh a, [hJoyPressed]
-	bit D_LEFT_F, a
-	jr nz, .LeftPressed
-	bit D_RIGHT_F, a
-	jr z, .NonePressed
-	bit MENU_ACCOUNT, [hl]
-	jr nz, .ToggleOff
-	jr .ToggleOn
-
-.LeftPressed:
-	bit MENU_ACCOUNT, [hl]
-	jr z, .ToggleOn
-	jr .ToggleOff
-
-.NonePressed:
-	bit MENU_ACCOUNT, [hl]
-	jr nz, .ToggleOn
-
-.ToggleOff:
-	res MENU_ACCOUNT, [hl]
-	ld de, .Off
-	jr .Display
-
-.ToggleOn:
-	set MENU_ACCOUNT, [hl]
-	ld de, .On
-
-.Display:
-	hlcoord 11, 13
-	call PlaceString
-	and a
-	ret
-
-.Off: db "OFF@"
-.On:  db "ON @"
 
 Options_Frame:
 	ld hl, wTextboxFrame
@@ -518,15 +489,15 @@ OptionsControl:
 .DownPressed:
 	ld a, [hl]
 	cp OPT_CANCEL ; maximum option index
-	jr nz, .CheckMenuAccount
+	jr nz, .CheckFrame
 	ld [hl], OPT_TEXT_SPEED ; first option
 	scf
 	ret
 
-.CheckMenuAccount: ; I have no idea why this exists...
-	cp OPT_MENU_ACCOUNT
+.CheckFrame: ; I have no idea why this exists...
+	cp OPT_FRAME
 	jr nz, .Increase
-	ld [hl], OPT_MENU_ACCOUNT
+	ld [hl], OPT_FRAME
 
 .Increase:
 	inc [hl]
@@ -539,7 +510,7 @@ OptionsControl:
 ; Another thing where I'm not sure why it exists
 	cp OPT_FRAME
 	jr nz, .NotFrame
-	ld [hl], OPT_MENU_ACCOUNT
+	ld [hl], OPT_PRINT
 	scf
 	ret
 

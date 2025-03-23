@@ -168,10 +168,6 @@ _BootedTMText::
 	text "Booted up a TM."
 	prompt
 
-_BootedHMText::
-	text "Booted up an HM."
-	prompt
-
 _ContainedMoveText::
 	text "It contained"
 	line "@"
@@ -184,7 +180,7 @@ _ContainedMoveText::
 	line "to a #MON?"
 	done
 
-_TMHMNotCompatibleText::
+_TMNotCompatibleText::
 	text_ram wStringBuffer2
 	text " is"
 	line "not compatible"
@@ -198,7 +194,7 @@ _TMHMNotCompatibleText::
 	text "."
 	prompt
 
-_NoRoomTMHMText::
+_NoRoomTMText::
 	text "You have no room"
 	line "for any more"
 	cont "@"
@@ -206,7 +202,7 @@ _NoRoomTMHMText::
 	text "S."
 	prompt
 
-_ReceivedTMHMText::
+_ReceivedTMText::
 	text "You received"
 	line "@"
 	text_ram wStringBuffer1
@@ -303,7 +299,6 @@ _CantUseItemText::
 	prompt
 
 _UseCutText::
-	text_ram wStringBuffer2
 	text " used"
 	line "CUT!"
 	prompt
@@ -322,7 +317,6 @@ _BlindingFlashText::
 	text_end ; unreferenced
 
 _UsedSurfText::
-	text_ram wStringBuffer2
 	text " used"
 	line "SURF!"
 	done
@@ -343,7 +337,6 @@ _AskSurfText::
 	done
 
 _UseWaterfallText::
-	text_ram wStringBuffer2
 	text " used"
 	line "WATERFALL!"
 	done
@@ -392,7 +385,6 @@ _AlreadyUsingStrengthText::
 	prompt
 
 _UseStrengthText::
-	text_ram wStringBuffer2
 	text " used"
 	line "STRENGTH!"
 	done
@@ -422,7 +414,6 @@ _BouldersMayMoveText::
 	done
 
 _UseWhirlpoolText::
-	text_ram wStringBuffer2
 	text " used"
 	line "WHIRLPOOL!"
 	prompt
