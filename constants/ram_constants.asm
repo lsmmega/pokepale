@@ -38,9 +38,8 @@ DEF JOYPAD_DISABLE_SGB_TRANSFER_F EQU 7
 DEF IN_BATTLE_TOWER_BATTLE_F EQU 0
 
 ; wOptions1::
-	const_def 3
-	const NO_TEXT_SCROLL ; 3
-	const AUTOSCROLL_ABF ; 4
+	const_def 4
+	const NO_TEXT_SCROLL ; 4
 	const STEREO         ; 5
 	const BATTLE_SHIFT   ; 6
 	const BATTLE_SCENE   ; 7
