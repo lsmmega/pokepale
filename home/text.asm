@@ -451,7 +451,7 @@ Paragraph::
 	lb bc, TEXTBOX_INNERH - 1, TEXTBOX_INNERW
 	call ClearBox
 	call UnloadBlinkingCursor
-	ld c, 20
+	ld c, 5
 	call DelayFrames
 	hlcoord TEXTBOX_INNERX, TEXTBOX_INNERY
 	pop de
