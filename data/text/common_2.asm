@@ -390,7 +390,6 @@ _UseStrengthText::
 	done
 
 _MoveBoulderText::
-	text_ram wStringBuffer1
 	text " can"
 	line "move boulders."
 	prompt
