@@ -91,6 +91,14 @@ MovementPointers:
 	dw Movement_rock_smash            ; 57
 	dw Movement_return_dig            ; 58
 	dw Movement_skyfall_top           ; 59
+	dw Movement_run_step_down         ; 5a
+	dw Movement_run_step_up           ; 5b
+	dw Movement_run_step_left         ; 5c
+	dw Movement_run_step_right        ; 5d
+	dw Movement_fast_step_down        ; 5e
+	dw Movement_fast_step_up          ; 5f
+	dw Movement_fast_step_left        ; 60
+	dw Movement_fast_step_right       ; 61
 	assert_table_length NUM_MOVEMENT_CMDS
 
 Movement_teleport_from:
@@ -441,51 +449,91 @@ TurnHead:
 
 Movement_slow_step_down:
 	ld a, STEP_SLOW << 2 | DOWN
-	jp NormalStep
+	jr Movement_do_step
 
 Movement_slow_step_up:
 	ld a, STEP_SLOW << 2 | UP
-	jp NormalStep
+	jr Movement_do_step
 
 Movement_slow_step_left:
 	ld a, STEP_SLOW << 2 | LEFT
-	jp NormalStep
+	jr Movement_do_step
 
 Movement_slow_step_right:
 	ld a, STEP_SLOW << 2 | RIGHT
-	jp NormalStep
+	jr Movement_do_step
 
 Movement_step_down:
 	ld a, STEP_WALK << 2 | DOWN
-	jp NormalStep
+	jr Movement_do_step
 
 Movement_step_up:
 	ld a, STEP_WALK << 2 | UP
-	jp NormalStep
+	jr Movement_do_step
 
 Movement_step_left:
 	ld a, STEP_WALK << 2 | LEFT
-	jp NormalStep
+	jr Movement_do_step
 
 Movement_step_right:
 	ld a, STEP_WALK << 2 | RIGHT
-	jp NormalStep
+	jr Movement_do_step
+
+Movement_fast_step_down:
+	ld a, $3 << 2 | DOWN
+	jr Movement_do_step
+
+Movement_fast_step_up:
+	ld a, $3 << 2 | UP
+	jr Movement_do_step
+
+Movement_fast_step_left:
+	ld a, $3 << 2 | LEFT
+	jr Movement_do_step
+
+Movement_fast_step_right:
+	ld a, $3 << 2 | RIGHT
+	jr Movement_do_step
 
 Movement_big_step_down:
 	ld a, STEP_BIKE << 2 | DOWN
-	jp NormalStep
+	jr Movement_do_step
 
 Movement_big_step_up:
 	ld a, STEP_BIKE << 2 | UP
-	jp NormalStep
+	jr Movement_do_step
 
 Movement_big_step_left:
 	ld a, STEP_BIKE << 2 | LEFT
-	jp NormalStep
+	jr Movement_do_step
 
 Movement_big_step_right:
 	ld a, STEP_BIKE << 2 | RIGHT
+
+Movement_do_step:
+	ld d, OBJECT_ACTION_STEP
+
+Movement_normal_step:
 	jp NormalStep
+
+Movement_run_step_down:
+	ld a, $3 << 2 | DOWN
+	jr Movement_do_run
+
+Movement_run_step_up:
+	ld a, $3 << 2 | UP
+	jr Movement_do_run
+
+Movement_run_step_left:
+	ld a, $3 << 2 | LEFT
+	jr Movement_do_run
+
+Movement_run_step_right:
+	ld a, $3 << 2 | RIGHT
+
+Movement_do_run:
+	ld d, OBJECT_ACTION_RUN
+	jr Movement_normal_step
 
 Movement_turn_away_down:
 	ld a, STEP_SLOW << 2 | DOWN
@@ -662,11 +710,13 @@ TurnStep:
 	ret
 
 NormalStep:
+	push de
 	call InitStep
 	call UpdateTallGrassFlags
 	ld hl, OBJECT_ACTION
 	add hl, bc
-	ld [hl], OBJECT_ACTION_STEP
+	pop de
+	ld [hl], d
 
 	ld hl, OBJECT_TILE_COLLISION
 	add hl, bc

@@ -219,4 +219,44 @@ MACRO skyfall_top
 	db movement_skyfall_top
 ENDM
 
+	const movement_run_step_down
+MACRO run_step_down
+	db movement_run_step_down ; $5a
+ENDM
+
+	const movement_run_step_up
+MACRO run_step_up
+	db movement_run_step_up ; $5b
+ENDM
+
+	const movement_run_step_left
+MACRO run_step_left
+	db movement_run_step_left ; $5c
+ENDM
+
+	const movement_run_step_right
+MACRO run_step_right
+	db movement_run_step_right ; $5d
+ENDM
+
+	const movement_fast_step_down
+MACRO fast_step_down
+	db movement_fast_step_down ; $5e
+ENDM
+
+	const movement_fast_step_up
+MACRO fast_step_up
+	db movement_fast_step_up ; $5f
+ENDM
+
+	const movement_fast_step_left
+MACRO fast_step_left
+	db movement_fast_step_left ; $60
+ENDM
+
+	const movement_fast_step_right
+MACRO fast_step_right
+	db movement_fast_step_right ; $61
+ENDM
+
 DEF NUM_MOVEMENT_CMDS EQU const_value
