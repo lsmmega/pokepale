@@ -133,7 +133,6 @@ UnusedWait30Frames: ; unreferenced
 	ret
 
 HandleMap:
-	call ResetOverworldDelay
 	call HandleMapTimeAndJoypad
 	farcall HandleCmdQueue ; no need to farcall
 	call MapEvents
@@ -169,20 +168,13 @@ MapEvents:
 .no_events:
 	ret
 
-MaxOverworldDelay:
-	db 2
-
-ResetOverworldDelay:
-	ld a, [MaxOverworldDelay]
-	ld [wOverworldDelay], a
-	ret
-
 NextOverworldFrame:
 	ld a, [wOverworldDelay]
 	and a
-	ret z
-	ld c, a
-	call DelayFrames
+	jp nz, DelayFrame
+; reset overworld delay to leak into the next frame
+	ld a, $82
+	ld [wOverworldDelay], a
 	ret
 
 HandleMapTimeAndJoypad:
@@ -1015,7 +1007,7 @@ EdgeWarpScript:
 	reloadend MAPSETUP_CONNECTION
 
 ChangeDirectionScript:
-	deactivatefacing 3
+	deactivatefacing 6
 	callasm EnableWildEncounters
 	end
 
