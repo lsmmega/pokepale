@@ -1403,53 +1403,6 @@ _KnowsMoveText::
 	text "."
 	prompt
 
-_MoveKnowsOneText::
-	text "That #MON knows"
-	line "only one move."
-	done
-
-_AskDeleteMoveText::
-	text "Oh, make it forget"
-	line "@"
-	text_ram wStringBuffer1
-	text "?"
-	done
-
-_DeleterForgotMoveText::
-	text "Done! Your #MON"
-	line "forgot the move."
-	done
-
-_DeleterEggText::
-	text "An EGG doesn't"
-	line "know any moves!"
-	done
-
-_DeleterNoComeAgainText::
-	text "No? Come visit me"
-	line "again."
-	done
-
-_DeleterAskWhichMoveText::
-	text "Which move should"
-	line "it forget, then?"
-	prompt
-
-_DeleterIntroText::
-	text "Um… Oh, yes, I'm"
-	line "the MOVE DELETER."
-
-	para "I can make #MON"
-	line "forget moves."
-
-	para "Shall I make a"
-	line "#MON forget?"
-	done
-
-_DeleterAskWhichMonText::
-	text "Which #MON?"
-	prompt
-
 _DSTIsThatOKText::
 	text " DST,"
 	line "is that OK?"
