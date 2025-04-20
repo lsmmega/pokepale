@@ -109,7 +109,6 @@ Route39Farmhouse_Blocks:
 MahoganyRedGyaradosSpeechHouse_Blocks:
 BlackthornDragonSpeechHouse_Blocks:
 BlackthornEmysHouse_Blocks:
-MoveDeletersHouse_Blocks:
 CeruleanGymBadgeSpeechHouse_Blocks:
 CeruleanPoliceStation_Blocks:
 CeruleanTradeSpeechHouse_Blocks:

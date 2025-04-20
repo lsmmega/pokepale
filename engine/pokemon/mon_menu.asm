@@ -696,68 +696,6 @@ MonMenu_SweetScent:
 	ld a, $2
 	ret
 
-ChooseMoveToDelete:
-	ld hl, wOptions
-	ld a, [hl]
-	push af
-	set NO_TEXT_SCROLL, [hl]
-	call LoadFontsBattleExtra
-	call .ChooseMoveToDelete
-	pop bc
-	ld a, b
-	ld [wOptions], a
-	push af
-	call ClearBGPalettes
-	pop af
-	ret
-
-.ChooseMoveToDelete
-	call SetUpMoveScreenBG
-	ld de, DeleteMoveScreen2DMenuData
-	call Load2DMenuData
-	call SetUpMoveList
-	ld hl, w2DMenuFlags1
-	set _2DMENU_ENABLE_SPRITE_ANIMS_F, [hl]
-	jr .enter_loop
-
-.loop
-	call ScrollingMenuJoypad
-	bit B_BUTTON_F, a
-	jp nz, .b_button
-	bit A_BUTTON_F, a
-	jp nz, .a_button
-
-.enter_loop
-	call PrepareToPlaceMoveData
-	call PlaceMoveData
-	jp .loop
-
-.a_button
-	and a
-	jr .finish
-
-.b_button
-	scf
-
-.finish
-	push af
-	xor a
-	ld [wSwitchMon], a
-	ld hl, w2DMenuFlags1
-	res _2DMENU_ENABLE_SPRITE_ANIMS_F, [hl]
-	call ClearSprites
-	call ClearTilemap
-	pop af
-	ret
-
-DeleteMoveScreen2DMenuData:
-	db 3, 1 ; cursor start y, x
-	db 3, 1 ; rows, columns
-	db _2DMENU_ENABLE_SPRITE_ANIMS ; flags 1
-	db 0 ; flags 2
-	dn 2, 0 ; cursor offset
-	db D_UP | D_DOWN | A_BUTTON | B_BUTTON ; accepted buttons
-
 ManagePokemonMoves:
 	ld a, [wCurPartySpecies]
 	cp EGG
