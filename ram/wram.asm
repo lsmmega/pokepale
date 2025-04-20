@@ -709,14 +709,12 @@ wDexListingScrollOffset:: db ; offset of the first displayed entry from the star
 wDexListingCursor:: db ; Dex cursor
 wDexListingEnd:: db ; Last mon to display
 wDexListingHeight:: db ; number of entries displayed at once in the dex listing
-wCurDexMode:: db ; Pokedex Mode
 wDexSearchMonType1:: db ; first type to search
 wDexSearchMonType2:: db ; second type to search
 wDexSearchResultCount:: db
 wDexArrowCursorPosIndex:: db
 wDexArrowCursorDelayCounter:: db
 wDexArrowCursorBlinkCounter:: db
-wDexSearchSlowpokeFrame:: db
 wUnlockedUnownMode:: db
 wDexCurUnownIndex:: db
 wDexUnownCount:: db
@@ -2942,7 +2940,6 @@ wPokegearFlags::
 ; bit 7: on/off
 	db
 wRadioTuningKnob:: db
-wLastDexMode:: db
 	ds 1
 wWhichRegisteredItem:: db
 wRegisteredItem:: db

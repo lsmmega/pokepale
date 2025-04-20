@@ -315,14 +315,13 @@ Function11c1b9:
 	ld de, vTiles2
 	ld bc, $60
 	call CopyBytes
-	ld hl, EZChatSlowpokeLZ
+	ld hl, EZChatBorderLZ
 	ld de, vTiles0
 	call Decompress
 	call EnableLCD
 	farcall HDMATransferTilemapAndAttrmap_Overworld
 	farcall ClearSpriteAnims
 	farcall LoadPokemonData
-	farcall Pokedex_ABCMode
 	ldh a, [rSVBK]
 	push af
 	ld a, $5
@@ -2958,11 +2957,6 @@ EZChat_GetSeenPokemonByKana:
 	ld [wcd2e], a
 	ld [hl], a
 
-	ld a, LOW(EZChat_SortedPokemon)
-	ld [wcd2f], a
-	ld a, HIGH(EZChat_SortedPokemon)
-	ld [wcd30], a
-
 	ld a, LOW(wc6a8)
 	ld [wcd31], a
 	ld a, HIGH(wc6a8)
@@ -3225,13 +3219,11 @@ EZChat_GetCategoryWordsByKana:
 	ldh [rSVBK], a
 	ret
 
-INCLUDE "data/pokemon/ezchat_order.asm"
-
 SelectStartGFX:
 INCBIN "gfx/mobile/select_start.2bpp"
 
-EZChatSlowpokeLZ:
-INCBIN "gfx/pokedex/slowpoke.2bpp.lz"
+EZChatBorderLZ:
+INCBIN "gfx/pokedex/border.2bpp.lz"
 
 MobileEZChatCategoryNames:
 ; entries correspond to EZCHAT_* constants

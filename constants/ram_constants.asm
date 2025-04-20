@@ -6,13 +6,6 @@ DEF AUTO_INPUT EQU $ff
 	const DEBUG_BATTLE_F
 	const DEBUG_FIELD_F
 
-; wCurDexMode::
-	const_def
-	const DEXMODE_NEW
-	const DEXMODE_OLD
-	const DEXMODE_ABC
-	const DEXMODE_UNOWN
-
 ; wMonType::
 	const_def
 	const PARTYMON   ; 0
