@@ -5650,9 +5650,6 @@ Function11ad1b:
 	ld [wcf65], a
 	ld [wcf66], a
 	ld [wcd30], a
-	ld a, DEXMODE_ABC
-	ld [wCurDexMode], a
-	farcall Pokedex_OrderMonsByMode
 	ret
 
 Function11ad6e:
