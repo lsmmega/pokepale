@@ -11,6 +11,15 @@ EvosAttacksPointers::
 	dw SquirtleEvosAttacks
 	dw WartortleEvosAttacks
 	dw BlastoiseEvosAttacks
+	dw PichuEvosAttacks
+	dw PikachuEvosAttacks
+	dw RaichuEvosAttacks
+	dw EeveeEvosAttacks
+	dw VaporeonEvosAttacks
+	dw JolteonEvosAttacks
+	dw FlareonEvosAttacks
+	dw EspeonEvosAttacks
+	dw UmbreonEvosAttacks
 	dw CaterpieEvosAttacks
 	dw MetapodEvosAttacks
 	dw ButterfreeEvosAttacks
@@ -26,8 +35,6 @@ EvosAttacksPointers::
 	dw FearowEvosAttacks
 	dw EkansEvosAttacks
 	dw ArbokEvosAttacks
-	dw PikachuEvosAttacks
-	dw RaichuEvosAttacks
 	dw SandshrewEvosAttacks
 	dw SandslashEvosAttacks
 	dw NidoranFEvosAttacks
@@ -134,10 +141,6 @@ EvosAttacksPointers::
 	dw GyaradosEvosAttacks
 	dw LaprasEvosAttacks
 	dw DittoEvosAttacks
-	dw EeveeEvosAttacks
-	dw VaporeonEvosAttacks
-	dw JolteonEvosAttacks
-	dw FlareonEvosAttacks
 	dw PorygonEvosAttacks
 	dw OmanyteEvosAttacks
 	dw OmastarEvosAttacks
@@ -173,7 +176,6 @@ EvosAttacksPointers::
 	dw CrobatEvosAttacks
 	dw ChinchouEvosAttacks
 	dw LanturnEvosAttacks
-	dw PichuEvosAttacks
 	dw CleffaEvosAttacks
 	dw IgglybuffEvosAttacks
 	dw TogepiEvosAttacks
@@ -197,8 +199,6 @@ EvosAttacksPointers::
 	dw YanmaEvosAttacks
 	dw WooperEvosAttacks
 	dw QuagsireEvosAttacks
-	dw EspeonEvosAttacks
-	dw UmbreonEvosAttacks
 	dw MurkrowEvosAttacks
 	dw SlowkingEvosAttacks
 	dw MisdreavusEvosAttacks

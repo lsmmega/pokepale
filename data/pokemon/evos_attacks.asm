@@ -167,6 +167,127 @@ BlastoiseEvosAttacks:
 	db 68, HYDRO_PUMP
 	db 0 ; no more level-up moves
 
+PichuEvosAttacks:
+	db EVOLVE_HAPPINESS, TR_ANYTIME, PIKACHU
+	db 0 ; no more evolutions
+	db 1, THUNDERSHOCK
+	db 1, CHARM
+	db 6, TAIL_WHIP
+	db 8, THUNDER_WAVE
+	db 11, SWEET_KISS
+	db 0 ; no more level-up moves
+
+PikachuEvosAttacks:
+	db EVOLVE_ITEM, THUNDERSTONE, RAICHU
+	db 0 ; no more evolutions
+	db 1, THUNDERSHOCK
+	db 1, GROWL
+	db 6, TAIL_WHIP
+	db 8, THUNDER_WAVE
+	db 11, QUICK_ATTACK
+	db 15, DOUBLE_TEAM
+	db 20, SLAM
+	db 26, THUNDERBOLT
+	db 33, AGILITY
+	db 41, THUNDER
+	db 50, LIGHT_SCREEN
+	db 0 ; no more level-up moves
+
+RaichuEvosAttacks:
+	db 0 ; no more evolutions
+	db 1, THUNDERSHOCK
+	db 1, TAIL_WHIP
+	db 1, QUICK_ATTACK
+	db 1, THUNDERBOLT
+	db 0 ; no more level-up moves
+
+EeveeEvosAttacks:
+	db EVOLVE_ITEM, THUNDERSTONE, JOLTEON
+	db EVOLVE_ITEM, WATER_STONE, VAPOREON
+	db EVOLVE_ITEM, FIRE_STONE, FLAREON
+	db EVOLVE_HAPPINESS, TR_MORNDAY, ESPEON
+	db EVOLVE_HAPPINESS, TR_NITE, UMBREON
+	db 0 ; no more evolutions
+	db 1, TACKLE
+	db 1, TAIL_WHIP
+	db 8, SAND_ATTACK
+	db 16, GROWL
+	db 23, QUICK_ATTACK
+	db 30, BITE
+	db 36, BATON_PASS
+	db 42, TAKE_DOWN
+	db 0 ; no more level-up moves
+
+VaporeonEvosAttacks:
+	db 0 ; no more evolutions
+	db 1, TACKLE
+	db 1, TAIL_WHIP
+	db 8, SAND_ATTACK
+	db 16, WATER_GUN
+	db 23, QUICK_ATTACK
+	db 30, BITE
+	db 36, AURORA_BEAM
+	db 42, HAZE
+	db 47, ACID_ARMOR
+	db 52, HYDRO_PUMP
+	db 0 ; no more level-up moves
+
+JolteonEvosAttacks:
+	db 0 ; no more evolutions
+	db 1, TACKLE
+	db 1, TAIL_WHIP
+	db 8, SAND_ATTACK
+	db 16, THUNDERSHOCK
+	db 23, QUICK_ATTACK
+	db 30, DOUBLE_KICK
+	db 36, PIN_MISSILE
+	db 42, THUNDER_WAVE
+	db 47, AGILITY
+	db 52, THUNDER
+	db 0 ; no more level-up moves
+
+FlareonEvosAttacks:
+	db 0 ; no more evolutions
+	db 1, TACKLE
+	db 1, TAIL_WHIP
+	db 8, SAND_ATTACK
+	db 16, EMBER
+	db 23, QUICK_ATTACK
+	db 30, BITE
+	db 36, FIRE_SPIN
+	db 42, SMOG
+	db 47, LEER
+	db 52, FLAMETHROWER
+	db 0 ; no more level-up moves
+
+EspeonEvosAttacks:
+	db 0 ; no more evolutions
+	db 1, TACKLE
+	db 1, TAIL_WHIP
+	db 8, SAND_ATTACK
+	db 16, CONFUSION
+	db 23, QUICK_ATTACK
+	db 30, SWIFT
+	db 36, PSYBEAM
+	db 42, PSYCH_UP
+	db 47, PSYCHIC_M
+	db 52, MORNING_SUN
+	db 0 ; no more level-up moves
+
+UmbreonEvosAttacks:
+	db 0 ; no more evolutions
+	db 1, TACKLE
+	db 1, TAIL_WHIP
+	db 8, SAND_ATTACK
+	db 16, PURSUIT
+	db 23, QUICK_ATTACK
+	db 30, CONFUSE_RAY
+	db 36, FAINT_ATTACK
+	db 42, MEAN_LOOK
+	db 47, SCREECH
+	db 52, MOONLIGHT
+	db 0 ; no more level-up moves
+
 CaterpieEvosAttacks:
 	db EVOLVE_LEVEL, 7, METAPOD
 	db 0 ; no more evolutions
@@ -340,30 +461,6 @@ ArbokEvosAttacks:
 	db 33, SCREECH
 	db 43, ACID
 	db 51, HAZE
-	db 0 ; no more level-up moves
-
-PikachuEvosAttacks:
-	db EVOLVE_ITEM, THUNDERSTONE, RAICHU
-	db 0 ; no more evolutions
-	db 1, THUNDERSHOCK
-	db 1, GROWL
-	db 6, TAIL_WHIP
-	db 8, THUNDER_WAVE
-	db 11, QUICK_ATTACK
-	db 15, DOUBLE_TEAM
-	db 20, SLAM
-	db 26, THUNDERBOLT
-	db 33, AGILITY
-	db 41, THUNDER
-	db 50, LIGHT_SCREEN
-	db 0 ; no more level-up moves
-
-RaichuEvosAttacks:
-	db 0 ; no more evolutions
-	db 1, THUNDERSHOCK
-	db 1, TAIL_WHIP
-	db 1, QUICK_ATTACK
-	db 1, THUNDERBOLT
 	db 0 ; no more level-up moves
 
 SandshrewEvosAttacks:
@@ -1792,65 +1889,6 @@ DittoEvosAttacks:
 	db 1, TRANSFORM
 	db 0 ; no more level-up moves
 
-EeveeEvosAttacks:
-	db EVOLVE_ITEM, THUNDERSTONE, JOLTEON
-	db EVOLVE_ITEM, WATER_STONE, VAPOREON
-	db EVOLVE_ITEM, FIRE_STONE, FLAREON
-	db EVOLVE_HAPPINESS, TR_MORNDAY, ESPEON
-	db EVOLVE_HAPPINESS, TR_NITE, UMBREON
-	db 0 ; no more evolutions
-	db 1, TACKLE
-	db 1, TAIL_WHIP
-	db 8, SAND_ATTACK
-	db 16, GROWL
-	db 23, QUICK_ATTACK
-	db 30, BITE
-	db 36, BATON_PASS
-	db 42, TAKE_DOWN
-	db 0 ; no more level-up moves
-
-VaporeonEvosAttacks:
-	db 0 ; no more evolutions
-	db 1, TACKLE
-	db 1, TAIL_WHIP
-	db 8, SAND_ATTACK
-	db 16, WATER_GUN
-	db 23, QUICK_ATTACK
-	db 30, BITE
-	db 36, AURORA_BEAM
-	db 42, HAZE
-	db 47, ACID_ARMOR
-	db 52, HYDRO_PUMP
-	db 0 ; no more level-up moves
-
-JolteonEvosAttacks:
-	db 0 ; no more evolutions
-	db 1, TACKLE
-	db 1, TAIL_WHIP
-	db 8, SAND_ATTACK
-	db 16, THUNDERSHOCK
-	db 23, QUICK_ATTACK
-	db 30, DOUBLE_KICK
-	db 36, PIN_MISSILE
-	db 42, THUNDER_WAVE
-	db 47, AGILITY
-	db 52, THUNDER
-	db 0 ; no more level-up moves
-
-FlareonEvosAttacks:
-	db 0 ; no more evolutions
-	db 1, TACKLE
-	db 1, TAIL_WHIP
-	db 8, SAND_ATTACK
-	db 16, EMBER
-	db 23, QUICK_ATTACK
-	db 30, BITE
-	db 36, FIRE_SPIN
-	db 42, SMOG
-	db 47, LEER
-	db 52, FLAMETHROWER
-	db 0 ; no more level-up moves
-
 PorygonEvosAttacks:
 	db EVOLVE_TRADE, UP_GRADE, PORYGON2
 	db 0 ; no more evolutions
@@ -2343,17 +2381,7 @@ LanturnEvosAttacks:
 	db 33, CONFUSE_RAY
 	db 45, TAKE_DOWN
 	db 53, HYDRO_PUMP
-	db 0 ; no more level-up moves
-
-PichuEvosAttacks:
-	db EVOLVE_HAPPINESS, TR_ANYTIME, PIKACHU
-	db 0 ; no more evolutions
-	db 1, THUNDERSHOCK
-	db 1, CHARM
-	db 6, TAIL_WHIP
-	db 8, THUNDER_WAVE
-	db 11, SWEET_KISS
-	db 0 ; no more level-up moves
+	db 0 ; no more level-up move
 
 CleffaEvosAttacks:
 	db EVOLVE_HAPPINESS, TR_ANYTIME, CLEFAIRY
@@ -2639,34 +2667,6 @@ QuagsireEvosAttacks:
 	db 47, RAIN_DANCE
 	db 59, MIST
 	db 59, HAZE
-	db 0 ; no more level-up moves
-
-EspeonEvosAttacks:
-	db 0 ; no more evolutions
-	db 1, TACKLE
-	db 1, TAIL_WHIP
-	db 8, SAND_ATTACK
-	db 16, CONFUSION
-	db 23, QUICK_ATTACK
-	db 30, SWIFT
-	db 36, PSYBEAM
-	db 42, PSYCH_UP
-	db 47, PSYCHIC_M
-	db 52, MORNING_SUN
-	db 0 ; no more level-up moves
-
-UmbreonEvosAttacks:
-	db 0 ; no more evolutions
-	db 1, TACKLE
-	db 1, TAIL_WHIP
-	db 8, SAND_ATTACK
-	db 16, PURSUIT
-	db 23, QUICK_ATTACK
-	db 30, CONFUSE_RAY
-	db 36, FAINT_ATTACK
-	db 42, MEAN_LOOK
-	db 47, SCREECH
-	db 52, MOONLIGHT
 	db 0 ; no more level-up moves
 
 MurkrowEvosAttacks:

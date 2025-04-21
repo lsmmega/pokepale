@@ -15,6 +15,15 @@ PokemonCries::
 	mon_cry CRY_SQUIRTLE,     96,  192 ; SQUIRTLE
 	mon_cry CRY_SQUIRTLE,     32,  192 ; WARTORTLE
 	mon_cry CRY_BLASTOISE,     0,  256 ; BLASTOISE
+	mon_cry CRY_PICHU,         0,  320 ; PICHU
+	mon_cry CRY_BULBASAUR,   238,  129 ; PIKACHU
+	mon_cry CRY_RAICHU,      238,  136 ; RAICHU
+	mon_cry CRY_VENONAT,     136,  224 ; EEVEE
+	mon_cry CRY_VENONAT,     170,  383 ; VAPOREON
+	mon_cry CRY_VENONAT,      61,  256 ; JOLTEON
+	mon_cry CRY_VENONAT,      16,  160 ; FLAREON
+	mon_cry CRY_AIPOM,       162,  320 ; ESPEON
+	mon_cry CRY_VENONAT,    -233,  240 ; UMBREON
 	mon_cry CRY_CATERPIE,    128,  160 ; CATERPIE
 	mon_cry CRY_METAPOD,     204,  129 ; METAPOD
 	mon_cry CRY_CATERPIE,    119,  192 ; BUTTERFREE
@@ -30,8 +39,6 @@ PokemonCries::
 	mon_cry CRY_FEAROW,       64,  288 ; FEAROW
 	mon_cry CRY_EKANS,        18,  192 ; EKANS
 	mon_cry CRY_EKANS,       224,  144 ; ARBOK
-	mon_cry CRY_BULBASAUR,   238,  129 ; PIKACHU
-	mon_cry CRY_RAICHU,      238,  136 ; RAICHU
 	mon_cry CRY_NIDORAN_M,    32,  192 ; SANDSHREW
 	mon_cry CRY_NIDORAN_M,   255,  383 ; SANDSLASH
 	mon_cry CRY_NIDORAN_F,     0,  256 ; NIDORAN_F
@@ -138,10 +145,6 @@ PokemonCries::
 	mon_cry CRY_EKANS,         0,  256 ; GYARADOS
 	mon_cry CRY_LAPRAS,        0,  256 ; LAPRAS
 	mon_cry CRY_PIDGEY,      255,  383 ; DITTO
-	mon_cry CRY_VENONAT,     136,  224 ; EEVEE
-	mon_cry CRY_VENONAT,     170,  383 ; VAPOREON
-	mon_cry CRY_VENONAT,      61,  256 ; JOLTEON
-	mon_cry CRY_VENONAT,      16,  160 ; FLAREON
 	mon_cry CRY_WEEPINBELL,  170,  383 ; PORYGON
 	mon_cry CRY_GROWLITHE,   240,  129 ; OMANYTE
 	mon_cry CRY_GROWLITHE,   255,  192 ; OMASTAR
@@ -177,7 +180,6 @@ PokemonCries::
 	mon_cry CRY_SQUIRTLE,    -16,  320 ; CROBAT
 	mon_cry CRY_CYNDAQUIL,   969,  320 ; CHINCHOU
 	mon_cry CRY_CYNDAQUIL,   720,  272 ; LANTURN
-	mon_cry CRY_PICHU,         0,  320 ; PICHU
 	mon_cry CRY_CLEFFA,       97,  145 ; CLEFFA
 	mon_cry CRY_CHIKORITA,   232,  232 ; IGGLYBUFF
 	mon_cry CRY_TOGEPI,       16,  256 ; TOGEPI
@@ -201,8 +203,6 @@ PokemonCries::
 	mon_cry CRY_TOTODILE,     49,  200 ; YANMA
 	mon_cry CRY_WOOPER,      147,  175 ; WOOPER
 	mon_cry CRY_WOOPER,     -198,  320 ; QUAGSIRE
-	mon_cry CRY_AIPOM,       162,  320 ; ESPEON
-	mon_cry CRY_VENONAT,    -233,  240 ; UMBREON
 	mon_cry CRY_MARILL,      -31,  384 ; MURKROW
 	mon_cry CRY_SLOWKING,    260,  512 ; SLOWKING
 	mon_cry CRY_HOOTHOOT,    304,  232 ; MISDREAVUS

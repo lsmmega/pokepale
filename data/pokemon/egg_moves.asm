@@ -36,6 +36,19 @@ SquirtleEggMoves:
 	db FLAIL
 	db -1 ; end
 
+PichuEggMoves:
+	db REVERSAL
+	db BIDE
+	db PRESENT
+	db ENCORE
+	db DOUBLESLAP
+	db -1 ; end
+
+EeveeEggMoves:
+	db FLAIL
+	db CHARM
+	db -1 ; end
+
 PidgeyEggMoves:
 	db PURSUIT
 	db FAINT_ATTACK
@@ -402,11 +415,6 @@ LaprasEggMoves:
 	db FORESIGHT
 	db -1 ; end
 
-EeveeEggMoves:
-	db FLAIL
-	db CHARM
-	db -1 ; end
-
 OmanyteEggMoves:
 	db BUBBLEBEAM
 	db AURORA_BEAM
@@ -502,14 +510,6 @@ ChinchouEggMoves:
 	db FLAIL
 	db SUPERSONIC
 	db SCREECH
-	db -1 ; end
-
-PichuEggMoves:
-	db REVERSAL
-	db BIDE
-	db PRESENT
-	db ENCORE
-	db DOUBLESLAP
 	db -1 ; end
 
 CleffaEggMoves:

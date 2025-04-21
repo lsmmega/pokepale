@@ -9,6 +9,15 @@ AnimationIdlePointers:
 	dw SquirtleAnimationIdle
 	dw WartortleAnimationIdle
 	dw BlastoiseAnimationIdle
+	dw PichuAnimationIdle
+	dw PikachuAnimationIdle
+	dw RaichuAnimationIdle
+	dw EeveeAnimationIdle
+	dw VaporeonAnimationIdle
+	dw JolteonAnimationIdle
+	dw FlareonAnimationIdle
+	dw EspeonAnimationIdle
+	dw UmbreonAnimationIdle
 	dw CaterpieAnimationIdle
 	dw MetapodAnimationIdle
 	dw ButterfreeAnimationIdle
@@ -24,8 +33,6 @@ AnimationIdlePointers:
 	dw FearowAnimationIdle
 	dw EkansAnimationIdle
 	dw ArbokAnimationIdle
-	dw PikachuAnimationIdle
-	dw RaichuAnimationIdle
 	dw SandshrewAnimationIdle
 	dw SandslashAnimationIdle
 	dw NidoranFAnimationIdle
@@ -132,10 +139,6 @@ AnimationIdlePointers:
 	dw GyaradosAnimationIdle
 	dw LaprasAnimationIdle
 	dw DittoAnimationIdle
-	dw EeveeAnimationIdle
-	dw VaporeonAnimationIdle
-	dw JolteonAnimationIdle
-	dw FlareonAnimationIdle
 	dw PorygonAnimationIdle
 	dw OmanyteAnimationIdle
 	dw OmastarAnimationIdle
@@ -171,7 +174,6 @@ AnimationIdlePointers:
 	dw CrobatAnimationIdle
 	dw ChinchouAnimationIdle
 	dw LanturnAnimationIdle
-	dw PichuAnimationIdle
 	dw CleffaAnimationIdle
 	dw IgglybuffAnimationIdle
 	dw TogepiAnimationIdle
@@ -195,8 +197,6 @@ AnimationIdlePointers:
 	dw YanmaAnimationIdle
 	dw WooperAnimationIdle
 	dw QuagsireAnimationIdle
-	dw EspeonAnimationIdle
-	dw UmbreonAnimationIdle
 	dw MurkrowAnimationIdle
 	dw SlowkingAnimationIdle
 	dw MisdreavusAnimationIdle

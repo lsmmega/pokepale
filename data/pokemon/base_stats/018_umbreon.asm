@@ -1,9 +1,9 @@
-	db ESPEON ; 196
+	db UMBREON ; 018
 
-	db  65,  65,  60, 110, 130,  95
+	db  95,  65, 110,  65,  60, 130
 	;   hp  atk  def  spd  sat  sdf
 
-	db PSYCHIC_TYPE, PSYCHIC_TYPE ; type
+	db DARK, DARK ; type
 	db 45 ; catch rate
 	db 197 ; base exp
 	db NO_ITEM, NO_ITEM ; items
@@ -11,7 +11,7 @@
 	db 100 ; unknown 1
 	db 35 ; step cycles to hatch
 	db 5 ; unknown 2
-	INCBIN "gfx/pokemon/espeon/front.dimensions"
+	INCBIN "gfx/pokemon/018_umbreon/front.dimensions"
 	dw NULL, NULL ; unused (beta front/back pics)
 	db GROWTH_MEDIUM_FAST ; growth rate
 	dn EGG_GROUND, EGG_GROUND ; egg groups
