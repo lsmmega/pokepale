@@ -11,6 +11,15 @@ MonMenuIcons:
 	db ICON_SQUIRTLE    ; SQUIRTLE
 	db ICON_SQUIRTLE    ; WARTORTLE
 	db ICON_SQUIRTLE    ; BLASTOISE
+	db ICON_PIKACHU     ; PICHU
+	db ICON_PIKACHU     ; PIKACHU
+	db ICON_PIKACHU     ; RAICHU
+	db ICON_FOX         ; EEVEE
+	db ICON_FOX         ; VAPOREON
+	db ICON_FOX         ; JOLTEON
+	db ICON_FOX         ; FLAREON
+	db ICON_FOX         ; ESPEON
+	db ICON_FOX         ; UMBREON
 	db ICON_CATERPILLAR ; CATERPIE
 	db ICON_CATERPILLAR ; METAPOD
 	db ICON_MOTH        ; BUTTERFREE
@@ -26,8 +35,6 @@ MonMenuIcons:
 	db ICON_BIRD        ; FEAROW
 	db ICON_SERPENT     ; EKANS
 	db ICON_SERPENT     ; ARBOK
-	db ICON_PIKACHU     ; PIKACHU
-	db ICON_PIKACHU     ; RAICHU
 	db ICON_MONSTER     ; SANDSHREW
 	db ICON_MONSTER     ; SANDSLASH
 	db ICON_FOX         ; NIDORAN_F
@@ -134,10 +141,6 @@ MonMenuIcons:
 	db ICON_GYARADOS    ; GYARADOS
 	db ICON_LAPRAS      ; LAPRAS
 	db ICON_BLOB        ; DITTO
-	db ICON_FOX         ; EEVEE
-	db ICON_FOX         ; VAPOREON
-	db ICON_FOX         ; JOLTEON
-	db ICON_FOX         ; FLAREON
 	db ICON_VOLTORB     ; PORYGON
 	db ICON_SHELL       ; OMANYTE
 	db ICON_SHELL       ; OMASTAR
@@ -173,7 +176,6 @@ MonMenuIcons:
 	db ICON_BAT         ; CROBAT
 	db ICON_FISH        ; CHINCHOU
 	db ICON_FISH        ; LANTURN
-	db ICON_PIKACHU     ; PICHU
 	db ICON_CLEFAIRY    ; CLEFFA
 	db ICON_JIGGLYPUFF  ; IGGLYBUFF
 	db ICON_CLEFAIRY    ; TOGEPI
@@ -197,8 +199,6 @@ MonMenuIcons:
 	db ICON_BUG         ; YANMA
 	db ICON_MONSTER     ; WOOPER
 	db ICON_MONSTER     ; QUAGSIRE
-	db ICON_FOX         ; ESPEON
-	db ICON_FOX         ; UMBREON
 	db ICON_BIRD        ; MURKROW
 	db ICON_SLOWPOKE    ; SLOWKING
 	db ICON_GHOST       ; MISDREAVUS

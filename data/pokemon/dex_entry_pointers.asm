@@ -10,6 +10,15 @@ PokedexDataPointerTable:
 	dw SquirtlePokedexEntry
 	dw WartortlePokedexEntry
 	dw BlastoisePokedexEntry
+	dw PichuPokedexEntry
+	dw PikachuPokedexEntry
+	dw RaichuPokedexEntry
+	dw EeveePokedexEntry
+	dw VaporeonPokedexEntry
+	dw JolteonPokedexEntry
+	dw FlareonPokedexEntry
+	dw EspeonPokedexEntry
+	dw UmbreonPokedexEntry
 	dw CaterpiePokedexEntry
 	dw MetapodPokedexEntry
 	dw ButterfreePokedexEntry
@@ -25,8 +34,6 @@ PokedexDataPointerTable:
 	dw FearowPokedexEntry
 	dw EkansPokedexEntry
 	dw ArbokPokedexEntry
-	dw PikachuPokedexEntry
-	dw RaichuPokedexEntry
 	dw SandshrewPokedexEntry
 	dw SandslashPokedexEntry
 	dw NidoranFPokedexEntry
@@ -133,10 +140,6 @@ PokedexDataPointerTable:
 	dw GyaradosPokedexEntry
 	dw LaprasPokedexEntry
 	dw DittoPokedexEntry
-	dw EeveePokedexEntry
-	dw VaporeonPokedexEntry
-	dw JolteonPokedexEntry
-	dw FlareonPokedexEntry
 	dw PorygonPokedexEntry
 	dw OmanytePokedexEntry
 	dw OmastarPokedexEntry
@@ -172,7 +175,6 @@ PokedexDataPointerTable:
 	dw CrobatPokedexEntry
 	dw ChinchouPokedexEntry
 	dw LanturnPokedexEntry
-	dw PichuPokedexEntry
 	dw CleffaPokedexEntry
 	dw IgglybuffPokedexEntry
 	dw TogepiPokedexEntry
@@ -196,8 +198,6 @@ PokedexDataPointerTable:
 	dw YanmaPokedexEntry
 	dw WooperPokedexEntry
 	dw QuagsirePokedexEntry
-	dw EspeonPokedexEntry
-	dw UmbreonPokedexEntry
 	dw MurkrowPokedexEntry
 	dw SlowkingPokedexEntry
 	dw MisdreavusPokedexEntry

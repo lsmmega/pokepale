@@ -821,9 +821,9 @@ Link_PrepPartyData_Gen1:
 	push bc
 	ld b, 0
 	ld c, a
-	ld hl, KantoMonSpecials
+	;ld hl, KantoMonSpecials
 	add hl, bc
-	ld a, BANK(KantoMonSpecials)
+	;ld a, BANK(KantoMonSpecials)
 	call GetFarByte
 	ld [wBaseSpecialAttack], a
 	pop bc
@@ -2097,7 +2097,7 @@ CheckTimeCapsuleCompatibility:
 	ld a, [hli]
 	cp -1
 	jr z, .checkitem
-	cp JOHTO_POKEMON
+	;cp JOHTO_POKEMON
 	jr nc, .mon_too_new
 	dec b
 	jr nz, .loop
