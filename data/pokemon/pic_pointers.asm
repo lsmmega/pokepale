@@ -21,15 +21,15 @@ PokemonPicPointers::
 	dba_pics FlareonFrontpic, FlareonBackpic
 	dba_pics EspeonFrontpic, EspeonBackpic
 	dba_pics UmbreonFrontpic, UmbreonBackpic
+	dba_pics LeafeonFrontpic, LeafeonBackpic
+	dba_pics GlaceonFrontpic, GlaceonBackpic
+	dba_pics SylveonFrontpic, SylveonBackpic
 	dba_pics CaterpieFrontpic, CaterpieBackpic
 	dba_pics MetapodFrontpic, MetapodBackpic
 	dba_pics ButterfreeFrontpic, ButterfreeBackpic
 	dba_pics WeedleFrontpic, WeedleBackpic
 	dba_pics KakunaFrontpic, KakunaBackpic
 	dba_pics BeedrillFrontpic, BeedrillBackpic
-	dba_pics PidgeyFrontpic, PidgeyBackpic
-	dba_pics PidgeottoFrontpic, PidgeottoBackpic
-	dba_pics PidgeotFrontpic, PidgeotBackpic
 	dba_pics RattataFrontpic, RattataBackpic
 	dba_pics RaticateFrontpic, RaticateBackpic
 	dba_pics SpearowFrontpic, SpearowBackpic

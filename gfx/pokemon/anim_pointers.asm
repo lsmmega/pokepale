@@ -18,15 +18,15 @@ AnimationPointers:
 	dw FlareonAnimation
 	dw EspeonAnimation
 	dw UmbreonAnimation
+	dw LeafeonAnimation
+	dw GlaceonAnimation
+	dw SylveonAnimation
 	dw CaterpieAnimation
 	dw MetapodAnimation
 	dw ButterfreeAnimation
 	dw WeedleAnimation
 	dw KakunaAnimation
 	dw BeedrillAnimation
-	dw PidgeyAnimation
-	dw PidgeottoAnimation
-	dw PidgeotAnimation
 	dw RattataAnimation
 	dw RaticateAnimation
 	dw SpearowAnimation

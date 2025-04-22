@@ -18,15 +18,15 @@ EvolutionMoves::
 	db EMBER        ; FLAREON
 	db CONFUSION    ; ESPEON
 	db NO_MOVE      ; UMBREON
+	db RAZOR_LEAF   ; LEAFEON
+	db ICY_WIND     ; GLACEON
+	db NO_MOVE      ; SYLVEON
 	db NO_MOVE      ; CATERPIE
 	db NO_MOVE      ; METAPOD
 	db NO_MOVE      ; BUTTERFREE
 	db NO_MOVE      ; WEEDLE
 	db NO_MOVE      ; KAKUNA
 	db NO_MOVE      ; BEEDRILL
-	db NO_MOVE      ; PIDGEY
-	db NO_MOVE      ; PIDGEOTTO
-	db NO_MOVE      ; PIDGEOT
 	db NO_MOVE      ; RATTATA
 	db NO_MOVE      ; RATICATE
 	db NO_MOVE      ; SPEAROW

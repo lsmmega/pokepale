@@ -284,6 +284,18 @@ UmbreonEvosAttacks:
 	db 52, MOONLIGHT
 	db 0 ; no more level-up moves
 
+LeafeonEvosAttacks:
+	db 0 ; no more evolutions
+	db 0 ; no more level-up moves
+
+GlaceonEvosAttacks:
+	db 0 ; no more evolutions
+	db 0 ; no more level-up moves
+
+SylveonEvosAttacks:
+	db 0 ; no more evolutions
+	db 0 ; no more level-up moves
+
 CaterpieEvosAttacks:
 	db EVOLVE_LEVEL, 7, METAPOD
 	db 0 ; no more evolutions
@@ -336,49 +348,6 @@ BeedrillEvosAttacks:
 	db 30, PURSUIT
 	db 35, PIN_MISSILE
 	db 40, AGILITY
-	db 0 ; no more level-up moves
-
-PidgeyEvosAttacks:
-	db EVOLVE_LEVEL, 18, PIDGEOTTO
-	db 0 ; no more evolutions
-	db 1, TACKLE
-	db 5, SAND_ATTACK
-	db 9, GUST
-	db 15, QUICK_ATTACK
-	db 21, WHIRLWIND
-	db 29, WING_ATTACK
-	db 37, AGILITY
-	db 47, MIRROR_MOVE
-	db 0 ; no more level-up moves
-
-PidgeottoEvosAttacks:
-	db EVOLVE_LEVEL, 36, PIDGEOT
-	db 0 ; no more evolutions
-	db 1, TACKLE
-	db 1, SAND_ATTACK
-	db 1, GUST
-	db 5, SAND_ATTACK
-	db 9, GUST
-	db 15, QUICK_ATTACK
-	db 23, WHIRLWIND
-	db 33, WING_ATTACK
-	db 43, AGILITY
-	db 55, MIRROR_MOVE
-	db 0 ; no more level-up moves
-
-PidgeotEvosAttacks:
-	db 0 ; no more evolutions
-	db 1, TACKLE
-	db 1, SAND_ATTACK
-	db 1, GUST
-	db 1, QUICK_ATTACK
-	db 5, SAND_ATTACK
-	db 9, GUST
-	db 15, QUICK_ATTACK
-	db 23, WHIRLWIND
-	db 33, WING_ATTACK
-	db 46, AGILITY
-	db 61, MIRROR_MOVE
 	db 0 ; no more level-up moves
 
 RattataEvosAttacks:

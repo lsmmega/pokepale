@@ -32,15 +32,15 @@
 	const FLAREON    ; 10
 	const ESPEON     ; 11
 	const UMBREON    ; 12
+	const LEAFEON
+	const GLACEON
+	const SYLVEON
 	const CATERPIE   ; 13
 	const METAPOD    ; 14
 	const BUTTERFREE ; 15
 	const WEEDLE     ; 16
 	const KAKUNA     ; 17
 	const BEEDRILL   ; 18
-	const PIDGEY     ; 19
-	const PIDGEOTTO  ; 1a
-	const PIDGEOT    ; 1b
 	const RATTATA    ; 1c
 	const RATICATE   ; 1d
 	const SPEAROW    ; 1e

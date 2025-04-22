@@ -24,15 +24,15 @@ PokemonCries::
 	mon_cry CRY_VENONAT,      16,  160 ; FLAREON
 	mon_cry CRY_AIPOM,       162,  320 ; ESPEON
 	mon_cry CRY_VENONAT,    -233,  240 ; UMBREON
+	mon_cry CRY_VENONAT,      61,  256 ; LEAFEON
+	mon_cry CRY_AIPOM,       162,  320 ; GLACEON
+	mon_cry CRY_VENONAT,     170,  383 ; SYLVEON
 	mon_cry CRY_CATERPIE,    128,  160 ; CATERPIE
 	mon_cry CRY_METAPOD,     204,  129 ; METAPOD
 	mon_cry CRY_CATERPIE,    119,  192 ; BUTTERFREE
 	mon_cry CRY_WEEDLE,      238,  129 ; WEEDLE
 	mon_cry CRY_BLASTOISE,   255,  129 ; KAKUNA
 	mon_cry CRY_BLASTOISE,    96,  256 ; BEEDRILL
-	mon_cry CRY_PIDGEY,      223,  132 ; PIDGEY
-	mon_cry CRY_PIDGEOTTO,    40,  320 ; PIDGEOTTO
-	mon_cry CRY_PIDGEOTTO,    17,  383 ; PIDGEOT
 	mon_cry CRY_RATTATA,       0,  256 ; RATTATA
 	mon_cry CRY_RATTATA,      32,  383 ; RATICATE
 	mon_cry CRY_SPEAROW,       0,  256 ; SPEAROW

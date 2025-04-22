@@ -18,15 +18,15 @@ BitmasksPointers:
 	dw FlareonBitmasks
 	dw EspeonBitmasks
 	dw UmbreonBitmasks
+	dw LeafeonBitmasks
+	dw GlaceonBitmasks
+	dw SylveonBitmasks
 	dw CaterpieBitmasks
 	dw MetapodBitmasks
 	dw ButterfreeBitmasks
 	dw WeedleBitmasks
 	dw KakunaBitmasks
 	dw BeedrillBitmasks
-	dw PidgeyBitmasks
-	dw PidgeottoBitmasks
-	dw PidgeotBitmasks
 	dw RattataBitmasks
 	dw RaticateBitmasks
 	dw SpearowBitmasks
