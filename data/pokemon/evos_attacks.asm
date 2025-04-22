@@ -223,7 +223,6 @@ VaporeonEvosAttacks:
 	db 1, TACKLE
 	db 1, TAIL_WHIP
 	db 8, SAND_ATTACK
-	db 16, WATER_GUN
 	db 23, QUICK_ATTACK
 	db 30, BITE
 	db 36, AURORA_BEAM
@@ -237,7 +236,6 @@ JolteonEvosAttacks:
 	db 1, TACKLE
 	db 1, TAIL_WHIP
 	db 8, SAND_ATTACK
-	db 16, THUNDERSHOCK
 	db 23, QUICK_ATTACK
 	db 30, DOUBLE_KICK
 	db 36, PIN_MISSILE
@@ -251,7 +249,6 @@ FlareonEvosAttacks:
 	db 1, TACKLE
 	db 1, TAIL_WHIP
 	db 8, SAND_ATTACK
-	db 16, EMBER
 	db 23, QUICK_ATTACK
 	db 30, BITE
 	db 36, FIRE_SPIN
@@ -265,7 +262,6 @@ EspeonEvosAttacks:
 	db 1, TACKLE
 	db 1, TAIL_WHIP
 	db 8, SAND_ATTACK
-	db 16, CONFUSION
 	db 23, QUICK_ATTACK
 	db 30, SWIFT
 	db 36, PSYBEAM
