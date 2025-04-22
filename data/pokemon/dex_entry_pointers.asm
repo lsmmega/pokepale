@@ -19,15 +19,15 @@ PokedexDataPointerTable:
 	dw FlareonPokedexEntry
 	dw EspeonPokedexEntry
 	dw UmbreonPokedexEntry
+	dw LeafeonPokedexEntry
+	dw GlaceonPokedexEntry
+	dw SylveonPokedexEntry
 	dw CaterpiePokedexEntry
 	dw MetapodPokedexEntry
 	dw ButterfreePokedexEntry
 	dw WeedlePokedexEntry
 	dw KakunaPokedexEntry
 	dw BeedrillPokedexEntry
-	dw PidgeyPokedexEntry
-	dw PidgeottoPokedexEntry
-	dw PidgeotPokedexEntry
 	dw RattataPokedexEntry
 	dw RaticatePokedexEntry
 	dw SpearowPokedexEntry

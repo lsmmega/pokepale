@@ -49,12 +49,6 @@ EeveeEggMoves:
 	db CHARM
 	db -1 ; end
 
-PidgeyEggMoves:
-	db PURSUIT
-	db FAINT_ATTACK
-	db FORESIGHT
-	db -1 ; end
-
 RattataEggMoves:
 	db SCREECH
 	db FLAME_WHEEL

@@ -20,15 +20,15 @@ MonMenuIcons:
 	db ICON_FOX         ; FLAREON
 	db ICON_FOX         ; ESPEON
 	db ICON_FOX         ; UMBREON
+	db ICON_FOX         ; LEAFEON
+	db ICON_FOX         ; GLACEON
+	db ICON_FOX         ; SYLVEON
 	db ICON_CATERPILLAR ; CATERPIE
 	db ICON_CATERPILLAR ; METAPOD
 	db ICON_MOTH        ; BUTTERFREE
 	db ICON_CATERPILLAR ; WEEDLE
 	db ICON_CATERPILLAR ; KAKUNA
 	db ICON_BUG         ; BEEDRILL
-	db ICON_BIRD        ; PIDGEY
-	db ICON_BIRD        ; PIDGEOTTO
-	db ICON_BIRD        ; PIDGEOT
 	db ICON_FOX         ; RATTATA
 	db ICON_FOX         ; RATICATE
 	db ICON_BIRD        ; SPEAROW

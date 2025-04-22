@@ -18,15 +18,15 @@ FramesPointers:
 	dw FlareonFrames
 	dw EspeonFrames
 	dw UmbreonFrames
+	dw LeafeonFrames
+	dw GlaceonFrames
+	dw SylveonFrames
 	dw CaterpieFrames
 	dw MetapodFrames
 	dw ButterfreeFrames
 	dw WeedleFrames
 	dw KakunaFrames
 	dw BeedrillFrames
-	dw PidgeyFrames
-	dw PidgeottoFrames
-	dw PidgeotFrames
 	dw RattataFrames
 	dw RaticateFrames
 	dw SpearowFrames

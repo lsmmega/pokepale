@@ -18,15 +18,15 @@ AnimationIdlePointers:
 	dw FlareonAnimationIdle
 	dw EspeonAnimationIdle
 	dw UmbreonAnimationIdle
+	dw LeafeonAnimationIdle
+	dw GlaceonAnimationIdle
+	dw SylveonAnimationIdle
 	dw CaterpieAnimationIdle
 	dw MetapodAnimationIdle
 	dw ButterfreeAnimationIdle
 	dw WeedleAnimationIdle
 	dw KakunaAnimationIdle
 	dw BeedrillAnimationIdle
-	dw PidgeyAnimationIdle
-	dw PidgeottoAnimationIdle
-	dw PidgeotAnimationIdle
 	dw RattataAnimationIdle
 	dw RaticateAnimationIdle
 	dw SpearowAnimationIdle

@@ -20,15 +20,15 @@ EvosAttacksPointers::
 	dw FlareonEvosAttacks
 	dw EspeonEvosAttacks
 	dw UmbreonEvosAttacks
+	dw LeafeonEvosAttacks
+	dw GlaceonEvosAttacks
+	dw SylveonEvosAttacks
 	dw CaterpieEvosAttacks
 	dw MetapodEvosAttacks
 	dw ButterfreeEvosAttacks
 	dw WeedleEvosAttacks
 	dw KakunaEvosAttacks
 	dw BeedrillEvosAttacks
-	dw PidgeyEvosAttacks
-	dw PidgeottoEvosAttacks
-	dw PidgeotEvosAttacks
 	dw RattataEvosAttacks
 	dw RaticateEvosAttacks
 	dw SpearowEvosAttacks
