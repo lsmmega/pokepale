@@ -97,157 +97,161 @@ endr
 	ret
 
 WaitTop::
-; Wait until the top third of the BG Map is being updated.
+; Wait until the top half of the BG Map is being updated.
 
 	ldh a, [hBGMapMode]
 	and a
-	ret z
-
-	ldh a, [hBGMapThird]
-	and a
-	jr z, .done
-
+	jr nz, .handleLoop
+	ret
+.loop
 	call DelayFrame
-	jr WaitTop
-
+.handleLoop
+	ldh a, [hBGMapHalf]
+	and a
+	jr nz, .loop
 .done
 	xor a
 	ldh [hBGMapMode], a
 	ret
 
+DEF HALF_HEIGHT EQU SCREEN_HEIGHT / 2
+
 UpdateBGMap::
-; Update the BG Map, in thirds, from wTilemap and wAttrmap.
+; Update the BG Map, in halves, from wTileMap and wAttrMap.
 
 	ldh a, [hBGMapMode]
-	and a ; 0
+	and $7f
 	ret z
 
 ; BG Map 0
 	dec a ; 1
-	jr z, .Tiles
+	jr z, .DoTiles
 	dec a ; 2
-	jr z, .Attr
-
+	jr z, .DoAttributes
 ; BG Map 1
-	dec a ; useless
-
-	ldh a, [hBGMapAddress]
-	ld l, a
-	ldh a, [hBGMapAddress + 1]
-	ld h, a
-	push hl
-
-	xor a ; LOW(vBGMap1)
-	ldh [hBGMapAddress], a
-	ld a, HIGH(vBGMap1)
-	ldh [hBGMapAddress + 1], a
-
-	ldh a, [hBGMapMode]
-	push af
-	cp 3
-	call z, .Tiles
-	pop af
-	cp 4
-	call z, .Attr
-
-	pop hl
-	ld a, l
-	ldh [hBGMapAddress], a
-	ld a, h
-	ldh [hBGMapAddress + 1], a
-	ret
-
-.Attr:
+	ld hl, vBGMap1
+	dec a ; 3
+	jr z, .DoBGMap1Tiles
+	dec a ; 4
+	jr z, .DoBGMap1Attributes
+; Update from a specific row
+; does not update hBGMapHalf
+	dec a
+	bccoord 0, 0
+	jr z, .DoCustomSourceTiles
+	dec a
+	ret nz
+	bccoord 0, 0, wAttrmap
 	ld a, 1
 	ldh [rVBK], a
-
-	hlcoord 0, 0, wAttrmap
-	call .update
-
-	ld a, 0
+	call .DoCustomSourceTiles
+	xor a
 	ldh [rVBK], a
 	ret
 
-.Tiles:
-	hlcoord 0, 0
+.DoCustomSourceTiles
+	ld [hSPBuffer], sp
+	xor a
+	ld h, a
+	ld d, a
+	ldh a, [hBGMapHalf] ; multiply by 20 to get the tilemap offset
+	ld l, a
+	ld e, a
+	add hl, hl ; hl = hl * 2
+	add hl, hl ; hl = hl * 4
+	add hl, de ; hl = (hl*4) + de
+	add hl, hl ; hl = (5*hl)*2
+	add hl, hl ; hl = (5*hl)*4
+	add hl, bc
+	ld sp, hl
+	ldh a, [hBGMapHalf] ; multiply by 32 to get the bg map offset
+	; assumes [hBGMapHalf] < 16
+	swap a
+	ld l, a
+	ld h, 0
+	add hl, hl
+	ldh a, [hBGMapAddress]
+	add l
+	ld l, a
+	ldh a, [hBGMapAddress + 1]
+	adc h
+	ld h, a
+	ldh a, [hTilesPerCycle]
+	jr .startCustomCopy
 
-.update
+.DoAttributes
+	ldh a, [hBGMapAddress + 1]
+	ld h, a
+	ldh a, [hBGMapAddress]
+	ld l, a
+.DoBGMap1Attributes
+	ld a, 1
+	ldh [rVBK], a
+	call .CopyAttributes
+	xor a
+	ldh [rVBK], a
+	ret
+
+.CopyAttributes
 	ld [hSPBuffer], sp
 
-; Which third?
-	ldh a, [hBGMapThird]
+; Which half?
+	ldh a, [hBGMapHalf]
 	and a ; 0
-	jr z, .top
-	dec a ; 1
-	jr z, .middle
-	; 2
-
-DEF THIRD_HEIGHT EQU SCREEN_HEIGHT / 3
-
-; bottom
-	ld de, 2 * THIRD_HEIGHT * SCREEN_WIDTH
+	jr z, .AttributeMapTop
+; bottom row
+	coord sp, 0, 9, wAttrmap
+	ld de, HALF_HEIGHT * BG_MAP_WIDTH
 	add hl, de
-	ld sp, hl
-
-	ldh a, [hBGMapAddress + 1]
-	ld h, a
-	ldh a, [hBGMapAddress]
-	ld l, a
-
-	ld de, 2 * THIRD_HEIGHT * BG_MAP_WIDTH
-	add hl, de
-
-; Next time: top third
+; Next time: top half
 	xor a
-	jr .start
+	jr .startCopy
+.AttributeMapTop
+	coord sp, 0, 0, wAttrmap
+; Next time: bottom half
+	jr .AttributeMapTopContinue
 
-.middle
-	ld de, THIRD_HEIGHT * SCREEN_WIDTH
-	add hl, de
-	ld sp, hl
-
+.DoTiles
 	ldh a, [hBGMapAddress + 1]
 	ld h, a
 	ldh a, [hBGMapAddress]
 	ld l, a
 
-	ld de, THIRD_HEIGHT * BG_MAP_WIDTH
+.DoBGMap1Tiles
+	ld [hSPBuffer], sp
+; Which half?
+	ldh a, [hBGMapHalf]
+	and a ; 0
+	jr z, .TileMapTop
+; bottom row
+	coord sp, 0, 9
+	ld de, HALF_HEIGHT * BG_MAP_WIDTH
 	add hl, de
-
-; Next time: bottom third
-	ld a, 2
-	jr .start
-
-.top
-	ld sp, hl
-
-	ldh a, [hBGMapAddress + 1]
-	ld h, a
-	ldh a, [hBGMapAddress]
-	ld l, a
-
-; Next time: middle third
-	ld a, 1
-
-.start
-; Which third to update next time
-	ldh [hBGMapThird], a
-
-; Rows of tiles in a third
-	ld a, THIRD_HEIGHT
-
-; Discrepancy between wTilemap and BGMap
+; Next time: top half
+	xor a
+	jr .startCopy
+.TileMapTop
+	coord sp, 0, 0
+; Next time: bottom half
+.AttributeMapTopContinue
+	inc a
+.startCopy
+; Which half to update next time
+	ldh [hBGMapHalf], a
+; Rows of tiles in a half
+	ld a, SCREEN_HEIGHT / 2
+.startCustomCopy
+; Discrepancy between wTileMap and BGMap
 	ld bc, BG_MAP_WIDTH - (SCREEN_WIDTH - 1)
-
 .row
 ; Copy a row of 20 tiles
-rept SCREEN_WIDTH / 2 - 1
+	rept (SCREEN_WIDTH / 2) - 1
 	pop de
 	ld [hl], e
 	inc l
 	ld [hl], d
 	inc l
-endr
+	endr
 	pop de
 	ld [hl], e
 	inc l

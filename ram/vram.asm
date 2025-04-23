@@ -6,7 +6,6 @@ vTiles2:: ds $80 tiles
 vBGMap0:: ds BG_MAP_WIDTH * BG_MAP_HEIGHT
 vBGMap1:: ds BG_MAP_WIDTH * BG_MAP_HEIGHT
 
-
 SECTION "VRAM1", VRAM
 
 vTiles3:: ds $80 tiles
