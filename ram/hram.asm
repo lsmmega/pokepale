@@ -136,7 +136,7 @@ hWX::            db
 hWY::            db
 hTilesPerCycle:: db
 hBGMapMode::     db
-hBGMapThird::    db
+hBGMapHalf::     db
 hBGMapAddress::  dw
 
 hOAMUpdate:: db
