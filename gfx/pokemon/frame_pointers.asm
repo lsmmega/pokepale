@@ -1,14 +1,14 @@
 FramesPointers:
 	table_width 2
-	dw BulbasaurFrames
-	dw IvysaurFrames
-	dw VenusaurFrames
-	dw CharmanderFrames
-	dw CharmeleonFrames
-	dw CharizardFrames
-	dw SquirtleFrames
-	dw WartortleFrames
-	dw BlastoiseFrames
+	dw TurtwigFrames
+	dw GrotleFrames
+	dw TorterraFrames
+	dw FennekinFrames
+	dw BraixenFrames
+	dw DelphoxFrames
+	dw QuaxlyFrames
+	dw QuaxwellFrames
+	dw QuaquavalFrames
 	dw PichuFrames
 	dw PikachuFrames
 	dw RaichuFrames

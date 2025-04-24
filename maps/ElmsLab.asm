@@ -156,90 +156,90 @@ LabTryToLeaveScript:
 	applymovement PLAYER, ElmsLab_CantLeaveMovement
 	end
 
-CyndaquilPokeBallScript:
+FennekinPokeBallScript:
 	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
 	iftrue LookAtElmPokeBallScript
 	turnobject ELMSLAB_ELM, DOWN
 	reanchormap
-	pokepic CYNDAQUIL
-	cry CYNDAQUIL
+	pokepic FENNEKIN
+	cry FENNEKIN
 	waitbutton
 	closepokepic
 	opentext
-	writetext TakeCyndaquilText
+	writetext TakeFennekinText
 	yesorno
 	iffalse DidntChooseStarterScript
 	disappear ELMSLAB_POKE_BALL1
-	setevent EVENT_GOT_CYNDAQUIL_FROM_ELM
+	setevent EVENT_GOT_FENNEKIN_FROM_ELM
 	writetext ChoseStarterText
 	promptbutton
 	waitsfx
-	getmonname STRING_BUFFER_3, CYNDAQUIL
+	getmonname STRING_BUFFER_3, FENNEKIN
 	writetext ReceivedStarterText
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	promptbutton
-	givepoke CYNDAQUIL, 5, BERRY
+	givepoke FENNEKIN, 5, BERRY
 	closetext
 	readvar VAR_FACING
 	ifequal RIGHT, ElmDirectionsScript
-	applymovement PLAYER, AfterCyndaquilMovement
+	applymovement PLAYER, AfterFennekinMovement
 	sjump ElmDirectionsScript
 
-TotodilePokeBallScript:
+QuaxlyPokeBallScript:
 	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
 	iftrue LookAtElmPokeBallScript
 	turnobject ELMSLAB_ELM, DOWN
 	reanchormap
-	pokepic TOTODILE
-	cry TOTODILE
+	pokepic QUAXLY
+	cry QUAXLY
 	waitbutton
 	closepokepic
 	opentext
-	writetext TakeTotodileText
+	writetext TakeQuaxlyText
 	yesorno
 	iffalse DidntChooseStarterScript
 	disappear ELMSLAB_POKE_BALL2
-	setevent EVENT_GOT_TOTODILE_FROM_ELM
+	setevent EVENT_GOT_QUAXLY_FROM_ELM
 	writetext ChoseStarterText
 	promptbutton
 	waitsfx
-	getmonname STRING_BUFFER_3, TOTODILE
+	getmonname STRING_BUFFER_3, QUAXLY
 	writetext ReceivedStarterText
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	promptbutton
-	givepoke TOTODILE, 5, BERRY
+	givepoke QUAXLY, 5, BERRY
 	closetext
-	applymovement PLAYER, AfterTotodileMovement
+	applymovement PLAYER, AfterQuaxlyMovement
 	sjump ElmDirectionsScript
 
-ChikoritaPokeBallScript:
+TurtwigPokeBallScript:
 	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
 	iftrue LookAtElmPokeBallScript
 	turnobject ELMSLAB_ELM, DOWN
 	reanchormap
-	pokepic CHIKORITA
-	cry CHIKORITA
+	pokepic TURTWIG
+	cry TURTWIG
 	waitbutton
 	closepokepic
 	opentext
-	writetext TakeChikoritaText
+	writetext TakeTurtwigText
 	yesorno
 	iffalse DidntChooseStarterScript
 	disappear ELMSLAB_POKE_BALL3
-	setevent EVENT_GOT_CHIKORITA_FROM_ELM
+	setevent EVENT_GOT_TURTWIG_FROM_ELM
 	writetext ChoseStarterText
 	promptbutton
 	waitsfx
-	getmonname STRING_BUFFER_3, CHIKORITA
+	getmonname STRING_BUFFER_3, TURTWIG
 	writetext ReceivedStarterText
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	promptbutton
-	givepoke CHIKORITA, 5, BERRY
+	givepoke TURTWIG, 5, BERRY
 	closetext
-	applymovement PLAYER, AfterChikoritaMovement
+	applymovement PLAYER, AfterTurtwigMovement
 	sjump ElmDirectionsScript
 
 DidntChooseStarterScript:
@@ -702,20 +702,20 @@ ElmsLab_ElmToDefaultPositionMovement2:
 	turn_head DOWN
 	step_end
 
-AfterCyndaquilMovement:
+AfterFennekinMovement:
 	step LEFT
 	step UP
 	turn_head UP
 	step_end
 
-AfterTotodileMovement:
+AfterQuaxlyMovement:
 	step LEFT
 	step LEFT
 	step UP
 	turn_head UP
 	step_end
 
-AfterChikoritaMovement:
+AfterTurtwigMovement:
 	step LEFT
 	step LEFT
 	step LEFT
@@ -856,21 +856,21 @@ LabWhereGoingText:
 	line "are you going?"
 	done
 
-TakeCyndaquilText:
+TakeFennekinText:
 	text "ELM: You'll take"
-	line "CYNDAQUIL, the"
+	line "FENNEKIN, the"
 	cont "fire #MON?"
 	done
 
-TakeTotodileText:
+TakeQuaxlyText:
 	text "ELM: Do you want"
-	line "TOTODILE, the"
+	line "QUAXLY, the"
 	cont "water #MON?"
 	done
 
-TakeChikoritaText:
+TakeTurtwigText:
 	text "ELM: So, you like"
-	line "CHIKORITA, the"
+	line "TURTWIG, the"
 	cont "grass #MON?"
 	done
 
@@ -1406,7 +1406,7 @@ ElmsLab_MapEvents:
 	def_object_events
 	object_event  5,  2, SPRITE_ELM, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ProfElmScript, -1
 	object_event  2,  9, SPRITE_SCIENTIST, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ElmsAideScript, EVENT_ELMS_AIDE_IN_LAB
-	object_event  6,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CyndaquilPokeBallScript, EVENT_CYNDAQUIL_POKEBALL_IN_ELMS_LAB
-	object_event  7,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TotodilePokeBallScript, EVENT_TOTODILE_POKEBALL_IN_ELMS_LAB
-	object_event  8,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ChikoritaPokeBallScript, EVENT_CHIKORITA_POKEBALL_IN_ELMS_LAB
+	object_event  6,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, FennekinPokeBallScript, EVENT_FENNEKIN_POKEBALL_IN_ELMS_LAB
+	object_event  7,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, QuaxlyPokeBallScript, EVENT_QUAXLY_POKEBALL_IN_ELMS_LAB
+	object_event  8,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TurtwigPokeBallScript, EVENT_TURTWIG_POKEBALL_IN_ELMS_LAB
 	object_event  5,  3, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CopScript, EVENT_COP_IN_ELMS_LAB

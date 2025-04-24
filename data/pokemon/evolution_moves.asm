@@ -1,14 +1,14 @@
 EvolutionMoves::
 	table_width 1, EvolutionMoves
-	db NO_MOVE      ; BULBASAUR
-	db NO_MOVE      ; IVYSAUR
-	db NO_MOVE      ; VENUSAUR
-	db NO_MOVE      ; CHARMANDER
-	db NO_MOVE      ; CHARMELEON
-	db NO_MOVE      ; CHARIZARD
-	db NO_MOVE      ; SQUIRTLE
-	db NO_MOVE      ; WARTORTLE
-	db NO_MOVE      ; BLASTOISE
+	db EARTHQUAKE   ; TURTWIG
+	db NO_MOVE      ; GROTLE
+	db NO_MOVE      ; TORTERRA
+	db NO_MOVE      ; FENNEKIN
+	db NO_MOVE      ; BRAIXEN
+	db NO_MOVE      ; DELPHOX
+	db NO_MOVE      ; QUAXLY
+	db NO_MOVE      ; QUAXWELL
+	db NO_MOVE      ; QUAQUAVAL
 	db NO_MOVE      ; PICHU
 	db NO_MOVE      ; PIKACHU
 	db THUNDERPUNCH ; RAICHU

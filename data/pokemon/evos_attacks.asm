@@ -15,8 +15,8 @@ SECTION "Evolutions and Attacks", ROMX
 INCLUDE "data/pokemon/evolution_moves.asm"
 INCLUDE "data/pokemon/evos_attacks_pointers.asm"
 
-BulbasaurEvosAttacks:
-	db EVOLVE_LEVEL, 16, IVYSAUR
+TurtwigEvosAttacks:
+	db EVOLVE_LEVEL, 18, GROTLE
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 4, GROWL
@@ -31,8 +31,8 @@ BulbasaurEvosAttacks:
 	db 46, SOLARBEAM
 	db 0 ; no more level-up moves
 
-IvysaurEvosAttacks:
-	db EVOLVE_LEVEL, 32, VENUSAUR
+GrotleEvosAttacks:
+	db EVOLVE_LEVEL, 32, TORTERRA
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 1, GROWL
@@ -49,7 +49,7 @@ IvysaurEvosAttacks:
 	db 56, SOLARBEAM
 	db 0 ; no more level-up moves
 
-VenusaurEvosAttacks:
+TorterraEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 1, GROWL
@@ -67,8 +67,8 @@ VenusaurEvosAttacks:
 	db 65, SOLARBEAM
 	db 0 ; no more level-up moves
 
-CharmanderEvosAttacks:
-	db EVOLVE_LEVEL, 16, CHARMELEON
+FennekinEvosAttacks:
+	db EVOLVE_LEVEL, 16, BRAIXEN
 	db 0 ; no more evolutions
 	db 1, SCRATCH
 	db 1, GROWL
@@ -82,8 +82,8 @@ CharmanderEvosAttacks:
 	db 49, FIRE_SPIN
 	db 0 ; no more level-up moves
 
-CharmeleonEvosAttacks:
-	db EVOLVE_LEVEL, 36, CHARIZARD
+BraixenEvosAttacks:
+	db EVOLVE_LEVEL, 36, DELPHOX
 	db 0 ; no more evolutions
 	db 1, SCRATCH
 	db 1, GROWL
@@ -98,7 +98,7 @@ CharmeleonEvosAttacks:
 	db 55, FIRE_SPIN
 	db 0 ; no more level-up moves
 
-CharizardEvosAttacks:
+DelphoxEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, SCRATCH
 	db 1, GROWL
@@ -115,8 +115,8 @@ CharizardEvosAttacks:
 	db 64, FIRE_SPIN
 	db 0 ; no more level-up moves
 
-SquirtleEvosAttacks:
-	db EVOLVE_LEVEL, 16, WARTORTLE
+QuaxlyEvosAttacks:
+	db EVOLVE_LEVEL, 16, QUAXWELL
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 4, TAIL_WHIP
@@ -131,8 +131,8 @@ SquirtleEvosAttacks:
 	db 47, HYDRO_PUMP
 	db 0 ; no more level-up moves
 
-WartortleEvosAttacks:
-	db EVOLVE_LEVEL, 36, BLASTOISE
+QuaxwellEvosAttacks:
+	db EVOLVE_LEVEL, 36, QUAQUAVAL
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 1, TAIL_WHIP
@@ -149,7 +149,7 @@ WartortleEvosAttacks:
 	db 53, HYDRO_PUMP
 	db 0 ; no more level-up moves
 
-BlastoiseEvosAttacks:
+QuaquavalEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 1, TAIL_WHIP
