@@ -15,24 +15,24 @@ PokemonPalettes:
 	RGB 30, 22, 17
 	RGB 16, 14, 19
 
-INCBIN "gfx/pokemon/bulbasaur/normal.gbcpal", middle_colors
-INCLUDE "gfx/pokemon/bulbasaur/shiny.pal"
-INCBIN "gfx/pokemon/ivysaur/normal.gbcpal", middle_colors
-INCLUDE "gfx/pokemon/ivysaur/shiny.pal"
-INCBIN "gfx/pokemon/venusaur/normal.gbcpal", middle_colors
-INCLUDE "gfx/pokemon/venusaur/shiny.pal"
-INCBIN "gfx/pokemon/charmander/normal.gbcpal", middle_colors
-INCLUDE "gfx/pokemon/charmander/shiny.pal"
-INCBIN "gfx/pokemon/charmeleon/normal.gbcpal", middle_colors
-INCLUDE "gfx/pokemon/charmeleon/shiny.pal"
-INCBIN "gfx/pokemon/charizard/normal.gbcpal", middle_colors
-INCLUDE "gfx/pokemon/charizard/shiny.pal"
-INCBIN "gfx/pokemon/squirtle/normal.gbcpal", middle_colors
-INCLUDE "gfx/pokemon/squirtle/shiny.pal"
-INCBIN "gfx/pokemon/wartortle/normal.gbcpal", middle_colors
-INCLUDE "gfx/pokemon/wartortle/shiny.pal"
-INCBIN "gfx/pokemon/blastoise/normal.gbcpal", middle_colors
-INCLUDE "gfx/pokemon/blastoise/shiny.pal"
+INCBIN "gfx/pokemon/001_turtwig/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/001_turtwig/shiny.pal"
+INCBIN "gfx/pokemon/002_grotle/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/002_grotle/shiny.pal"
+INCBIN "gfx/pokemon/003_torterra/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/003_torterra/shiny.pal"
+INCBIN "gfx/pokemon/004_fennekin/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/004_fennekin/shiny.pal"
+INCBIN "gfx/pokemon/005_braixen/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/005_braixen/shiny.pal"
+INCBIN "gfx/pokemon/006_delphox/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/006_delphox/shiny.pal"
+INCBIN "gfx/pokemon/007_quaxly/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/007_quaxly/shiny.pal"
+INCBIN "gfx/pokemon/008_quaxwell/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/008_quaxwell/shiny.pal"
+INCBIN "gfx/pokemon/009_quaquaval/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/009_quaquaval/shiny.pal"
 INCBIN "gfx/pokemon/010_pichu/normal.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/010_pichu/shiny.pal"
 INCBIN "gfx/pokemon/011_pikachu/normal.gbcpal", middle_colors

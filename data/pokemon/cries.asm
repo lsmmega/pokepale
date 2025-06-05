@@ -6,15 +6,15 @@ ENDM
 PokemonCries::
 ; entries correspond to constants/pokemon_constants.asm
 	table_width MON_CRY_LENGTH
-	mon_cry CRY_BULBASAUR,   128,  129 ; BULBASAUR
-	mon_cry CRY_BULBASAUR,    32,  256 ; IVYSAUR
-	mon_cry CRY_BULBASAUR,     0,  320 ; VENUSAUR
-	mon_cry CRY_CHARMANDER,   96,  192 ; CHARMANDER
-	mon_cry CRY_CHARMANDER,   32,  192 ; CHARMELEON
-	mon_cry CRY_CHARMANDER,    0,  256 ; CHARIZARD
-	mon_cry CRY_SQUIRTLE,     96,  192 ; SQUIRTLE
-	mon_cry CRY_SQUIRTLE,     32,  192 ; WARTORTLE
-	mon_cry CRY_BLASTOISE,     0,  256 ; BLASTOISE
+	mon_cry CRY_BULBASAUR,   128,  129 ; TURTWIG
+	mon_cry CRY_BULBASAUR,    32,  256 ; GROTLE
+	mon_cry CRY_BULBASAUR,     0,  320 ; TORTERRA
+	mon_cry CRY_CHARMANDER,   96,  192 ; FENNEKIN
+	mon_cry CRY_CHARMANDER,   32,  192 ; BRAIXEN
+	mon_cry CRY_CHARMANDER,    0,  256 ; DELPHOX
+	mon_cry CRY_SQUIRTLE,     96,  192 ; QUAXLY
+	mon_cry CRY_SQUIRTLE,     32,  192 ; QUAXWELL
+	mon_cry CRY_BLASTOISE,     0,  256 ; QUAQUAVAL
 	mon_cry CRY_PICHU,         0,  320 ; PICHU
 	mon_cry CRY_BULBASAUR,   238,  129 ; PIKACHU
 	mon_cry CRY_RAICHU,      238,  136 ; RAICHU

@@ -1,14 +1,14 @@
 AnimationPointers:
 	table_width 2
-	dw BulbasaurAnimation
-	dw IvysaurAnimation
-	dw VenusaurAnimation
-	dw CharmanderAnimation
-	dw CharmeleonAnimation
-	dw CharizardAnimation
-	dw SquirtleAnimation
-	dw WartortleAnimation
-	dw BlastoiseAnimation
+	dw TurtwigAnimation
+	dw GrotleAnimation
+	dw TorterraAnimation
+	dw FennekinAnimation
+	dw BraixenAnimation
+	dw DelphoxAnimation
+	dw QuaxlyAnimation
+	dw QuaxwellAnimation
+	dw QuaquavalAnimation
 	dw PichuAnimation
 	dw PikachuAnimation
 	dw RaichuAnimation

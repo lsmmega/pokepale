@@ -1,15 +1,15 @@
 PokedexDataPointerTable:
 ; entries correspond to constants/pokemon_constants.asm
 	table_width 2
-	dw BulbasaurPokedexEntry
-	dw IvysaurPokedexEntry
-	dw VenusaurPokedexEntry
-	dw CharmanderPokedexEntry
-	dw CharmeleonPokedexEntry
-	dw CharizardPokedexEntry
-	dw SquirtlePokedexEntry
-	dw WartortlePokedexEntry
-	dw BlastoisePokedexEntry
+	dw TurtwigPokedexEntry
+	dw GrotlePokedexEntry
+	dw TorterraPokedexEntry
+	dw FennekinPokedexEntry
+	dw BraixenPokedexEntry
+	dw DelphoxPokedexEntry
+	dw QuaxlyPokedexEntry
+	dw QuaxwellPokedexEntry
+	dw QuaquavalPokedexEntry
 	dw PichuPokedexEntry
 	dw PikachuPokedexEntry
 	dw RaichuPokedexEntry

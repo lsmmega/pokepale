@@ -3,15 +3,15 @@
 PokemonPicPointers::
 ; entries correspond to Pokémon species
 	table_width 3 * 2
-	dba_pics BulbasaurFrontpic, BulbasaurBackpic
-	dba_pics IvysaurFrontpic, IvysaurBackpic
-	dba_pics VenusaurFrontpic, VenusaurBackpic
-	dba_pics CharmanderFrontpic, CharmanderBackpic
-	dba_pics CharmeleonFrontpic, CharmeleonBackpic
-	dba_pics CharizardFrontpic, CharizardBackpic
-	dba_pics SquirtleFrontpic, SquirtleBackpic
-	dba_pics WartortleFrontpic, WartortleBackpic
-	dba_pics BlastoiseFrontpic, BlastoiseBackpic
+	dba_pics TurtwigFrontpic, TurtwigBackpic
+	dba_pics GrotleFrontpic, GrotleBackpic
+	dba_pics TorterraFrontpic, TorterraBackpic
+	dba_pics FennekinFrontpic, FennekinBackpic
+	dba_pics BraixenFrontpic, BraixenBackpic
+	dba_pics DelphoxFrontpic, DelphoxBackpic
+	dba_pics QuaxlyFrontpic, QuaxlyBackpic
+	dba_pics QuaxwellFrontpic, QuaxwellBackpic
+	dba_pics QuaquavalFrontpic, QuaquavalBackpic
 	dba_pics PichuFrontpic, PichuBackpic
 	dba_pics PikachuFrontpic, PikachuBackpic
 	dba_pics RaichuFrontpic, RaichuBackpic

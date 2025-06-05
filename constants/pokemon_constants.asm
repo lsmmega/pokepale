@@ -14,15 +14,15 @@
 ; - BitmasksPointers (see gfx/pokemon/bitmask_pointers.asm)
 ; - FramesPointers (see gfx/pokemon/frame_pointers.asm)
 	const_def 1
-	const BULBASAUR  ; 01
-	const IVYSAUR    ; 02
-	const VENUSAUR   ; 03
-	const CHARMANDER ; 04
-	const CHARMELEON ; 05
-	const CHARIZARD  ; 06
-	const SQUIRTLE   ; 07
-	const WARTORTLE  ; 08
-	const BLASTOISE  ; 09
+	const TURTWIG    ; 01
+	const GROTLE     ; 02
+	const TORTERRA   ; 03
+	const FENNEKIN   ; 04
+	const BRAIXEN    ; 05
+	const DELPHOX    ; 06
+	const QUAXLY     ; 07
+	const QUAXWELL   ; 08
+	const QUAQUAVAL  ; 09
 	const PICHU      ; 0a
 	const PIKACHU    ; 0b
 	const RAICHU     ; 0c
@@ -32,15 +32,15 @@
 	const FLAREON    ; 10
 	const ESPEON     ; 11
 	const UMBREON    ; 12
-	const LEAFEON
-	const GLACEON
-	const SYLVEON
-	const CATERPIE   ; 13
-	const METAPOD    ; 14
-	const BUTTERFREE ; 15
-	const WEEDLE     ; 16
-	const KAKUNA     ; 17
-	const BEEDRILL   ; 18
+	const LEAFEON    ; 13
+	const GLACEON    ; 14
+	const SYLVEON    ; 15
+	const CATERPIE   ; 16
+	const METAPOD    ; 17
+	const BUTTERFREE ; 18
+	const WEEDLE     ; 19
+	const KAKUNA     ; 1a
+	const BEEDRILL   ; 1b
 	const RATTATA    ; 1c
 	const RATICATE   ; 1d
 	const SPEAROW    ; 1e
