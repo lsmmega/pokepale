@@ -55,9 +55,6 @@ BattleAnimRunScript:
 	and a
 	jr nz, .hi_byte
 
-	farcall CheckBattleScene
-	jr c, .disabled
-
 ; This vc_hook reduces the move animation flashing in the Virtual Console for
 ; Fissure, Self-Destruct, Thunder, Flash, Explosion, Horn Drill, and Hyper Beam.
 	call BattleAnimClearHud
@@ -72,7 +69,6 @@ BattleAnimRunScript:
 	call BattleAnimDelayFrame
 	call BattleAnimRestoreHuds
 
-.disabled
 	ld a, [wNumHits]
 	and a
 	jr z, .done

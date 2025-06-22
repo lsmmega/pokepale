@@ -53,10 +53,8 @@ DoBattle:
 	jp z, LostBattle
 	call SafeLoadTempTilemapToTilemap
 	ld a, [wBattleType]
-	cp BATTLETYPE_DEBUG
-	jp z, .tutorial_debug
 	cp BATTLETYPE_TUTORIAL
-	jp z, .tutorial_debug
+	jp z, .tutorial_
 	xor a
 	ld [wCurPartyMon], a
 .loop2
@@ -113,7 +111,7 @@ DoBattle:
 	call StartAutomaticBattleWeather
 	jp BattleTurn
 
-.tutorial_debug
+.tutorial_
 	jp BattleMenu
 
 StartAutomaticBattleWeather:
@@ -2420,14 +2418,9 @@ WinTrainerBattle:
 	cp BATTLETYPE_CANLOSE
 	jr nz, .skip_heal
 	predef HealParty
+
 .skip_heal
-
-	ld a, [wDebugFlags]
-	bit DEBUG_BATTLE_F, a
-	jr nz, .skip_win_loss_text
 	call PrintWinLossText
-.skip_win_loss_text
-
 	jp .give_money
 
 .mobile
@@ -2968,12 +2961,7 @@ LostBattle:
 
 	ld c, 40
 	call DelayFrames
-
-	ld a, [wDebugFlags]
-	bit DEBUG_BATTLE_F, a
-	jr nz, .skip_win_loss_text
 	call PrintWinLossText
-.skip_win_loss_text
 	ret
 
 .battle_tower
@@ -3612,16 +3600,12 @@ ShowSetEnemyMonAndSendOutAnimation:
 	farcall CheckFaintedFrzSlp
 	jr c, .skip_cry
 
-	farcall CheckBattleScene
-	jr c, .cry_no_anim
-
 	hlcoord 12, 0
 	ld d, $0
 	ld e, ANIM_MON_SLOW
 	predef AnimateFrontpic
 	jr .skip_cry
 
-.cry_no_anim
 	ld a, $f
 	ld [wCryTracks], a
 	ld a, [wTempEnemyMonSpecies]
@@ -3716,8 +3700,6 @@ CheckIfCurPartyMonIsFitToFight:
 TryToRunAwayFromBattle:
 ; Run away from battle, with or without item
 	ld a, [wBattleType]
-	cp BATTLETYPE_DEBUG
-	jp z, .can_escape
 	cp BATTLETYPE_CONTEST
 	jp z, .can_escape
 	cp BATTLETYPE_TRAP
@@ -4918,8 +4900,6 @@ BattleMenu:
 	call LoadTempTilemapToTilemap
 
 	ld a, [wBattleType]
-	cp BATTLETYPE_DEBUG
-	jr z, .ok
 	cp BATTLETYPE_TUTORIAL
 	jr z, .ok
 	call EmptyBattleTextbox
@@ -9167,16 +9147,12 @@ BattleStartMessage:
 	farcall CheckSleepingTreeMon
 	jr c, .skip_cry
 
-	farcall CheckBattleScene
-	jr c, .cry_no_anim
-
 	hlcoord 12, 0
 	ld d, $0
 	ld e, ANIM_MON_NORMAL
 	predef AnimateFrontpic
 	jr .skip_cry ; cry is played during the animation
 
-.cry_no_anim
 	ld a, $f
 	ld [wCryTracks], a
 	ld a, [wTempEnemyMonSpecies]

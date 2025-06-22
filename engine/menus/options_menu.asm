@@ -2,13 +2,12 @@
 	const_def
 	const OPT_TEXT_SPEED        ; 0
 	const OPT_TEXT_AUTOSCROLL   ; 1
-	const OPT_BATTLE_SCENE      ; 2
-	const OPT_BATTLE_STYLE      ; 3
-	const OPT_SOUND             ; 4
-	const OPT_PRINT             ; 5
-	const OPT_FRAME             ; 6
-	const OPT_CANCEL            ; 7
-DEF NUM_OPTIONS EQU const_value ; 8
+	const OPT_BATTLE_STYLE      ; 2
+	const OPT_SOUND             ; 3
+	const OPT_PRINT             ; 4
+	const OPT_FRAME             ; 5
+	const OPT_CANCEL            ; 6
+DEF NUM_OPTIONS EQU const_value ; 7
 
 _Option:
 ; BUG: Options menu fails to clear joypad state on initialization (see docs/bugs_and_glitches.md)
@@ -79,8 +78,6 @@ StringOptions:
 	db "        :<LF>"
 	db "TEXT AUTOSCROLL<LF>"
 	db "        :<LF>"
-	db "BATTLE SCENE<LF>"
-	db "        :<LF>"
 	db "BATTLE STYLE<LF>"
 	db "        :<LF>"
 	db "SOUND<LF>"
@@ -98,7 +95,6 @@ GetOptionPointer:
 ; entries correspond to OPT_* constants
 	dw Options_TextSpeed
 	dw Options_TextAutoscroll
-	dw Options_BattleScene
 	dw Options_BattleStyle
 	dw Options_Sound
 	dw Options_Print
@@ -210,45 +206,6 @@ Options_TextAutoscroll:
 .AorB:
 	db "A OR B @"
 
-Options_BattleScene:
-	ld hl, wOptions
-	ldh a, [hJoyPressed]
-	bit D_LEFT_F, a
-	jr nz, .LeftPressed
-	bit D_RIGHT_F, a
-	jr z, .NonePressed
-	bit BATTLE_SCENE, [hl]
-	jr nz, .ToggleOn
-	jr .ToggleOff
-
-.LeftPressed:
-	bit BATTLE_SCENE, [hl]
-	jr z, .ToggleOff
-	jr .ToggleOn
-
-.NonePressed:
-	bit BATTLE_SCENE, [hl]
-	jr z, .ToggleOn
-	jr .ToggleOff
-
-.ToggleOn:
-	res BATTLE_SCENE, [hl]
-	ld de, .On
-	jr .Display
-
-.ToggleOff:
-	set BATTLE_SCENE, [hl]
-	ld de, .Off
-
-.Display:
-	hlcoord 11, 7
-	call PlaceString
-	and a
-	ret
-
-.On:  db "ON @"
-.Off: db "OFF@"
-
 Options_BattleStyle:
 	ld hl, wOptions
 	ldh a, [hJoyPressed]
@@ -279,7 +236,7 @@ Options_BattleStyle:
 	ld de, .Set
 
 .Display:
-	hlcoord 11, 9
+	hlcoord 11, 7
 	call PlaceString
 	and a
 	ret
@@ -324,7 +281,7 @@ Options_Sound:
 	ld de, .Stereo
 
 .Display:
-	hlcoord 11, 11
+	hlcoord 11, 9
 	call PlaceString
 	and a
 	ret
@@ -378,7 +335,7 @@ Options_Print:
 	ld e, [hl]
 	inc hl
 	ld d, [hl]
-	hlcoord 11, 13
+	hlcoord 11, 11
 	call PlaceString
 	and a
 	ret
@@ -458,7 +415,7 @@ Options_Frame:
 	ld [hl], a
 UpdateFrame:
 	ld a, [wTextboxFrame]
-	hlcoord 16, 15 ; where on the screen the number is drawn
+	hlcoord 16, 13 ; where on the screen the number is drawn
 	add "1"
 	ld [hl], a
 	call LoadFontsExtra
