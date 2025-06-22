@@ -187,6 +187,7 @@ BattleAnimFrameData:
 	dw .Frameset_EnemyFeet2Row       ; BATTLE_ANIM_FRAMESET_ENEMYFEET_2ROW
 	dw .Frameset_PlayerHead2Row      ; BATTLE_ANIM_FRAMESET_PLAYERHEAD_2ROW
 	dw .Frameset_Hail                ; BATTLE_ANIM_FRAMESET_HAIL
+	dw .Frameset_LeafBlade           ; BATTLE_ANIM_FRAMESET_SWORD_DOWN_LEFT
 	assert_table_length NUM_BATTLE_ANIM_FRAMESETS
 
 .Frameset_HitBig:
@@ -1273,3 +1274,11 @@ BattleAnimFrameData:
 .Frameset_Hail:
 	oamframe BATTLE_ANIM_OAMSET_HAIL, 32
 	oamend
+
+.Frameset_LeafBlade:
+	oamframe BATTLE_ANIM_OAMSET_LEAFBLADE1,  2
+	oamframe BATTLE_ANIM_OAMSET_LEAFBLADE2,  2
+	oamframe BATTLE_ANIM_OAMSET_LEAFBLADE3,  2
+	oamframe BATTLE_ANIM_OAMSET_LEAFBLADE4,  2
+	oamwait 4
+	oamdelete
