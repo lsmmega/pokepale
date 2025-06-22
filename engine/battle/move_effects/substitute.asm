@@ -54,8 +54,6 @@ BattleCommand_Substitute:
 	xor a
 	ld [hl], a
 	ld [de], a
-	call _CheckBattleScene
-	jr c, .no_anim
 
 	xor a
 	ld [wNumHits], a
@@ -65,7 +63,6 @@ BattleCommand_Substitute:
 	call LoadAnim
 	jr .finish
 
-.no_anim
 	call BattleCommand_RaiseSubNoAnim
 .finish
 	ld hl, MadeSubstituteText
