@@ -167,13 +167,13 @@ UndergroundRivalBattleScript:
 	waitbutton
 	closetext
 	setevent EVENT_RIVAL_GOLDENROD_UNDERGROUND
-	checkevent EVENT_GOT_QUAXLY_FROM_ELM
+	checkevent EVENT_GOT_FROAKIE_FROM_ELM
 	iftrue .Quaxly
-	checkevent EVENT_GOT_TURTWIG_FROM_ELM
+	checkevent EVENT_GOT_ROWLET_FROM_ELM
 	iftrue .Turtwig
 	winlosstext UndergroundRivalWinText, UndergroundRivalLossText
 	setlasttalked GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_RIVAL
-	loadtrainer RIVAL1, RIVAL1_4_QUAXLY
+	loadtrainer RIVAL1, RIVAL1_4_FROAKIE
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
@@ -182,7 +182,7 @@ UndergroundRivalBattleScript:
 .Quaxly:
 	winlosstext UndergroundRivalWinText, UndergroundRivalLossText
 	setlasttalked GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_RIVAL
-	loadtrainer RIVAL1, RIVAL1_4_TURTWIG
+	loadtrainer RIVAL1, RIVAL1_4_ROWLET
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
@@ -191,7 +191,7 @@ UndergroundRivalBattleScript:
 .Turtwig:
 	winlosstext UndergroundRivalWinText, UndergroundRivalLossText
 	setlasttalked GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_RIVAL
-	loadtrainer RIVAL1, RIVAL1_4_FENNEKIN
+	loadtrainer RIVAL1, RIVAL1_4_CHIMCHAR
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle

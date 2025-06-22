@@ -1,20 +1,20 @@
-	db GROTLE ; 002
+	db DECIDUEYE ; 003
 
-	db  75,  89,  85,  36,  55,  65
+	db  78, 107,  75,  70, 100, 100
 	;   hp  atk  def  spd  sat  sdf
 
-	db GRASS, GRASS ; type
+	db GRASS, GHOST ; type
 	db 45 ; catch rate
 	db 0 ; base exp
 	db NO_ITEM, NO_ITEM ; items
 	db GENDER_F12_5 ; gender ratio
 	db 100 ; unknown 1
-	db 20 ; step cycles to hatch
+	db 15 ; step cycles to hatch
 	db 5 ; unknown 2
-	INCBIN "gfx/pokemon/002_grotle/front.dimensions"
+	INCBIN "gfx/pokemon/003_decidueye/front.dimensions"
 	dw NULL, NULL ; unused (beta front/back pics)
 	db GROWTH_MEDIUM_SLOW ; growth rate
-	dn EGG_MONSTER, EGG_PLANT ; egg groups
+	dn EGG_FLYING, EGG_FLYING ; egg groups
 
 	; tm learnset
 	tm

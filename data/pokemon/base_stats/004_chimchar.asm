@@ -1,9 +1,9 @@
-	db QUAXWELL ; 008
+	db CHIMCHAR ; 004
 
-	db  70,  85,  65,  65,  65,  60
+	db  44,  58,  44,  61,  58,  44
 	;   hp  atk  def  spd  sat  sdf
 
-	db WATER, WATER ; type
+	db FIRE, FIRE ; type
 	db 45 ; catch rate
 	db 0 ; base exp
 	db NO_ITEM, NO_ITEM ; items
@@ -11,10 +11,10 @@
 	db 100 ; unknown 1
 	db 20 ; step cycles to hatch
 	db 5 ; unknown 2
-	INCBIN "gfx/pokemon/008_quaxwell/front.dimensions"
+	INCBIN "gfx/pokemon/004_chimchar/front.dimensions"
 	dw NULL, NULL ; unused (beta front/back pics)
 	db GROWTH_MEDIUM_SLOW ; growth rate
-	dn EGG_FLYING, EGG_WATER_1 ; egg groups
+	dn EGG_GROUND, EGG_HUMANSHAPE ; egg groups
 
 	; tm learnset
 	tm

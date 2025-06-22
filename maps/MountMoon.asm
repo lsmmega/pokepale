@@ -26,13 +26,13 @@ MountMoonRivalBattleScript:
 	writetext MountMoonRivalTextBefore
 	waitbutton
 	closetext
-	checkevent EVENT_GOT_QUAXLY_FROM_ELM
+	checkevent EVENT_GOT_FROAKIE_FROM_ELM
 	iftrue .Quaxly
-	checkevent EVENT_GOT_TURTWIG_FROM_ELM
+	checkevent EVENT_GOT_ROWLET_FROM_ELM
 	iftrue .Turtwig
 	winlosstext MountMoonRivalTextWin, MountMoonRivalTextLoss
 	setlasttalked MOUNTMOON_RIVAL
-	loadtrainer RIVAL2, RIVAL2_1_QUAXLY
+	loadtrainer RIVAL2, RIVAL2_1_FROAKIE
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
@@ -41,7 +41,7 @@ MountMoonRivalBattleScript:
 .Quaxly:
 	winlosstext MountMoonRivalTextWin, MountMoonRivalTextLoss
 	setlasttalked MOUNTMOON_RIVAL
-	loadtrainer RIVAL2, RIVAL2_1_TURTWIG
+	loadtrainer RIVAL2, RIVAL2_1_ROWLET
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
@@ -50,7 +50,7 @@ MountMoonRivalBattleScript:
 .Turtwig:
 	winlosstext MountMoonRivalTextWin, MountMoonRivalTextLoss
 	setlasttalked MOUNTMOON_RIVAL
-	loadtrainer RIVAL2, RIVAL2_1_FENNEKIN
+	loadtrainer RIVAL2, RIVAL2_1_CHIMCHAR
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle

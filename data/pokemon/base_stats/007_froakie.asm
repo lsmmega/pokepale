@@ -1,9 +1,9 @@
-	db FENNEKIN ; 004
+	db FROAKIE ; 007
 
-	db  40,  45,  40,  60,  62,  60
+	db  41,  56,  40,  71,  62,  44
 	;   hp  atk  def  spd  sat  sdf
 
-	db FIRE, FIRE ; type
+	db WATER, WATER ; type
 	db 45 ; catch rate
 	db 0 ; base exp
 	db NO_ITEM, NO_ITEM ; items
@@ -11,10 +11,10 @@
 	db 100 ; unknown 1
 	db 20 ; step cycles to hatch
 	db 5 ; unknown 2
-	INCBIN "gfx/pokemon/004_fennekin/front.dimensions"
+	INCBIN "gfx/pokemon/007_froakie/front.dimensions"
 	dw NULL, NULL ; unused (beta front/back pics)
 	db GROWTH_MEDIUM_SLOW ; growth rate
-	dn EGG_GROUND, EGG_GROUND ; egg groups
+	dn EGG_WATER_1, EGG_WATER_1 ; egg groups
 
 	; tm learnset
 	tm
