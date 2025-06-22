@@ -254,9 +254,9 @@ BattleAnimations::
 	dw BattleAnim_Whirlpool
 	dw BattleAnim_BeatUp
 	dw BattleAnim_Hail
+	dw BattleAnim_LeafBlade
+	dw BattleAnim_Leafage
 	assert_table_length NUM_ATTACKS + 1
-	dw BattleAnim_Dummy
-	dw BattleAnim_Dummy
 	dw BattleAnim_SweetScent2
 	assert_table_length $100
 ; $100
@@ -1164,6 +1164,7 @@ BattleAnim_LeechSeed:
 	anim_ret
 
 BattleAnim_RazorLeaf:
+BattleAnim_Leafage:
 	anim_1gfx BATTLE_ANIM_GFX_PLANT
 	anim_sound 0, 0, SFX_VINE_WHIP
 	anim_obj BATTLE_ANIM_OBJ_RAZOR_LEAF, 48, 80, $28
@@ -4613,6 +4614,12 @@ BattleAnim_InHail:
 	anim_wait 8
 	anim_ret
 
+BattleAnim_LeafBlade:
+	anim_1gfx BATTLE_ANIM_GFX_WHIP
+	anim_sound 0, 0, SFX_SWORDS_DANCE
+	anim_obj BATTLE_ANIM_OBJ_LEAF_BLADE, 144, 48, $0
+	anim_wait 56
+	anim_ret
 
 BattleAnimSub_Drain:
 	anim_obj BATTLE_ANIM_OBJ_DRAIN, 132, 44, $0

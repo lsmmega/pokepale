@@ -252,4 +252,6 @@ MoveNames::
 	li "WHIRLPOOL"
 	li "BEAT UP"
 	li "HAIL"
+	li "LEAF BLADE"
+	li "LEAFAGE"
 	assert_list_length NUM_ATTACKS

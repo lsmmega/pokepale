@@ -20,9 +20,11 @@ RowletEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 1, GROWL
+	db 1, LEAFAGE
 	db 9, PECK
 	db 15, RAZOR_LEAF
 	db 18, SYNTHESIS
+	db 30, LEAF_BLADE
 	db 0 ; no more level-up moves
 
 DartrixEvosAttacks:
@@ -30,19 +32,23 @@ DartrixEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 1, GROWL
+	db 1, LEAFAGE
 	db 9, PECK
 	db 15, RAZOR_LEAF
 	db 20, SYNTHESIS
+	db 40, LEAF_BLADE
 	db 0 ; no more level-up moves
 
 DecidueyeEvosAttacks:
 	db 0 ; no more evolutions
+	db 1, LEAFAGE
 	db 1, TACKLE
 	db 1, SPITE
 	db 1, GROWL
 	db 9, PECK
 	db 15, RAZOR_LEAF
 	db 20, SYNTHESIS
+	db 50, LEAF_BLADE
 	db 0 ; no more level-up moves
 
 ChimcharEvosAttacks:
@@ -50,11 +56,11 @@ ChimcharEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, SCRATCH
 	db 1, LEER
-	db 7, EMBER
+	db 1, EMBER
 	db 15, FURY_SWIPES
 	db 17, FLAME_WHEEL
+	db 30, FLAMETHROWER
 	db 33, FIRE_SPIN
-	db 47, FLAMETHROWER
 	db 0 ; no more level-up moves
 
 MonfernoEvosAttacks:
@@ -66,6 +72,7 @@ MonfernoEvosAttacks:
 	db 16, FURY_SWIPES
 	db 19, FLAME_WHEEL
 	db 39, FIRE_SPIN
+	db 40, FLAMETHROWER
 	db 0 ; no more level-up moves
 
 InfernapeEvosAttacks:
@@ -77,6 +84,7 @@ InfernapeEvosAttacks:
 	db 16, FURY_SWIPES
 	db 19, FLAME_WHEEL
 	db 42, FIRE_SPIN
+	db 50, FLAMETHROWER
 	db 0 ; no more level-up moves
 
 FroakieEvosAttacks:
@@ -84,10 +92,11 @@ FroakieEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, POUND
 	db 1, GROWL
-	db 5, WATER_GUN
+	db 1, WATER_GUN
 	db 8, QUICK_ATTACK
 	db 10, LICK
 	db 18, SMOKESCREEN
+	db 30, SURF
 	db 35, SUBSTITUTE
 	db 43, DOUBLE_TEAM
 	db 48, HYDRO_PUMP
@@ -102,6 +111,7 @@ FrogadierEvosAttacks:
 	db 8, QUICK_ATTACK
 	db 10, LICK
 	db 19, SMOKESCREEN
+	db 40, SURF
 	db 40, SUBSTITUTE
 	db 50, DOUBLE_TEAM
 	db 56, HYDRO_PUMP
@@ -118,6 +128,7 @@ GreninjaEvosAttacks:
 	db 19, SMOKESCREEN
 	db 28, SPIKES
 	db 42, SUBSTITUTE
+	db 50, SURF
 	db 56, DOUBLE_TEAM
 	db 68, HYDRO_PUMP
 	db 0 ; no more level-up moves
