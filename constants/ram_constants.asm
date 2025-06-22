@@ -1,11 +1,6 @@
 ; wInputType::
 DEF AUTO_INPUT EQU $ff
 
-; wDebugFlags::
-	const_def
-	const DEBUG_BATTLE_F
-	const DEBUG_FIELD_F
-
 ; wMonType::
 	const_def
 	const PARTYMON   ; 0

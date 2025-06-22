@@ -53,10 +53,8 @@ DoBattle:
 	jp z, LostBattle
 	call SafeLoadTempTilemapToTilemap
 	ld a, [wBattleType]
-	cp BATTLETYPE_DEBUG
-	jp z, .tutorial_debug
 	cp BATTLETYPE_TUTORIAL
-	jp z, .tutorial_debug
+	jp z, .tutorial_
 	xor a
 	ld [wCurPartyMon], a
 .loop2
@@ -113,7 +111,7 @@ DoBattle:
 	call StartAutomaticBattleWeather
 	jp BattleTurn
 
-.tutorial_debug
+.tutorial_
 	jp BattleMenu
 
 StartAutomaticBattleWeather:
@@ -2420,14 +2418,9 @@ WinTrainerBattle:
 	cp BATTLETYPE_CANLOSE
 	jr nz, .skip_heal
 	predef HealParty
+
 .skip_heal
-
-	ld a, [wDebugFlags]
-	bit DEBUG_BATTLE_F, a
-	jr nz, .skip_win_loss_text
 	call PrintWinLossText
-.skip_win_loss_text
-
 	jp .give_money
 
 .mobile
@@ -2968,12 +2961,7 @@ LostBattle:
 
 	ld c, 40
 	call DelayFrames
-
-	ld a, [wDebugFlags]
-	bit DEBUG_BATTLE_F, a
-	jr nz, .skip_win_loss_text
 	call PrintWinLossText
-.skip_win_loss_text
 	ret
 
 .battle_tower
@@ -3716,8 +3704,6 @@ CheckIfCurPartyMonIsFitToFight:
 TryToRunAwayFromBattle:
 ; Run away from battle, with or without item
 	ld a, [wBattleType]
-	cp BATTLETYPE_DEBUG
-	jp z, .can_escape
 	cp BATTLETYPE_CONTEST
 	jp z, .can_escape
 	cp BATTLETYPE_TRAP
@@ -4918,8 +4904,6 @@ BattleMenu:
 	call LoadTempTilemapToTilemap
 
 	ld a, [wBattleType]
-	cp BATTLETYPE_DEBUG
-	jr z, .ok
 	cp BATTLETYPE_TUTORIAL
 	jr z, .ok
 	call EmptyBattleTextbox

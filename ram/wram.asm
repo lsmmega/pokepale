@@ -123,7 +123,6 @@ wAutoInputAddress:: dw
 wAutoInputBank::    db
 wAutoInputLength::  db
 
-wDebugFlags:: db
 wGameLogicPaused:: db
 wSpriteUpdatesEnabled:: db
 
@@ -638,24 +637,6 @@ wOddEggName:: ds MON_NAME_LENGTH
 wOddEggOT:: ds NAME_LENGTH
 
 NEXTU
-; debug mon color picker
-wDebugMiddleColors::
-wDebugLightColor:: ds 2
-wDebugDarkColor::  ds 2
-	ds 6
-wDebugRedChannel::   db
-wDebugGreenChannel:: db
-wDebugBlueChannel::  db
-
-NEXTU
-; debug tileset color picker
-wDebugPalette::
-wDebugWhiteTileColor:: ds 2
-wDebugLightTileColor:: ds 2
-wDebugDarkTileColor::  ds 2
-wDebugBlackTileColor:: ds 2
-
-NEXTU
 wMobileMonSender:: ds NAME_LENGTH_JAPANESE - 1
 wMobileMon::       party_struct wMobileMon
 wMobileMonOT::     ds NAME_LENGTH_JAPANESE - 1
@@ -922,13 +903,6 @@ SECTION UNION "Overworld Map", WRAM0
 
 ; Hall of Fame data
 wHallOfFamePokemonList:: hall_of_fame wHallOfFamePokemonList
-
-
-SECTION UNION "Overworld Map", WRAM0
-
-; debug color picker
-wDebugOriginalColors:: ds 256 * 4
-
 
 SECTION UNION "Overworld Map", WRAM0
 
@@ -1532,18 +1506,6 @@ NEXTU
 wUnusedBillsPCData:: ds 3
 
 NEXTU
-; debug mon color picker
-wDebugColorRGBJumptableIndex:: db
-wDebugColorCurColor:: db
-wDebugColorCurMon:: db
-
-NEXTU
-; debug tileset color picker
-wDebugTilesetCurPalette:: db
-wDebugTilesetRGBJumptableIndex:: db
-wDebugTilesetCurColor:: db
-
-NEXTU
 ; stats screen
 wStatsScreenFlags:: db
 
@@ -2004,14 +1966,6 @@ wTempRestorePPItem::
 wApricorns::
 wSuicuneFrame::
 	db
-
-
-SECTION UNION "Miscellaneous WRAM 1", WRAMX
-
-; debug color picker
-wDebugColorIsTrainer:: db
-wDebugColorIsShiny:: db
-
 
 SECTION UNION "Miscellaneous WRAM 1", WRAMX
 
