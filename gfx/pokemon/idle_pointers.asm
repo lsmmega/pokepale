@@ -1,14 +1,14 @@
 AnimationIdlePointers:
 	table_width 2
-	dw TurtwigAnimationIdle
-	dw GrotleAnimationIdle
-	dw TorterraAnimationIdle
-	dw FennekinAnimationIdle
-	dw BraixenAnimationIdle
-	dw DelphoxAnimationIdle
-	dw QuaxlyAnimationIdle
-	dw QuaxwellAnimationIdle
-	dw QuaquavalAnimationIdle
+	dw RowletAnimationIdle
+	dw DartrixAnimationIdle
+	dw DecidueyeAnimationIdle
+	dw ChimcharAnimationIdle
+	dw MonfernoAnimationIdle
+	dw InfernapeAnimationIdle
+	dw FroakieAnimationIdle
+	dw FrogadierAnimationIdle
+	dw GreninjaAnimationIdle
 	dw PichuAnimationIdle
 	dw PikachuAnimationIdle
 	dw RaichuAnimationIdle

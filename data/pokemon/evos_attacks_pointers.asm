@@ -2,15 +2,15 @@
 
 EvosAttacksPointers::
 	table_width 2
-	dw TurtwigEvosAttacks
-	dw GrotleEvosAttacks
-	dw TorterraEvosAttacks
-	dw FennekinEvosAttacks
-	dw BraixenEvosAttacks
-	dw DelphoxEvosAttacks
-	dw QuaxlyEvosAttacks
-	dw QuaxwellEvosAttacks
-	dw QuaquavalEvosAttacks
+	dw RowletEvosAttacks
+	dw DartrixEvosAttacks
+	dw DecidueyeEvosAttacks
+	dw ChimcharEvosAttacks
+	dw MonfernoEvosAttacks
+	dw InfernapeEvosAttacks
+	dw FroakieEvosAttacks
+	dw FrogadierEvosAttacks
+	dw GreninjaEvosAttacks
 	dw PichuEvosAttacks
 	dw PikachuEvosAttacks
 	dw RaichuEvosAttacks

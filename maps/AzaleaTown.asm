@@ -60,13 +60,13 @@ AzaleaTownRivalBattleScript:
 	waitbutton
 	closetext
 	setevent EVENT_RIVAL_AZALEA_TOWN
-	checkevent EVENT_GOT_QUAXLY_FROM_ELM
+	checkevent EVENT_GOT_FROAKIE_FROM_ELM
 	iftrue .Quaxly
-	checkevent EVENT_GOT_TURTWIG_FROM_ELM
+	checkevent EVENT_GOT_ROWLET_FROM_ELM
 	iftrue .Turtwig
 	winlosstext AzaleaTownRivalWinText, AzaleaTownRivalLossText
 	setlasttalked AZALEATOWN_RIVAL
-	loadtrainer RIVAL1, RIVAL1_2_QUAXLY
+	loadtrainer RIVAL1, RIVAL1_2_FROAKIE
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
@@ -75,7 +75,7 @@ AzaleaTownRivalBattleScript:
 .Quaxly:
 	winlosstext AzaleaTownRivalWinText, AzaleaTownRivalLossText
 	setlasttalked AZALEATOWN_RIVAL
-	loadtrainer RIVAL1, RIVAL1_2_TURTWIG
+	loadtrainer RIVAL1, RIVAL1_2_ROWLET
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
@@ -84,7 +84,7 @@ AzaleaTownRivalBattleScript:
 .Turtwig:
 	winlosstext AzaleaTownRivalWinText, AzaleaTownRivalLossText
 	setlasttalked AZALEATOWN_RIVAL
-	loadtrainer RIVAL1, RIVAL1_2_FENNEKIN
+	loadtrainer RIVAL1, RIVAL1_2_CHIMCHAR
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle

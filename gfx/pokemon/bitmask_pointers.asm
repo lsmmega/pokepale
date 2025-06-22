@@ -1,14 +1,14 @@
 BitmasksPointers:
 	table_width 2
-	dw TurtwigBitmasks
-	dw GrotleBitmasks
-	dw TorterraBitmasks
-	dw FennekinBitmasks
-	dw BraixenBitmasks
-	dw DelphoxBitmasks
-	dw QuaxlyBitmasks
-	dw QuaxwellBitmasks
-	dw QuaquavalBitmasks
+	dw RowletBitmasks
+	dw DartrixBitmasks
+	dw DecidueyeBitmasks
+	dw ChimcharBitmasks
+	dw MonfernoBitmasks
+	dw InfernapeBitmasks
+	dw FroakieBitmasks
+	dw FrogadierBitmasks
+	dw GreninjaBitmasks
 	dw PichuBitmasks
 	dw PikachuBitmasks
 	dw RaichuBitmasks

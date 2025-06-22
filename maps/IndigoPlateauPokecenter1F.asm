@@ -88,14 +88,14 @@ PlateauRivalBattleCommon:
 	waitbutton
 	closetext
 	setevent EVENT_INDIGO_PLATEAU_POKECENTER_RIVAL
-	checkevent EVENT_GOT_QUAXLY_FROM_ELM
+	checkevent EVENT_GOT_FROAKIE_FROM_ELM
 	iftrue .Quaxly
-	checkevent EVENT_GOT_TURTWIG_FROM_ELM
+	checkevent EVENT_GOT_ROWLET_FROM_ELM
 	iftrue .Turtwig
 	; Fennekin
 	winlosstext PlateauRivalWinText, PlateauRivalLoseText
 	setlasttalked INDIGOPLATEAUPOKECENTER1F_RIVAL
-	loadtrainer RIVAL2, RIVAL2_2_QUAXLY
+	loadtrainer RIVAL2, RIVAL2_2_FROAKIE
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
@@ -104,7 +104,7 @@ PlateauRivalBattleCommon:
 .Quaxly:
 	winlosstext PlateauRivalWinText, PlateauRivalLoseText
 	setlasttalked INDIGOPLATEAUPOKECENTER1F_RIVAL
-	loadtrainer RIVAL2, RIVAL2_2_TURTWIG
+	loadtrainer RIVAL2, RIVAL2_2_ROWLET
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
@@ -113,7 +113,7 @@ PlateauRivalBattleCommon:
 .Turtwig:
 	winlosstext PlateauRivalWinText, PlateauRivalLoseText
 	setlasttalked INDIGOPLATEAUPOKECENTER1F_RIVAL
-	loadtrainer RIVAL2, RIVAL2_2_FENNEKIN
+	loadtrainer RIVAL2, RIVAL2_2_CHIMCHAR
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle

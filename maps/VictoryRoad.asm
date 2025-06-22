@@ -56,13 +56,13 @@ VictoryRoadRivalNext:
 	waitbutton
 	closetext
 	setevent EVENT_RIVAL_VICTORY_ROAD
-	checkevent EVENT_GOT_QUAXLY_FROM_ELM
+	checkevent EVENT_GOT_FROAKIE_FROM_ELM
 	iftrue .GotQuaxly
-	checkevent EVENT_GOT_TURTWIG_FROM_ELM
+	checkevent EVENT_GOT_ROWLET_FROM_ELM
 	iftrue .GotTurtwig
 	winlosstext VictoryRoadRivalDefeatText, VictoryRoadRivalVictoryText
 	setlasttalked VICTORYROAD_RIVAL
-	loadtrainer RIVAL1, RIVAL1_5_QUAXLY
+	loadtrainer RIVAL1, RIVAL1_5_FROAKIE
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
@@ -71,7 +71,7 @@ VictoryRoadRivalNext:
 .GotQuaxly:
 	winlosstext VictoryRoadRivalDefeatText, VictoryRoadRivalVictoryText
 	setlasttalked VICTORYROAD_RIVAL
-	loadtrainer RIVAL1, RIVAL1_5_TURTWIG
+	loadtrainer RIVAL1, RIVAL1_5_ROWLET
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
@@ -80,7 +80,7 @@ VictoryRoadRivalNext:
 .GotTurtwig:
 	winlosstext VictoryRoadRivalDefeatText, VictoryRoadRivalVictoryText
 	setlasttalked VICTORYROAD_RIVAL
-	loadtrainer RIVAL1, RIVAL1_5_FENNEKIN
+	loadtrainer RIVAL1, RIVAL1_5_CHIMCHAR
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle

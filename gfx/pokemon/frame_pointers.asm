@@ -1,14 +1,14 @@
 FramesPointers:
 	table_width 2
-	dw TurtwigFrames
-	dw GrotleFrames
-	dw TorterraFrames
-	dw FennekinFrames
-	dw BraixenFrames
-	dw DelphoxFrames
-	dw QuaxlyFrames
-	dw QuaxwellFrames
-	dw QuaquavalFrames
+	dw RowletFrames
+	dw DartrixFrames
+	dw DecidueyeFrames
+	dw ChimcharFrames
+	dw MonfernoFrames
+	dw InfernapeFrames
+	dw FroakieFrames
+	dw FrogadierFrames
+	dw GreninjaFrames
 	dw PichuFrames
 	dw PikachuFrames
 	dw RaichuFrames

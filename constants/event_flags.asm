@@ -32,9 +32,9 @@
 	const EVENT_GOT_SUPER_ROD
 ; Johto story events
 	const EVENT_GOT_A_POKEMON_FROM_ELM
-	const EVENT_GOT_FENNEKIN_FROM_ELM
-	const EVENT_GOT_QUAXLY_FROM_ELM
-	const EVENT_GOT_TURTWIG_FROM_ELM
+	const EVENT_GOT_CHIMCHAR_FROM_ELM
+	const EVENT_GOT_FROAKIE_FROM_ELM
+	const EVENT_GOT_ROWLET_FROM_ELM
 	const EVENT_GOT_MYSTERY_EGG_FROM_MR_POKEMON
 	const EVENT_GAVE_MYSTERY_EGG_TO_ELM
 	const EVENT_JASMINE_RETURNED_TO_GYM
@@ -1046,9 +1046,9 @@
 ; The map script command macros `disappear` and `appear` set/clear these flags and immediately apply the effect on visibility.
 ; The map script command macros `setevent` and `clearevent` set/clear these flags, and their effects will be seen when the map is reloaded.
 ; Johto itemballs
-	const EVENT_FENNEKIN_POKEBALL_IN_ELMS_LAB
-	const EVENT_QUAXLY_POKEBALL_IN_ELMS_LAB
-	const EVENT_TURTWIG_POKEBALL_IN_ELMS_LAB
+	const EVENT_CHIMCHAR_POKEBALL_IN_ELMS_LAB
+	const EVENT_FROAKIE_POKEBALL_IN_ELMS_LAB
+	const EVENT_ROWLET_POKEBALL_IN_ELMS_LAB
 	const EVENT_VIOLET_CITY_PP_UP
 	const EVENT_VIOLET_CITY_RARE_CANDY
 	const EVENT_LAKE_OF_RAGE_ELIXER

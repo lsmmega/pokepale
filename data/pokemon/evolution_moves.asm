@@ -1,14 +1,14 @@
 EvolutionMoves::
 	table_width 1, EvolutionMoves
-	db EARTHQUAKE   ; TURTWIG
-	db NO_MOVE      ; GROTLE
-	db NO_MOVE      ; TORTERRA
-	db NO_MOVE      ; FENNEKIN
-	db NO_MOVE      ; BRAIXEN
-	db NO_MOVE      ; DELPHOX
-	db NO_MOVE      ; QUAXLY
-	db NO_MOVE      ; QUAXWELL
-	db NO_MOVE      ; QUAQUAVAL
+	db NO_MOVE      ; ROWLET
+	db NO_MOVE      ; DARTRIX
+	db NO_MOVE      ; DECIDUEYE
+	db NO_MOVE      ; CHIMCHAR
+	db MACH_PUNCH   ; MONFERNO
+	db NO_MOVE      ; INFERNAPE
+	db NO_MOVE      ; FROAKIE
+	db NO_MOVE      ; FROGADIER
+	db NO_MOVE      ; GRENINJA
 	db NO_MOVE      ; PICHU
 	db NO_MOVE      ; PIKACHU
 	db THUNDERPUNCH ; RAICHU

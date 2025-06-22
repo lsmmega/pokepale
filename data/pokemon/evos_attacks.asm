@@ -15,155 +15,110 @@ SECTION "Evolutions and Attacks", ROMX
 INCLUDE "data/pokemon/evolution_moves.asm"
 INCLUDE "data/pokemon/evos_attacks_pointers.asm"
 
-TurtwigEvosAttacks:
-	db EVOLVE_LEVEL, 18, GROTLE
-	db 0 ; no more evolutions
-	db 1, TACKLE
-	db 4, GROWL
-	db 7, LEECH_SEED
-	db 10, VINE_WHIP
-	db 15, POISONPOWDER
-	db 15, SLEEP_POWDER
-	db 20, RAZOR_LEAF
-	db 25, SWEET_SCENT
-	db 32, GROWTH
-	db 39, SYNTHESIS
-	db 46, SOLARBEAM
-	db 0 ; no more level-up moves
-
-GrotleEvosAttacks:
-	db EVOLVE_LEVEL, 32, TORTERRA
+RowletEvosAttacks:
+	db EVOLVE_LEVEL, 17, DARTRIX
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 1, GROWL
-	db 1, LEECH_SEED
-	db 4, GROWL
-	db 7, LEECH_SEED
-	db 10, VINE_WHIP
-	db 15, POISONPOWDER
-	db 15, SLEEP_POWDER
-	db 22, RAZOR_LEAF
-	db 29, SWEET_SCENT
-	db 38, GROWTH
-	db 47, SYNTHESIS
-	db 56, SOLARBEAM
+	db 9, PECK
+	db 15, RAZOR_LEAF
+	db 18, SYNTHESIS
 	db 0 ; no more level-up moves
 
-TorterraEvosAttacks:
+DartrixEvosAttacks:
+	db EVOLVE_LEVEL, 34, DECIDUEYE
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 1, GROWL
-	db 1, LEECH_SEED
-	db 1, VINE_WHIP
-	db 4, GROWL
-	db 7, LEECH_SEED
-	db 10, VINE_WHIP
-	db 15, POISONPOWDER
-	db 15, SLEEP_POWDER
-	db 22, RAZOR_LEAF
-	db 29, SWEET_SCENT
-	db 41, GROWTH
-	db 53, SYNTHESIS
-	db 65, SOLARBEAM
+	db 9, PECK
+	db 15, RAZOR_LEAF
+	db 20, SYNTHESIS
 	db 0 ; no more level-up moves
 
-FennekinEvosAttacks:
-	db EVOLVE_LEVEL, 16, BRAIXEN
+DecidueyeEvosAttacks:
+	db 0 ; no more evolutions
+	db 1, TACKLE
+	db 1, SPITE
+	db 1, GROWL
+	db 9, PECK
+	db 15, RAZOR_LEAF
+	db 20, SYNTHESIS
+	db 0 ; no more level-up moves
+
+ChimcharEvosAttacks:
+	db EVOLVE_LEVEL, 14, MONFERNO
 	db 0 ; no more evolutions
 	db 1, SCRATCH
-	db 1, GROWL
+	db 1, LEER
 	db 7, EMBER
-	db 13, SMOKESCREEN
-	db 19, RAGE
-	db 25, SCARY_FACE
-	db 31, FLAMETHROWER
-	db 37, SLASH
-	db 43, DRAGON_RAGE
-	db 49, FIRE_SPIN
+	db 15, FURY_SWIPES
+	db 17, FLAME_WHEEL
+	db 33, FIRE_SPIN
+	db 47, FLAMETHROWER
 	db 0 ; no more level-up moves
 
-BraixenEvosAttacks:
-	db EVOLVE_LEVEL, 36, DELPHOX
+MonfernoEvosAttacks:
+	db EVOLVE_LEVEL, 36, INFERNAPE
 	db 0 ; no more evolutions
 	db 1, SCRATCH
-	db 1, GROWL
+	db 1, LEER
 	db 1, EMBER
-	db 7, EMBER
-	db 13, SMOKESCREEN
-	db 20, RAGE
-	db 27, SCARY_FACE
-	db 34, FLAMETHROWER
-	db 41, SLASH
-	db 48, DRAGON_RAGE
-	db 55, FIRE_SPIN
+	db 16, FURY_SWIPES
+	db 19, FLAME_WHEEL
+	db 39, FIRE_SPIN
 	db 0 ; no more level-up moves
 
-DelphoxEvosAttacks:
+InfernapeEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, SCRATCH
-	db 1, GROWL
+	db 1, LEER
 	db 1, EMBER
-	db 1, SMOKESCREEN
-	db 7, EMBER
-	db 13, SMOKESCREEN
-	db 20, RAGE
-	db 27, SCARY_FACE
-	db 34, FLAMETHROWER
-	db 36, WING_ATTACK
-	db 44, SLASH
-	db 54, DRAGON_RAGE
-	db 64, FIRE_SPIN
+	db 1, MACH_PUNCH
+	db 16, FURY_SWIPES
+	db 19, FLAME_WHEEL
+	db 42, FIRE_SPIN
 	db 0 ; no more level-up moves
 
-QuaxlyEvosAttacks:
-	db EVOLVE_LEVEL, 16, QUAXWELL
+FroakieEvosAttacks:
+	db EVOLVE_LEVEL, 16, FROGADIER
 	db 0 ; no more evolutions
-	db 1, TACKLE
-	db 4, TAIL_WHIP
-	db 7, BUBBLE
-	db 10, WITHDRAW
-	db 13, WATER_GUN
-	db 18, BITE
-	db 23, RAPID_SPIN
-	db 28, PROTECT
-	db 33, RAIN_DANCE
-	db 40, SKULL_BASH
-	db 47, HYDRO_PUMP
+	db 1, POUND
+	db 1, GROWL
+	db 5, WATER_GUN
+	db 8, QUICK_ATTACK
+	db 10, LICK
+	db 18, SMOKESCREEN
+	db 35, SUBSTITUTE
+	db 43, DOUBLE_TEAM
+	db 48, HYDRO_PUMP
 	db 0 ; no more level-up moves
 
-QuaxwellEvosAttacks:
-	db EVOLVE_LEVEL, 36, QUAQUAVAL
+FrogadierEvosAttacks:
+	db EVOLVE_LEVEL, 36, GRENINJA
 	db 0 ; no more evolutions
-	db 1, TACKLE
-	db 1, TAIL_WHIP
-	db 1, BUBBLE
-	db 4, TAIL_WHIP
-	db 7, BUBBLE
-	db 10, WITHDRAW
-	db 13, WATER_GUN
-	db 19, BITE
-	db 25, RAPID_SPIN
-	db 31, PROTECT
-	db 37, RAIN_DANCE
-	db 45, SKULL_BASH
-	db 53, HYDRO_PUMP
+	db 1, POUND
+	db 1, GROWL
+	db 1, WATER_GUN
+	db 8, QUICK_ATTACK
+	db 10, LICK
+	db 19, SMOKESCREEN
+	db 40, SUBSTITUTE
+	db 50, DOUBLE_TEAM
+	db 56, HYDRO_PUMP
 	db 0 ; no more level-up moves
 
-QuaquavalEvosAttacks:
+GreninjaEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, TACKLE
-	db 1, TAIL_WHIP
-	db 1, BUBBLE
-	db 1, WITHDRAW
-	db 4, TAIL_WHIP
-	db 7, BUBBLE
-	db 10, WITHDRAW
-	db 13, WATER_GUN
-	db 19, BITE
-	db 25, RAPID_SPIN
-	db 31, PROTECT
-	db 42, RAIN_DANCE
-	db 55, SKULL_BASH
+	db 1, HAZE
+	db 1, POUND
+	db 1, WATER_GUN
+	db 1, GROWL
+	db 1, QUICK_ATTACK
+	db 10, LICK
+	db 19, SMOKESCREEN
+	db 28, SPIKES
+	db 42, SUBSTITUTE
+	db 56, DOUBLE_TEAM
 	db 68, HYDRO_PUMP
 	db 0 ; no more level-up moves
 
