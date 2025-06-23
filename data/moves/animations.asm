@@ -166,7 +166,6 @@ BattleAnimations::
 	dw BattleAnim_SuperFang
 	dw BattleAnim_Slash
 	dw BattleAnim_Substitute
-	dw BattleAnim_Struggle
 	dw BattleAnim_Sketch
 	dw BattleAnim_TripleKick
 	dw BattleAnim_Thief
@@ -255,11 +254,13 @@ BattleAnimations::
 	dw BattleAnim_BeatUp
 	dw BattleAnim_Hail
 	dw BattleAnim_LeafBlade
+	dw BattleAnim_CharmVoice
 	dw BattleAnim_Leafage
+	dw BattleAnim_Struggle
 	assert_table_length NUM_ATTACKS + 1
 	dw BattleAnim_SweetScent2
-	assert_table_length $100
-; $100
+	assert_table_length $101
+; $101
 	dw BattleAnim_ThrowPokeBall
 	dw BattleAnim_SendOutMon
 	dw BattleAnim_ReturnMon
@@ -1860,6 +1861,7 @@ BattleAnim_Growl:
 	anim_ret
 
 BattleAnim_Roar:
+BattleAnim_CharmVoice:
 	anim_1gfx BATTLE_ANIM_GFX_NOISE
 	anim_bgeffect BATTLE_BG_EFFECT_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
 	anim_cry $1

@@ -165,7 +165,6 @@ MoveDescriptions::
 	dw SuperFangDescription
 	dw SlashDescription
 	dw SubstituteDescription
-	dw StruggleDescription
 	dw SketchDescription
 	dw TripleKickDescription
 	dw ThiefDescription
@@ -254,9 +253,10 @@ MoveDescriptions::
 	dw BeatUpDescription
 	dw HailDescription
 	dw LeafBladeDescription
+	dw CharmVoiceDescription
 	dw LeafageDescription
+	dw StruggleDescription
 	assert_table_length NUM_ATTACKS
-	dw MoveFFDescription
 	dw Move00Description
 	assert_table_length $100
 
@@ -782,6 +782,7 @@ ClampDescription:
 	next "2-5 turns.@"
 
 SwiftDescription:
+CharmVoiceDescription:
 	db   "An attack that"
 	next "never misses.@"
 
