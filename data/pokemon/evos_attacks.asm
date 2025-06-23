@@ -21,9 +21,6 @@ RowletEvosAttacks:
 	db 1, TACKLE
 	db 1, GROWL
 	db 1, LEAFAGE
-	db 9, PECK
-	db 15, RAZOR_LEAF
-	db 18, SYNTHESIS
 	db 30, LEAF_BLADE
 	db 0 ; no more level-up moves
 
@@ -33,22 +30,15 @@ DartrixEvosAttacks:
 	db 1, TACKLE
 	db 1, GROWL
 	db 1, LEAFAGE
-	db 9, PECK
-	db 15, RAZOR_LEAF
-	db 20, SYNTHESIS
-	db 40, LEAF_BLADE
+	db 45, LEAF_BLADE
 	db 0 ; no more level-up moves
 
 DecidueyeEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, LEAFAGE
 	db 1, TACKLE
-	db 1, SPITE
 	db 1, GROWL
-	db 9, PECK
-	db 15, RAZOR_LEAF
-	db 20, SYNTHESIS
-	db 50, LEAF_BLADE
+	db 1, LEAFAGE
+	db 60, LEAF_BLADE
 	db 0 ; no more level-up moves
 
 ChimcharEvosAttacks:
@@ -57,10 +47,7 @@ ChimcharEvosAttacks:
 	db 1, SCRATCH
 	db 1, LEER
 	db 1, EMBER
-	db 15, FURY_SWIPES
-	db 17, FLAME_WHEEL
 	db 30, FLAMETHROWER
-	db 33, FIRE_SPIN
 	db 0 ; no more level-up moves
 
 MonfernoEvosAttacks:
@@ -69,10 +56,7 @@ MonfernoEvosAttacks:
 	db 1, SCRATCH
 	db 1, LEER
 	db 1, EMBER
-	db 16, FURY_SWIPES
-	db 19, FLAME_WHEEL
-	db 39, FIRE_SPIN
-	db 40, FLAMETHROWER
+	db 45, FLAMETHROWER
 	db 0 ; no more level-up moves
 
 InfernapeEvosAttacks:
@@ -80,11 +64,7 @@ InfernapeEvosAttacks:
 	db 1, SCRATCH
 	db 1, LEER
 	db 1, EMBER
-	db 1, MACH_PUNCH
-	db 16, FURY_SWIPES
-	db 19, FLAME_WHEEL
-	db 42, FIRE_SPIN
-	db 50, FLAMETHROWER
+	db 60, FLAMETHROWER
 	db 0 ; no more level-up moves
 
 FroakieEvosAttacks:
@@ -93,13 +73,7 @@ FroakieEvosAttacks:
 	db 1, POUND
 	db 1, GROWL
 	db 1, WATER_GUN
-	db 8, QUICK_ATTACK
-	db 10, LICK
-	db 18, SMOKESCREEN
 	db 30, SURF
-	db 35, SUBSTITUTE
-	db 43, DOUBLE_TEAM
-	db 48, HYDRO_PUMP
 	db 0 ; no more level-up moves
 
 FrogadierEvosAttacks:
@@ -108,29 +82,15 @@ FrogadierEvosAttacks:
 	db 1, POUND
 	db 1, GROWL
 	db 1, WATER_GUN
-	db 8, QUICK_ATTACK
-	db 10, LICK
-	db 19, SMOKESCREEN
-	db 40, SURF
-	db 40, SUBSTITUTE
-	db 50, DOUBLE_TEAM
-	db 56, HYDRO_PUMP
+	db 45, SURF
 	db 0 ; no more level-up moves
 
 GreninjaEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, HAZE
 	db 1, POUND
-	db 1, WATER_GUN
 	db 1, GROWL
-	db 1, QUICK_ATTACK
-	db 10, LICK
-	db 19, SMOKESCREEN
-	db 28, SPIKES
-	db 42, SUBSTITUTE
-	db 50, SURF
-	db 56, DOUBLE_TEAM
-	db 68, HYDRO_PUMP
+	db 1, WATER_GUN
+	db 60, SURF
 	db 0 ; no more level-up moves
 
 PichuEvosAttacks:
