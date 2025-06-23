@@ -21,9 +21,7 @@ RowletEvosAttacks:
 	db 1, TACKLE
 	db 1, GROWL
 	db 1, LEAFAGE
-	db 9, PECK
-	db 15, RAZOR_LEAF
-	db 18, SYNTHESIS
+	db 1, SNARL
 	db 30, LEAF_BLADE
 	db 0 ; no more level-up moves
 
@@ -33,22 +31,15 @@ DartrixEvosAttacks:
 	db 1, TACKLE
 	db 1, GROWL
 	db 1, LEAFAGE
-	db 9, PECK
-	db 15, RAZOR_LEAF
-	db 20, SYNTHESIS
-	db 40, LEAF_BLADE
+	db 45, LEAF_BLADE
 	db 0 ; no more level-up moves
 
 DecidueyeEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, LEAFAGE
 	db 1, TACKLE
-	db 1, SPITE
 	db 1, GROWL
-	db 9, PECK
-	db 15, RAZOR_LEAF
-	db 20, SYNTHESIS
-	db 50, LEAF_BLADE
+	db 1, LEAFAGE
+	db 60, LEAF_BLADE
 	db 0 ; no more level-up moves
 
 ChimcharEvosAttacks:
@@ -57,10 +48,7 @@ ChimcharEvosAttacks:
 	db 1, SCRATCH
 	db 1, LEER
 	db 1, EMBER
-	db 15, FURY_SWIPES
-	db 17, FLAME_WHEEL
 	db 30, FLAMETHROWER
-	db 33, FIRE_SPIN
 	db 0 ; no more level-up moves
 
 MonfernoEvosAttacks:
@@ -69,10 +57,7 @@ MonfernoEvosAttacks:
 	db 1, SCRATCH
 	db 1, LEER
 	db 1, EMBER
-	db 16, FURY_SWIPES
-	db 19, FLAME_WHEEL
-	db 39, FIRE_SPIN
-	db 40, FLAMETHROWER
+	db 45, FLAMETHROWER
 	db 0 ; no more level-up moves
 
 InfernapeEvosAttacks:
@@ -80,11 +65,7 @@ InfernapeEvosAttacks:
 	db 1, SCRATCH
 	db 1, LEER
 	db 1, EMBER
-	db 1, MACH_PUNCH
-	db 16, FURY_SWIPES
-	db 19, FLAME_WHEEL
-	db 42, FIRE_SPIN
-	db 50, FLAMETHROWER
+	db 60, FLAMETHROWER
 	db 0 ; no more level-up moves
 
 FroakieEvosAttacks:
@@ -93,13 +74,7 @@ FroakieEvosAttacks:
 	db 1, POUND
 	db 1, GROWL
 	db 1, WATER_GUN
-	db 8, QUICK_ATTACK
-	db 10, LICK
-	db 18, SMOKESCREEN
 	db 30, SURF
-	db 35, SUBSTITUTE
-	db 43, DOUBLE_TEAM
-	db 48, HYDRO_PUMP
 	db 0 ; no more level-up moves
 
 FrogadierEvosAttacks:
@@ -108,29 +83,15 @@ FrogadierEvosAttacks:
 	db 1, POUND
 	db 1, GROWL
 	db 1, WATER_GUN
-	db 8, QUICK_ATTACK
-	db 10, LICK
-	db 19, SMOKESCREEN
-	db 40, SURF
-	db 40, SUBSTITUTE
-	db 50, DOUBLE_TEAM
-	db 56, HYDRO_PUMP
+	db 45, SURF
 	db 0 ; no more level-up moves
 
 GreninjaEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, HAZE
 	db 1, POUND
-	db 1, WATER_GUN
 	db 1, GROWL
-	db 1, QUICK_ATTACK
-	db 10, LICK
-	db 19, SMOKESCREEN
-	db 28, SPIKES
-	db 42, SUBSTITUTE
-	db 50, SURF
-	db 56, DOUBLE_TEAM
-	db 68, HYDRO_PUMP
+	db 1, WATER_GUN
+	db 60, SURF
 	db 0 ; no more level-up moves
 
 PichuEvosAttacks:
@@ -174,80 +135,26 @@ EeveeEvosAttacks:
 	db EVOLVE_HAPPINESS, TR_MORNDAY, ESPEON
 	db EVOLVE_HAPPINESS, TR_NITE, UMBREON
 	db 0 ; no more evolutions
-	db 1, TACKLE
-	db 1, TAIL_WHIP
-	db 8, SAND_ATTACK
-	db 16, GROWL
-	db 23, QUICK_ATTACK
-	db 30, BITE
-	db 36, BATON_PASS
-	db 42, TAKE_DOWN
 	db 0 ; no more level-up moves
 
 VaporeonEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, TACKLE
-	db 1, TAIL_WHIP
-	db 8, SAND_ATTACK
-	db 23, QUICK_ATTACK
-	db 30, BITE
-	db 36, AURORA_BEAM
-	db 42, HAZE
-	db 47, ACID_ARMOR
-	db 52, HYDRO_PUMP
 	db 0 ; no more level-up moves
 
 JolteonEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, TACKLE
-	db 1, TAIL_WHIP
-	db 8, SAND_ATTACK
-	db 23, QUICK_ATTACK
-	db 30, DOUBLE_KICK
-	db 36, PIN_MISSILE
-	db 42, THUNDER_WAVE
-	db 47, AGILITY
-	db 52, THUNDER
 	db 0 ; no more level-up moves
 
 FlareonEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, TACKLE
-	db 1, TAIL_WHIP
-	db 8, SAND_ATTACK
-	db 23, QUICK_ATTACK
-	db 30, BITE
-	db 36, FIRE_SPIN
-	db 42, SMOG
-	db 47, LEER
-	db 52, FLAMETHROWER
 	db 0 ; no more level-up moves
 
 EspeonEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, TACKLE
-	db 1, TAIL_WHIP
-	db 8, SAND_ATTACK
-	db 23, QUICK_ATTACK
-	db 30, SWIFT
-	db 36, PSYBEAM
-	db 42, PSYCH_UP
-	db 47, PSYCHIC_M
-	db 52, MORNING_SUN
 	db 0 ; no more level-up moves
 
 UmbreonEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, TACKLE
-	db 1, TAIL_WHIP
-	db 8, SAND_ATTACK
-	db 16, PURSUIT
-	db 23, QUICK_ATTACK
-	db 30, CONFUSE_RAY
-	db 36, FAINT_ATTACK
-	db 42, MEAN_LOOK
-	db 47, SCREECH
-	db 52, MOONLIGHT
 	db 0 ; no more level-up moves
 
 LeafeonEvosAttacks:
@@ -284,7 +191,6 @@ ButterfreeEvosAttacks:
 	db 14, STUN_SPORE
 	db 15, SLEEP_POWDER
 	db 18, SUPERSONIC
-	db 23, WHIRLWIND
 	db 28, GUST
 	db 34, PSYBEAM
 	db 40, SAFEGUARD
@@ -3256,7 +3162,6 @@ LugiaEvosAttacks:
 	db 44, HYDRO_PUMP
 	db 55, RAIN_DANCE
 	db 66, SWIFT
-	db 77, WHIRLWIND
 	db 88, ANCIENTPOWER
 	db 99, FUTURE_SIGHT
 	db 0 ; no more level-up moves
@@ -3270,7 +3175,6 @@ HoOhEvosAttacks:
 	db 44, FIRE_BLAST
 	db 55, SUNNY_DAY
 	db 66, SWIFT
-	db 77, WHIRLWIND
 	db 88, ANCIENTPOWER
 	db 99, FUTURE_SIGHT
 	db 0 ; no more level-up moves

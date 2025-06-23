@@ -17,10 +17,10 @@ EvolutionMoves::
 	db THUNDERSHOCK ; JOLTEON
 	db EMBER        ; FLAREON
 	db CONFUSION    ; ESPEON
-	db NO_MOVE      ; UMBREON
+	db SNARL        ; UMBREON
 	db RAZOR_LEAF   ; LEAFEON
 	db ICY_WIND     ; GLACEON
-	db NO_MOVE      ; SYLVEON
+	db CHARM_VOICE  ; SYLVEON
 	db NO_MOVE      ; CATERPIE
 	db NO_MOVE      ; METAPOD
 	db NO_MOVE      ; BUTTERFREE

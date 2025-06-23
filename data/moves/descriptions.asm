@@ -18,7 +18,6 @@ MoveDescriptions::
 	dw CutDescription
 	dw GustDescription
 	dw WingAttackDescription
-	dw WhirlwindDescription
 	dw FlyDescription
 	dw BindDescription
 	dw SlamDescription
@@ -165,7 +164,6 @@ MoveDescriptions::
 	dw SuperFangDescription
 	dw SlashDescription
 	dw SubstituteDescription
-	dw StruggleDescription
 	dw SketchDescription
 	dw TripleKickDescription
 	dw ThiefDescription
@@ -254,16 +252,14 @@ MoveDescriptions::
 	dw BeatUpDescription
 	dw HailDescription
 	dw LeafBladeDescription
+	dw SnarlDescription
+	dw CharmVoiceDescription
 	dw LeafageDescription
+	dw StruggleDescription
 	assert_table_length NUM_ATTACKS
-	dw MoveFFDescription
 	dw Move00Description
 	assert_table_length $100
 
-MoveFCDescription:
-MoveFDDescription:
-MoveFEDescription:
-MoveFFDescription:
 Move00Description:
 	db "?@"
 
@@ -340,10 +336,6 @@ GustDescription:
 WingAttackDescription:
 	db   "Strikes the target"
 	next "with wings.@"
-
-WhirlwindDescription:
-	db   "Blows away the foe"
-	next "& ends battle.@"
 
 FlyDescription:
 	db   "1st turn: Fly"
@@ -782,6 +774,7 @@ ClampDescription:
 	next "2-5 turns.@"
 
 SwiftDescription:
+CharmVoiceDescription:
 	db   "An attack that"
 	next "never misses.@"
 
@@ -1261,3 +1254,7 @@ BeatUpDescription:
 LeafageDescription:
 	db   "An attack by pelt-"
 	next "ing with leaves.@"
+
+SnarlDescription:
+	db   "An attack lower"
+	next "foes sp.atk.@"

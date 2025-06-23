@@ -89,7 +89,6 @@ ZubatEggMoves:
 	db PURSUIT
 	db FAINT_ATTACK
 	db GUST
-	db WHIRLWIND
 	db -1 ; end
 
 OddishEggMoves:
@@ -400,7 +399,6 @@ KabutoEggMoves:
 	db -1 ; end
 
 AerodactylEggMoves:
-	db WHIRLWIND
 	db PURSUIT
 	db FORESIGHT
 	db -1 ; end
@@ -456,7 +454,6 @@ HoothootEggMoves:
 	db SUPERSONIC
 	db FAINT_ATTACK
 	db WING_ATTACK
-	db WHIRLWIND
 	db SKY_ATTACK
 	db -1 ; end
 
@@ -557,7 +554,6 @@ AipomEggMoves:
 	db -1 ; end
 
 YanmaEggMoves:
-	db WHIRLWIND
 	db REVERSAL
 	db LEECH_LIFE
 	db -1 ; end
@@ -569,7 +565,6 @@ WooperEggMoves:
 	db -1 ; end
 
 MurkrowEggMoves:
-	db WHIRLWIND
 	db DRILL_PECK
 	db QUICK_ATTACK
 	db MIRROR_MOVE
@@ -703,7 +698,6 @@ MantineEggMoves:
 SkarmoryEggMoves:
 	db DRILL_PECK
 	db PURSUIT
-	db WHIRLWIND
 	db SKY_ATTACK
 	db -1 ; end
 
