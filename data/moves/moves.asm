@@ -31,7 +31,6 @@ Moves:
 	move CUT,                EFFECT_NORMAL_HIT,         50, NORMAL,        PHYSICAL,  95, 30,   0
 	move GUST,               EFFECT_GUST,               40, FLYING,        SPECIAL,  100, 35,   0
 	move WING_ATTACK,        EFFECT_NORMAL_HIT,         60, FLYING,        PHYSICAL, 100, 35,   0
-	move WHIRLWIND,          EFFECT_FORCE_SWITCH,        0, NORMAL,        STATUS,   100, 20,   0
 	move FLY,                EFFECT_FLY,                70, FLYING,        PHYSICAL,  95, 15,   0
 	move BIND,               EFFECT_TRAP_TARGET,        15, NORMAL,        PHYSICAL,  75, 20,   0
 	move SLAM,               EFFECT_NORMAL_HIT,         80, NORMAL,        PHYSICAL,  75, 20,   0
@@ -268,6 +267,9 @@ Moves:
 ;gen 3                       
 	move HAIL,               EFFECT_HAIL,                0, ICE,           STATUS,   100, 10,   0
 	move LEAF_BLADE,         EFFECT_NORMAL_HIT,         90, GRASS,         PHYSICAL, 100, 15,   0
+
+;gen 5
+	move SNARL,              EFFECT_SP_ATK_DOWN_HIT,    55, DARK,          SPECIAL,   95, 15, 100
 
 ;gen 6                       
 	move CHARM_VOICE,        EFFECT_ALWAYS_HIT,         40, FAIRY,         SPECIAL,  100, 15,   0

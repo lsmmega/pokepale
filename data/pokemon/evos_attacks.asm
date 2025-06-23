@@ -21,7 +21,7 @@ RowletEvosAttacks:
 	db 1, TACKLE
 	db 1, GROWL
 	db 1, LEAFAGE
-	db 1, CHARM_VOICE
+	db 1, SNARL
 	db 30, LEAF_BLADE
 	db 0 ; no more level-up moves
 
@@ -191,7 +191,6 @@ ButterfreeEvosAttacks:
 	db 14, STUN_SPORE
 	db 15, SLEEP_POWDER
 	db 18, SUPERSONIC
-	db 23, WHIRLWIND
 	db 28, GUST
 	db 34, PSYBEAM
 	db 40, SAFEGUARD
@@ -3163,7 +3162,6 @@ LugiaEvosAttacks:
 	db 44, HYDRO_PUMP
 	db 55, RAIN_DANCE
 	db 66, SWIFT
-	db 77, WHIRLWIND
 	db 88, ANCIENTPOWER
 	db 99, FUTURE_SIGHT
 	db 0 ; no more level-up moves
@@ -3177,7 +3175,6 @@ HoOhEvosAttacks:
 	db 44, FIRE_BLAST
 	db 55, SUNNY_DAY
 	db 66, SWIFT
-	db 77, WHIRLWIND
 	db 88, ANCIENTPOWER
 	db 99, FUTURE_SIGHT
 	db 0 ; no more level-up moves
