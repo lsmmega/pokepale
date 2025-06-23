@@ -21,7 +21,6 @@ RowletEvosAttacks:
 	db 1, TACKLE
 	db 1, GROWL
 	db 1, LEAFAGE
-	db 1, SNARL
 	db 30, LEAF_BLADE
 	db 0 ; no more level-up moves
 
