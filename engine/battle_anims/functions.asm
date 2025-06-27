@@ -40,7 +40,6 @@ DoBattleAnimFrame:
 	dw BattleAnimFunc_Bite
 	dw BattleAnimFunc_SolarBeam
 	dw BattleAnimFunc_Gust
-	dw BattleAnimFunc_RazorWind
 	dw BattleAnimFunc_Kick
 	dw BattleAnimFunc_Absorb
 	dw BattleAnimFunc_Egg
@@ -1984,16 +1983,6 @@ BattleAnimFunc_Spikes:
 .wait
 	call BattleAnim_IncAnonJumptableIndex
 .two
-	ret
-
-BattleAnimFunc_RazorWind:
-	call BattleAnimFunc_MoveInCircle
-	; Causes object to skip ahead the circular motion every frame
-	ld hl, BATTLEANIMSTRUCT_VAR1
-	add hl, bc
-	ld a, [hl]
-	add $f
-	ld [hl], a
 	ret
 
 BattleAnimFunc_Kick:

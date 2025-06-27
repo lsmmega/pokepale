@@ -247,7 +247,7 @@ BattleTurn:
 	ld a, [wBattleEnded]
 	and a
 	jr nz, .quit
-	ld a, [wForcedSwitch] ; roared/whirlwinded/teleported
+	ld a, [wForcedSwitch] ; roared/teleported
 	and a
 	jr nz, .quit
 .skip_iteration
