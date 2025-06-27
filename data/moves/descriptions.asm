@@ -13,13 +13,11 @@ MoveDescriptions::
 	dw ScratchDescription
 	dw VicegripDescription
 	dw GuillotineDescription
-	dw RazorWindDescription
 	dw SwordsDanceDescription
 	dw CutDescription
 	dw GustDescription
 	dw WingAttackDescription
 	dw FlyDescription
-	dw BindDescription
 	dw SlamDescription
 	dw VineWhipDescription
 	dw StompDescription
@@ -252,8 +250,10 @@ MoveDescriptions::
 	dw BeatUpDescription
 	dw HailDescription
 	dw LeafBladeDescription
+	dw DarkPulseDescription
 	dw SnarlDescription
 	dw CharmVoiceDescription
+	dw MoonblastDescription
 	dw LeafageDescription
 	dw StruggleDescription
 	assert_table_length NUM_ATTACKS
@@ -317,10 +317,6 @@ GuillotineDescription:
 	db   "A one-hit KO,"
 	next "pincer attack.@"
 
-RazorWindDescription:
-	db   "1st turn: Prepare"
-	next "2nd turn: Attack@"
-
 SwordsDanceDescription:
 	db   "A dance that in-"
 	next "creases ATTACK.@"
@@ -341,10 +337,6 @@ FlyDescription:
 	db   "1st turn: Fly"
 	next "2nd turn: Attack@"
 
-BindDescription:
-	db   "Binds the target"
-	next "for 2-5 turns.@"
-
 SlamDescription:
 	db   "Slams the foe with"
 	next "a tail, vine, etc.@"
@@ -354,6 +346,7 @@ VineWhipDescription:
 	next "slender vines.@"
 
 StompDescription:
+DarkPulseDescription:
 	db   "An attack that may"
 	next "cause flinching.@"
 
@@ -1258,3 +1251,7 @@ LeafageDescription:
 SnarlDescription:
 	db   "An attack lower"
 	next "foes sp.atk.@"
+
+MoonblastDescription:
+	db   "An attack may low-"
+	next "er foes sp.atk.@"

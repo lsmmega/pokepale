@@ -224,10 +224,6 @@ BattleAnimOAMData:
 	battleanimoam $00, 14, .OAMData_d6   ; BATTLE_ANIM_OAMSET_D6
 	battleanimoam $00, 12, .OAMData_d7   ; BATTLE_ANIM_OAMSET_D7
 	battleanimoam $00, 13, .OAMData_Hail ; BATTLE_ANIM_OAMSET_HAIL
-	battleanimoam $06,  4, .OAMData_LeafBlade1  ; BATTLE_ANIM_OAMSET_LEAFBLADE1
-	battleanimoam $06,  4, .OAMData_LeafBlade2  ; BATTLE_ANIM_OAMSET_LEAFBLADE2
-	battleanimoam $06,  4, .OAMData_LeafBlade3  ; BATTLE_ANIM_OAMSET_LEAFBLADE3
-	battleanimoam $06,  4, .OAMData_LeafBlade4  ; BATTLE_ANIM_OAMSET_LEAFBLADE4
 	assert_table_length NUM_BATTLE_ANIM_OAMSETS
 
 .OAMData_11:
@@ -1110,27 +1106,3 @@ BattleAnimOAMData:
 	dbsprite   6,  -2, 4, 0, $04, $0
 	dbsprite   8,  -4, 4, 0, $04, $0
 	dbsprite  10,  -2, 4, 0, $04, $0
-
-.OAMData_LeafBlade1:
-	dbsprite   0,  -1, 0, 0, $00, X_FLIP
-	dbsprite  -1,  -1, 0, 0, $01, X_FLIP
-	dbsprite   0,   0, 0, 0, $02, X_FLIP
-	dbsprite  -1,   0, 0, 0, $03, X_FLIP
-
-.OAMData_LeafBlade2:
-	dbsprite  -1,   0, 0, 0, $00, X_FLIP
-	dbsprite  -2,   0, 0, 0, $01, X_FLIP
-	dbsprite  -1,   1, 0, 0, $02, X_FLIP
-	dbsprite  -2,   1, 0, 0, $03, X_FLIP
-
-.OAMData_LeafBlade3:
-	dbsprite  -2,   1, 0, 0, $00, X_FLIP
-	dbsprite  -3,   1, 0, 0, $01, X_FLIP
-	dbsprite  -2,   2, 0, 0, $02, X_FLIP
-	dbsprite  -3,   2, 0, 0, $03, X_FLIP
-
-.OAMData_LeafBlade4:
-	dbsprite  -3,   2, 0, 0, $00, X_FLIP
-	dbsprite  -4,   2, 0, 0, $01, X_FLIP
-	dbsprite  -3,   3, 0, 0, $02, X_FLIP
-	dbsprite  -4,   3, 0, 0, $03, X_FLIP

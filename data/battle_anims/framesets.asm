@@ -73,8 +73,6 @@ BattleAnimFrameData:
 	dw .Frameset_Gust                ; BATTLE_ANIM_FRAMESET_GUST
 	dw .Frameset_VineWhip1           ; BATTLE_ANIM_FRAMESET_VINE_WHIP_1
 	dw .Frameset_VineWhip2           ; BATTLE_ANIM_FRAMESET_VINE_WHIP_2
-	dw .Frameset_RazorWind1          ; BATTLE_ANIM_FRAMESET_RAZOR_WIND_1
-	dw .Frameset_RazorWind2          ; BATTLE_ANIM_FRAMESET_RAZOR_WIND_2
 	dw .Frameset_SonicboomJP         ; BATTLE_ANIM_FRAMESET_SONICBOOM_JP
 	dw .Frameset_Warp                ; BATTLE_ANIM_FRAMESET_WARP
 	dw .Frameset_ChargeOrb2          ; BATTLE_ANIM_FRAMESET_CHARGE_ORB_2
@@ -187,7 +185,6 @@ BattleAnimFrameData:
 	dw .Frameset_EnemyFeet2Row       ; BATTLE_ANIM_FRAMESET_ENEMYFEET_2ROW
 	dw .Frameset_PlayerHead2Row      ; BATTLE_ANIM_FRAMESET_PLAYERHEAD_2ROW
 	dw .Frameset_Hail                ; BATTLE_ANIM_FRAMESET_HAIL
-	dw .Frameset_LeafBlade           ; BATTLE_ANIM_FRAMESET_SWORD_DOWN_LEFT
 	assert_table_length NUM_BATTLE_ANIM_FRAMESETS
 
 .Frameset_HitBig:
@@ -680,24 +677,6 @@ BattleAnimFrameData:
 .Frameset_VineWhip2:
 	oamframe BATTLE_ANIM_OAMSET_56,  2, OAM_X_FLIP, OAM_Y_FLIP
 	oamframe BATTLE_ANIM_OAMSET_57,  4, OAM_X_FLIP, OAM_Y_FLIP
-	oamdelete
-
-.Frameset_RazorWind1:
-	oamframe BATTLE_ANIM_OAMSET_56,  1
-	oamframe BATTLE_ANIM_OAMSET_57,  1
-	oamframe BATTLE_ANIM_OAMSET_58,  1
-	oamframe BATTLE_ANIM_OAMSET_57,  1, OAM_X_FLIP, OAM_Y_FLIP
-	oamframe BATTLE_ANIM_OAMSET_58,  1, OAM_X_FLIP, OAM_Y_FLIP
-	oamframe BATTLE_ANIM_OAMSET_57,  2
-	oamdelete
-
-.Frameset_RazorWind2:
-	oamframe BATTLE_ANIM_OAMSET_56,  1, OAM_X_FLIP, OAM_Y_FLIP
-	oamframe BATTLE_ANIM_OAMSET_57,  1, OAM_X_FLIP, OAM_Y_FLIP
-	oamframe BATTLE_ANIM_OAMSET_58,  1, OAM_X_FLIP, OAM_Y_FLIP
-	oamframe BATTLE_ANIM_OAMSET_57,  1
-	oamframe BATTLE_ANIM_OAMSET_58,  1
-	oamframe BATTLE_ANIM_OAMSET_57,  2, OAM_X_FLIP, OAM_Y_FLIP
 	oamdelete
 
 .Frameset_SonicboomJP:
@@ -1274,11 +1253,3 @@ BattleAnimFrameData:
 .Frameset_Hail:
 	oamframe BATTLE_ANIM_OAMSET_HAIL, 32
 	oamend
-
-.Frameset_LeafBlade:
-	oamframe BATTLE_ANIM_OAMSET_LEAFBLADE1,  2
-	oamframe BATTLE_ANIM_OAMSET_LEAFBLADE2,  2
-	oamframe BATTLE_ANIM_OAMSET_LEAFBLADE3,  2
-	oamframe BATTLE_ANIM_OAMSET_LEAFBLADE4,  2
-	oamwait 4
-	oamdelete
