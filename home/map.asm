@@ -2181,12 +2181,6 @@ GetAnyMapEnvironment::
 	pop hl
 	ret
 
-GetAnyMapTileset::
-	ld de, MAP_TILESET
-	call GetAnyMapField
-	ld a, c
-	ret
-
 GetWorldMapLocation::
 ; given a map group/id in bc, return its location on the Pokégear map.
 	push hl
