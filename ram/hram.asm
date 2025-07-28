@@ -58,8 +58,8 @@ hConnectionStripLength:: db
 hConnectedMapWidth:: db
 ENDU
 
-hEnemyMonSpeed:: dw
-
+hEnemyMonSpeed:: db
+hBigMultiplicand:: db
 UNION
 ; math-related values
 
@@ -81,8 +81,8 @@ hQuotient::     ds 4
 hRemainder::    db
 ENDU
 
-hMathBuffer:: ds 5
-
+hMathBuffer:: db
+hMultiplierStor:: ds 4
 NEXTU
 ; PrintNum scratch space
 hPrintNumBuffer:: ds 10

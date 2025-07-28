@@ -6458,6 +6458,10 @@ LoadEnemyMon:
 
 	ld a, [wBaseExp]
 	ld [de], a
+	inc de
+
+	ld a, [wBaseExp + 1]
+	ld [de], a
 
 	ld a, [wTempEnemyMonSpecies]
 	ld [wNamedObjectIndex], a
@@ -7147,18 +7151,7 @@ GiveExperiencePoints:
 	cp MAX_LEVEL
 	jp nc, .next_mon
 	push bc
-	xor a
-	ldh [hMultiplicand + 0], a
-	ldh [hMultiplicand + 1], a
-	ld a, [wEnemyMonBaseExp]
-	ldh [hMultiplicand + 2], a
-	ld a, [wEnemyMonLevel]
-	ldh [hMultiplier], a
-	call Multiply
-	ld a, 7
-	ldh [hDivisor], a
-	ld b, 4
-	call Divide
+	farcall ScaledExpCalculation
 ; Boost Experience for traded Pokemon
 	pop bc
 	ld hl, MON_OT_ID
@@ -7189,20 +7182,18 @@ GiveExperiencePoints:
 	ld a, [hl]
 	cp LUCKY_EGG
 	call z, BoostExp
-	ldh a, [hQuotient + 3]
-	ld [wStringBuffer2 + 1], a
-	ldh a, [hQuotient + 2]
-	ld [wStringBuffer2], a
 	ld a, [wCurPartyMon]
 	ld hl, wPartyMonNicknames
 	call GetNickname
 	ld hl, Text_MonGainedExpPoint
 	call BattleTextbox
-	ld a, [wStringBuffer2 + 1]
-	ldh [hQuotient + 3], a
-	ld a, [wStringBuffer2]
-	ldh [hQuotient + 2], a
 	pop bc
+	ld a, [wExpScratch40_1 + 2]
+	ldh [hQuotient + 3], a
+	ld a, [wExpScratch40_1 + 1]
+	ldh [hQuotient + 2], a
+	ld a, [wExpScratch40_1]
+	ldh [hQuotient + 1], a
 	call AnimateExpBar
 	push bc
 	call LoadTilemapToTempTilemap
@@ -7216,6 +7207,10 @@ GiveExperiencePoints:
 	ld d, [hl]
 	ldh a, [hQuotient + 2]
 	adc d
+	ld [hld], a
+	ld d, [hl]
+	ldh a, [hQuotient + 1]
+	add d
 	ld [hl], a
 	jr nc, .no_exp_overflow
 	dec hl
@@ -7441,20 +7436,19 @@ GiveExperiencePoints:
 BoostExp:
 ; Multiply experience by 1.5x
 	push bc
-; load experience value
-	ldh a, [hProduct + 2]
-	ld b, a
-	ldh a, [hProduct + 3]
-	ld c, a
-; halve it
-	srl b
-	rr c
-; add it back to the whole exp value
-	add c
-	ldh [hProduct + 3], a
-	ldh a, [hProduct + 2]
-	adc b
-	ldh [hProduct + 2], a
+	ld a, $3
+	ldh [hMultiplier], a
+	call Multiply
+	ld a, $2
+	ldh [hDivisor], a
+	ld b, $4
+	call Divide
+	ld a, [hProduct + 3]
+	ld [wExpScratch40_1 + 2], a
+	ld a, [hProduct + 2]
+	ld [wExpScratch40_1 + 1], a
+	ld a, [hProduct + 1]
+	ld [wExpScratch40_1], a
 	pop bc
 	ret
 
@@ -7495,8 +7489,9 @@ AnimateExpBar:
 	ldh a, [hProduct + 2]
 	ld [wExperienceGained + 1], a
 	push af
-	xor a
+	ldh a, [hProduct + 1]
 	ld [wExperienceGained], a
+	push af
 	xor a ; PARTYMON
 	ld [wMonType], a
 	predef CopyMonToTempMon
@@ -7513,6 +7508,9 @@ AnimateExpBar:
 	ld [hld], a
 	ld a, [wExperienceGained + 1]
 	adc [hl]
+	ld [hld], a
+	ld a, [wExperienceGained]
+	add [hl]
 	ld [hld], a
 	jr nc, .NoOverflow
 	inc [hl]
@@ -7599,6 +7597,8 @@ AnimateExpBar:
 	call .PlayExpBarSound
 	call .LoopBarAnimation
 	call TerminateExpBarSound
+	pop af
+	ldh [hProduct + 1], a
 	pop af
 	ldh [hProduct + 2], a
 	pop af
