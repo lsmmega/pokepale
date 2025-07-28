@@ -1711,7 +1711,9 @@ wSecondsSince:: db
 wMinutesSince:: db
 wHoursSince:: db
 wDaysSince:: db
-
+wExpScratch40_1:: ds 5
+wExpScratch40_2:: ds 5
+wExpScratchByte:: db
 
 SECTION "WRAM 1", WRAMX
 
@@ -2505,7 +2507,7 @@ NEXTU
 wEnemyMon:: battle_struct wEnemyMon
 wEnemyMonBaseStats:: ds NUM_EXP_STATS
 wEnemyMonCatchRate:: db
-wEnemyMonBaseExp::   db
+wEnemyMonBaseExp::   dw
 wEnemyMonEnd::
 ENDU
 
@@ -2552,17 +2554,13 @@ wBaseType::
 wBaseType1:: db
 wBaseType2:: db
 wBaseCatchRate:: db
-wBaseExp:: db
+wBaseExp:: dw
 wBaseItems::
 wBaseItem1:: db
 wBaseItem2:: db
 wBaseGender:: db
-wBaseUnknown1:: db
 wBaseEggSteps:: db
-wBaseUnknown2:: db
 wBasePicSize:: db
-wBaseUnusedFrontpic:: dw
-wBaseUnusedBackpic:: dw
 wBaseGrowthRate:: db
 wBaseEggGroups:: db
 wBaseTM:: flag_array NUM_TM_TUTOR
