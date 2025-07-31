@@ -2,7 +2,7 @@ Font:
 INCBIN "gfx/font/font.1bpp"
 
 FontBattleExtra:
-INCBIN "gfx/font/font_battle_extra.2bpp"
+INCBIN "gfx/font/font_battle_extra.1bpp"
 
 Frames:
 	table_width TEXTBOX_FRAME_TILES * LEN_1BPP_TILE
@@ -20,11 +20,8 @@ INCBIN "gfx/frames/9.1bpp" ; unused
 StatsScreenPageTilesGFX:
 INCBIN "gfx/stats/stats_tiles.2bpp"
 
-EnemyHPBarBorderGFX:
-INCBIN "gfx/battle/enemy_hp_bar_border.1bpp"
-
-HPExpBarBorderGFX:
-INCBIN "gfx/battle/hp_exp_bar_border.1bpp"
+HPBarGFX:
+INCBIN "gfx/battle/hpbar.2bpp"
 
 ExpBarGFX:
 INCBIN "gfx/battle/expbar.2bpp"

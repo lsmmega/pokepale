@@ -30,22 +30,22 @@ CommonBattleMenu:
 
 BattleMenuHeader:
 	db MENU_BACKUP_TILES ; flags
-	menu_coords 8, 12, SCREEN_WIDTH - 1, SCREEN_HEIGHT - 1
+	menu_coords 0, 12, SCREEN_WIDTH - 1, SCREEN_HEIGHT - 1
 	dw .MenuData
 	db 1 ; default option
 
 .MenuData:
 	db STATICMENU_CURSOR | STATICMENU_DISABLE_B ; flags
 	dn 2, 2 ; rows, columns
-	db 6 ; spacing
+	db 9 ; spacing
 	dba .Text
 	dbw BANK(@), NULL
 
 .Text:
-	db "FIGHT@"
-	db "<PKMN>@"
-	db "PACK@"
-	db "RUN@"
+	db "Fight@"
+	db "Pokémon@"
+	db "Pack@"
+	db "Run@"
 
 SafariBattleMenuHeader:
 	db MENU_BACKUP_TILES ; flags

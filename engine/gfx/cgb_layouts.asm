@@ -135,8 +135,8 @@ _CGB_FinishBattleScreenLayout:
 	lb bc, 5, 10
 	ld a, PAL_BATTLE_BG_PLAYER_HP
 	call FillBoxCGB
-	hlcoord 10, 11, wAttrmap
-	lb bc, 1, 9
+	hlcoord 9, 11, wAttrmap
+	lb bc, 1, 11
 	ld a, PAL_BATTLE_BG_EXP
 	call FillBoxCGB
 	hlcoord 0, 12, wAttrmap
@@ -223,8 +223,8 @@ _CGB_StatsScreenHPPals:
 	ld a, $1 ; mon palette
 	call FillBoxCGB
 
-	hlcoord 10, 16, wAttrmap
-	ld bc, 10
+	hlcoord 9, 16, wAttrmap
+	ld bc, 11
 	ld a, $2 ; exp palette
 	call ByteFill
 

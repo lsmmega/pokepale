@@ -468,7 +468,7 @@ StatsScreen_PlaceVerticalDivider: ; unreferenced
 StatsScreen_PlaceHorizontalDivider:
 	hlcoord 0, 7
 	ld b, SCREEN_WIDTH
-	ld a, $62 ; horizontal divider (empty HP/exp bar)
+	ld a, $31
 .loop
 	ld [hli], a
 	dec b
@@ -550,7 +550,7 @@ LoadPinkPage:
 	ld b, $0
 	predef DrawPlayerHP
 	hlcoord 8, 9
-	ld [hl], $41 ; right HP/exp bar end cap
+	ld [hl], $6c
 	ld de, .Status_Type
 	hlcoord 0, 12
 	call PlaceString
@@ -585,15 +585,6 @@ LoadPinkPage:
 .done_status
 	hlcoord 1, 15
 	predef PrintMonTypes
-	hlcoord 9, 8
-	ld de, SCREEN_WIDTH
-	ld b, 10
-	ld a, $31 ; vertical divider
-.vertical_divider
-	ld [hl], a
-	add hl, de
-	dec b
-	jr nz, .vertical_divider
 	ld de, .ExpPointStr
 	hlcoord 10, 9
 	call PlaceString
@@ -619,10 +610,12 @@ LoadPinkPage:
 	ld b, a
 	ld de, wTempMonExp + 2
 	predef FillInExpBar
-	hlcoord 10, 16
-	ld [hl], $40 ; left exp bar end cap
 	hlcoord 19, 16
-	ld [hl], $41 ; right exp bar end cap
+	ld [hl], $60
+	hlcoord 9, 16
+	ld a, $55
+	ld [hli], a
+	ld [hl], $56
 	ret
 
 .PrintNextLevel:
@@ -669,20 +662,20 @@ LoadPinkPage:
 	ret
 
 .Status_Type:
-	db   "STATUS/"
-	next "TYPE/@"
+	db   "Status/"
+	next "Type/@"
 
 .OK_str:
 	db "OK @"
 
 .ExpPointStr:
-	db "EXP POINTS@"
+	db "Exp Points@"
 
 .LevelUpStr:
-	db "LEVEL UP@"
+	db "Level Up@"
 
 .ToStr:
-	db "TO@"
+	db "To@"
 
 .PkrsStr:
 	db "#RUS@"
@@ -724,25 +717,16 @@ LoadGreenPage:
 	ret
 
 .Item:
-	db "ITEM@"
+	db "Item@"
 
 .ThreeDashes:
 	db "---@"
 
 .Move:
-	db "MOVE@"
+	db "Move@"
 
 LoadBluePage:
 	call .PlaceOTInfo
-	hlcoord 10, 8
-	ld de, SCREEN_WIDTH
-	ld b, 10
-	ld a, $31 ; vertical divider
-.vertical_divider
-	ld [hl], a
-	add hl, de
-	dec b
-	jr nz, .vertical_divider
 	hlcoord 11, 8
 	ld bc, 6
 	predef PrintTempMonStats
@@ -1010,7 +994,7 @@ EggStatsScreen:
 	ret
 
 EggString:
-	db "EGG@"
+	db "Egg@"
 
 FiveQMarkString:
 	db "?????@"
@@ -1032,7 +1016,7 @@ EggMoreTimeString:
 	next "more time, though.@"
 
 EggALotMoreTimeString:
-	db   "This EGG needs a"
+	db   "This egg needs a"
 	next "lot more time to"
 	next "hatch.@"
 
