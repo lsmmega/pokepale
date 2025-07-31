@@ -376,8 +376,8 @@ GiveTakeItemMenuData:
 .Items:
 	db STATICMENU_CURSOR ; flags
 	db 2 ; # items
-	db "GIVE@"
-	db "TAKE@"
+	db "Give@"
+	db "Take@"
 
 PokemonSwapItemText:
 	text_far _PokemonSwapItemText
@@ -1074,7 +1074,7 @@ String_MoveType_Top:
 String_MoveType_Bottom:
 	db "│        └@"
 String_MoveAtk:
-	db "ATK/@"
+	db "Atk/@"
 String_MoveNoPower:
 	db "---@"
 

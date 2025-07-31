@@ -1857,7 +1857,6 @@ SECTION UNION "Miscellaneous WRAM 1", WRAMX
 ; trainer HUD data
 	ds 1
 wPlaceBallsDirection:: db
-wTrainerHUDTiles:: ds 4
 
 
 SECTION UNION "Miscellaneous WRAM 1", WRAMX

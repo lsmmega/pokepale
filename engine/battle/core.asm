@@ -2774,7 +2774,7 @@ ForcePlayerMonChoice:
 .enemy_fainted_mobile_error
 	call ClearSprites
 	call ClearBGPalettes
-	call _LoadHPBar
+	call _LoadExpBar
 	call ExitMenu
 	call LoadTilemapToTempTilemap
 	call WaitBGMap
@@ -2795,7 +2795,7 @@ ForcePlayerMonChoice:
 	call ResetPlayerStatLevels
 	call ClearPalettes
 	call DelayFrame
-	call _LoadHPBar
+	call _LoadExpBar
 	call CloseWindow
 	call GetMemSGBLayout
 	call SetDefaultBGPAndOBP
@@ -3533,7 +3533,7 @@ OfferSwitch:
 	ld [wCurBattleMon], a
 	call ClearPalettes
 	call DelayFrame
-	call _LoadHPBar
+	call _LoadExpBar
 	pop af
 	ld [wCurPartyMon], a
 	xor a
@@ -3545,7 +3545,7 @@ OfferSwitch:
 .canceled_switch
 	call ClearPalettes
 	call DelayFrame
-	call _LoadHPBar
+	call _LoadExpBar
 
 .said_no
 	pop af
@@ -4616,15 +4616,16 @@ DrawPlayerHUD:
 	lb bc, 5, 11
 	call ClearBox
 
-	farcall DrawPlayerHUDBorder
-
-	hlcoord 18, 9
-	ld [hl], $73 ; vertical bar
+	hlcoord 19, 11
+	ld [hl], $60
+	hlcoord 9, 11
+	ld a, $55
+	ld [hli], a
+	ld [hl], $56
 	call PrintPlayerHUD
 
 	; HP bar
 	hlcoord 10, 9
-	ld b, 1
 	xor a ; PARTYMON
 	ld [wMonType], a
 	predef DrawPlayerHP
@@ -4637,7 +4638,7 @@ DrawPlayerHUD:
 	ld d, h
 	ld e, l
 
-	hlcoord 10, 11
+	hlcoord 11, 11
 	ld a, [wTempMonLevel]
 	ld b, a
 	call FillInExpBar
@@ -4753,8 +4754,17 @@ DrawEnemyHUD:
 	lb bc, 4, 11
 	call ClearBox
 
-	farcall DrawEnemyHUDBorder
+	ld a, [wBattleMode]
+	dec a
+	jr nz, .SkipCheckCaughtMon
+	ld a, [wTempEnemyMonSpecies]
+	dec a
+	call CheckCaughtMon
+	jr z, .SkipCheckCaughtMon
+	hlcoord 1, 1
+	ld [hl], $6e
 
+.SkipCheckCaughtMon
 	ld a, [wTempEnemyMonSpecies]
 	ld [wCurSpecies], a
 	ld [wCurPartySpecies], a
@@ -4873,7 +4883,6 @@ DrawEnemyHUD:
 	xor a
 	ld [wWhichHPBar], a
 	hlcoord 2, 2
-	ld b, 0
 	call DrawBattleHPBar
 	ret
 
@@ -5113,7 +5122,7 @@ BattleMenuPKMN_Loop:
 	call ClearSprites
 	call ClearPalettes
 	call DelayFrame
-	call _LoadHPBar
+	call _LoadExpBar
 	call CloseWindow
 	call LoadTilemapToTempTilemap
 	call GetMemSGBLayout
@@ -5200,7 +5209,7 @@ TryPlayerSwitch:
 	call ClearPalettes
 	call DelayFrame
 	call ClearSprites
-	call _LoadHPBar
+	call _LoadExpBar
 	call CloseWindow
 	call GetMemSGBLayout
 	call SetDefaultBGPAndOBP
@@ -6934,23 +6943,9 @@ _LoadBattleFontsHPBar:
 	callfar LoadBattleFontsHPBar
 	ret
 
-_LoadHPBar:
-	callfar LoadHPBar
+_LoadExpBar:
+	callfar LoadExpBar
 	ret
-
-LoadHPExpBarGFX: ; unreferenced
-	ld de, EnemyHPBarBorderGFX
-	ld hl, vTiles2 tile $6c
-	lb bc, BANK(EnemyHPBarBorderGFX), 4
-	call Get1bpp
-	ld de, HPExpBarBorderGFX
-	ld hl, vTiles2 tile $73
-	lb bc, BANK(HPExpBarBorderGFX), 6
-	call Get1bpp
-	ld de, ExpBarGFX
-	ld hl, vTiles2 tile $55
-	lb bc, BANK(ExpBarGFX), 8
-	jp Get2bpp
 
 EmptyBattleTextbox:
 	ld hl, .empty
@@ -7625,42 +7620,16 @@ AnimateExpBar:
 	inc b
 	push bc
 	push de
-	hlcoord 17, 11
+	hlcoord 11, 11
 	call PlaceExpBar
 	pop de
 	ld a, $1
-	ldh [hBGMapMode], a
-	ld c, d
-	call DelayFrames
-	xor a
-	ldh [hBGMapMode], a
-	pop bc
-	ld a, c
-	cp b
-	jr z, .end_animation
-	inc b
-	push bc
-	push de
-	hlcoord 17, 11
-	call PlaceExpBar
-	pop de
-	ld a, $1
-	ldh [hBGMapMode], a
-	ld c, d
-	call DelayFrames
-	xor a
-	ldh [hBGMapMode], a
-	dec d
-	jr nz, .min_number_of_frames
-	ld d, 1
-.min_number_of_frames
+	ldh [hBGMapHalf], a
+	call DelayFrame
 	pop bc
 	ld a, c
 	cp b
 	jr nz, .anim_loop
-.end_animation
-	ld a, $1
-	ldh [hBGMapMode], a
 	ret
 
 SendOutMonText:
@@ -7863,8 +7832,6 @@ FillInExpBar:
 	push hl
 	call CalcExpBar
 	pop hl
-	ld de, 7
-	add hl, de
 	jp PlaceExpBar
 
 CalcExpBar:
@@ -7973,8 +7940,8 @@ PlaceExpBar:
 	sub $8
 	jr c, .next
 	ld b, a
-	ld a, $6a ; full bar
-	ld [hld], a
+	ld a, $5f ; full bar
+	ld [hli], a
 	dec c
 	jr z, .finish
 	jr .loop1
@@ -7982,15 +7949,15 @@ PlaceExpBar:
 .next
 	add $8
 	jr z, .loop2
-	add $54 ; tile to the left of small exp bar tile
+	add $57 ; tile to the left of small exp bar tile
 	jr .skip
 
 .loop2
-	ld a, $62 ; empty bar
+	ld a, $57 ; empty bar
 
 .skip
-	ld [hld], a
-	ld a, $62 ; empty bar
+	ld [hli], a
+	ld a, $57 ; empty bar
 	dec c
 	jr nz, .loop2
 

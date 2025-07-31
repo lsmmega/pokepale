@@ -30,7 +30,7 @@ DEF EXP_BAR_LENGTH_PX EQU EXP_BAR_LENGTH * TILE_WIDTH ; pixels
 
 ; GetHPPal return values (see home/tilemap.asm)
 DEF HP_GREEN  EQU 0
-DEF HP_YELLOW EQU 1
+DEF HP_ORANGE EQU 1
 DEF HP_RED    EQU 2
 
 ; sprite_oam_struct members (see macros/ram.asm)
