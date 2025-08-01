@@ -171,7 +171,10 @@ hMobile:: db
 hSystemBooted:: db
 
 hClockResetTrigger:: db
-
-	ds 19
+hRequested2bpp:: db
+hRequested1bpp:: db
+hRequestedVTileDest:: dw
+hRequestedVTileSource:: dw
+	ds 13
 
 ENDSECTION

@@ -1536,14 +1536,6 @@ wcf65:: db
 wcf66:: db
 ENDU
 
-wRequested2bppSize:: db
-wRequested2bppSource:: dw
-wRequested2bppDest:: dw
-
-wRequested1bppSize:: db
-wRequested1bppSource:: dw
-wRequested1bppDest:: dw
-
 wMenuMetadata::
 wWindowStackPointer:: dw
 wMenuJoypad:: db
