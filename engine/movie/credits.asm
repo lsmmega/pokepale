@@ -188,20 +188,20 @@ Credits_PrepBGMapUpdate:
 Credits_UpdateGFXRequestPath:
 	call Credits_LoadBorderGFX
 	ld a, l
-	ld [wRequested2bppSource], a
+	ldh [hRequestedVTileSource], a
 	ld a, h
-	ld [wRequested2bppSource + 1], a
+	ldh [hRequestedVTileSource + 1], a
 	ld a, LOW(vTiles2)
-	ld [wRequested2bppDest], a
+	ldh [hRequestedVTileDest], a
 	ld a, HIGH(vTiles2)
-	ld [wRequested2bppDest + 1], a
+	ldh [hRequestedVTileDest + 1], a
 	jr Credits_RequestGFX
 
 Credits_RequestGFX:
 	xor a
 	ldh [hBGMapMode], a
 	ld a, 8
-	ld [wRequested2bppSize], a
+	ldh [hRequested2bpp], a
 	jp Credits_Next
 
 Credits_LYOverride:

@@ -245,13 +245,13 @@ UpdateBGMap::
 	ld bc, BG_MAP_WIDTH - (SCREEN_WIDTH - 1)
 .row
 ; Copy a row of 20 tiles
-	rept (SCREEN_WIDTH / 2) - 1
+rept (SCREEN_WIDTH / 2) - 1
 	pop de
 	ld [hl], e
 	inc l
 	ld [hl], d
 	inc l
-	endr
+endr
 	pop de
 	ld [hl], e
 	inc l
@@ -271,155 +271,116 @@ UpdateBGMap::
 Serve1bppRequest::
 ; Only call during the first fifth of VBlank
 
-	ld a, [wRequested1bppSize]
+	ld a, [hRequested1bpp]
 	and a
 	ret z
 
+	ld b, a
 ; Back out if we're too far into VBlank
-	ldh a, [rLY]
-	cp LY_VBLANK
+	ld a, [rLY]
+	cp 144
 	ret c
-	cp LY_VBLANK + 2
+	cp 146
 	ret nc
 
-; Copy [wRequested1bppSize] 1bpp tiles from [wRequested1bppSource] to [wRequested1bppDest]
+	xor a
+	ldh [hRequested1bpp], a
 
+; Copy [hRequested1bpp] 1bpp tiles from [hRequestedVTileSource] to [hRequestedVTileDest]
 	ld [hSPBuffer], sp
-
-; Source
-	ld hl, wRequested1bppSource
+; Destination
+	ld hl, hRequestedVTileDest
+	ld a, [hli]
+	ld e, a
+	ld a, [hli]
+	ld d, a
+; Source	
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
 	ld sp, hl
-
-; Destination
-	ld hl, wRequested1bppDest
-	ld a, [hli]
-	ld h, [hl]
-	ld l, a
-
+	ld h, d
+	ld l, e
+	
 ; # tiles to copy
-	ld a, [wRequested1bppSize]
-	ld b, a
-
-	xor a
-	ld [wRequested1bppSize], a
-
 .next
-
-rept 3
+rept 4
 	pop de
-	ld [hl], e
-	inc l
-	ld [hl], e
-	inc l
-	ld [hl], d
-	inc l
-	ld [hl], d
-	inc l
+	ld a, e
+	ld [hli], a
+	ld [hli], a
+	ld a, d
+	ld [hli], a
+	ld [hli], a
 endr
-	pop de
-	ld [hl], e
-	inc l
-	ld [hl], e
-	inc l
-	ld [hl], d
-	inc l
-	ld [hl], d
-
-	inc hl
 	dec b
 	jr nz, .next
+	jp WriteVTileSourceAndDestinationAndReturn
 
-	ld a, l
-	ld [wRequested1bppDest], a
-	ld a, h
-	ld [wRequested1bppDest + 1], a
-
-	ld [wRequested1bppSource], sp
-
-	ldh a, [hSPBuffer]
-	ld l, a
-	ldh a, [hSPBuffer + 1]
-	ld h, a
-	ld sp, hl
+Serve2bppRequest_NoVBlankCheck::
+	ld a, [hRequested2bpp]
+	and a
+	ret z
+	ld b, a
+	call _Serve2bppRequest
+	xor a
+	ld [hRequested2bpp], a
 	ret
 
 Serve2bppRequest::
 ; Only call during the first fifth of VBlank
 
-	ld a, [wRequested2bppSize]
+	ldh a, [hRequested2bpp]
 	and a
 	ret z
+
+	ld b, a ; save tile count for later
 
 ; Back out if we're too far into VBlank
 	ldh a, [rLY]
-	cp LY_VBLANK
+	cp 144
 	ret c
-	cp LY_VBLANK + 2
+	cp 146
 	ret nc
-	jr _Serve2bppRequest
-
-Serve2bppRequest_VBlank::
-	ld a, [wRequested2bppSize]
-	and a
-	ret z
-
-_Serve2bppRequest::
-; Copy [wRequested2bppSize] 2bpp tiles from [wRequested2bppSource] to [wRequested2bppDest]
-
-	ld [hSPBuffer], sp
-
-; Source
-	ld hl, wRequested2bppSource
-	ld a, [hli]
-	ld h, [hl]
-	ld l, a
-	ld sp, hl
-
-; Destination
-	ld hl, wRequested2bppDest
-	ld a, [hli]
-	ld h, [hl]
-	ld l, a
-
-; # tiles to copy
-	ld a, [wRequested2bppSize]
-	ld b, a
 
 	xor a
-	ld [wRequested2bppSize], a
+	ldh [hRequested2bpp], a
+
+_Serve2bppRequest::
+; Copy [hRequested2bpp] 2bpp tiles from [hRequestedVTileSource] to [hRequestedVTileDest]
+
+	ld [hSPBuffer], sp
+; Destination
+	ld hl, hRequestedVTileDest
+	ld a, [hli]
+	ld e, a
+	ld a, [hli]
+	ld d, a
+; Source
+	ld sp, hl
+	pop hl
+	ld sp, hl
+	ld h, d
+	ld l, e
 
 .next
-
-rept 7
+rept 8
 	pop de
-	ld [hl], e
-	inc l
-	ld [hl], d
-	inc l
+	ld a, e
+	ld [hli], a
+	ld a, d
+	ld [hli], a
 endr
-	pop de
-	ld [hl], e
-	inc l
-	ld [hl], d
-
-	inc hl
 	dec b
 	jr nz, .next
 
-	ld a, l
-	ld [wRequested2bppDest], a
-	ld a, h
-	ld [wRequested2bppDest + 1], a
+WriteVTileSourceAndDestinationAndReturn:
+	ld [hRequestedVTileSource], sp
+	ld sp, hl
+	ld [hRequestedVTileDest], sp
 
-	ld [wRequested2bppSource], sp
-
-	ldh a, [hSPBuffer]
-	ld l, a
-	ldh a, [hSPBuffer + 1]
-	ld h, a
+	ld sp, hSPBuffer
+	pop hl
 	ld sp, hl
 	ret
 
