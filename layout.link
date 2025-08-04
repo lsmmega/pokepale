@@ -19,12 +19,8 @@ ROM0
 	"vblank"
 	org $0048
 	"lcd"
-	org $0050
-	"timer"
 	org $0058
 	"serial"
-	org $0060
-	"joypad"
 	org $0100
 	"Header"
 	org $0150

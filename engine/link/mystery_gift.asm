@@ -706,20 +706,7 @@ TryReceivingIRDataBlock:
 
 InitializeIRCommunicationInterrupts:
 	call StartFastIRTimer
-	ld a, 1 << TIMER
-	ldh [rIE], a
-	xor a
-	ldh [rIF], a
-	call BeginIRCommunication
-; waits for ~$40400 cycles = ~0.25 seconds
-	xor a
-	ld b, a
-.busy_wait
-	inc a
-	jr nz, .busy_wait
-	inc b
-	jr nz, .busy_wait
-	ret
+	jp BeginIRCommunication
 
 StartFastIRTimer:
 ; Starts a 65,536 Hz timer that interrupts every 3 increments (21,845 Hz).

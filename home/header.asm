@@ -46,15 +46,8 @@ SECTION "vblank", ROM0[$0040]
 SECTION "lcd", ROM0[$0048]
 	jp LCD
 
-SECTION "timer", ROM0[$0050]
-	reti
-
 SECTION "serial", ROM0[$0058]
 	jp Serial
-
-SECTION "joypad", ROM0[$0060]
-	reti
-
 
 SECTION "Header", ROM0[$0100]
 

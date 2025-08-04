@@ -27,10 +27,8 @@ DEF RTC_DH_OVERFLOW EQU 7 ; Day Counter Carry Bit (1=Counter Overflow)
 ; interrupt flags
 DEF VBLANK     EQU 0
 DEF LCD_STAT   EQU 1
-DEF TIMER      EQU 2
 DEF SERIAL     EQU 3
-DEF JOYPAD     EQU 4
-DEF IE_DEFAULT EQU (1 << SERIAL) | (1 << TIMER) | (1 << LCD_STAT) | (1 << VBLANK)
+DEF IE_DEFAULT EQU (1 << SERIAL) | (1 << LCD_STAT) | (1 << VBLANK)
 
 ; OAM attribute flags
 DEF OAM_TILE_BANK EQU 3

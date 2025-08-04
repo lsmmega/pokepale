@@ -621,7 +621,7 @@ Function11032c:
 Function110393:
 	ld c, LOW(rIE)
 	ldh a, [c]
-	or (1 << SERIAL) | (1 << TIMER)
+	or 1 << SERIAL
 	ldh [c], a
 	ret
 
@@ -3433,7 +3433,7 @@ Function111686:
 	ldh [rTAC], a
 	ld c, LOW(rIE)
 	ldh a, [c]
-	and ~(1 << SERIAL | 1 << TIMER)
+	and ~ 1 << SERIAL
 	ldh [c], a
 	ld a, [wMobileSDK_PacketBuffer + 1]
 	ld [wc86a], a
