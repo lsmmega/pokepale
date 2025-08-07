@@ -47,13 +47,14 @@ hInMenu:: db
 	ds 1
 
 hPrinter:: db
-hGraphicStartTile:: db
 hMoveMon:: db
 
 UNION
+hGraphicStartTile:: db
 hMapObjectIndex:: db
 hObjectStructIndex:: db
 NEXTU
+hMapWidthPlus6:: db
 hConnectionStripLength:: db
 hConnectedMapWidth:: db
 ENDU
