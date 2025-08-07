@@ -4762,7 +4762,7 @@ DrawEnemyHUD:
 	call CheckCaughtMon
 	jr z, .SkipCheckCaughtMon
 	hlcoord 1, 1
-	ld [hl], $6e
+	ld [hl], $6f
 
 .SkipCheckCaughtMon
 	ld a, [wTempEnemyMonSpecies]

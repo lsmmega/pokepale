@@ -161,7 +161,7 @@ Function1000fa:
 	xor a
 	ldh [rIF], a
 	ldh a, [rIE]
-	and $1f ^ (1 << SERIAL | 1 << TIMER)
+	and $1f ^ 1 << SERIAL
 	ldh [rIE], a
 	xor a
 	ldh [hMobileReceive], a

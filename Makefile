@@ -46,7 +46,6 @@ pale: pokepale.gbc
 clean: tidy
 	find gfx \
 	     \( -name "*.[12]bpp" \
-	        -o -name "*.lz" \
 	        -o -name "*.gbcpal" \
 	        -o -name "*.sgb.tilemap" \) \
 	     -delete
@@ -57,6 +56,7 @@ clean: tidy
 	        -o -name "front.animated.tilemap" \
 	        -o -name "front.dimensions" \) \
 	     -delete
+	find -name "*.lz" -delete
 
 tidy:
 	$(RM) $(roms) \

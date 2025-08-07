@@ -44,16 +44,16 @@ hJoyLast::        db
 
 hInMenu:: db
 
-	ds 1
-
-hPrinter:: db
-hGraphicStartTile:: db
 hMoveMon:: db
 
 UNION
+hPrinter:: db
+hGraphicStartTile:: db
 hMapObjectIndex:: db
 hObjectStructIndex:: db
 NEXTU
+hMapBorderBlock:: db
+hMapWidthPlus6:: db
 hConnectionStripLength:: db
 hConnectedMapWidth:: db
 ENDU

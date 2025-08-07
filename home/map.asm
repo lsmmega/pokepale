@@ -55,32 +55,31 @@ GetMapSceneID::
 	rst Bankswitch
 
 	ld hl, MapScenes
+	ld de, 4
+	jr .handleLoop
+
 .loop
+	pop hl
+	add hl, de
+
+.handleLoop
 	push hl
 	ld a, [hli] ; map group, or terminator
 	cp -1
 	jr z, .end ; the current map is not in the scene_var table
 	cp b
-	jr nz, .next ; map group did not match
+	jr nz, .loop ; map group did not match
 	ld a, [hli] ; map number
 	cp c
-	jr nz, .next ; map number did not match
-	jr .found ; we found our map
+	jr nz, .loop ; map number did not match
+	ld a, [hli]
+	ld d, [hl]
+	ld e, a
+	jr .done
 
-.next
-	pop hl
-	ld de, 4 ; scene_var size
-	add hl, de
-	jr .loop
 
 .end
 	scf
-	jr .done
-
-.found
-	ld e, [hl]
-	inc hl
-	ld d, [hl]
 
 .done
 	pop hl
@@ -95,137 +94,7 @@ LoadOverworldTilemapAndAttrmapPals::
 	; fallthrough
 
 LoadOverworldTilemap::
-	ldh a, [hROMBank]
-	push af
-
-	ld a, [wTilesetBlocksBank]
-	rst Bankswitch
-	call LoadMetatiles
-
-	ld a, "■"
-	hlcoord 0, 0
-	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
-	call ByteFill
-
-	ld a, [wTilesetAttributesBank]
-	rst Bankswitch
-	call LoadMetatileAttributes
-
-	ld a, BANK(_LoadOverworldTilemap)
-	rst Bankswitch
-	call _LoadOverworldTilemap
-
-	pop af
-	rst Bankswitch
-	ret
-
-LoadMetatiles::
-	ld hl, wSurroundingTiles
-	ld de, wTilesetBlocksAddress
-	jr _LoadMetatilesOrAttributes
-
-LoadMetatileAttributes::
-	ld hl, wSurroundingAttributes
-	ld de, wTilesetAttributesAddress
-	; fallthrough
-
-_LoadMetatilesOrAttributes:
-	ld a, [de]
-	ld [wTilesetDataAddress], a
-	inc de
-	ld a, [de]
-	ld [wTilesetDataAddress + 1], a
-
-	; de <- wOverworldMapAnchor
-	ld a, [wOverworldMapAnchor]
-	ld e, a
-	ld a, [wOverworldMapAnchor + 1]
-	ld d, a
-	ld b, SCREEN_META_HEIGHT
-
-.row
-	push de
-	push hl
-	ld c, SCREEN_META_WIDTH
-
-.col
-	push de
-	push hl
-	; Load the current map block.
-	; If the current map block is a border block, load the border block.
-	ld a, [de]
-	and a
-	jr nz, .ok
-	ld a, [wMapBorderBlock]
-
-.ok
-	; Load the current wSurroundingTiles address into de.
-	ld e, l
-	ld d, h
-	; Set hl to the address of the current metatile data ([wTilesetBlocksAddress] + (a) tiles).
-	ld l, a
-	ld h, 0
-	add hl, hl
-	add hl, hl
-	add hl, hl
-	add hl, hl
-	ld a, [wTilesetDataAddress]
-	add l
-	ld l, a
-	ld a, [wTilesetDataAddress + 1]
-	adc h
-	ld h, a
-
-	ldh a, [rSVBK]
-	push af
-	ld a, BANK("Surrounding Data")
-	ldh [rSVBK], a
-
-	; copy the 4x4 metatile
-rept METATILE_WIDTH - 1
-rept METATILE_WIDTH
-	ld a, [hli]
-	ld [de], a
-	inc de
-endr
-	ld a, e
-	add SURROUNDING_WIDTH - METATILE_WIDTH
-	ld e, a
-	jr nc, .next\@
-	inc d
-.next\@
-endr
-rept METATILE_WIDTH
-	ld a, [hli]
-	ld [de], a
-	inc de
-endr
-
-	pop af
-	ldh [rSVBK], a
-
-	; Next metatile
-	pop hl
-	ld de, METATILE_WIDTH
-	add hl, de
-	pop de
-	inc de
-	dec c
-	jp nz, .col
-	; Next metarow
-	pop hl
-	ld de, SURROUNDING_WIDTH * METATILE_WIDTH
-	add hl, de
-	pop de
-	ld a, [wMapWidth]
-	add MAP_CONNECTION_PADDING_WIDTH * 2
-	add e
-	ld e, a
-	jr nc, .ok2
-	inc d
-.ok2
-	dec b
-	jp nz, .row
+	farcall _LoadMapPart
 	ret
 
 ReturnToMapFromSubmenu::
@@ -717,6 +586,10 @@ endr
 	ret
 
 LoadBlockData::
+	ld a, [hVBlank]
+	push af
+	ld a, 2
+	ldh [hVBlank], a
 	ld hl, wOverworldMapBlocks
 	ld bc, wOverworldMapBlocksEnd - wOverworldMapBlocks
 	ld a, 0
@@ -725,17 +598,37 @@ LoadBlockData::
 	call FillMapConnections
 	ld a, MAPCALLBACK_TILES
 	call RunMapCallback
+	pop af
+	ldh [hVBlank], a
 	ret
 
 ChangeMap::
-	ldh a, [hROMBank]
-	push af
-
-	ld hl, wOverworldMapBlocks
+	ld a, [wMapBlocksBank]
+	ld b, a
+	ld a, [wMapBlocksPointer]
+	ld l, a
+	ld a, [wMapBlocksPointer + 1]
+	ld h, a
 	ld a, [wMapWidth]
+	ld d, a
+	ld a, [wMapHeight]
+	ld e, a
+
+	ld a, [rSVBK]
+	push af
+	ld a, BANK(wDecompressScratch)
+	ldh [rSVBK], a
+	push de
+	ld de, wDecompressScratch
+	ld a, b
+	call FarDecompress
+	pop de
+
+	ld a, d
 	ldh [hConnectedMapWidth], a
 	add $6
 	ldh [hConnectionStripLength], a
+	ld hl, wOverworldMapBlocks
 	ld c, a
 	ld b, 0
 	add hl, bc
@@ -743,15 +636,9 @@ ChangeMap::
 	add hl, bc
 	ld c, 3
 	add hl, bc
-	ld a, [wMapBlocksBank]
-	rst Bankswitch
 
-	ld a, [wMapBlocksPointer]
-	ld e, a
-	ld a, [wMapBlocksPointer + 1]
-	ld d, a
-	ld a, [wMapHeight]
-	ld b, a
+	ld b, e
+	ld de, wDecompressScratch
 .row
 	push hl
 	ldh a, [hConnectedMapWidth]
@@ -773,7 +660,22 @@ ChangeMap::
 	jr nz, .row
 
 	pop af
-	rst Bankswitch
+	ldh [rSVBK], a
+	ret
+
+DecompressConnectionMap:
+	ld a, [rSVBK]
+	push af
+	ld a, BANK(wDecompressScratch)
+	ldh [rSVBK], a
+	push de
+	push bc
+	ld de, wDecompressScratch
+	call Decompress
+	pop bc
+	pop de
+	pop af
+	ldh [rSVBK], a
 	ret
 
 FillMapConnections::
@@ -785,6 +687,7 @@ FillMapConnections::
 	ld a, [wNorthConnectedMapNumber]
 	ld c, a
 	call GetAnyMapBlocksBank
+	call DecompressConnectionMap
 
 	ld a, [wNorthConnectionStripPointer]
 	ld l, a
@@ -808,6 +711,7 @@ FillMapConnections::
 	ld a, [wSouthConnectedMapNumber]
 	ld c, a
 	call GetAnyMapBlocksBank
+	call DecompressConnectionMap
 
 	ld a, [wSouthConnectionStripPointer]
 	ld l, a
@@ -831,6 +735,7 @@ FillMapConnections::
 	ld a, [wWestConnectedMapNumber]
 	ld c, a
 	call GetAnyMapBlocksBank
+	call DecompressConnectionMap
 
 	ld a, [wWestConnectionStripPointer]
 	ld l, a
@@ -854,6 +759,7 @@ FillMapConnections::
 	ld a, [wEastConnectedMapNumber]
 	ld c, a
 	call GetAnyMapBlocksBank
+	call DecompressConnectionMap
 
 	ld a, [wEastConnectionStripPointer]
 	ld l, a
@@ -874,6 +780,13 @@ FillMapConnections::
 
 FillNorthConnectionStrip::
 FillSouthConnectionStrip::
+	ld a, [wMapWidth]
+	add 6
+	ldh [hMapWidthPlus6], a
+	ld a, [rSVBK]
+	push af
+	ld a, BANK(wDecompressScratch)
+	ld [rSVBK], a
 	ld c, 3
 .y
 	push de
@@ -895,8 +808,7 @@ FillSouthConnectionStrip::
 	add hl, de
 	pop de
 
-	ld a, [wMapWidth]
-	add 6
+	ld a, [hMapWidthPlus6]
 	add e
 	ld e, a
 	jr nc, .okay
@@ -904,15 +816,21 @@ FillSouthConnectionStrip::
 .okay
 	dec c
 	jr nz, .y
+	pop af
+	ldh [rSVBK], a
 	ret
 
 FillWestConnectionStrip::
 FillEastConnectionStrip::
-.loop
 	ld a, [wMapWidth]
 	add 6
 	ldh [hConnectedMapWidth], a
 
+	ld a, [rSVBK]
+	push af
+	ld a, BANK(wDecompressScratch)
+	ldh [rSVBK], a
+.loop
 	push de
 
 	push hl
@@ -941,6 +859,8 @@ FillEastConnectionStrip::
 .okay
 	dec b
 	jr nz, .loop
+	pop af
+	ldh [rSVBK], a
 	ret
 
 LoadMapStatus::
@@ -2115,7 +2035,6 @@ GetMapScriptsBank::
 
 GetAnyMapBlocksBank::
 ; Return the blockdata bank for group b map c.
-	push hl
 	push de
 	push bc
 
@@ -2131,15 +2050,21 @@ GetAnyMapBlocksBank::
 	call GetAnyMapField
 	pop hl
 
-	ld de, MAP_MAPATTRIBUTES ; blockdata bank
-	add hl, de
+	inc hl
+	inc hl
+	inc hl
 	ld a, c
-	call GetFarByte
+	rst Bankswitch
+	ld a, [hli]
+	ld c, a
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	ld a, c
 	rst Bankswitch
 
 	pop bc
 	pop de
-	pop hl
 	ret
 
 GetMapAttributesPointer::

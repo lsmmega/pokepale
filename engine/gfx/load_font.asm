@@ -43,7 +43,7 @@ _LoadFontsExtra2::
 _LoadFontsBattleExtra::
 	ld de, FontBattleExtra
 	ld hl, vTiles2 tile $6d
-	lb bc, BANK(FontBattleExtra), 1
+	lb bc, BANK(FontBattleExtra), 2
 	call Get1bppViaHDMA
 	ld de, HPBarGFX
 	ld hl, vTiles2 tile $61
@@ -70,7 +70,7 @@ LoadFrame:
 LoadBattleFontsHPBar:
 	ld de, FontBattleExtra
 	ld hl, vTiles2 tile $6d
-	lb bc, BANK(FontBattleExtra), 2
+	lb bc, BANK(FontBattleExtra), 3
 	call Get1bppViaHDMA
 	ld de, HPBarGFX
 	ld hl, vTiles2 tile $61
