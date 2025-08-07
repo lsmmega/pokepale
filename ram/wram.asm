@@ -3292,8 +3292,11 @@ wPokeAnimBitmaskBuffer:: ds 7
 	ds 2
 wPokeAnimStructEnd::
 
+SECTION UNION "Metatiles", WRAMX
 
-SECTION "Battle Tower RAM", WRAMX
+wDecompressedMetatiles:: ds 256 tiles
+
+SECTION UNION "Metatiles", WRAMX ;Battle Tower RAM
 
 w3_d000:: ds 1
 w3_d001:: ds 1
@@ -3362,15 +3365,13 @@ NEXTU
 w3_de00:: ds $200
 ENDU
 
+SECTION UNION "Attributes", WRAMX
 
-SECTION "News Script RAM", WRAMX
+wDecompressedAttributes:: ds 256 tiles
+
+SECTION UNION "Attributes", WRAMX ;News Script RAM
 
 w4_d000:: ds $1000
-
-SECTION "Surrounding Data", WRAMX
-
-wSurroundingTiles:: ds SURROUNDING_WIDTH * SURROUNDING_HEIGHT
-wSurroundingAttributes:: ds SURROUNDING_WIDTH * SURROUNDING_HEIGHT
 
 SECTION "GBC Video", WRAMX, ALIGN[8]
 

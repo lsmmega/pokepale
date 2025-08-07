@@ -2046,7 +2046,7 @@ Function1190ec:
 	ret c
 
 .asm_11913e
-	ld a, BANK("Battle Tower RAM")
+	ld a, BANK("Metatiles")
 	ldh [rSVBK], a
 	call CloseSRAM
 	ld hl, Text_ReceivedNews
@@ -2137,14 +2137,14 @@ Function1191ad:
 	jr c, .asm_1191b4
 	ld a, $da
 	call SetMobileErrorCode
-	ld a, BANK("Battle Tower RAM")
+	ld a, BANK("Metatiles")
 	ldh [rSVBK], a
 	pop bc
 	scf
 	ret
 
 .asm_1191cc
-	ld a, BANK("Battle Tower RAM")
+	ld a, BANK("Metatiles")
 	ldh [rSVBK], a
 	pop bc
 	and a
@@ -2526,7 +2526,7 @@ Function119413:
 	ret c
 
 .asm_119447
-	ld a, BANK("Battle Tower RAM")
+	ld a, BANK("Metatiles")
 	ldh [rSVBK], a
 	call CloseSRAM
 	jp BattleTowerRoomMenu_IncrementJumptable
@@ -3168,7 +3168,7 @@ Function119800:
 	farcall Function10803d
 	call Function11a9ce
 	call RestartMapMusic
-	ld a, BANK("Battle Tower RAM")
+	ld a, BANK("Metatiles")
 	ldh [rSVBK], a
 	pop af
 	ld [wBattleTowerRoomMenuJumptableIndex], a
@@ -3203,7 +3203,7 @@ Function11984e:
 	farcall MobileTradeAnimation_SendGivemonToGTS
 	call Function11a9ce
 	call RestartMapMusic
-	ld a, BANK("Battle Tower RAM")
+	ld a, BANK("Metatiles")
 	ldh [rSVBK], a
 	pop af
 	ld [wBattleTowerRoomMenuJumptableIndex], a
@@ -3237,7 +3237,7 @@ Function11984e:
 	farcall MobileTradeAnimation_RetrieveGivemonFromGTS
 	call Function11a9ce
 	call RestartMapMusic
-	ld a, BANK("Battle Tower RAM")
+	ld a, BANK("Metatiles")
 	ldh [rSVBK], a
 	pop af
 	ld [wBattleTowerRoomMenuJumptableIndex], a
