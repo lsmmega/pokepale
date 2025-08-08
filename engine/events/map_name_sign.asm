@@ -179,7 +179,7 @@ PlaceMapNameSign::
 	sub SCREEN_HEIGHT_PX
 	ret nz
 	ld hl, rIE
-	res LCD_STAT, [hl]
+	res B_IE_STAT, [hl]
 	ldh [hLCDCPointer], a
 	ret
 
@@ -230,7 +230,7 @@ InitMapSignAttrmap:
 	inc b
 	inc c
 	inc c
-	ld a, PAL_BG_TEXT | PRIORITY
+	ld a, PAL_BG_TEXT | OAM_PRIO
 .loop
 	push bc
 	push hl

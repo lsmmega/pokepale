@@ -2555,10 +2555,10 @@ BGEffect_RapidCyclePals:
 
 BGEffects_LoadPlayerPals:
 	ld h, a
-	ldh a, [rSVBK]
+	ldh a, [rWBK]
 	push af
 	ld a, BANK(wBGPals1)
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	ld a, h
 	push bc
 	push af
@@ -2575,17 +2575,17 @@ BGEffects_LoadPlayerPals:
 	call CopyPals
 	pop bc
 	pop af
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	ld a, TRUE
 	ldh [hCGBPalUpdate], a
 	ret
 
 BGEffects_LoadEnemyPals:
 	ld h, a
-	ldh a, [rSVBK]
+	ldh a, [rWBK]
 	push af
 	ld a, BANK(wBGPals1)
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	ld a, h
 	push bc
 	push af
@@ -2602,7 +2602,7 @@ BGEffects_LoadEnemyPals:
 	call CopyPals
 	pop bc
 	pop af
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	ld a, TRUE
 	ldh [hCGBPalUpdate], a
 	ret

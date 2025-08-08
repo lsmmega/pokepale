@@ -52,7 +52,7 @@ _Option:
 .joypad_loop
 	call JoyTextDelay
 	ldh a, [hJoyPressed]
-	and START | B_BUTTON
+	and PAD_START | PAD_B
 	jr nz, .ExitOptions
 	call OptionsControl
 	jr c, .dpad
@@ -113,10 +113,10 @@ Options_TextSpeed:
 	ld c, a
 	ldh a, [hJoyPressed]
 	dec c
-	bit D_LEFT_F, a
+	bit B_PAD_LEFT, a
 	jr nz, .ok
 	inc c
-	bit D_RIGHT_F, a
+	bit B_PAD_RIGHT, a
 	jr z, .NonePressed
 	inc c
 .ok
@@ -162,10 +162,10 @@ Options_TextAutoscroll:
 	ld a, [wOptions]
 	and AUTOSCROLL_MASK
 	sub 4
-	bit D_LEFT_F, b
+	bit B_PAD_LEFT, b
 	jr nz, .ok
 	add 4
-	bit D_RIGHT_F, b
+	bit B_PAD_RIGHT, b
 	jr z, .not_changing
 	add 4
 .ok
@@ -209,9 +209,9 @@ Options_TextAutoscroll:
 Options_BattleStyle:
 	ld hl, wOptions
 	ldh a, [hJoyPressed]
-	bit D_LEFT_F, a
+	bit B_PAD_LEFT, a
 	jr nz, .LeftPressed
-	bit D_RIGHT_F, a
+	bit B_PAD_RIGHT, a
 	jr z, .NonePressed
 	bit BATTLE_SHIFT, [hl]
 	jr nz, .ToggleShift
@@ -247,9 +247,9 @@ Options_BattleStyle:
 Options_Sound:
 	ld hl, wOptions
 	ldh a, [hJoyPressed]
-	bit D_LEFT_F, a
+	bit B_PAD_LEFT, a
 	jr nz, .LeftPressed
-	bit D_RIGHT_F, a
+	bit B_PAD_RIGHT, a
 	jr z, .NonePressed
 	bit STEREO, [hl]
 	jr nz, .SetMono
@@ -299,9 +299,9 @@ Options_Sound:
 Options_Print:
 	call GetPrinterSetting
 	ldh a, [hJoyPressed]
-	bit D_LEFT_F, a
+	bit B_PAD_LEFT, a
 	jr nz, .LeftPressed
-	bit D_RIGHT_F, a
+	bit B_PAD_RIGHT, a
 	jr z, .NonePressed
 	ld a, c
 	cp OPT_PRINT_DARKEST
@@ -394,9 +394,9 @@ GetPrinterSetting:
 Options_Frame:
 	ld hl, wTextboxFrame
 	ldh a, [hJoyPressed]
-	bit D_LEFT_F, a
+	bit B_PAD_LEFT, a
 	jr nz, .LeftPressed
-	bit D_RIGHT_F, a
+	bit B_PAD_RIGHT, a
 	jr nz, .RightPressed
 	and a
 	ret
@@ -424,7 +424,7 @@ UpdateFrame:
 
 Options_Cancel:
 	ldh a, [hJoyPressed]
-	and A_BUTTON
+	and PAD_A
 	jr nz, .Exit
 	and a
 	ret
@@ -436,9 +436,9 @@ Options_Cancel:
 OptionsControl:
 	ld hl, wJumptableIndex
 	ldh a, [hJoyLast]
-	cp D_DOWN
+	cp PAD_DOWN
 	jr z, .DownPressed
-	cp D_UP
+	cp PAD_UP
 	jr z, .UpPressed
 	and a
 	ret

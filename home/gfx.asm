@@ -1,6 +1,6 @@
 Get2bppViaHDMA::
 	ldh a, [rLCDC]
-	bit rLCDC_ENABLE, a
+	bit B_LCDC_ENABLE, a
 	jp z, Copy2bpp
 
 	homecall HDMATransfer2bpp
@@ -9,7 +9,7 @@ Get2bppViaHDMA::
 
 Get1bppViaHDMA::
 	ldh a, [rLCDC]
-	bit rLCDC_ENABLE, a
+	bit B_LCDC_ENABLE, a
 	jp z, Copy1bpp
 
 	homecall HDMATransfer1bpp
@@ -241,7 +241,7 @@ Request1bpp::
 Get2bpp::
 ; copy c 2bpp tiles from b:de to hl
 	ldh a, [rLCDC]
-	bit rLCDC_ENABLE, a
+	bit B_LCDC_ENABLE, a
 	jp nz, Request2bpp
 	; fallthrough
 
@@ -254,7 +254,7 @@ Copy2bpp:
 ; bank
 	ld a, b
 
-; bc = c * LEN_2BPP_TILE
+; bc = c * TILE_SIZE
 	push af
 	swap c
 	ld a, $f
@@ -270,7 +270,7 @@ Copy2bpp:
 Get1bpp::
 ; copy c 1bpp tiles from b:de to hl
 	ldh a, [rLCDC]
-	bit rLCDC_ENABLE, a
+	bit B_LCDC_ENABLE, a
 	jp nz, Request1bpp
 	; fallthrough
 
@@ -282,7 +282,7 @@ Copy1bpp::
 ; bank
 	ld a, b
 
-; bc = c * LEN_1BPP_TILE
+; bc = c * TILE_1BPP_SIZE
 	push af
 	ld h, 0
 	ld l, c
@@ -326,7 +326,7 @@ WriteVCopyRegistersToHRAM:
 	ret
 
 VRAMToVRAMCopy::
-	lb bc, rSTAT_MODE_MASK, LOW(rSTAT) ; predefine for speed and size
+	lb bc, STAT_MODE, LOW(rSTAT) ; predefine for speed and size
 	jr .waitNoHBlank2
 .outerLoop2
 	ldh a, [rLY]
@@ -447,11 +447,11 @@ HBlankCopy2bpp::
 	pop de
 .waitNoHBlank
 	ldh a, [rSTAT]
-	and rSTAT_MODE_MASK
+	and STAT_MODE
 	jr z, .waitNoHBlank
 .waitHBlank
 	ldh a, [rSTAT]
-	and rSTAT_MODE_MASK
+	and STAT_MODE
 	jr nz, .waitHBlank
 ; preloads r us
 	ld a, c

@@ -3,10 +3,10 @@ BattleTowerText::
 ; 1: Intro text
 ; 2: Player lost
 ; 3: Player won
-	ldh a, [rSVBK]
+	ldh a, [rWBK]
 	push af
 	ld a, BANK(wBT_OTTrainerClass)
-	ldh [rSVBK], a
+	ldh [rWBK], a
 ; BUG: Instead of loading the trainer class,
 ; Crystal 1.0 loads the 6th character in the trainer's
 ; name, then uses it to get the trainer's gender.
@@ -75,7 +75,7 @@ BattleTowerText::
 	ld h, a
 	bccoord 1, 14
 	pop af
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	call PrintTextboxTextAt
 	ret
 

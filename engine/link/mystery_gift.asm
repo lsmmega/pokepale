@@ -293,14 +293,14 @@ ExchangeMysteryGiftData:
 	jr c, .wait_frame
 
 	ld c, LOW(rRP)
-	ld a, rRP_ENABLE_READ_MASK
+	ld a, RP_ENABLE
 	ldh [c], a
 
 	ld b, 60 * 4 ; 4 seconds
 .continue
 	push bc
 	call MysteryGift_UpdateJoypad
-	ld b, 1 << rRP_RECEIVING
+	ld b, RP_DATA_IN
 	ld c, LOW(rRP)
 .in_vblank
 	ldh a, [c]
@@ -326,7 +326,7 @@ ExchangeMysteryGiftData:
 	jr nz, .restart
 	; Check if we've pressed the B button to cancel
 	ldh a, [hMGJoypadReleased]
-	bit B_BUTTON_F, a
+	bit B_PAD_B, a
 	jr z, .continue
 	ld a, MG_CANCELED
 	ldh [hMGStatusFlags], a
@@ -508,7 +508,7 @@ EndOrContinueMysteryGiftIRCommunication:
 	xor a
 	ldh [rIF], a
 	ldh a, [rIE]
-	or 1 << VBLANK
+	or IE_VBLANK
 	ldh [rIE], a
 	ei
 	call DelayFrame
@@ -665,7 +665,7 @@ EndNameCardIRCommunication:
 	xor a
 	ldh [rIF], a
 	ldh a, [rIE]
-	or 1 << VBLANK
+	or IE_VBLANK
 	ldh [rIE], a
 	ei
 	call DelayFrame
@@ -715,9 +715,9 @@ StartFastIRTimer:
 	ld a, -2
 	ldh [rTMA], a
 	ldh [rTIMA], a
-	ld a, rTAC_65536_HZ
+	ld a, TAC_65KHZ
 	ldh [rTAC], a
-	or 1 << rTAC_ON
+	or TAC_START
 	ldh [rTAC], a
 	ret
 
@@ -727,14 +727,14 @@ StartSlowIRTimer:
 	ldh [rTAC], a
 	ldh [rTMA], a
 	ldh [rTIMA], a
-	ld a, rTAC_65536_HZ
+	ld a, TAC_65KHZ
 	ldh [rTAC], a
-	or 1 << rTAC_ON
+	or TAC_START
 	ldh [rTAC], a
 	ret
 
 BeginIRCommunication:
-	ld a, rRP_ENABLE_READ_MASK
+	ld a, RP_ENABLE
 	call ToggleIRCommunication
 	ld a, IR_RECEIVER
 	ldh [hMGRole], a
@@ -743,7 +743,7 @@ BeginIRCommunication:
 EndIRCommunication:
 	xor a
 	call ToggleIRCommunication
-	ld a, rTAC_65536_HZ
+	ld a, TAC_65KHZ
 	ldh [rTAC], a
 	ret
 
@@ -757,7 +757,7 @@ ReceiveInfraredLEDOn:
 	halt
 	nop
 	ldh a, [c]
-	bit rRP_RECEIVING, a
+	bit B_RP_DATA_IN, a
 	jr z, .recv_loop
 	or a
 	ret
@@ -772,14 +772,14 @@ ReceiveInfraredLEDOff:
 	halt
 	nop
 	ldh a, [c]
-	bit rRP_RECEIVING, a
+	bit B_RP_DATA_IN, a
 	jr nz, .no_recv_loop
 	or a
 	ret
 
 SendInfraredLEDOn:
 ; Holds the IR LED on for d-1 interrupts.
-	ld a, rRP_ENABLE_READ_MASK | (1 << rRP_LED_ON)
+	ld a, RP_ENABLE | RP_LED_ON
 	ldh [c], a
 .wait
 	dec d
@@ -792,7 +792,7 @@ SendInfraredLEDOn:
 
 SendInfraredLEDOff:
 ; Holds the IR LED off for d-1 interrupts.
-	ld a, rRP_ENABLE_READ_MASK
+	ld a, RP_ENABLE
 	ldh [c], a
 .wait
 	dec d
@@ -811,11 +811,11 @@ InitializeIRCommunicationRoles:
 	ldh [hMGRole], a
 .loop
 	call MysteryGift_UpdateJoypad
-	ld b, 1 << rRP_RECEIVING
+	ld b, RP_DATA_IN
 	ld c, LOW(rRP)
 	; Check if we've pressed the B button to cancel
 	ldh a, [hMGJoypadReleased]
-	bit B_BUTTON_F, a
+	bit B_PAD_B, a
 	jr z, .not_canceled
 	ld a, MG_CANCELED
 	ldh [hMGStatusFlags], a
@@ -823,7 +823,7 @@ InitializeIRCommunicationRoles:
 
 .not_canceled
 	; Check if we've pressed the A button to start sending
-	bit A_BUTTON_F, a
+	bit B_PAD_A, a
 	jr nz, SendIRHelloMessageAfterDelay
 	; If rRP is not receiving data, keep checking for input
 	ldh a, [c]
@@ -998,7 +998,7 @@ SendIRDataMessage:
 	ldh [rIF], a
 	halt
 	nop
-	ld a, rRP_ENABLE_READ_MASK | (1 << rRP_LED_ON)
+	ld a, RP_ENABLE | RP_LED_ON
 	ldh [rRP], a
 	; Turn the LED off for longer if the bit is 1
 	ld d, 1
@@ -1011,7 +1011,7 @@ SendIRDataMessage:
 	ldh a, [rTIMA]
 	cp -8
 	jr c, .wait
-	ld a, rRP_ENABLE_READ_MASK
+	ld a, RP_ENABLE
 	ldh [rRP], a
 	dec d
 	jr z, .no_halt
@@ -1149,7 +1149,7 @@ ReceiveIRDataMessage:
 	inc d
 	jr z, .recv_done
 	ldh a, [c]
-	bit rRP_RECEIVING, a
+	bit B_RP_DATA_IN, a
 	jr z, .recv_loop
 	ld d, 0
 .recv_done
@@ -1157,7 +1157,7 @@ ReceiveIRDataMessage:
 	inc d
 	jr z, .send_done
 	ldh a, [c]
-	bit rRP_RECEIVING, a
+	bit B_RP_DATA_IN, a
 	jr nz, .send_loop
 .send_done
 	ldh a, [hMGPrevTIMA]
@@ -1215,7 +1215,7 @@ ReceiveEmptyIRDataBlock:
 MysteryGift_UpdateJoypad:
 ; We can only get four inputs at a time.
 ; We take d-pad first for no particular reason.
-	ld a, 1 << rJOYP_DPAD
+	ld a, JOYP_GET_CTRL_PAD
 	ldh [rJOYP], a
 ; Read twice to give the request time to take.
 	ldh a, [rJOYP]
@@ -1224,7 +1224,7 @@ MysteryGift_UpdateJoypad:
 ; The Joypad register output is in the lo nybble (inversed).
 ; We make the hi nybble of our new container d-pad input.
 	cpl
-	and $f
+	and JOYP_INPUTS
 	swap a
 
 ; We'll keep this in b for now.
@@ -1232,7 +1232,7 @@ MysteryGift_UpdateJoypad:
 
 ; Buttons make 8 total inputs (A, B, Select, Start).
 ; We can fit this into one byte.
-	ld a, 1 << rJOYP_BUTTONS
+	ld a, JOYP_GET_BUTTONS
 	ldh [rJOYP], a
 ; Wait for input to stabilize.
 rept 6
@@ -1240,7 +1240,7 @@ rept 6
 endr
 ; Buttons take the lo nybble.
 	cpl
-	and $f
+	and JOYP_INPUTS
 	or b
 	ld c, a
 ; To get the delta we xor the last frame's input with the new one.
@@ -1432,7 +1432,7 @@ InitMysteryGiftLayout:
 	call FarCopyBytes
 	hlcoord 0, 0
 	ld a, $42
-	ld bc, SCREEN_HEIGHT * SCREEN_WIDTH
+	ld bc, SCREEN_AREA
 	call ByteFill
 	hlcoord 3, 7
 	lb bc, 9, 15
@@ -1609,7 +1609,7 @@ DoNameCardSwap:
 	ld b, 8
 .dec_y_loop
 	dec [hl]
-rept SPRITEOAMSTRUCT_LENGTH
+rept OBJ_SIZE
 	inc hl
 endr
 	dec b
@@ -1618,7 +1618,7 @@ endr
 	ld b, 8
 .inc_y_loop
 	inc [hl]
-rept SPRITEOAMSTRUCT_LENGTH
+rept OBJ_SIZE
 	inc hl
 endr
 	dec b
@@ -1730,7 +1730,7 @@ InitNameCardLayout:
 	call FarCopyBytes
 	hlcoord 0, 0
 	ld a, $3f
-	ld bc, SCREEN_HEIGHT * SCREEN_WIDTH
+	ld bc, SCREEN_AREA
 	call ByteFill
 	hlcoord 3, 7
 	lb bc, 9, 15
@@ -1801,7 +1801,7 @@ InitNameCardLayout:
 	ld [hl], $3e
 	ld de, wShadowOAMSprite00
 	ld hl, .NameCardOAMData
-	ld bc, 16 * SPRITEOAMSTRUCT_LENGTH
+	ld bc, 16 * OBJ_SIZE
 	call CopyBytes
 	call EnableLCD
 	call WaitBGMap

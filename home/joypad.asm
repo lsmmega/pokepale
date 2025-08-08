@@ -31,7 +31,7 @@ UpdateJoypad::
 
 ; We can only get four inputs at a time.
 ; We take d-pad first for no particular reason.
-	ld a, 1 << rJOYP_DPAD
+	ld a, JOYP_GET_CTRL_PAD
 	ldh [rJOYP], a
 ; Read twice to give the request time to take.
 	ldh a, [rJOYP]
@@ -40,7 +40,7 @@ UpdateJoypad::
 ; The Joypad register output is in the lo nybble (inversed).
 ; We make the hi nybble of our new container d-pad input.
 	cpl
-	and $f
+	and JOYP_INPUTS
 	swap a
 
 ; We'll keep this in b for now.
@@ -48,7 +48,7 @@ UpdateJoypad::
 
 ; Buttons make 8 total inputs (A, B, Select, Start).
 ; We can fit this into one byte.
-	ld a, 1 << rJOYP_BUTTONS
+	ld a, JOYP_GET_BUTTONS
 	ldh [rJOYP], a
 ; Wait for input to stabilize.
 rept 6
@@ -56,12 +56,12 @@ rept 6
 endr
 ; Buttons take the lo nybble.
 	cpl
-	and $f
+	and JOYP_INPUTS
 	or b
 	ld b, a
 
 ; Reset the joypad register since we're done with it.
-	ld a, (1 << rJOYP_BUTTONS) | (1 << rJOYP_DPAD)
+	ld a, JOYP_GET_NONE
 	ldh [rJOYP], a
 
 ; To get the delta we xor the last frame's input with the new one.
@@ -90,8 +90,8 @@ endr
 ; Now that we have the input, we can do stuff with it.
 
 ; For example, soft reset:
-	and A_BUTTON | B_BUTTON | SELECT | START
-	cp  A_BUTTON | B_BUTTON | SELECT | START
+	and PAD_A | PAD_B | PAD_SELECT | PAD_START
+	cp  PAD_A | PAD_B | PAD_SELECT | PAD_START
 	jp z, Reset
 
 	ret
@@ -105,8 +105,8 @@ GetJoypad::
 
 ; bit 0 A
 ;     1 B
-;     2 SELECT
-;     3 START
+;     2 PAD_SELECT
+;     3 PAD_START
 ;     4 RIGHT
 ;     5 LEFT
 ;     6 UP
@@ -264,12 +264,12 @@ JoyTitleScreenInput:: ; unreferenced
 
 ; Save data can be deleted by pressing Up + B + Select.
 	ldh a, [hJoyDown]
-	cp D_UP | SELECT | B_BUTTON
+	cp PAD_UP | PAD_SELECT | PAD_B
 	jr z, .keycombo
 
 ; Press Start or A to start the game.
 	ldh a, [hJoyLast]
-	and START | A_BUTTON
+	and PAD_START | PAD_A
 	jr nz, .keycombo
 
 	dec c
@@ -287,7 +287,7 @@ JoyWaitAorB::
 	call DelayFrame
 	call GetJoypad
 	ldh a, [hJoyPressed]
-	and A_BUTTON | B_BUTTON
+	and PAD_A | PAD_B
 	ret nz
 	call CheckAutoscroll
 	ret nz
@@ -298,7 +298,7 @@ CheckIfAOrBPressed:
 	call JoyTextDelay
 	ldh a, [hJoyLast]
 _Autoscroll:
-	and A_BUTTON | B_BUTTON
+	and PAD_A | PAD_B
 	ret nz
 	; fallthrough
 CheckAutoscroll:
@@ -313,9 +313,9 @@ CheckAutoscroll:
 	; Check A+B. If both are held, autoscroll for both A&B and A|B.
 	; Otherwise, autoscroll if the option is set to A or B, not A and B
 	ldh a, [hJoyDown]
-	and A_BUTTON | B_BUTTON
+	and PAD_A | PAD_B
 	ret z
-	cp A_BUTTON | B_BUTTON
+	cp PAD_A | PAD_B
 	jr z, _Autoscroll
 	ld a, [wOptions]
 	; nz if AORB, z if AANDB
@@ -324,7 +324,7 @@ CheckAutoscroll:
 
 .start
 	ld a, [hJoyDown]
-	and START
+	and PAD_START
 	ret
 
 Script_waitbutton::

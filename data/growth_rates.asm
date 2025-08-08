@@ -24,15 +24,15 @@ ErraticExperience:
 	table_width 3, ErraticExperience
 	for n, 1, MAX_LEVEL + 1
 		if n == 1
-			dt 0
+			bigdt 0
 		elif n < 50
-			dt (n**3 * (100 - n)) / 50
+			bigdt (n**3 * (100 - n)) / 50
 		elif n < 68
-			dt (n**3 * (150 - n)) / 100
+			bigdt (n**3 * (150 - n)) / 100
 		elif n < 98
-			dt (n**3 * ((1911 - 10 * n) / 3)) / 500
+			bigdt (n**3 * ((1911 - 10 * n) / 3)) / 500
 		else
-			dt (n**3 * (160 - n)) / 100
+			bigdt (n**3 * (160 - n)) / 100
 		endc
 	endr
 	assert_table_length MAX_LEVEL
@@ -41,13 +41,13 @@ FluctuatingExperience:
 	table_width 3, FluctuatingExperience
 	for n, 1, MAX_LEVEL + 1
 		if n == 1
-			dt 0
+			bigdt 0
 		elif n < 15
-			dt (n**3 * ((n + 1) / 3 + 24)) / 50
+			bigdt (n**3 * ((n + 1) / 3 + 24)) / 50
 		elif n < 36
-			dt (n**3 * (n + 14)) / 50
+			bigdt (n**3 * (n + 14)) / 50
 		else
-			dt (n**3 * (n / 2 + 32)) / 50
+			bigdt (n**3 * (n / 2 + 32)) / 50
 		endc
 	endr
 	assert_table_length MAX_LEVEL
