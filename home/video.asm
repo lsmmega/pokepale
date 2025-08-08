@@ -8,7 +8,7 @@ DMATransfer::
 	ret z
 
 ; Start transfer
-	ldh [rHDMA5], a
+	ldh [rVDMA_LEN], a
 
 ; Execution is halted until the transfer is complete.
 
@@ -201,7 +201,7 @@ UpdateBGMap::
 	jr z, .AttributeMapTop
 ; bottom row
 	coord sp, 0, 9, wAttrmap
-	ld de, HALF_HEIGHT * BG_MAP_WIDTH
+	ld de, HALF_HEIGHT * TILEMAP_WIDTH
 	add hl, de
 ; Next time: top half
 	xor a
@@ -225,7 +225,7 @@ UpdateBGMap::
 	jr z, .TileMapTop
 ; bottom row
 	coord sp, 0, 9
-	ld de, HALF_HEIGHT * BG_MAP_WIDTH
+	ld de, HALF_HEIGHT * TILEMAP_WIDTH
 	add hl, de
 ; Next time: top half
 	xor a
@@ -242,7 +242,7 @@ UpdateBGMap::
 	ld a, SCREEN_HEIGHT / 2
 .startCustomCopy
 ; Discrepancy between wTileMap and BGMap
-	ld bc, BG_MAP_WIDTH - (SCREEN_WIDTH - 1)
+	ld bc, TILEMAP_WIDTH - (SCREEN_WIDTH - 1)
 .row
 ; Copy a row of 20 tiles
 rept (SCREEN_WIDTH / 2) - 1
@@ -403,10 +403,10 @@ AnimateTileset::
 	ld a, BANK(_AnimateTileset)
 	rst Bankswitch
 
-	ldh a, [rSVBK]
+	ldh a, [rWBK]
 	push af
 	ld a, BANK(wTilesetAnim)
-	ldh [rSVBK], a
+	ldh [rWBK], a
 
 	ldh a, [rVBK]
 	push af
@@ -418,7 +418,7 @@ AnimateTileset::
 	pop af
 	ldh [rVBK], a
 	pop af
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	pop af
 	rst Bankswitch
 	ret

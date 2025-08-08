@@ -614,10 +614,10 @@ ChangeMap::
 	ld a, [wMapHeight]
 	ld e, a
 
-	ld a, [rSVBK]
+	ld a, [rWBK]
 	push af
 	ld a, BANK(wDecompressScratch)
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	push de
 	ld de, wDecompressScratch
 	ld a, b
@@ -660,14 +660,14 @@ ChangeMap::
 	jr nz, .row
 
 	pop af
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	ret
 
 DecompressConnectionMap:
-	ld a, [rSVBK]
+	ld a, [rWBK]
 	push af
 	ld a, BANK(wDecompressScratch)
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	push de
 	push bc
 	ld de, wDecompressScratch
@@ -675,7 +675,7 @@ DecompressConnectionMap:
 	pop bc
 	pop de
 	pop af
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	ret
 
 FillMapConnections::
@@ -783,10 +783,10 @@ FillSouthConnectionStrip::
 	ld a, [wMapWidth]
 	add 6
 	ldh [hMapWidthPlus6], a
-	ld a, [rSVBK]
+	ld a, [rWBK]
 	push af
 	ld a, BANK(wDecompressScratch)
-	ld [rSVBK], a
+	ld [rWBK], a
 	ld c, 3
 .y
 	push de
@@ -817,7 +817,7 @@ FillSouthConnectionStrip::
 	dec c
 	jr nz, .y
 	pop af
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	ret
 
 FillWestConnectionStrip::
@@ -826,10 +826,10 @@ FillEastConnectionStrip::
 	add 6
 	ldh [hConnectedMapWidth], a
 
-	ld a, [rSVBK]
+	ld a, [rWBK]
 	push af
 	ld a, BANK(wDecompressScratch)
-	ldh [rSVBK], a
+	ldh [rWBK], a
 .loop
 	push de
 
@@ -860,7 +860,7 @@ FillEastConnectionStrip::
 	dec b
 	jr nz, .loop
 	pop af
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	ret
 
 LoadMapStatus::
@@ -1118,7 +1118,7 @@ ScrollMapDown::
 	ld l, a
 	ld a, [wBGMapAnchor + 1]
 	ld h, a
-	ld bc, BG_MAP_WIDTH tiles
+	ld bc, TILEMAP_WIDTH tiles
 	add hl, bc
 ; cap d at HIGH(vBGMap0)
 	ld a, h
@@ -1205,7 +1205,7 @@ UpdateBGMapRow::
 	push de
 	call .iteration
 	pop de
-	ld a, BG_MAP_WIDTH
+	ld a, TILEMAP_WIDTH
 	add e
 	ld e, a
 
@@ -1239,7 +1239,7 @@ UpdateBGMapColumn::
 	ld [hli], a
 	ld a, d
 	ld [hli], a
-	ld a, BG_MAP_WIDTH
+	ld a, TILEMAP_WIDTH
 	add e
 	ld e, a
 	jr nc, .skip
@@ -1272,10 +1272,10 @@ LoadTilesetGFX::
 	ld a, [wTilesetBank]
 	ld e, a
 
-	ldh a, [rSVBK]
+	ldh a, [rWBK]
 	push af
 	ld a, BANK(wDecompressScratch)
-	ldh [rSVBK], a
+	ldh [rWBK], a
 
 	ld a, e
 	ld de, wDecompressScratch
@@ -1300,7 +1300,7 @@ LoadTilesetGFX::
 	ldh [rVBK], a
 
 	pop af
-	ldh [rSVBK], a
+	ldh [rWBK], a
 
 ; These tilesets support dynamic per-mapgroup roof tiles.
 	ld a, [wMapTileset]
