@@ -204,14 +204,12 @@ EnterMapWarp:
 	call GetAnyMapEnvironment
 	call CheckIndoorMap
 	ret nz
-	ld a, [wNextMapGroup]
-	ld b, a
-	ld a, [wNextMapNumber]
-	ld c, a
 
 ; Respawn in Pokémon Centers.
-	call GetAnyMapTileset
-	ld a, c
+	ld a, [wPrevMapGroup]
+	ld [wLastSpawnMapGroup], a
+	ld a, [wPrevMapNumber]
+	ld [wLastSpawnMapNumber], a
 	ret
 
 LoadMapTimeOfDay:
@@ -276,7 +274,7 @@ LoadMapTimeOfDay:
 	ld [hli], a
 	dec c
 	jr nz, .column
-	ld bc, BG_MAP_WIDTH - SCREEN_WIDTH
+	ld bc, TILEMAP_WIDTH - SCREEN_WIDTH
 	add hl, bc
 	pop bc
 	dec b

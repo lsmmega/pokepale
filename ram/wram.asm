@@ -28,7 +28,7 @@ wCurNoteDuration:: db ; used in MusicE0 and LoadNote
 wCurMusicByte:: db
 wCurChannel:: db
 wVolume::
-; corresponds to rNR50
+; corresponds to rAUDVOL
 ; Channel control / ON-OFF / Volume (R/W)
 ;   bit 7 - Vin->SO2 ON/OFF
 ;   bit 6-4 - SO2 output level (volume) (# 0-7)
@@ -36,12 +36,12 @@ wVolume::
 ;   bit 2-0 - SO1 output level (volume) (# 0-7)
 	db
 wSoundOutput::
-; corresponds to rNR51
+; corresponds to rAUDTERM
 ; bit 4-7: ch1-4 so2 on/off
 ; bit 0-3: ch1-4 so1 on/off
 	db
 wPitchSweep::
-; corresponds to rNR10
+; corresponds to rAUD1SWEEP
 ; bit 7:   unused
 ; bit 4-6: sweep time
 ; bit 3:   sweep direction
@@ -123,7 +123,6 @@ wAutoInputAddress:: dw
 wAutoInputBank::    db
 wAutoInputLength::  db
 
-wDebugFlags:: db
 wGameLogicPaused:: db
 wSpriteUpdatesEnabled:: db
 
@@ -302,7 +301,7 @@ SECTION "Sprites", WRAM0
 
 wShadowOAM::
 ; wShadowOAMSprite00 - wShadowOAMSprite39
-for n, NUM_SPRITE_OAM_STRUCTS
+for n, OAM_COUNT
 wShadowOAMSprite{02d:n}:: sprite_oam_struct wShadowOAMSprite{02d:n}
 endr
 wShadowOAMEnd::
@@ -312,7 +311,7 @@ SECTION "Tilemap", WRAM0
 
 wTilemap::
 ; 20x18 grid of 8x8 tiles
-	ds SCREEN_WIDTH * SCREEN_HEIGHT
+	ds SCREEN_AREA
 wTilemapEnd::
 
 
@@ -638,24 +637,6 @@ wOddEggName:: ds MON_NAME_LENGTH
 wOddEggOT:: ds NAME_LENGTH
 
 NEXTU
-; debug mon color picker
-wDebugMiddleColors::
-wDebugLightColor:: ds 2
-wDebugDarkColor::  ds 2
-	ds 6
-wDebugRedChannel::   db
-wDebugGreenChannel:: db
-wDebugBlueChannel::  db
-
-NEXTU
-; debug tileset color picker
-wDebugPalette::
-wDebugWhiteTileColor:: ds 2
-wDebugLightTileColor:: ds 2
-wDebugDarkTileColor::  ds 2
-wDebugBlackTileColor:: ds 2
-
-NEXTU
 wMobileMonSender:: ds NAME_LENGTH_JAPANESE - 1
 wMobileMon::       party_struct wMobileMon
 wMobileMonOT::     ds NAME_LENGTH_JAPANESE - 1
@@ -709,14 +690,12 @@ wDexListingScrollOffset:: db ; offset of the first displayed entry from the star
 wDexListingCursor:: db ; Dex cursor
 wDexListingEnd:: db ; Last mon to display
 wDexListingHeight:: db ; number of entries displayed at once in the dex listing
-wCurDexMode:: db ; Pokedex Mode
 wDexSearchMonType1:: db ; first type to search
 wDexSearchMonType2:: db ; second type to search
 wDexSearchResultCount:: db
 wDexArrowCursorPosIndex:: db
 wDexArrowCursorDelayCounter:: db
 wDexArrowCursorBlinkCounter:: db
-wDexSearchSlowpokeFrame:: db
 wUnlockedUnownMode:: db
 wDexCurUnownIndex:: db
 wDexUnownCount:: db
@@ -889,7 +868,7 @@ wPrinterSendByteOffset:: dw
 wPrinterSendByteCounter:: dw
 
 ; tilemap backup?
-wPrinterTilemapBuffer:: ds SCREEN_HEIGHT * SCREEN_WIDTH
+wPrinterTilemapBuffer:: ds SCREEN_AREA
 wPrinterStatus:: db
 	ds 1
 ; High nibble is for margin before the image, low nibble is for after.
@@ -924,13 +903,6 @@ SECTION UNION "Overworld Map", WRAM0
 
 ; Hall of Fame data
 wHallOfFamePokemonList:: hall_of_fame wHallOfFamePokemonList
-
-
-SECTION UNION "Overworld Map", WRAM0
-
-; debug color picker
-wDebugOriginalColors:: ds 256 * 4
-
 
 SECTION UNION "Overworld Map", WRAM0
 
@@ -1534,18 +1506,6 @@ NEXTU
 wUnusedBillsPCData:: ds 3
 
 NEXTU
-; debug mon color picker
-wDebugColorRGBJumptableIndex:: db
-wDebugColorCurColor:: db
-wDebugColorCurMon:: db
-
-NEXTU
-; debug tileset color picker
-wDebugTilesetCurPalette:: db
-wDebugTilesetRGBJumptableIndex:: db
-wDebugTilesetCurColor:: db
-
-NEXTU
 ; stats screen
 wStatsScreenFlags:: db
 
@@ -1575,14 +1535,6 @@ wcf64:: db
 wcf65:: db
 wcf66:: db
 ENDU
-
-wRequested2bppSize:: db
-wRequested2bppSource:: dw
-wRequested2bppDest:: dw
-
-wRequested1bppSize:: db
-wRequested1bppSource:: dw
-wRequested1bppDest:: dw
 
 wMenuMetadata::
 wWindowStackPointer:: dw
@@ -1751,7 +1703,9 @@ wSecondsSince:: db
 wMinutesSince:: db
 wHoursSince:: db
 wDaysSince:: db
-
+wExpScratch40_1:: ds 5
+wExpScratch40_2:: ds 5
+wExpScratchByte:: db
 
 SECTION "WRAM 1", WRAMX
 
@@ -1895,7 +1849,6 @@ SECTION UNION "Miscellaneous WRAM 1", WRAMX
 ; trainer HUD data
 	ds 1
 wPlaceBallsDirection:: db
-wTrainerHUDTiles:: ds 4
 
 
 SECTION UNION "Miscellaneous WRAM 1", WRAMX
@@ -2006,14 +1959,6 @@ wTempRestorePPItem::
 wApricorns::
 wSuicuneFrame::
 	db
-
-
-SECTION UNION "Miscellaneous WRAM 1", WRAMX
-
-; debug color picker
-wDebugColorIsTrainer:: db
-wDebugColorIsShiny:: db
-
 
 SECTION UNION "Miscellaneous WRAM 1", WRAMX
 
@@ -2553,7 +2498,7 @@ NEXTU
 wEnemyMon:: battle_struct wEnemyMon
 wEnemyMonBaseStats:: ds NUM_EXP_STATS
 wEnemyMonCatchRate:: db
-wEnemyMonBaseExp::   db
+wEnemyMonBaseExp::   dw
 wEnemyMonEnd::
 ENDU
 
@@ -2600,17 +2545,13 @@ wBaseType::
 wBaseType1:: db
 wBaseType2:: db
 wBaseCatchRate:: db
-wBaseExp:: db
+wBaseExp:: dw
 wBaseItems::
 wBaseItem1:: db
 wBaseItem2:: db
 wBaseGender:: db
-wBaseUnknown1:: db
 wBaseEggSteps:: db
-wBaseUnknown2:: db
 wBasePicSize:: db
-wBaseUnusedFrontpic:: dw
-wBaseUnusedBackpic:: dw
 wBaseGrowthRate:: db
 wBaseEggGroups:: db
 wBaseTM:: flag_array NUM_TM_TUTOR
@@ -2942,7 +2883,6 @@ wPokegearFlags::
 ; bit 7: on/off
 	db
 wRadioTuningKnob:: db
-wLastDexMode:: db
 	ds 1
 wWhichRegisteredItem:: db
 wRegisteredItem:: db
@@ -3318,7 +3258,7 @@ SECTION "Pic Animations", WRAMX
 
 wTempTilemap::
 ; 20x18 grid of 8x8 tiles
-	ds SCREEN_WIDTH * SCREEN_HEIGHT
+	ds SCREEN_AREA
 
 ; PokeAnim data
 wPokeAnimStruct::
@@ -3353,8 +3293,11 @@ wPokeAnimBitmaskBuffer:: ds 7
 	ds 2
 wPokeAnimStructEnd::
 
+SECTION UNION "Metatiles", WRAMX
 
-SECTION "Battle Tower RAM", WRAMX
+wDecompressedMetatiles:: ds 256 tiles
+
+SECTION UNION "Metatiles", WRAMX ;Battle Tower RAM
 
 w3_d000:: ds 1
 w3_d001:: ds 1
@@ -3381,7 +3324,7 @@ w3_d742:: battle_tower_struct w3_d742
 
 NEXTU
 	ds $be
-w3_d800:: ds BG_MAP_WIDTH * SCREEN_HEIGHT
+w3_d800:: ds TILEMAP_WIDTH * SCREEN_HEIGHT
 
 NEXTU
 	ds $be
@@ -3410,9 +3353,9 @@ ENDU
 
 	ds $1c0
 
-w3_dc00:: ds SCREEN_WIDTH * SCREEN_HEIGHT
+w3_dc00:: ds SCREEN_AREA
 UNION
-w3_dd68:: ds SCREEN_WIDTH * SCREEN_HEIGHT
+w3_dd68:: ds SCREEN_AREA
 
 	ds $11c
 
@@ -3423,15 +3366,13 @@ NEXTU
 w3_de00:: ds $200
 ENDU
 
+SECTION UNION "Attributes", WRAMX
 
-SECTION "News Script RAM", WRAMX
+wDecompressedAttributes:: ds 256 tiles
+
+SECTION UNION "Attributes", WRAMX ;News Script RAM
 
 w4_d000:: ds $1000
-
-SECTION "Surrounding Data", WRAMX
-
-wSurroundingTiles:: ds SURROUNDING_WIDTH * SURROUNDING_HEIGHT
-wSurroundingAttributes:: ds SURROUNDING_WIDTH * SURROUNDING_HEIGHT
 
 SECTION "GBC Video", WRAMX, ALIGN[8]
 
@@ -3557,12 +3498,11 @@ w5_MobileOpponentBattleLossMessage:: ds $c
 SECTION "Scratch RAM", WRAMX
 
 UNION
-wScratchTilemap:: ds BG_MAP_WIDTH * BG_MAP_HEIGHT
-wScratchAttrmap:: ds BG_MAP_WIDTH * BG_MAP_HEIGHT
+wScratchTilemap:: ds TILEMAP_AREA
+wScratchAttrmap:: ds TILEMAP_AREA
 
 NEXTU
-wDecompressScratch:: ds $80 tiles
-wDecompressEnemyFrontpic:: ds $80 tiles
+wDecompressScratch:: ds $100 tiles
 
 NEXTU
 ; unidentified uses

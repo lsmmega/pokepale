@@ -10,36 +10,17 @@ SECTION "Egg Moves", ROMX
 
 INCLUDE "data/pokemon/egg_move_pointers.asm"
 
-BulbasaurEggMoves:
-	db LIGHT_SCREEN
-	db SKULL_BASH
-	db SAFEGUARD
-	db RAZOR_WIND
-	db PETAL_DANCE
+PichuEggMoves:
+	db REVERSAL
+	db BIDE
+	db PRESENT
+	db ENCORE
+	db DOUBLESLAP
 	db -1 ; end
 
-CharmanderEggMoves:
-	db BELLY_DRUM
-	db ANCIENTPOWER
-	db ROCK_SLIDE
-	db BITE
-	db OUTRAGE
-	db BEAT_UP
-	db -1 ; end
-
-SquirtleEggMoves:
-	db MIRROR_COAT
-	db HAZE
-	db MIST
-	db CONFUSION
-	db FORESIGHT
+EeveeEggMoves:
 	db FLAIL
-	db -1 ; end
-
-PidgeyEggMoves:
-	db PURSUIT
-	db FAINT_ATTACK
-	db FORESIGHT
+	db CHARM
 	db -1 ; end
 
 RattataEggMoves:
@@ -108,7 +89,6 @@ ZubatEggMoves:
 	db PURSUIT
 	db FAINT_ATTACK
 	db GUST
-	db WHIRLWIND
 	db -1 ; end
 
 OddishEggMoves:
@@ -387,7 +367,6 @@ ScytherEggMoves:
 	db COUNTER
 	db SAFEGUARD
 	db BATON_PASS
-	db RAZOR_WIND
 	db REVERSAL
 	db LIGHT_SCREEN
 	db -1 ; end
@@ -400,11 +379,6 @@ PinsirEggMoves:
 LaprasEggMoves:
 	db AURORA_BEAM
 	db FORESIGHT
-	db -1 ; end
-
-EeveeEggMoves:
-	db FLAIL
-	db CHARM
 	db -1 ; end
 
 OmanyteEggMoves:
@@ -424,7 +398,6 @@ KabutoEggMoves:
 	db -1 ; end
 
 AerodactylEggMoves:
-	db WHIRLWIND
 	db PURSUIT
 	db FORESIGHT
 	db -1 ; end
@@ -463,7 +436,6 @@ TotodileEggMoves:
 	db THRASH
 	db HYDRO_PUMP
 	db ANCIENTPOWER
-	db RAZOR_WIND
 	db ROCK_SLIDE
 	db -1 ; end
 
@@ -480,7 +452,6 @@ HoothootEggMoves:
 	db SUPERSONIC
 	db FAINT_ATTACK
 	db WING_ATTACK
-	db WHIRLWIND
 	db SKY_ATTACK
 	db -1 ; end
 
@@ -502,14 +473,6 @@ ChinchouEggMoves:
 	db FLAIL
 	db SUPERSONIC
 	db SCREECH
-	db -1 ; end
-
-PichuEggMoves:
-	db REVERSAL
-	db BIDE
-	db PRESENT
-	db ENCORE
-	db DOUBLESLAP
 	db -1 ; end
 
 CleffaEggMoves:
@@ -589,7 +552,6 @@ AipomEggMoves:
 	db -1 ; end
 
 YanmaEggMoves:
-	db WHIRLWIND
 	db REVERSAL
 	db LEECH_LIFE
 	db -1 ; end
@@ -601,7 +563,6 @@ WooperEggMoves:
 	db -1 ; end
 
 MurkrowEggMoves:
-	db WHIRLWIND
 	db DRILL_PECK
 	db QUICK_ATTACK
 	db MIRROR_MOVE
@@ -640,7 +601,6 @@ DunsparceEggMoves:
 GligarEggMoves:
 	db METAL_CLAW
 	db WING_ATTACK
-	db RAZOR_WIND
 	db COUNTER
 	db -1 ; end
 
@@ -735,7 +695,6 @@ MantineEggMoves:
 SkarmoryEggMoves:
 	db DRILL_PECK
 	db PURSUIT
-	db WHIRLWIND
 	db SKY_ATTACK
 	db -1 ; end
 

@@ -17,7 +17,8 @@ PrintLetterDelay::
 	ld a, [wTextboxFlags]
 	bit TEXT_DELAY_F, a
 	ret z
-	ldh [hBGMapThird], a
+	ld a, 1
+	ldh [hBGMapHalf], a
 	push hl
 	push de
 	push bc
@@ -57,11 +58,11 @@ PrintLetterDelay::
 
 ; Wait one frame if holding A or B.
 	ldh a, [hJoyDown]
-	bit A_BUTTON_F, a
+	bit B_PAD_A, a
 	jr z, .checkb
 	jr .delay
 .checkb
-	bit B_BUTTON_F, a
+	bit B_PAD_B, a
 	jr z, .wait
 
 .delay

@@ -15,7 +15,6 @@ EnemySwitch_TrainerHud:
 	jp ShowOTTrainerMonsRemaining
 
 ShowPlayerMonsRemaining:
-	call DrawPlayerPartyIconHUDBorder
 	ld hl, wPartyMon1HP
 	ld de, wPartyCount
 	call StageBallTilesData
@@ -30,7 +29,6 @@ ShowPlayerMonsRemaining:
 	jp LoadTrainerHudOAM
 
 ShowOTTrainerMonsRemaining:
-	call DrawEnemyHUDBorder
 	ld hl, wOTPartyMon1HP
 	ld de, wOTPartyCount
 	call StageBallTilesData
@@ -41,7 +39,7 @@ ShowOTTrainerMonsRemaining:
 	ld [hl], 4 * TILE_WIDTH
 	ld a, -TILE_WIDTH
 	ld [wPlaceBallsDirection], a
-	ld hl, wShadowOAMSprite00 + PARTY_LENGTH * SPRITEOAMSTRUCT_LENGTH
+	ld hl, wShadowOAMSprite00 + PARTY_LENGTH * OBJ_SIZE
 	jp LoadTrainerHudOAM
 
 StageBallTilesData:
@@ -99,83 +97,6 @@ StageBallTilesData:
 	add hl, bc
 	ret
 
-DrawPlayerHUDBorder:
-	ld hl, .tiles
-	ld de, wTrainerHUDTiles
-	ld bc, .tiles_end - .tiles
-	call CopyBytes
-	hlcoord 18, 10
-	ld de, -1 ; start on right
-	jr PlaceHUDBorderTiles
-
-.tiles
-	db $73 ; right side
-	db $77 ; bottom right
-	db $6f ; bottom left
-	db $76 ; bottom side
-.tiles_end
-
-DrawPlayerPartyIconHUDBorder:
-	ld hl, .tiles
-	ld de, wTrainerHUDTiles
-	ld bc, .tiles_end - .tiles
-	call CopyBytes
-	hlcoord 18, 10
-	ld de, -1 ; start on right
-	jr PlaceHUDBorderTiles
-
-.tiles
-	db $73 ; right side
-	db $5c ; bottom right
-	db $6f ; bottom left
-	db $76 ; bottom side
-.tiles_end
-
-DrawEnemyHUDBorder:
-	ld hl, .tiles
-	ld de, wTrainerHUDTiles
-	ld bc, .tiles_end - .tiles
-	call CopyBytes
-	hlcoord 1, 2
-	ld de, 1 ; start on left
-	call PlaceHUDBorderTiles
-	ld a, [wBattleMode]
-	dec a
-	ret nz
-	ld a, [wTempEnemyMonSpecies]
-	dec a
-	call CheckCaughtMon
-	ret z
-	hlcoord 1, 1
-	ld [hl], $5d
-	ret
-
-.tiles
-	db $6d ; left side
-	db $74 ; bottom left
-	db $78 ; bottom right
-	db $76 ; bottom side
-.tiles_end
-
-PlaceHUDBorderTiles:
-	ld a, [wTrainerHUDTiles + 0]
-	ld [hl], a
-	ld bc, SCREEN_WIDTH
-	add hl, bc
-	ld a, [wTrainerHUDTiles + 1]
-	ld [hl], a
-	ld b, 8
-.loop
-	add hl, de
-	ld a, [wTrainerHUDTiles + 3]
-	ld [hl], a
-	dec b
-	jr nz, .loop
-	add hl, de
-	ld a, [wTrainerHUDTiles + 2]
-	ld [hl], a
-	ret
-
 LinkBattle_TrainerHuds:
 	call LoadBallIconGFX
 	ld hl, wPartyMon1HP
@@ -197,7 +118,7 @@ LinkBattle_TrainerHuds:
 	ld a, 10 * TILE_WIDTH
 	ld [hli], a
 	ld [hl], 13 * TILE_WIDTH
-	ld hl, wShadowOAMSprite00 + PARTY_LENGTH * SPRITEOAMSTRUCT_LENGTH
+	ld hl, wShadowOAMSprite00 + PARTY_LENGTH * OBJ_SIZE
 	jp LoadTrainerHudOAM
 
 LoadTrainerHudOAM:

@@ -11,7 +11,7 @@ FarCall::
 SECTION "rst10", ROM0[$0010]
 Bankswitch::
 	ldh [hROMBank], a
-	ld [MBC3RomBank], a
+	ld [rROMB], a
 	ret
 
 SECTION "rst18", ROM0[$0018]
@@ -46,15 +46,8 @@ SECTION "vblank", ROM0[$0040]
 SECTION "lcd", ROM0[$0048]
 	jp LCD
 
-SECTION "timer", ROM0[$0050]
-	jp MobileTimer
-
 SECTION "serial", ROM0[$0058]
 	jp Serial
-
-SECTION "joypad", ROM0[$0060]
-	jp Joypad
-
 
 SECTION "Header", ROM0[$0100]
 

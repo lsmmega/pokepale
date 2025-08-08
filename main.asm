@@ -13,6 +13,7 @@ INCLUDE "engine/overworld/npc_movement.asm"
 INCLUDE "engine/events/happiness_egg.asm"
 INCLUDE "engine/events/shuckle.asm"
 INCLUDE "engine/events/haircut.asm"
+INCLUDE "engine/battle/scaled_exp.asm"
 
 
 SECTION "bank2", ROMX
@@ -133,7 +134,6 @@ SECTION "bankB", ROMX
 INCLUDE "engine/battle/trainer_huds.asm"
 INCLUDE "data/trainers/class_names.asm"
 INCLUDE "engine/battle/ai/redundant.asm"
-INCLUDE "engine/events/move_deleter.asm"
 INCLUDE "engine/link/mystery_gift_2.asm"
 INCLUDE "engine/items/tm.asm"
 INCLUDE "engine/pokemon/print_move_description.asm"
@@ -223,7 +223,6 @@ INCLUDE "engine/movie/init_hof_credits.asm"
 INCLUDE "engine/events/battle_tower/get_trainer_class.asm"
 INCLUDE "engine/battle/sliding_intro.asm"
 INCLUDE "mobile/print_opp_message.asm"
-INCLUDE "engine/battle/check_battle_scene.asm"
 INCLUDE "engine/movie/gbc_only.asm"
 INCLUDE "engine/events/poke_seer.asm"
 
@@ -434,12 +433,10 @@ INCLUDE "gfx/pokemon/unown_bitmasks.asm"
 SECTION "Pic Animations 2", ROMX
 
 INCLUDE "gfx/pokemon/frame_pointers.asm"
-INCLUDE "gfx/pokemon/kanto_frames.asm"
-
+INCLUDE "gfx/pokemon/pokemon_frames.asm"
 
 SECTION "Pic Animations 3", ROMX
 
-INCLUDE "gfx/pokemon/johto_frames.asm"
 INCLUDE "gfx/pokemon/unown_frame_pointers.asm"
 INCLUDE "gfx/pokemon/unown_frames.asm"
 

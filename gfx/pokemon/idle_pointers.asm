@@ -1,31 +1,38 @@
 AnimationIdlePointers:
 	table_width 2
-	dw BulbasaurAnimationIdle
-	dw IvysaurAnimationIdle
-	dw VenusaurAnimationIdle
-	dw CharmanderAnimationIdle
-	dw CharmeleonAnimationIdle
-	dw CharizardAnimationIdle
-	dw SquirtleAnimationIdle
-	dw WartortleAnimationIdle
-	dw BlastoiseAnimationIdle
+	dw RowletAnimationIdle
+	dw DartrixAnimationIdle
+	dw DecidueyeAnimationIdle
+	dw ChimcharAnimationIdle
+	dw MonfernoAnimationIdle
+	dw InfernapeAnimationIdle
+	dw FroakieAnimationIdle
+	dw FrogadierAnimationIdle
+	dw GreninjaAnimationIdle
+	dw PichuAnimationIdle
+	dw PikachuAnimationIdle
+	dw RaichuAnimationIdle
+	dw EeveeAnimationIdle
+	dw VaporeonAnimationIdle
+	dw JolteonAnimationIdle
+	dw FlareonAnimationIdle
+	dw EspeonAnimationIdle
+	dw UmbreonAnimationIdle
+	dw LeafeonAnimationIdle
+	dw GlaceonAnimationIdle
+	dw SylveonAnimationIdle
 	dw CaterpieAnimationIdle
 	dw MetapodAnimationIdle
 	dw ButterfreeAnimationIdle
 	dw WeedleAnimationIdle
 	dw KakunaAnimationIdle
 	dw BeedrillAnimationIdle
-	dw PidgeyAnimationIdle
-	dw PidgeottoAnimationIdle
-	dw PidgeotAnimationIdle
 	dw RattataAnimationIdle
 	dw RaticateAnimationIdle
 	dw SpearowAnimationIdle
 	dw FearowAnimationIdle
 	dw EkansAnimationIdle
 	dw ArbokAnimationIdle
-	dw PikachuAnimationIdle
-	dw RaichuAnimationIdle
 	dw SandshrewAnimationIdle
 	dw SandslashAnimationIdle
 	dw NidoranFAnimationIdle
@@ -132,10 +139,6 @@ AnimationIdlePointers:
 	dw GyaradosAnimationIdle
 	dw LaprasAnimationIdle
 	dw DittoAnimationIdle
-	dw EeveeAnimationIdle
-	dw VaporeonAnimationIdle
-	dw JolteonAnimationIdle
-	dw FlareonAnimationIdle
 	dw PorygonAnimationIdle
 	dw OmanyteAnimationIdle
 	dw OmastarAnimationIdle
@@ -171,7 +174,6 @@ AnimationIdlePointers:
 	dw CrobatAnimationIdle
 	dw ChinchouAnimationIdle
 	dw LanturnAnimationIdle
-	dw PichuAnimationIdle
 	dw CleffaAnimationIdle
 	dw IgglybuffAnimationIdle
 	dw TogepiAnimationIdle
@@ -195,8 +197,6 @@ AnimationIdlePointers:
 	dw YanmaAnimationIdle
 	dw WooperAnimationIdle
 	dw QuagsireAnimationIdle
-	dw EspeonAnimationIdle
-	dw UmbreonAnimationIdle
 	dw MurkrowAnimationIdle
 	dw SlowkingAnimationIdle
 	dw MisdreavusAnimationIdle

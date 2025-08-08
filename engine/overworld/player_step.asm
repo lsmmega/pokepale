@@ -1,13 +1,11 @@
 _HandlePlayerStep::
 	ld a, [wPlayerStepFlags]
-	and a
-	ret z
-	bit PLAYERSTEP_START_F, a
-	jr nz, .update_overworld_map
-	bit PLAYERSTEP_STOP_F, a
-	jr nz, .update_player_coords
-	bit PLAYERSTEP_CONTINUE_F, a
-	jr nz, .finish
+	add a
+	jr c, .update_overworld_map ; starting step
+	add a
+	jr c, .update_player_coords ; finishing step
+	add a
+	jr c, .finish ; ongoing step
 	ret
 
 .update_overworld_map
@@ -149,7 +147,7 @@ UpdateOverworldMap:
 
 .ScrollOverworldMapDown:
 	ld a, [wBGMapAnchor]
-	add 2 * BG_MAP_WIDTH
+	add 2 * TILEMAP_WIDTH
 	ld [wBGMapAnchor], a
 	jr nc, .not_overflowed
 	ld a, [wBGMapAnchor + 1]
@@ -180,7 +178,7 @@ UpdateOverworldMap:
 
 .ScrollOverworldMapUp:
 	ld a, [wBGMapAnchor]
-	sub 2 * BG_MAP_WIDTH
+	sub 2 * TILEMAP_WIDTH
 	ld [wBGMapAnchor], a
 	jr nc, .not_underflowed
 	ld a, [wBGMapAnchor + 1]

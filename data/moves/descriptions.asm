@@ -13,14 +13,11 @@ MoveDescriptions::
 	dw ScratchDescription
 	dw VicegripDescription
 	dw GuillotineDescription
-	dw RazorWindDescription
 	dw SwordsDanceDescription
 	dw CutDescription
 	dw GustDescription
 	dw WingAttackDescription
-	dw WhirlwindDescription
 	dw FlyDescription
-	dw BindDescription
 	dw SlamDescription
 	dw VineWhipDescription
 	dw StompDescription
@@ -165,7 +162,6 @@ MoveDescriptions::
 	dw SuperFangDescription
 	dw SlashDescription
 	dw SubstituteDescription
-	dw StruggleDescription
 	dw SketchDescription
 	dw TripleKickDescription
 	dw ThiefDescription
@@ -253,17 +249,17 @@ MoveDescriptions::
 	dw WhirlpoolDescription
 	dw BeatUpDescription
 	dw HailDescription
+	dw LeafBladeDescription
+	dw DarkPulseDescription
+	dw SnarlDescription
+	dw CharmVoiceDescription
+	dw MoonblastDescription
+	dw LeafageDescription
+	dw StruggleDescription
 	assert_table_length NUM_ATTACKS
-	dw MoveFDDescription
-	dw MoveFEDescription
-	dw MoveFFDescription
 	dw Move00Description
 	assert_table_length $100
 
-MoveFCDescription:
-MoveFDDescription:
-MoveFEDescription:
-MoveFFDescription:
 Move00Description:
 	db "?@"
 
@@ -272,6 +268,12 @@ PoundDescription:
 	next "legs or tail.@"
 
 KarateChopDescription:
+RazorLeafDescription:
+CrabhammerDescription:
+SlashDescription:
+AeroblastDescription:
+CrossChopDescription:
+LeafBladeDescription:
 	db   "Has a high criti-"
 	next "cal hit ratio.@"
 
@@ -315,10 +317,6 @@ GuillotineDescription:
 	db   "A one-hit KO,"
 	next "pincer attack.@"
 
-RazorWindDescription:
-	db   "1st turn: Prepare"
-	next "2nd turn: Attack@"
-
 SwordsDanceDescription:
 	db   "A dance that in-"
 	next "creases ATTACK.@"
@@ -335,17 +333,9 @@ WingAttackDescription:
 	db   "Strikes the target"
 	next "with wings.@"
 
-WhirlwindDescription:
-	db   "Blows away the foe"
-	next "& ends battle.@"
-
 FlyDescription:
 	db   "1st turn: Fly"
 	next "2nd turn: Attack@"
-
-BindDescription:
-	db   "Binds the target"
-	next "for 2-5 turns.@"
 
 SlamDescription:
 	db   "Slams the foe with"
@@ -356,6 +346,7 @@ VineWhipDescription:
 	next "slender vines.@"
 
 StompDescription:
+DarkPulseDescription:
 	db   "An attack that may"
 	next "cause flinching.@"
 
@@ -562,10 +553,6 @@ LeechSeedDescription:
 GrowthDescription:
 	db   "Raises the SPCL."
 	next "ATK rating.@"
-
-RazorLeafDescription:
-	db   "Has a high criti-"
-	next "cal hit ratio.@"
 
 SolarbeamDescription:
 	db   "1st turn: Prepare"
@@ -780,6 +767,7 @@ ClampDescription:
 	next "2-5 turns.@"
 
 SwiftDescription:
+CharmVoiceDescription:
 	db   "An attack that"
 	next "never misses.@"
 
@@ -871,10 +859,6 @@ AcidArmorDescription:
 	db   "Sharply raises the"
 	next "user's DEFENSE.@"
 
-CrabhammerDescription:
-	db   "Has a high criti-"
-	next "cal hit ratio.@"
-
 ExplosionDescription:
 	db   "Very powerful but"
 	next "makes user faint.@"
@@ -914,10 +898,6 @@ TriAttackDescription:
 SuperFangDescription:
 	db   "Cuts the foe's HP"
 	next "by 1/2.@"
-
-SlashDescription:
-	db   "Has a high criti-"
-	next "cal hit ratio.@"
 
 SubstituteDescription:
 	db   "Makes a decoy with"
@@ -970,10 +950,6 @@ FlailDescription:
 Conversion2Description:
 	db   "The user's type is"
 	next "made resistant.@"
-
-AeroblastDescription:
-	db   "Has a high criti-"
-	next "cal hit ratio.@"
 
 CottonSporeDescription:
 	db   "Sharply reduces"
@@ -1216,10 +1192,6 @@ HiddenPowerDescription:
 	db   "The power varies"
 	next "with the #MON.@"
 
-CrossChopDescription:
-	db   "Has a high criti-"
-	next "cal hit ratio.@"
-
 TwisterDescription:
 	db   "Whips up a tornado"
 	next "to attack.@"
@@ -1271,3 +1243,15 @@ WhirlpoolDescription:
 BeatUpDescription:
 	db   "Party #MON join"
 	next "in the attack.@"
+
+LeafageDescription:
+	db   "An attack by pelt-"
+	next "ing with leaves.@"
+
+SnarlDescription:
+	db   "An attack lower"
+	next "foes sp.atk.@"
+
+MoonblastDescription:
+	db   "An attack may low-"
+	next "er foes sp.atk.@"

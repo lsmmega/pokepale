@@ -14,14 +14,11 @@ BattleAnimations::
 	dw BattleAnim_Scratch
 	dw BattleAnim_Vicegrip
 	dw BattleAnim_Guillotine
-	dw BattleAnim_RazorWind
 	dw BattleAnim_SwordsDance
 	dw BattleAnim_Cut
 	dw BattleAnim_Gust
 	dw BattleAnim_WingAttack
-	dw BattleAnim_Whirlwind
 	dw BattleAnim_Fly
-	dw BattleAnim_Bind
 	dw BattleAnim_Slam
 	dw BattleAnim_VineWhip
 	dw BattleAnim_Stomp
@@ -166,7 +163,6 @@ BattleAnimations::
 	dw BattleAnim_SuperFang
 	dw BattleAnim_Slash
 	dw BattleAnim_Substitute
-	dw BattleAnim_Struggle
 	dw BattleAnim_Sketch
 	dw BattleAnim_TripleKick
 	dw BattleAnim_Thief
@@ -254,12 +250,17 @@ BattleAnimations::
 	dw BattleAnim_Whirlpool
 	dw BattleAnim_BeatUp
 	dw BattleAnim_Hail
+	dw BattleAnim_LeafBlade
+	dw BattleAnim_DarkPulse
+	dw BattleAnim_Snarl
+	dw BattleAnim_CharmVoice
+	dw BattleAnim_MoonBlast
+	dw BattleAnim_Leafage
+	dw BattleAnim_Struggle
 	assert_table_length NUM_ATTACKS + 1
-	dw BattleAnim_Dummy
-	dw BattleAnim_Dummy
 	dw BattleAnim_SweetScent2
-	assert_table_length $100
-; $100
+	assert_table_length $101
+; $101
 	dw BattleAnim_ThrowPokeBall
 	dw BattleAnim_SendOutMon
 	dw BattleAnim_ReturnMon
@@ -287,6 +288,12 @@ BattleAnimations::
 
 BattleAnim_Dummy:
 BattleAnim_MirrorMove:
+BattleAnim_LeafBlade:
+BattleAnim_DarkPulse:
+BattleAnim_Snarl:
+BattleAnim_CharmVoice:
+BattleAnim_MoonBlast:
+BattleAnim_Leafage:
 	anim_ret
 
 BattleAnim_SweetScent2:
@@ -1291,31 +1298,6 @@ BattleAnim_Thunder:
 	anim_wait 48
 	anim_ret
 
-BattleAnim_RazorWind:
-	anim_if_param_equal $1, BattleAnim_FocusEnergy
-	anim_1gfx BATTLE_ANIM_GFX_WHIP
-	anim_bgeffect BATTLE_BG_EFFECT_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $1, $0
-.loop
-	anim_bgeffect BATTLE_BG_EFFECT_FLASH_INVERTED, $0, $4, $2
-	anim_sound 0, 1, SFX_RAZOR_WIND
-	anim_obj BATTLE_ANIM_OBJ_RAZOR_WIND2, 152, 40, $3
-	anim_wait 4
-	anim_sound 0, 1, SFX_RAZOR_WIND
-	anim_obj BATTLE_ANIM_OBJ_RAZOR_WIND2, 136, 56, $3
-	anim_wait 4
-	anim_sound 0, 1, SFX_RAZOR_WIND
-	anim_obj BATTLE_ANIM_OBJ_RAZOR_WIND2, 152, 64, $3
-	anim_wait 4
-	anim_sound 0, 1, SFX_RAZOR_WIND
-	anim_obj BATTLE_ANIM_OBJ_RAZOR_WIND1, 120, 40, $83
-	anim_wait 4
-	anim_sound 0, 1, SFX_RAZOR_WIND
-	anim_obj BATTLE_ANIM_OBJ_RAZOR_WIND1, 120, 64, $83
-	anim_wait 4
-	anim_loop 3, .loop
-	anim_wait 24
-	anim_ret
-
 BattleAnim_Sonicboom_JP: ; unreferenced
 	anim_2gfx BATTLE_ANIM_GFX_WHIP, BATTLE_ANIM_GFX_HIT
 .loop
@@ -1764,22 +1746,6 @@ BattleAnim_Bide:
 	anim_call BattleAnim_ShowMon_0
 	anim_ret
 
-BattleAnim_Bind:
-	anim_1gfx BATTLE_ANIM_GFX_ROPE
-	anim_sound 0, 1, SFX_BIND
-	anim_obj BATTLE_ANIM_OBJ_BIND1, 132, 64, $0
-	anim_wait 8
-	anim_obj BATTLE_ANIM_OBJ_BIND2, 132, 56, $0
-	anim_wait 8
-	anim_obj BATTLE_ANIM_OBJ_BIND1, 132, 48, $0
-	anim_wait 64
-	anim_sound 0, 1, SFX_BIND
-	anim_incobj 1
-	anim_incobj 2
-	anim_incobj 3
-	anim_wait 96
-	anim_ret
-
 BattleAnim_Wrap:
 	anim_1gfx BATTLE_ANIM_GFX_ROPE
 	anim_sound 0, 1, SFX_BIND
@@ -2157,30 +2123,6 @@ BattleAnim_Submission:
 	anim_wait 32
 	anim_incbgeffect BATTLE_BG_EFFECT_WOBBLE_MON
 	anim_call BattleAnim_ShowMon_1
-	anim_ret
-
-BattleAnim_Whirlwind:
-	anim_1gfx BATTLE_ANIM_GFX_WIND
-.loop
-	anim_sound 0, 0, SFX_RAZOR_WIND
-	anim_obj BATTLE_ANIM_OBJ_GUST, 64, 112, $0
-	anim_wait 6
-	anim_loop 9, .loop
-	anim_incobj 1
-	anim_incobj 2
-	anim_incobj 3
-	anim_incobj 4
-	anim_incobj 5
-	anim_incobj 6
-	anim_incobj 7
-	anim_incobj 8
-	anim_incobj 9
-	anim_sound 16, 2, SFX_WHIRLWIND
-	anim_wait 128
-	anim_if_param_equal $0, .done
-	anim_bgeffect BATTLE_BG_EFFECT_REMOVE_MON, $0, BG_EFFECT_TARGET, $0
-	anim_wait 64
-.done
 	anim_ret
 
 BattleAnim_Hypnosis:
@@ -4612,7 +4554,6 @@ BattleAnim_InHail:
 	anim_loop 8, .loop
 	anim_wait 8
 	anim_ret
-
 
 BattleAnimSub_Drain:
 	anim_obj BATTLE_ANIM_OBJ_DRAIN, 132, 44, $0

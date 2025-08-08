@@ -1,32 +1,39 @@
 PokedexDataPointerTable:
 ; entries correspond to constants/pokemon_constants.asm
 	table_width 2
-	dw BulbasaurPokedexEntry
-	dw IvysaurPokedexEntry
-	dw VenusaurPokedexEntry
-	dw CharmanderPokedexEntry
-	dw CharmeleonPokedexEntry
-	dw CharizardPokedexEntry
-	dw SquirtlePokedexEntry
-	dw WartortlePokedexEntry
-	dw BlastoisePokedexEntry
+	dw RowletPokedexEntry
+	dw DartrixPokedexEntry
+	dw DecidueyePokedexEntry
+	dw ChimcharPokedexEntry
+	dw MonfernoPokedexEntry
+	dw InfernapePokedexEntry
+	dw FroakiePokedexEntry
+	dw FrogadierPokedexEntry
+	dw GreninjaPokedexEntry
+	dw PichuPokedexEntry
+	dw PikachuPokedexEntry
+	dw RaichuPokedexEntry
+	dw EeveePokedexEntry
+	dw VaporeonPokedexEntry
+	dw JolteonPokedexEntry
+	dw FlareonPokedexEntry
+	dw EspeonPokedexEntry
+	dw UmbreonPokedexEntry
+	dw LeafeonPokedexEntry
+	dw GlaceonPokedexEntry
+	dw SylveonPokedexEntry
 	dw CaterpiePokedexEntry
 	dw MetapodPokedexEntry
 	dw ButterfreePokedexEntry
 	dw WeedlePokedexEntry
 	dw KakunaPokedexEntry
 	dw BeedrillPokedexEntry
-	dw PidgeyPokedexEntry
-	dw PidgeottoPokedexEntry
-	dw PidgeotPokedexEntry
 	dw RattataPokedexEntry
 	dw RaticatePokedexEntry
 	dw SpearowPokedexEntry
 	dw FearowPokedexEntry
 	dw EkansPokedexEntry
 	dw ArbokPokedexEntry
-	dw PikachuPokedexEntry
-	dw RaichuPokedexEntry
 	dw SandshrewPokedexEntry
 	dw SandslashPokedexEntry
 	dw NidoranFPokedexEntry
@@ -133,10 +140,6 @@ PokedexDataPointerTable:
 	dw GyaradosPokedexEntry
 	dw LaprasPokedexEntry
 	dw DittoPokedexEntry
-	dw EeveePokedexEntry
-	dw VaporeonPokedexEntry
-	dw JolteonPokedexEntry
-	dw FlareonPokedexEntry
 	dw PorygonPokedexEntry
 	dw OmanytePokedexEntry
 	dw OmastarPokedexEntry
@@ -172,7 +175,6 @@ PokedexDataPointerTable:
 	dw CrobatPokedexEntry
 	dw ChinchouPokedexEntry
 	dw LanturnPokedexEntry
-	dw PichuPokedexEntry
 	dw CleffaPokedexEntry
 	dw IgglybuffPokedexEntry
 	dw TogepiPokedexEntry
@@ -196,8 +198,6 @@ PokedexDataPointerTable:
 	dw YanmaPokedexEntry
 	dw WooperPokedexEntry
 	dw QuagsirePokedexEntry
-	dw EspeonPokedexEntry
-	dw UmbreonPokedexEntry
 	dw MurkrowPokedexEntry
 	dw SlowkingPokedexEntry
 	dw MisdreavusPokedexEntry

@@ -179,12 +179,12 @@ LongAnim_UpdateVariables:
 	ld c, a
 	ld a, [hli]
 	ld b, a
-; BUG: HP bar animation is slow for high HP (see docs/bugs_and_glitches.md)
+
 	call ComputeHPBarPixels
+	ld a, e
 	pop bc
 	pop de
 	pop hl
-	ld a, e
 	ld hl, wCurHPBarPixels
 	cp [hl]
 	jr z, .loop
@@ -314,13 +314,13 @@ HPBarAnim_BGMapUpdate:
 	ld a, $2
 	ldh [hBGMapMode], a
 	ld a, c
-	ldh [hBGMapThird], a
+	ldh [hBGMapHalf], a
 	call DelayFrame
 .skip_delay
 	ld a, $1
 	ldh [hBGMapMode], a
 	ld a, c
-	ldh [hBGMapThird], a
+	ldh [hBGMapHalf], a
 	call DelayFrame
 	pop af
 	cp $2
@@ -334,12 +334,12 @@ HPBarAnim_BGMapUpdate:
 	ld a, $2
 	ldh [hBGMapMode], a
 	ld a, c
-	ldh [hBGMapThird], a
+	ldh [hBGMapHalf], a
 	call DelayFrame
 	ld a, $1
 	ldh [hBGMapMode], a
 	ld a, c
-	ldh [hBGMapThird], a
+	ldh [hBGMapHalf], a
 	call DelayFrame
 	ret
 
@@ -352,7 +352,7 @@ HPBarAnim_BGMapUpdate:
 .finish
 	call DelayFrame
 	ld a, c
-	ldh [hBGMapThird], a
+	ldh [hBGMapHalf], a
 	call DelayFrame
 	ret
 

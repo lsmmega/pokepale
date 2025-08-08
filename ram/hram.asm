@@ -44,22 +44,22 @@ hJoyLast::        db
 
 hInMenu:: db
 
-	ds 1
-
-hPrinter:: db
-hGraphicStartTile:: db
 hMoveMon:: db
 
 UNION
+hPrinter:: db
+hGraphicStartTile:: db
 hMapObjectIndex:: db
 hObjectStructIndex:: db
 NEXTU
+hMapBorderBlock:: db
+hMapWidthPlus6:: db
 hConnectionStripLength:: db
 hConnectedMapWidth:: db
 ENDU
 
-hEnemyMonSpeed:: dw
-
+hEnemyMonSpeed:: db
+hBigMultiplicand:: db
 UNION
 ; math-related values
 
@@ -81,8 +81,8 @@ hQuotient::     ds 4
 hRemainder::    db
 ENDU
 
-hMathBuffer:: ds 5
-
+hMathBuffer:: db
+hMultiplierStor:: ds 4
 NEXTU
 ; PrintNum scratch space
 hPrintNumBuffer:: ds 10
@@ -136,7 +136,7 @@ hWX::            db
 hWY::            db
 hTilesPerCycle:: db
 hBGMapMode::     db
-hBGMapThird::    db
+hBGMapHalf::     db
 hBGMapAddress::  dw
 
 hOAMUpdate:: db
@@ -171,7 +171,10 @@ hMobile:: db
 hSystemBooted:: db
 
 hClockResetTrigger:: db
-
-	ds 19
+hRequested2bpp:: db
+hRequested1bpp:: db
+hRequestedVTileDest:: dw
+hRequestedVTileSource:: dw
+	ds 13
 
 ENDSECTION

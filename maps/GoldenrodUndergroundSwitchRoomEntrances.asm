@@ -167,31 +167,31 @@ UndergroundRivalBattleScript:
 	waitbutton
 	closetext
 	setevent EVENT_RIVAL_GOLDENROD_UNDERGROUND
-	checkevent EVENT_GOT_TOTODILE_FROM_ELM
-	iftrue .Totodile
-	checkevent EVENT_GOT_CHIKORITA_FROM_ELM
-	iftrue .Chikorita
+	checkevent EVENT_GOT_FROAKIE_FROM_ELM
+	iftrue .Quaxly
+	checkevent EVENT_GOT_ROWLET_FROM_ELM
+	iftrue .Turtwig
 	winlosstext UndergroundRivalWinText, UndergroundRivalLossText
 	setlasttalked GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_RIVAL
-	loadtrainer RIVAL1, RIVAL1_4_TOTODILE
+	loadtrainer RIVAL1, RIVAL1_4_FROAKIE
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
 	sjump .FinishRivalBattle
 
-.Totodile:
+.Quaxly:
 	winlosstext UndergroundRivalWinText, UndergroundRivalLossText
 	setlasttalked GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_RIVAL
-	loadtrainer RIVAL1, RIVAL1_4_CHIKORITA
+	loadtrainer RIVAL1, RIVAL1_4_ROWLET
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
 	sjump .FinishRivalBattle
 
-.Chikorita:
+.Turtwig:
 	winlosstext UndergroundRivalWinText, UndergroundRivalLossText
 	setlasttalked GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_RIVAL
-	loadtrainer RIVAL1, RIVAL1_4_CYNDAQUIL
+	loadtrainer RIVAL1, RIVAL1_4_CHIMCHAR
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
@@ -956,12 +956,12 @@ GoldenrodUndergroundSwitchRoomEntrances_MapEvents:
 	bg_event  1,  8, BGEVENT_ITEM, GoldenrodUndergroundSwitchRoomEntrancesHiddenRevive
 
 	def_object_events
-	object_event  9, 12, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerBurglarDuncan, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
-	object_event  4,  8, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerBurglarEddie, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
-	object_event 17,  2, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerGruntM13, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
-	object_event 11,  2, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerGruntM11, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
-	object_event  3,  2, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerGruntM25, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
-	object_event 19, 12, SPRITE_ROCKET_GIRL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerGruntF3, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
+	object_event  9, 12, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 0, TrainerBurglarDuncan, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
+	object_event  4,  8, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 0, TrainerBurglarEddie, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
+	object_event 17,  2, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 0, TrainerGruntM13, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
+	object_event 11,  2, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 0, TrainerGruntM11, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
+	object_event  3,  2, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 0, TrainerGruntM25, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
+	object_event 19, 12, SPRITE_ROCKET_GIRL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 0, TrainerGruntF3, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
 	object_event  3, 27, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodUndergroundSwitchRoomEntrancesTeacherScript, -1
 	object_event 19, 27, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodUndergroundSwitchRoomEntrancesSuperNerdScript, -1
 	object_event  1, 12, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, GoldenrodUndergroundSwitchRoomEntrancesSmokeBall, EVENT_GOLDENROD_UNDERGROUND_SWITCH_ROOM_ENTRANCES_SMOKE_BALL

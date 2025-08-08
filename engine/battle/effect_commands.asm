@@ -111,10 +111,10 @@ CheckTurn:
 BattleCommand_CheckTurn:
 ; Repurposed as hardcoded turn handling. Useless as a command.
 
-; Move $ff immediately ends the turn.
+; NO_MOVE immediately ends the turn.
 	ld a, BATTLE_VARS_MOVE
 	call GetBattleVar
-	inc a
+	and a ; NO_MOVE?
 	jp z, EndTurn
 
 	xor a
@@ -1077,7 +1077,6 @@ BattleCommand_DoTurn:
 	ret
 
 .continuousmoves
-	db EFFECT_RAZOR_WIND
 	db EFFECT_SKY_ATTACK
 	db EFFECT_SKULL_BASH
 	db EFFECT_SOLARBEAM
@@ -1726,8 +1725,6 @@ BattleCommand_CheckHit:
 
 	cp GUST
 	ret z
-	cp WHIRLWIND
-	ret z
 	cp THUNDER
 	ret z
 	cp TWISTER
@@ -1903,8 +1900,6 @@ BattleCommand_LowerSub:
 
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
-	cp EFFECT_RAZOR_WIND
-	jr z, .charge_turn
 	cp EFFECT_SKY_ATTACK
 	jr z, .charge_turn
 	cp EFFECT_SKULL_BASH
@@ -1922,9 +1917,6 @@ BattleCommand_LowerSub:
 	ret nz
 
 .charge_turn
-	call _CheckBattleScene
-	jr c, .mimic_anims
-
 	xor a
 	ld [wNumHits], a
 	ld [wFXAnimID + 1], a
@@ -1933,7 +1925,6 @@ BattleCommand_LowerSub:
 	ld a, SUBSTITUTE
 	jp LoadAnim
 
-.mimic_anims
 	call BattleCommand_LowerSubNoAnim
 	jp BattleCommand_MoveDelay
 
@@ -2067,9 +2058,6 @@ BattleCommand_RaiseSub:
 	call GetBattleVar
 	bit SUBSTATUS_SUBSTITUTE, a
 	ret z
-
-	call _CheckBattleScene
-	jp c, BattleCommand_RaiseSubNoAnim
 
 	xor a
 	ld [wNumHits], a
@@ -2660,10 +2648,6 @@ TruncateHL_BC:
 	inc l
 
 .finish
-; BUG: Reflect and Light Screen can make (Special) Defense wrap around above 1024 (see docs/bugs_and_glitches.md)
-	ld a, [wLinkMode]
-	cp LINK_COLOSSEUM
-	jr z, .done
 ; If we go back to the loop point,
 ; it's the same as doing this exact
 ; same check twice.
@@ -2671,7 +2655,6 @@ TruncateHL_BC:
 	or b
 	jr nz, .loop
 
-.done
 	ld b, l
 	ret
 
@@ -4256,14 +4239,7 @@ MinimizeDropSub:
 
 	ld a, $1
 	ld [bc], a
-	call _CheckBattleScene
-	ret nc
-
-	xor a
-	ldh [hBGMapMode], a
-	call CallBattleCore
-	call WaitBGMap
-	jp BattleCommand_MoveDelay
+	ret
 
 BattleCommand_AttackDown:
 	ld a, ATTACK
@@ -5558,9 +5534,6 @@ BattleCommand_Charge:
 	text_asm
 	ld a, BATTLE_VARS_MOVE_ANIM
 	call GetBattleVar
-	cp RAZOR_WIND
-	ld hl, .BattleMadeWhirlwindText
-	jr z, .done
 
 	cp SOLARBEAM
 	ld hl, .BattleTookSunlightText
@@ -5583,10 +5556,6 @@ BattleCommand_Charge:
 
 .done
 	ret
-
-.BattleMadeWhirlwindText:
-	text_far _BattleMadeWhirlwindText
-	text_end
 
 .BattleTookSunlightText:
 	text_far _BattleTookSunlightText
@@ -5660,7 +5629,6 @@ BattleCommand_TrapTarget:
 	jp StdBattleTextbox
 
 .Traps:
-	dbw BIND,      UsedBindText      ; 'used BIND on'
 	dbw WRAP,      WrappedByText     ; 'was WRAPPED by'
 	dbw FIRE_SPIN, FireSpinTrapText  ; 'was trapped!'
 	dbw CLAMP,     ClampedByText     ; 'was CLAMPED by'
@@ -6772,17 +6740,6 @@ AppearUserLowerSub:
 
 AppearUserRaiseSub:
 	farcall _AppearUserRaiseSub
-	ret
-
-_CheckBattleScene:
-; Checks the options.  Returns carry if battle animations are disabled.
-	push hl
-	push de
-	push bc
-	farcall CheckBattleScene
-	pop bc
-	pop de
-	pop hl
 	ret
 
 SandstormSpDefBoost: 

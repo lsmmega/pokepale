@@ -692,8 +692,6 @@ PokeBallEffect:
 	ld a, [wBattleType]
 	cp BATTLETYPE_TUTORIAL
 	ret z
-	cp BATTLETYPE_DEBUG
-	ret z
 	cp BATTLETYPE_CONTEST
 	jr z, .used_park_ball
 

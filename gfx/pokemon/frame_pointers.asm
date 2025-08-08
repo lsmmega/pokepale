@@ -1,31 +1,38 @@
 FramesPointers:
 	table_width 2
-	dw BulbasaurFrames
-	dw IvysaurFrames
-	dw VenusaurFrames
-	dw CharmanderFrames
-	dw CharmeleonFrames
-	dw CharizardFrames
-	dw SquirtleFrames
-	dw WartortleFrames
-	dw BlastoiseFrames
+	dw RowletFrames
+	dw DartrixFrames
+	dw DecidueyeFrames
+	dw ChimcharFrames
+	dw MonfernoFrames
+	dw InfernapeFrames
+	dw FroakieFrames
+	dw FrogadierFrames
+	dw GreninjaFrames
+	dw PichuFrames
+	dw PikachuFrames
+	dw RaichuFrames
+	dw EeveeFrames
+	dw VaporeonFrames
+	dw JolteonFrames
+	dw FlareonFrames
+	dw EspeonFrames
+	dw UmbreonFrames
+	dw LeafeonFrames
+	dw GlaceonFrames
+	dw SylveonFrames
 	dw CaterpieFrames
 	dw MetapodFrames
 	dw ButterfreeFrames
 	dw WeedleFrames
 	dw KakunaFrames
 	dw BeedrillFrames
-	dw PidgeyFrames
-	dw PidgeottoFrames
-	dw PidgeotFrames
 	dw RattataFrames
 	dw RaticateFrames
 	dw SpearowFrames
 	dw FearowFrames
 	dw EkansFrames
 	dw ArbokFrames
-	dw PikachuFrames
-	dw RaichuFrames
 	dw SandshrewFrames
 	dw SandslashFrames
 	dw NidoranFFrames
@@ -132,10 +139,6 @@ FramesPointers:
 	dw GyaradosFrames
 	dw LaprasFrames
 	dw DittoFrames
-	dw EeveeFrames
-	dw VaporeonFrames
-	dw JolteonFrames
-	dw FlareonFrames
 	dw PorygonFrames
 	dw OmanyteFrames
 	dw OmastarFrames
@@ -171,7 +174,6 @@ FramesPointers:
 	dw CrobatFrames
 	dw ChinchouFrames
 	dw LanturnFrames
-	dw PichuFrames
 	dw CleffaFrames
 	dw IgglybuffFrames
 	dw TogepiFrames
@@ -195,8 +197,6 @@ FramesPointers:
 	dw YanmaFrames
 	dw WooperFrames
 	dw QuagsireFrames
-	dw EspeonFrames
-	dw UmbreonFrames
 	dw MurkrowFrames
 	dw SlowkingFrames
 	dw MisdreavusFrames

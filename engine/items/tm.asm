@@ -195,7 +195,7 @@ TM_PocketLoop:
 	ld [w2DMenuFlags2], a
 	ld a, $20
 	ld [w2DMenuCursorOffsets], a
-	ld a, A_BUTTON | B_BUTTON | D_UP | D_DOWN | D_LEFT | D_RIGHT
+	ld a, PAD_A | PAD_B | PAD_UP | PAD_DOWN | PAD_LEFT | PAD_RIGHT
 	ld [wMenuJoypadFilter], a
 	ld a, [wTMPocketCursor]
 	inc a
@@ -218,13 +218,13 @@ TM_JoypadLoop:
 	jp nz, TM_ScrollPocket
 	ld a, b
 	ld [wMenuJoypad], a
-	bit A_BUTTON_F, a
+	bit B_PAD_A, a
 	jp nz, TM_ChooseTM
-	bit B_BUTTON_F, a
+	bit B_PAD_B, a
 	jp nz, TM_ExitPack
-	bit D_RIGHT_F, a
+	bit B_PAD_RIGHT, a
 	jp nz, TM_ExitPocket
-	bit D_LEFT_F, a
+	bit B_PAD_LEFT, a
 	jp nz, TM_ExitPocket
 TM_ShowTMMoveDescription:
 	call TM_CheckHoveringOverCancel
@@ -279,7 +279,7 @@ TM_CheckHoveringOverCancel:
 TM_ExitPack:
 	call TM_PlaySFX_ReadText2
 _TM_ExitPack:
-	ld a, B_BUTTON
+	ld a, PAD_B
 	ld [wMenuJoypad], a
 	and a
 	ret
@@ -290,7 +290,7 @@ TM_ExitPocket:
 
 TM_ScrollPocket:
 	ld a, b
-	bit D_DOWN_F, a
+	bit B_PAD_DOWN, a
 	jr nz, .down
 	ld hl, wTMPocketScrollPosition
 	ld a, [hl]

@@ -209,23 +209,16 @@ Function170c8b:
 CheckBTMonMovesForErrors:
 	ld c, BATTLETOWER_PARTY_LENGTH
 	ld hl, wBT_OTTempMon1Moves
+
 .loop
 	push hl
-	ld a, [hl]
-	cp NUM_ATTACKS + 1
-	jr c, .okay
-	ld a, POUND
-	ld [hl], a
-
-.okay
-	inc hl
+	ld a, [hli]
 	ld b, NUM_MOVES - 1
+
 .loop2
 	ld a, [hl]
 	and a
-	jr z, .loop3
-	cp NUM_ATTACKS + 1
-	jr c, .next
+	jr nz, .next
 
 .loop3
 	xor a
@@ -249,10 +242,10 @@ CheckBTMonMovesForErrors:
 	ret
 
 Function170cc6:
-	ldh a, [rSVBK]
+	ldh a, [rWBK]
 	push af
 	ld a, BANK(wDecompressScratch)
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	ld hl, PichuAnimatedMobileGFX
 	ld de, wDecompressScratch
 	call Decompress
@@ -272,7 +265,7 @@ Function170cc6:
 	lb bc, BANK(wDecompressScratch), 83
 	call Get2bpp
 	pop af
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	ret
 
 Function170d02:
@@ -308,13 +301,13 @@ Function1719c8:
 Function1719d6:
 	farcall BattleTowerRoomMenu_InitRAM
 	call Function1719ed
-	ldh a, [rSVBK]
+	ldh a, [rWBK]
 	push af
 	ld a, $5
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	call Function171a11
 	pop af
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	ret
 
 Function1719ed:
@@ -380,13 +373,13 @@ Function171a5d:
 	ld [wMobileErrorCodeBuffer + 2], a
 	ld a, MOBILEAPI_05
 	call MobileAPI
-	ldh a, [rSVBK]
+	ldh a, [rWBK]
 	push af
 	ld a, $1
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	farcall BattleTowerRoomMenu_Cleanup
 	pop af
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	ld a, $a
 	ld [wcd49], a
 	ret
@@ -422,13 +415,13 @@ Function171ad7:
 	jp Function171c66
 
 Function171aec:
-	ldh a, [rSVBK]
+	ldh a, [rWBK]
 	push af
 	ld a, $1
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	farcall BattleTowerRoomMenu_Cleanup
 	pop af
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	hlcoord 2, 6
 	ld a, $8
 .asm_171b01
@@ -515,16 +508,16 @@ Function171b4b:
 Function171b85:
 	ld hl, hJoyPressed
 	ld a, [hl]
-	and B_BUTTON
+	and PAD_B
 	jp nz, Function171b9f
 	ld a, [hl]
-	and A_BUTTON
+	and PAD_A
 	jp nz, Function171bbd
 	ld a, [hl]
-	and D_UP
+	and PAD_UP
 	jr nz, asm_171ba5
 	ld a, [hl]
-	and D_DOWN
+	and PAD_DOWN
 	jr nz, asm_171baf
 	ret
 
@@ -562,10 +555,10 @@ Function171bbd:
 Function171bcc:
 	ld hl, hJoyPressed
 	ld a, [hl]
-	and B_BUTTON
+	and PAD_B
 	jp nz, Function171bdc
 	ld a, [hl]
-	and A_BUTTON
+	and PAD_A
 	jp nz, Function171beb
 	ret
 
@@ -654,7 +647,7 @@ Function171c87:
 	ld de, vTiles2 tile $00
 	ld bc, $6e tiles
 	call CopyBytes
-	ld hl, PasswordSlowpokeLZ
+	ld hl, PasswordBorderLZ
 	ld de, vTiles0 tile $00
 	call Decompress
 	call EnableLCD
@@ -675,10 +668,10 @@ Function171c87:
 	ret
 
 Function171ccd:
-	ldh a, [rSVBK]
+	ldh a, [rWBK]
 	push af
 	ld a, $5
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	ld hl, MobilePasswordPalettes
 	ld de, wBGPals1
 	ld bc, 8 palettes
@@ -690,7 +683,7 @@ Function171ccd:
 	ld [hl], a
 	call SetDefaultBGPAndOBP
 	pop af
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	ret
 
 Function171cf0:
@@ -726,7 +719,7 @@ Function171d2b:
 	ld de, vTiles2 tile $00
 	ld bc, $6e tiles
 	call CopyBytes
-	ld hl, PasswordSlowpokeLZ
+	ld hl, PasswordBorderLZ
 	ld de, vTiles0 tile $00
 	call Decompress
 	call EnableLCD
@@ -770,8 +763,8 @@ INCBIN "gfx/mobile/password.attrmap"
 ChooseMobileCenterAttrmap:
 INCBIN "gfx/mobile/mobile_center.attrmap"
 
-PasswordSlowpokeLZ:
-INCBIN "gfx/pokedex/slowpoke.2bpp.lz"
+PasswordBorderLZ:
+INCBIN "gfx/pokedex/border.2bpp.lz"
 
 String_172e31:
 	db "パスワード<WO>いれてください@"
@@ -811,10 +804,10 @@ Function172e78:
 	ret
 
 Function172eb9:
-	ldh a, [rSVBK]
+	ldh a, [rWBK]
 	push af
 	ld a, $5
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	ld hl, Palette_172edf
 	ld de, wBGPals1
 	ld bc, 8 palettes
@@ -825,7 +818,7 @@ Function172eb9:
 	call CopyBytes
 	call SetDefaultBGPAndOBP
 	pop af
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	ret
 
 Palette_172edf:

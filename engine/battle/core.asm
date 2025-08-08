@@ -53,10 +53,8 @@ DoBattle:
 	jp z, LostBattle
 	call SafeLoadTempTilemapToTilemap
 	ld a, [wBattleType]
-	cp BATTLETYPE_DEBUG
-	jp z, .tutorial_debug
 	cp BATTLETYPE_TUTORIAL
-	jp z, .tutorial_debug
+	jp z, .tutorial_
 	xor a
 	ld [wCurPartyMon], a
 .loop2
@@ -113,7 +111,7 @@ DoBattle:
 	call StartAutomaticBattleWeather
 	jp BattleTurn
 
-.tutorial_debug
+.tutorial_
 	jp BattleMenu
 
 StartAutomaticBattleWeather:
@@ -249,7 +247,7 @@ BattleTurn:
 	ld a, [wBattleEnded]
 	and a
 	jr nz, .quit
-	ld a, [wForcedSwitch] ; roared/whirlwinded/teleported
+	ld a, [wForcedSwitch] ; roared/teleported
 	and a
 	jr nz, .quit
 .skip_iteration
@@ -2420,14 +2418,9 @@ WinTrainerBattle:
 	cp BATTLETYPE_CANLOSE
 	jr nz, .skip_heal
 	predef HealParty
+
 .skip_heal
-
-	ld a, [wDebugFlags]
-	bit DEBUG_BATTLE_F, a
-	jr nz, .skip_win_loss_text
 	call PrintWinLossText
-.skip_win_loss_text
-
 	jp .give_money
 
 .mobile
@@ -2781,7 +2774,7 @@ ForcePlayerMonChoice:
 .enemy_fainted_mobile_error
 	call ClearSprites
 	call ClearBGPalettes
-	call _LoadHPBar
+	call _LoadExpBar
 	call ExitMenu
 	call LoadTilemapToTempTilemap
 	call WaitBGMap
@@ -2802,7 +2795,7 @@ ForcePlayerMonChoice:
 	call ResetPlayerStatLevels
 	call ClearPalettes
 	call DelayFrame
-	call _LoadHPBar
+	call _LoadExpBar
 	call CloseWindow
 	call GetMemSGBLayout
 	call SetDefaultBGPAndOBP
@@ -2968,12 +2961,7 @@ LostBattle:
 
 	ld c, 40
 	call DelayFrames
-
-	ld a, [wDebugFlags]
-	bit DEBUG_BATTLE_F, a
-	jr nz, .skip_win_loss_text
 	call PrintWinLossText
-.skip_win_loss_text
 	ret
 
 .battle_tower
@@ -3545,7 +3533,7 @@ OfferSwitch:
 	ld [wCurBattleMon], a
 	call ClearPalettes
 	call DelayFrame
-	call _LoadHPBar
+	call _LoadExpBar
 	pop af
 	ld [wCurPartyMon], a
 	xor a
@@ -3557,7 +3545,7 @@ OfferSwitch:
 .canceled_switch
 	call ClearPalettes
 	call DelayFrame
-	call _LoadHPBar
+	call _LoadExpBar
 
 .said_no
 	pop af
@@ -3612,16 +3600,12 @@ ShowSetEnemyMonAndSendOutAnimation:
 	farcall CheckFaintedFrzSlp
 	jr c, .skip_cry
 
-	farcall CheckBattleScene
-	jr c, .cry_no_anim
-
 	hlcoord 12, 0
 	ld d, $0
 	ld e, ANIM_MON_SLOW
 	predef AnimateFrontpic
 	jr .skip_cry
 
-.cry_no_anim
 	ld a, $f
 	ld [wCryTracks], a
 	ld a, [wTempEnemyMonSpecies]
@@ -3716,8 +3700,6 @@ CheckIfCurPartyMonIsFitToFight:
 TryToRunAwayFromBattle:
 ; Run away from battle, with or without item
 	ld a, [wBattleType]
-	cp BATTLETYPE_DEBUG
-	jp z, .can_escape
 	cp BATTLETYPE_CONTEST
 	jp z, .can_escape
 	cp BATTLETYPE_TRAP
@@ -4215,7 +4197,7 @@ PursuitSwitch:
 
 	ld a, BATTLE_VARS_MOVE
 	call GetBattleVarAddr
-	ld a, $ff
+	xor a ; NO_MOVE
 	ld [hl], a
 
 	pop af
@@ -4634,15 +4616,16 @@ DrawPlayerHUD:
 	lb bc, 5, 11
 	call ClearBox
 
-	farcall DrawPlayerHUDBorder
-
-	hlcoord 18, 9
-	ld [hl], $73 ; vertical bar
+	hlcoord 19, 11
+	ld [hl], $60
+	hlcoord 9, 11
+	ld a, $55
+	ld [hli], a
+	ld [hl], $56
 	call PrintPlayerHUD
 
 	; HP bar
 	hlcoord 10, 9
-	ld b, 1
 	xor a ; PARTYMON
 	ld [wMonType], a
 	predef DrawPlayerHP
@@ -4655,7 +4638,7 @@ DrawPlayerHUD:
 	ld d, h
 	ld e, l
 
-	hlcoord 10, 11
+	hlcoord 11, 11
 	ld a, [wTempMonLevel]
 	ld b, a
 	call FillInExpBar
@@ -4771,8 +4754,17 @@ DrawEnemyHUD:
 	lb bc, 4, 11
 	call ClearBox
 
-	farcall DrawEnemyHUDBorder
+	ld a, [wBattleMode]
+	dec a
+	jr nz, .SkipCheckCaughtMon
+	ld a, [wTempEnemyMonSpecies]
+	dec a
+	call CheckCaughtMon
+	jr z, .SkipCheckCaughtMon
+	hlcoord 1, 1
+	ld [hl], $6f
 
+.SkipCheckCaughtMon
 	ld a, [wTempEnemyMonSpecies]
 	ld [wCurSpecies], a
 	ld [wCurPartySpecies], a
@@ -4891,7 +4883,6 @@ DrawEnemyHUD:
 	xor a
 	ld [wWhichHPBar], a
 	hlcoord 2, 2
-	ld b, 0
 	call DrawBattleHPBar
 	ret
 
@@ -4918,8 +4909,6 @@ BattleMenu:
 	call LoadTempTilemapToTilemap
 
 	ld a, [wBattleType]
-	cp BATTLETYPE_DEBUG
-	jr z, .ok
 	cp BATTLETYPE_TUTORIAL
 	jr z, .ok
 	call EmptyBattleTextbox
@@ -5133,7 +5122,7 @@ BattleMenuPKMN_Loop:
 	call ClearSprites
 	call ClearPalettes
 	call DelayFrame
-	call _LoadHPBar
+	call _LoadExpBar
 	call CloseWindow
 	call LoadTilemapToTempTilemap
 	call GetMemSGBLayout
@@ -5220,7 +5209,7 @@ TryPlayerSwitch:
 	call ClearPalettes
 	call DelayFrame
 	call ClearSprites
-	call _LoadHPBar
+	call _LoadExpBar
 	call CloseWindow
 	call GetMemSGBLayout
 	call SetDefaultBGPAndOBP
@@ -5444,15 +5433,15 @@ MoveSelectionScreen:
 	ld c, STATICMENU_ENABLE_LEFT_RIGHT | STATICMENU_ENABLE_START | STATICMENU_WRAP
 	ld a, [wMoveSelectionMenuType]
 	dec a
-	ld b, D_DOWN | D_UP | A_BUTTON
+	ld b, PAD_DOWN | PAD_UP | PAD_A
 	jr z, .okay
 	dec a
-	ld b, D_DOWN | D_UP | A_BUTTON | B_BUTTON
+	ld b, PAD_DOWN | PAD_UP | PAD_A | PAD_B
 	jr z, .okay
 	ld a, [wLinkMode]
 	and a
 	jr nz, .okay
-	ld b, D_DOWN | D_UP | A_BUTTON | B_BUTTON | SELECT
+	ld b, PAD_DOWN | PAD_UP | PAD_A | PAD_B | PAD_SELECT
 
 .okay
 	ld a, b
@@ -5490,13 +5479,13 @@ MoveSelectionScreen:
 	ld a, $1
 	ldh [hBGMapMode], a
 	call ScrollingMenuJoypad
-	bit D_UP_F, a
+	bit B_PAD_UP, a
 	jp nz, .pressed_up
-	bit D_DOWN_F, a
+	bit B_PAD_DOWN, a
 	jp nz, .pressed_down
-	bit SELECT_F, a
+	bit B_PAD_SELECT, a
 	jp nz, .pressed_select
-	bit B_BUTTON_F, a
+	bit B_PAD_B, a
 	; A button
 	push af
 
@@ -6478,6 +6467,10 @@ LoadEnemyMon:
 
 	ld a, [wBaseExp]
 	ld [de], a
+	inc de
+
+	ld a, [wBaseExp + 1]
+	ld [de], a
 
 	ld a, [wTempEnemyMonSpecies]
 	ld [wNamedObjectIndex], a
@@ -6620,7 +6613,7 @@ BattleWinSlideInEnemyTrainerFrontpic:
 	ret z
 	xor a
 	ldh [hBGMapMode], a
-	ldh [hBGMapThird], a
+	ldh [hBGMapHalf], a
 	ld d, $0
 	push bc
 	push hl
@@ -6950,23 +6943,9 @@ _LoadBattleFontsHPBar:
 	callfar LoadBattleFontsHPBar
 	ret
 
-_LoadHPBar:
-	callfar LoadHPBar
+_LoadExpBar:
+	callfar LoadExpBar
 	ret
-
-LoadHPExpBarGFX: ; unreferenced
-	ld de, EnemyHPBarBorderGFX
-	ld hl, vTiles2 tile $6c
-	lb bc, BANK(EnemyHPBarBorderGFX), 4
-	call Get1bpp
-	ld de, HPExpBarBorderGFX
-	ld hl, vTiles2 tile $73
-	lb bc, BANK(HPExpBarBorderGFX), 6
-	call Get1bpp
-	ld de, ExpBarGFX
-	ld hl, vTiles2 tile $55
-	lb bc, BANK(ExpBarGFX), 8
-	jp Get2bpp
 
 EmptyBattleTextbox:
 	ld hl, .empty
@@ -7167,18 +7146,7 @@ GiveExperiencePoints:
 	cp MAX_LEVEL
 	jp nc, .next_mon
 	push bc
-	xor a
-	ldh [hMultiplicand + 0], a
-	ldh [hMultiplicand + 1], a
-	ld a, [wEnemyMonBaseExp]
-	ldh [hMultiplicand + 2], a
-	ld a, [wEnemyMonLevel]
-	ldh [hMultiplier], a
-	call Multiply
-	ld a, 7
-	ldh [hDivisor], a
-	ld b, 4
-	call Divide
+	farcall ScaledExpCalculation
 ; Boost Experience for traded Pokemon
 	pop bc
 	ld hl, MON_OT_ID
@@ -7209,20 +7177,18 @@ GiveExperiencePoints:
 	ld a, [hl]
 	cp LUCKY_EGG
 	call z, BoostExp
-	ldh a, [hQuotient + 3]
-	ld [wStringBuffer2 + 1], a
-	ldh a, [hQuotient + 2]
-	ld [wStringBuffer2], a
 	ld a, [wCurPartyMon]
 	ld hl, wPartyMonNicknames
 	call GetNickname
 	ld hl, Text_MonGainedExpPoint
 	call BattleTextbox
-	ld a, [wStringBuffer2 + 1]
-	ldh [hQuotient + 3], a
-	ld a, [wStringBuffer2]
-	ldh [hQuotient + 2], a
 	pop bc
+	ld a, [wExpScratch40_1 + 2]
+	ldh [hQuotient + 3], a
+	ld a, [wExpScratch40_1 + 1]
+	ldh [hQuotient + 2], a
+	ld a, [wExpScratch40_1]
+	ldh [hQuotient + 1], a
 	call AnimateExpBar
 	push bc
 	call LoadTilemapToTempTilemap
@@ -7236,6 +7202,10 @@ GiveExperiencePoints:
 	ld d, [hl]
 	ldh a, [hQuotient + 2]
 	adc d
+	ld [hld], a
+	ld d, [hl]
+	ldh a, [hQuotient + 1]
+	add d
 	ld [hl], a
 	jr nc, .no_exp_overflow
 	dec hl
@@ -7461,20 +7431,19 @@ GiveExperiencePoints:
 BoostExp:
 ; Multiply experience by 1.5x
 	push bc
-; load experience value
-	ldh a, [hProduct + 2]
-	ld b, a
-	ldh a, [hProduct + 3]
-	ld c, a
-; halve it
-	srl b
-	rr c
-; add it back to the whole exp value
-	add c
-	ldh [hProduct + 3], a
-	ldh a, [hProduct + 2]
-	adc b
-	ldh [hProduct + 2], a
+	ld a, $3
+	ldh [hMultiplier], a
+	call Multiply
+	ld a, $2
+	ldh [hDivisor], a
+	ld b, $4
+	call Divide
+	ld a, [hProduct + 3]
+	ld [wExpScratch40_1 + 2], a
+	ld a, [hProduct + 2]
+	ld [wExpScratch40_1 + 1], a
+	ld a, [hProduct + 1]
+	ld [wExpScratch40_1], a
 	pop bc
 	ret
 
@@ -7515,8 +7484,9 @@ AnimateExpBar:
 	ldh a, [hProduct + 2]
 	ld [wExperienceGained + 1], a
 	push af
-	xor a
+	ldh a, [hProduct + 1]
 	ld [wExperienceGained], a
+	push af
 	xor a ; PARTYMON
 	ld [wMonType], a
 	predef CopyMonToTempMon
@@ -7533,6 +7503,9 @@ AnimateExpBar:
 	ld [hld], a
 	ld a, [wExperienceGained + 1]
 	adc [hl]
+	ld [hld], a
+	ld a, [wExperienceGained]
+	add [hl]
 	ld [hld], a
 	jr nc, .NoOverflow
 	inc [hl]
@@ -7620,6 +7593,8 @@ AnimateExpBar:
 	call .LoopBarAnimation
 	call TerminateExpBarSound
 	pop af
+	ldh [hProduct + 1], a
+	pop af
 	ldh [hProduct + 2], a
 	pop af
 	ldh [hProduct + 3], a
@@ -7645,42 +7620,16 @@ AnimateExpBar:
 	inc b
 	push bc
 	push de
-	hlcoord 17, 11
+	hlcoord 11, 11
 	call PlaceExpBar
 	pop de
 	ld a, $1
-	ldh [hBGMapMode], a
-	ld c, d
-	call DelayFrames
-	xor a
-	ldh [hBGMapMode], a
-	pop bc
-	ld a, c
-	cp b
-	jr z, .end_animation
-	inc b
-	push bc
-	push de
-	hlcoord 17, 11
-	call PlaceExpBar
-	pop de
-	ld a, $1
-	ldh [hBGMapMode], a
-	ld c, d
-	call DelayFrames
-	xor a
-	ldh [hBGMapMode], a
-	dec d
-	jr nz, .min_number_of_frames
-	ld d, 1
-.min_number_of_frames
+	ldh [hBGMapHalf], a
+	call DelayFrame
 	pop bc
 	ld a, c
 	cp b
 	jr nz, .anim_loop
-.end_animation
-	ld a, $1
-	ldh [hBGMapMode], a
 	ret
 
 SendOutMonText:
@@ -7883,8 +7832,6 @@ FillInExpBar:
 	push hl
 	call CalcExpBar
 	pop hl
-	ld de, 7
-	add hl, de
 	jp PlaceExpBar
 
 CalcExpBar:
@@ -7993,8 +7940,8 @@ PlaceExpBar:
 	sub $8
 	jr c, .next
 	ld b, a
-	ld a, $6a ; full bar
-	ld [hld], a
+	ld a, $5f ; full bar
+	ld [hli], a
 	dec c
 	jr z, .finish
 	jr .loop1
@@ -8002,15 +7949,15 @@ PlaceExpBar:
 .next
 	add $8
 	jr z, .loop2
-	add $54 ; tile to the left of small exp bar tile
+	add $57 ; tile to the left of small exp bar tile
 	jr .skip
 
 .loop2
-	ld a, $62 ; empty bar
+	ld a, $57 ; empty bar
 
 .skip
-	ld [hld], a
-	ld a, $62 ; empty bar
+	ld [hli], a
+	ld a, $57 ; empty bar
 	dec c
 	jr nz, .loop2
 
@@ -8127,11 +8074,11 @@ BattleIntro:
 	ld b, SCGB_BATTLE_GRAYSCALE
 	call GetSGBLayout
 	ld hl, rLCDC
-	res rLCDC_WINDOW_TILEMAP, [hl] ; select vBGMap0/vBGMap2
+	res B_LCDC_WIN_MAP, [hl] ; select vBGMap0/vBGMap2
 	call InitBattleDisplay
 	call BattleStartMessage
 	ld hl, rLCDC
-	set rLCDC_WINDOW_TILEMAP, [hl] ; select vBGMap1/vBGMap3
+	set B_LCDC_WIN_MAP, [hl] ; select vBGMap1/vBGMap3
 	xor a
 	ldh [hBGMapMode], a
 	call EmptyBattleTextbox
@@ -8167,10 +8114,10 @@ InitEnemy:
 	jp InitEnemyWildmon ; wild
 
 BackUpBGMap2:
-	ldh a, [rSVBK]
+	ldh a, [rWBK]
 	push af
 	ld a, BANK(wDecompressScratch)
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	ld hl, wDecompressScratch
 	ld bc, $40 tiles ; vBGMap3 - vBGMap2
 	ld a, $2
@@ -8186,7 +8133,7 @@ BackUpBGMap2:
 	pop af
 	ldh [rVBK], a
 	pop af
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	ret
 
 InitEnemyTrainer:
@@ -8527,7 +8474,7 @@ _DisplayLinkRecord:
 	call CloseSRAM
 	hlcoord 0, 0, wAttrmap
 	xor a
-	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
+	ld bc, SCREEN_AREA
 	call ByteFill
 	call WaitBGMap2
 	ld b, SCGB_DIPLOMA
@@ -9020,23 +8967,23 @@ InitBattleDisplay:
 	ret
 
 .BlankBGMap:
-	ldh a, [rSVBK]
+	ldh a, [rWBK]
 	push af
 	ld a, BANK(wDecompressScratch)
-	ldh [rSVBK], a
+	ldh [rWBK], a
 
 	ld hl, wDecompressScratch
-	ld bc, BG_MAP_WIDTH * BG_MAP_HEIGHT
+	ld bc, TILEMAP_AREA
 	ld a, " "
 	call ByteFill
 
 	ld de, wDecompressScratch
 	hlbgcoord 0, 0
-	lb bc, BANK(@), (BG_MAP_WIDTH * BG_MAP_HEIGHT) / LEN_2BPP_TILE
+	lb bc, BANK(@), TILEMAP_AREA / TILE_SIZE
 	call Request2bpp
 
 	pop af
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	ret
 
 .InitBackPic:
@@ -9078,10 +9025,10 @@ GetTrainerBackpic:
 	ret
 
 CopyBackpic:
-	ldh a, [rSVBK]
+	ldh a, [rWBK]
 	push af
 	ld a, BANK(wDecompressScratch)
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	ld hl, vTiles0
 	ld de, vTiles2 tile $31
 	ldh a, [hROMBank]
@@ -9089,7 +9036,7 @@ CopyBackpic:
 	ld c, 7 * 7
 	call Get2bpp
 	pop af
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	call .LoadTrainerBackpicAsOAM
 	ld a, $31
 	ldh [hGraphicStartTile], a
@@ -9167,16 +9114,12 @@ BattleStartMessage:
 	farcall CheckSleepingTreeMon
 	jr c, .skip_cry
 
-	farcall CheckBattleScene
-	jr c, .cry_no_anim
-
 	hlcoord 12, 0
 	ld d, $0
 	ld e, ANIM_MON_NORMAL
 	predef AnimateFrontpic
 	jr .skip_cry ; cry is played during the animation
 
-.cry_no_anim
 	ld a, $f
 	ld [wCryTracks], a
 	ld a, [wTempEnemyMonSpecies]

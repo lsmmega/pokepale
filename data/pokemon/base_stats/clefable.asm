@@ -5,14 +5,11 @@
 
 	db FAIRY, FAIRY ; type
 	db 25 ; catch rate
-	db 129 ; base exp
+	dw 217 ; base exp
 	db MYSTERYBERRY, MOON_STONE ; items
 	db GENDER_F75 ; gender ratio
-	db 100 ; unknown 1
 	db 10 ; step cycles to hatch
-	db 5 ; unknown 2
 	INCBIN "gfx/pokemon/clefable/front.dimensions"
-	dw NULL, NULL ; unused (beta front/back pics)
 	db GROWTH_FAST ; growth rate
 	dn EGG_FAIRY, EGG_FAIRY ; egg groups
 

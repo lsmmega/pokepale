@@ -60,31 +60,31 @@ BurnedTowerRivalBattleScript:
 	writetext BurnedTowerRival_BeforeText
 	waitbutton
 	closetext
-	checkevent EVENT_GOT_TOTODILE_FROM_ELM
-	iftrue .totodile
-	checkevent EVENT_GOT_CHIKORITA_FROM_ELM
-	iftrue .chikorita
+	checkevent EVENT_GOT_FROAKIE_FROM_ELM
+	iftrue .quaxly
+	checkevent EVENT_GOT_ROWLET_FROM_ELM
+	iftrue .turtwig
 	winlosstext BurnedTowerRival_WinText, BurnedTowerRival_LossText
 	setlasttalked BURNEDTOWER1F_RIVAL
-	loadtrainer RIVAL1, RIVAL1_3_TOTODILE
+	loadtrainer RIVAL1, RIVAL1_3_FROAKIE
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
 	sjump .returnfrombattle
 
-.totodile
+.quaxly
 	winlosstext BurnedTowerRival_WinText, BurnedTowerRival_LossText
 	setlasttalked BURNEDTOWER1F_RIVAL
-	loadtrainer RIVAL1, RIVAL1_3_CHIKORITA
+	loadtrainer RIVAL1, RIVAL1_3_ROWLET
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
 	sjump .returnfrombattle
 
-.chikorita
+.turtwig
 	winlosstext BurnedTowerRival_WinText, BurnedTowerRival_LossText
 	setlasttalked BURNEDTOWER1F_RIVAL
-	loadtrainer RIVAL1, RIVAL1_3_CYNDAQUIL
+	loadtrainer RIVAL1, RIVAL1_3_CHIMCHAR
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
@@ -304,6 +304,6 @@ BurnedTower1F_MapEvents:
 	def_object_events
 	object_event 15,  4, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BurnedTower1FRock, -1
 	object_event 12, 12, SPRITE_SUPER_NERD, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, BurnedTower1FEusineScript, EVENT_BURNED_TOWER_1F_EUSINE
-	object_event  8,  9, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, ObjectEvent, EVENT_RIVAL_BURNED_TOWER
+	object_event  8,  9, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 0, ObjectEvent, EVENT_RIVAL_BURNED_TOWER
 	object_event 14, 14, SPRITE_MORTY, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, BurnedTower1FMortyScript, EVENT_BURNED_TOWER_MORTY
 	object_event 14,  2, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, BurnedTower1FHPUp, EVENT_BURNED_TOWER_1F_HP_UP

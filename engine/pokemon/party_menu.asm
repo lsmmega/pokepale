@@ -48,7 +48,7 @@ WritePartyMenuTilemap:
 	xor a
 	ldh [hBGMapMode], a
 	hlcoord 0, 0
-	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
+	ld bc, SCREEN_AREA
 	ld a, " "
 	call ByteFill ; blank the tilemap
 	call GetPartyMenuQualityIndexes
@@ -110,7 +110,7 @@ PlacePartyNicknames:
 	ret
 
 .CancelString:
-	db "CANCEL@"
+	db "Cancel@"
 
 PlacePartyHPBar:
 	xor a
@@ -341,10 +341,10 @@ PlacePartyMonTMCompatibility:
 	ret
 
 .string_able
-	db "ABLE@"
+	db "Able@"
 
 .string_not_able
-	db "NOT ABLE@"
+	db "Not Able@"
 
 PlacePartyMonEvoStoneCompatibility:
 	ld a, [wPartyCount]
@@ -423,9 +423,9 @@ PlacePartyMonEvoStoneCompatibility:
 	ret
 
 .string_able
-	db "ABLE@"
+	db "Able@"
 .string_not_able
-	db "NOT ABLE@"
+	db "Not Able@"
 
 PlacePartyMonGender:
 	ld a, [wPartyCount]
@@ -467,13 +467,13 @@ PlacePartyMonGender:
 	ret
 
 .male
-	db "♂…MALE@"
+	db "♂…Male@"
 
 .female
-	db "♀…FEMALE@"
+	db "♀…Female@"
 
 .unknown
-	db "…UNKNOWN@"
+	db "…Unknown@"
 
 PlacePartyMonMobileBattleSelection:
 	ld a, [wPartyCount]
@@ -633,7 +633,7 @@ InitPartyMenuWithCancel:
 
 .done
 	ld [wMenuCursorY], a
-	ld a, A_BUTTON | B_BUTTON
+	ld a, PAD_A | PAD_B
 	ld [wMenuJoypadFilter], a
 	ret
 
@@ -654,7 +654,7 @@ InitPartyMenuNoCancel:
 	ld a, 1
 .done
 	ld [wMenuCursorY], a
-	ld a, A_BUTTON | B_BUTTON
+	ld a, PAD_A | PAD_B
 	ld [wMenuJoypadFilter], a
 	ret
 
@@ -679,7 +679,7 @@ PartyMenuSelect:
 	ld [wPartyMenuCursor], a
 	ldh a, [hJoyLast]
 	ld b, a
-	bit B_BUTTON_F, b
+	bit B_PAD_B, b
 	jr nz, .exitmenu ; B button
 	ld a, [wMenuCursorY]
 	dec a
@@ -747,13 +747,13 @@ PartyMenuStrings:
 	dw ToWhichPKMNString
 
 ChooseAMonString:
-	db "Choose a #MON.@"
+	db "Choose a Pokémon.@"
 
 UseOnWhichPKMNString:
 	db "Use on which <PK><MN>?@"
 
 WhichPKMNString:
-	db "Which <PK><MN>?@"
+	db "Which Pokémon?@"
 
 TeachWhichPKMNString:
 	db "Teach which <PK><MN>?@"
@@ -768,7 +768,7 @@ ChooseAMalePKMNString: ; unreferenced
 	db "Choose a ♂<PK><MN>.@"
 
 ToWhichPKMNString:
-	db "To which <PK><MN>?@"
+	db "To which Pokémon?@"
 
 YouHaveNoPKMNString:
 	db "You have no <PK><MN>!@"

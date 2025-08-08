@@ -40,7 +40,6 @@ DoBattleAnimFrame:
 	dw BattleAnimFunc_Bite
 	dw BattleAnimFunc_SolarBeam
 	dw BattleAnimFunc_Gust
-	dw BattleAnimFunc_RazorWind
 	dw BattleAnimFunc_Kick
 	dw BattleAnimFunc_Absorb
 	dw BattleAnimFunc_Egg
@@ -432,14 +431,14 @@ BattleAnimFunc_PokeBallBlocked:
 
 GetBallAnimPal:
 	ld hl, BallColors
-	ldh a, [rSVBK]
+	ldh a, [rWBK]
 	push af
 	ld a, BANK(wCurItem)
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	ld a, [wCurItem]
 	ld e, a
 	pop af
-	ldh [rSVBK], a
+	ldh [rWBK], a
 .IsInArray:
 	ld a, [hli]
 	cp -1
@@ -944,7 +943,7 @@ BattleAnimFunc_RazorLeaf:
 	call ReinitBattleAnimFrameset
 	ld hl, BATTLEANIMSTRUCT_OAMFLAGS
 	add hl, bc
-	res OAM_X_FLIP, [hl]
+	res B_OAM_XFLIP, [hl]
 .four
 .five
 .six
@@ -1986,16 +1985,6 @@ BattleAnimFunc_Spikes:
 .two
 	ret
 
-BattleAnimFunc_RazorWind:
-	call BattleAnimFunc_MoveInCircle
-	; Causes object to skip ahead the circular motion every frame
-	ld hl, BATTLEANIMSTRUCT_VAR1
-	add hl, bc
-	ld a, [hl]
-	add $f
-	ld [hl], a
-	ret
-
 BattleAnimFunc_Kick:
 ; Uses anim_setobj for different kick types
 	call BattleAnim_AnonJumptable
@@ -2655,7 +2644,7 @@ BattleAnimFunc_String:
 	; Obj Param 0 flips when used by enemy
 	ld hl, BATTLEANIMSTRUCT_OAMFLAGS
 	add hl, bc
-	set OAM_Y_FLIP, [hl]
+	set B_OAM_YFLIP, [hl]
 .not_param_zero
 	assert BATTLE_ANIM_FRAMESET_STRING_SHOT_1 + 1 == BATTLE_ANIM_FRAMESET_STRING_SHOT_2 \
 		&& BATTLE_ANIM_FRAMESET_STRING_SHOT_2 + 1 == BATTLE_ANIM_FRAMESET_STRING_SHOT_3

@@ -170,7 +170,7 @@ SwitchPartyMons:
 	call DelayFrame
 
 	farcall PartyMenuSelect
-	bit B_BUTTON_F, b
+	bit B_PAD_B, b
 	jr c, .DontSwitch
 
 	farcall _SwitchPartyMons
@@ -376,8 +376,8 @@ GiveTakeItemMenuData:
 .Items:
 	db STATICMENU_CURSOR ; flags
 	db 2 ; # items
-	db "GIVE@"
-	db "TAKE@"
+	db "Give@"
+	db "Take@"
 
 PokemonSwapItemText:
 	text_far _PokemonSwapItemText
@@ -696,68 +696,6 @@ MonMenu_SweetScent:
 	ld a, $2
 	ret
 
-ChooseMoveToDelete:
-	ld hl, wOptions
-	ld a, [hl]
-	push af
-	set NO_TEXT_SCROLL, [hl]
-	call LoadFontsBattleExtra
-	call .ChooseMoveToDelete
-	pop bc
-	ld a, b
-	ld [wOptions], a
-	push af
-	call ClearBGPalettes
-	pop af
-	ret
-
-.ChooseMoveToDelete
-	call SetUpMoveScreenBG
-	ld de, DeleteMoveScreen2DMenuData
-	call Load2DMenuData
-	call SetUpMoveList
-	ld hl, w2DMenuFlags1
-	set _2DMENU_ENABLE_SPRITE_ANIMS_F, [hl]
-	jr .enter_loop
-
-.loop
-	call ScrollingMenuJoypad
-	bit B_BUTTON_F, a
-	jp nz, .b_button
-	bit A_BUTTON_F, a
-	jp nz, .a_button
-
-.enter_loop
-	call PrepareToPlaceMoveData
-	call PlaceMoveData
-	jp .loop
-
-.a_button
-	and a
-	jr .finish
-
-.b_button
-	scf
-
-.finish
-	push af
-	xor a
-	ld [wSwitchMon], a
-	ld hl, w2DMenuFlags1
-	res _2DMENU_ENABLE_SPRITE_ANIMS_F, [hl]
-	call ClearSprites
-	call ClearTilemap
-	pop af
-	ret
-
-DeleteMoveScreen2DMenuData:
-	db 3, 1 ; cursor start y, x
-	db 3, 1 ; rows, columns
-	db _2DMENU_ENABLE_SPRITE_ANIMS ; flags 1
-	db 0 ; flags 2
-	dn 2, 0 ; cursor offset
-	db D_UP | D_DOWN | A_BUTTON | B_BUTTON ; accepted buttons
-
 ManagePokemonMoves:
 	ld a, [wCurPartySpecies]
 	cp EGG
@@ -791,13 +729,13 @@ MoveScreenLoop:
 
 .joy_loop
 	call ScrollingMenuJoypad
-	bit B_BUTTON_F, a
+	bit B_PAD_B, a
 	jp nz, .b_button
-	bit A_BUTTON_F, a
+	bit B_PAD_A, a
 	jp nz, .a_button
-	bit D_RIGHT_F, a
+	bit B_PAD_RIGHT, a
 	jp nz, .d_right
-	bit D_LEFT_F, a
+	bit B_PAD_LEFT, a
 	jp nz, .d_left
 
 .skip_joy
@@ -986,7 +924,7 @@ MoveScreen2DMenuData:
 	db _2DMENU_ENABLE_SPRITE_ANIMS ; flags 1
 	db 0 ; flags 2
 	dn 2, 0 ; cursor offsets
-	db D_UP | D_DOWN | D_LEFT | D_RIGHT | A_BUTTON | B_BUTTON ; accepted buttons
+	db PAD_UP | PAD_DOWN | PAD_LEFT | PAD_RIGHT | PAD_A | PAD_B ; accepted buttons
 
 String_MoveWhere:
 	db "Where?@"
@@ -1127,16 +1065,14 @@ PlaceMoveData:
 .description
 	hlcoord 1, 14
 	predef PrintMoveDescription
-	ld a, $1
-	ldh [hBGMapMode], a
-	ret
+	jp WaitBGMap
 
 String_MoveType_Top:
 	db "┌────────┐@"
 String_MoveType_Bottom:
 	db "│        └@"
 String_MoveAtk:
-	db "ATK/@"
+	db "Atk/@"
 String_MoveNoPower:
 	db "---@"
 

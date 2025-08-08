@@ -1,31 +1,38 @@
 AnimationPointers:
 	table_width 2
-	dw BulbasaurAnimation
-	dw IvysaurAnimation
-	dw VenusaurAnimation
-	dw CharmanderAnimation
-	dw CharmeleonAnimation
-	dw CharizardAnimation
-	dw SquirtleAnimation
-	dw WartortleAnimation
-	dw BlastoiseAnimation
+	dw RowletAnimation
+	dw DartrixAnimation
+	dw DecidueyeAnimation
+	dw ChimcharAnimation
+	dw MonfernoAnimation
+	dw InfernapeAnimation
+	dw FroakieAnimation
+	dw FrogadierAnimation
+	dw GreninjaAnimation
+	dw PichuAnimation
+	dw PikachuAnimation
+	dw RaichuAnimation
+	dw EeveeAnimation
+	dw VaporeonAnimation
+	dw JolteonAnimation
+	dw FlareonAnimation
+	dw EspeonAnimation
+	dw UmbreonAnimation
+	dw LeafeonAnimation
+	dw GlaceonAnimation
+	dw SylveonAnimation
 	dw CaterpieAnimation
 	dw MetapodAnimation
 	dw ButterfreeAnimation
 	dw WeedleAnimation
 	dw KakunaAnimation
 	dw BeedrillAnimation
-	dw PidgeyAnimation
-	dw PidgeottoAnimation
-	dw PidgeotAnimation
 	dw RattataAnimation
 	dw RaticateAnimation
 	dw SpearowAnimation
 	dw FearowAnimation
 	dw EkansAnimation
 	dw ArbokAnimation
-	dw PikachuAnimation
-	dw RaichuAnimation
 	dw SandshrewAnimation
 	dw SandslashAnimation
 	dw NidoranFAnimation
@@ -132,10 +139,6 @@ AnimationPointers:
 	dw GyaradosAnimation
 	dw LaprasAnimation
 	dw DittoAnimation
-	dw EeveeAnimation
-	dw VaporeonAnimation
-	dw JolteonAnimation
-	dw FlareonAnimation
 	dw PorygonAnimation
 	dw OmanyteAnimation
 	dw OmastarAnimation
@@ -171,7 +174,6 @@ AnimationPointers:
 	dw CrobatAnimation
 	dw ChinchouAnimation
 	dw LanturnAnimation
-	dw PichuAnimation
 	dw CleffaAnimation
 	dw IgglybuffAnimation
 	dw TogepiAnimation
@@ -195,8 +197,6 @@ AnimationPointers:
 	dw YanmaAnimation
 	dw WooperAnimation
 	dw QuagsireAnimation
-	dw EspeonAnimation
-	dw UmbreonAnimation
 	dw MurkrowAnimation
 	dw SlowkingAnimation
 	dw MisdreavusAnimation

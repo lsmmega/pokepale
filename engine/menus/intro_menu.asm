@@ -59,8 +59,6 @@ Option:
 	ret
 
 NewGame:
-	xor a
-	ld [wDebugFlags], a
 	call ResetWRAM
 	call NewGame_ClearTilemapEtc
 	call PlayerProfileSetup
@@ -425,9 +423,9 @@ ConfirmContinue:
 	call DelayFrame
 	call GetJoypad
 	ld hl, hJoyPressed
-	bit A_BUTTON_F, [hl]
+	bit B_PAD_A, [hl]
 	jr nz, .PressA
-	bit B_BUTTON_F, [hl]
+	bit B_PAD_B, [hl]
 	jr z, .loop
 	scf
 	ret
@@ -966,10 +964,10 @@ IntroSequence:
 	; fallthrough
 
 StartTitleScreen:
-	ldh a, [rSVBK]
+	ldh a, [rWBK]
 	push af
 	ld a, BANK(wLYOverrides)
-	ldh [rSVBK], a
+	ldh [rWBK], a
 
 	call .TitleScreen
 	call DelayFrame
@@ -981,10 +979,10 @@ StartTitleScreen:
 	call ClearBGPalettes
 
 	pop af
-	ldh [rSVBK], a
+	ldh [rWBK], a
 
 	ld hl, rLCDC
-	res rLCDC_SPRITE_SIZE, [hl] ; 8x8
+	res B_LCDC_OBJ_SIZE, [hl] ; 8x8
 	call ClearScreen
 	call WaitBGMap2
 	xor a
@@ -1151,8 +1149,8 @@ TitleScreenMain:
 	call GetJoypad
 	ld hl, hJoyDown
 	ld a, [hl]
-	and D_UP + B_BUTTON + SELECT
-	cp  D_UP + B_BUTTON + SELECT
+	and PAD_UP + PAD_B + PAD_SELECT
+	cp  PAD_UP + PAD_B + PAD_SELECT
 	jr z, .delete_save_data
 
 ; To bring up the clock reset dialog:
@@ -1163,8 +1161,8 @@ TitleScreenMain:
 	jr z, .check_clock_reset
 
 	ld a, [hl]
-	and D_DOWN + B_BUTTON + SELECT
-	cp  D_DOWN + B_BUTTON + SELECT
+	and PAD_DOWN + PAD_B + PAD_SELECT
+	cp  PAD_DOWN + PAD_B + PAD_SELECT
 	jr nz, .check_start
 
 	ld a, $34
@@ -1174,21 +1172,21 @@ TitleScreenMain:
 ; Keep Select pressed, and hold Left + Up.
 ; Then let go of Select.
 .check_clock_reset
-	bit SELECT_F, [hl]
+	bit B_PAD_SELECT, [hl]
 	jr nz, .check_start
 
 	xor a
 	ldh [hClockResetTrigger], a
 
 	ld a, [hl]
-	and D_LEFT + D_UP
-	cp  D_LEFT + D_UP
+	and PAD_LEFT + PAD_UP
+	cp  PAD_LEFT + PAD_UP
 	jr z, .reset_clock
 
 ; Press Start or A to start the game.
 .check_start
 	ld a, [hl]
-	and START | A_BUTTON
+	and PAD_START | PAD_A
 	jr nz, .incave
 	ret
 

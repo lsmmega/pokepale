@@ -1,31 +1,38 @@
 BitmasksPointers:
 	table_width 2
-	dw BulbasaurBitmasks
-	dw IvysaurBitmasks
-	dw VenusaurBitmasks
-	dw CharmanderBitmasks
-	dw CharmeleonBitmasks
-	dw CharizardBitmasks
-	dw SquirtleBitmasks
-	dw WartortleBitmasks
-	dw BlastoiseBitmasks
+	dw RowletBitmasks
+	dw DartrixBitmasks
+	dw DecidueyeBitmasks
+	dw ChimcharBitmasks
+	dw MonfernoBitmasks
+	dw InfernapeBitmasks
+	dw FroakieBitmasks
+	dw FrogadierBitmasks
+	dw GreninjaBitmasks
+	dw PichuBitmasks
+	dw PikachuBitmasks
+	dw RaichuBitmasks
+	dw EeveeBitmasks
+	dw VaporeonBitmasks
+	dw JolteonBitmasks
+	dw FlareonBitmasks
+	dw EspeonBitmasks
+	dw UmbreonBitmasks
+	dw LeafeonBitmasks
+	dw GlaceonBitmasks
+	dw SylveonBitmasks
 	dw CaterpieBitmasks
 	dw MetapodBitmasks
 	dw ButterfreeBitmasks
 	dw WeedleBitmasks
 	dw KakunaBitmasks
 	dw BeedrillBitmasks
-	dw PidgeyBitmasks
-	dw PidgeottoBitmasks
-	dw PidgeotBitmasks
 	dw RattataBitmasks
 	dw RaticateBitmasks
 	dw SpearowBitmasks
 	dw FearowBitmasks
 	dw EkansBitmasks
 	dw ArbokBitmasks
-	dw PikachuBitmasks
-	dw RaichuBitmasks
 	dw SandshrewBitmasks
 	dw SandslashBitmasks
 	dw NidoranFBitmasks
@@ -132,10 +139,6 @@ BitmasksPointers:
 	dw GyaradosBitmasks
 	dw LaprasBitmasks
 	dw DittoBitmasks
-	dw EeveeBitmasks
-	dw VaporeonBitmasks
-	dw JolteonBitmasks
-	dw FlareonBitmasks
 	dw PorygonBitmasks
 	dw OmanyteBitmasks
 	dw OmastarBitmasks
@@ -171,7 +174,6 @@ BitmasksPointers:
 	dw CrobatBitmasks
 	dw ChinchouBitmasks
 	dw LanturnBitmasks
-	dw PichuBitmasks
 	dw CleffaBitmasks
 	dw IgglybuffBitmasks
 	dw TogepiBitmasks
@@ -195,8 +197,6 @@ BitmasksPointers:
 	dw YanmaBitmasks
 	dw WooperBitmasks
 	dw QuagsireBitmasks
-	dw EspeonBitmasks
-	dw UmbreonBitmasks
 	dw MurkrowBitmasks
 	dw SlowkingBitmasks
 	dw MisdreavusBitmasks

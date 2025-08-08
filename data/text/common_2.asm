@@ -100,20 +100,18 @@ Text_Gained::
 	text_end
 
 _BoostedExpPointsText::
-; BUG: Five-digit experience gain is printed incorrectly (see docs/bugs_and_glitches.md)
 	text_start
 	line "a boosted"
 	cont "@"
-	text_decimal wStringBuffer2, 2, 4
-	text " EXP. Points!"
+	text_decimal wExpScratch40_1, 3, 8
+	text " EXP.Points!"
 	prompt
 
 _ExpPointsText::
-; BUG: Five-digit experience gain is printed incorrectly (see docs/bugs_and_glitches.md)
 	text_start
 	line "@"
-	text_decimal wStringBuffer2, 2, 4
-	text " EXP. Points!"
+	text_decimal wExpScratch40_1, 3, 8
+	text " EXP.Points!"
 	prompt
 
 _GoMonText::
@@ -680,11 +678,6 @@ _BattleStatFellText::
 Text_BattleUser::
 	text "<USER>@"
 	text_end
-
-_BattleMadeWhirlwindText::
-	text_start
-	line "made a whirlwind!"
-	prompt
 
 _BattleTookSunlightText::
 	text_start
