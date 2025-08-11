@@ -2737,8 +2737,12 @@ TownMapPlayerIcon:
 ; Standing icon
 	ld hl, vTiles0 tile $10
 	ld c, 4 ; # tiles
+	push de
+	push bc
 	call Request2bpp
 ; Walking icon
+	pop bc
+	pop de
 	ld hl, 12 tiles
 	add hl, de
 	ld d, h
