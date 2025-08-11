@@ -7205,7 +7205,7 @@ GiveExperiencePoints:
 	ld [hld], a
 	ld d, [hl]
 	ldh a, [hQuotient + 1]
-	add d
+	adc d
 	ld [hl], a
 	jr nc, .no_exp_overflow
 	dec hl
