@@ -7505,7 +7505,7 @@ AnimateExpBar:
 	adc [hl]
 	ld [hld], a
 	ld a, [wExperienceGained]
-	add [hl]
+	adc [hl]
 	ld [hld], a
 	jr nc, .NoOverflow
 	inc [hl]
