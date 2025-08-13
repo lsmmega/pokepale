@@ -17,6 +17,9 @@ INCBIN "gfx/frames/8.1bpp"
 	assert_table_length NUM_FRAMES
 INCBIN "gfx/frames/9.1bpp" ; unused
 
+IDNOGFX:
+INCBIN "gfx/font/idno.1bpp"
+
 StatsScreenPageTilesGFX:
 INCBIN "gfx/stats/stats_tiles.2bpp"
 

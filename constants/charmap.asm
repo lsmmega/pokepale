@@ -43,8 +43,6 @@
 	charmap "<DO>",      $70 ; hiragana small do, unused
 	charmap "◀",         $6e
 	charmap "『",         $72 ; Japanese opening quote, unused
-	charmap "<ID>",      $33
-	charmap "№",         $34
 
 ; Actual characters (from other graphics files)
 

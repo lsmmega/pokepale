@@ -45,6 +45,10 @@ _LoadFontsBattleExtra::
 	ld hl, vTiles2 tile $6d
 	lb bc, BANK(FontBattleExtra), 2
 	call Get1bppViaHDMA
+	ld de, IDNOGFX
+	ld hl, vTiles2 tile $6f
+	lb bc, BANK(IDNOGFX), 2
+	call Get1bppViaHDMA
 	ld de, HPBarGFX
 	ld hl, vTiles2 tile $61
 	lb bc, BANK(HPBarGFX), 12

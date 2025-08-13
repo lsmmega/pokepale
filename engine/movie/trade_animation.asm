@@ -890,7 +890,7 @@ ShowPlayerTrademonStats:
 	ld de, wPlayerTrademonSpecies
 	ld a, [de]
 	cp EGG
-	jr z, TrademonStats_Egg
+	;jr z, TrademonStats_Egg
 	call TrademonStats_MonTemplate
 	ld de, wPlayerTrademonSpecies
 	call TrademonStats_PrintSpeciesNumber
