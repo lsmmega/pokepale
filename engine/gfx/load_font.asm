@@ -43,7 +43,7 @@ _LoadFontsExtra2::
 _LoadFontsBattleExtra::
 	ld de, FontBattleExtra
 	ld hl, vTiles2 tile $6d
-	lb bc, BANK(FontBattleExtra), 2
+	lb bc, BANK(FontBattleExtra), 4
 	call Get1bppViaHDMA
 	ld de, HPBarGFX
 	ld hl, vTiles2 tile $61
@@ -98,6 +98,6 @@ StatsScreen_LoadFont:
 LoadStatsScreenPageTilesGFX:
 	ld de, StatsScreenPageTilesGFX
 	ld hl, vTiles2 tile $31
-	lb bc, BANK(StatsScreenPageTilesGFX), 17
+	lb bc, BANK(StatsScreenPageTilesGFX), 13
 	call Get2bppViaHDMA
 	ret

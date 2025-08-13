@@ -43,15 +43,15 @@
 	charmap "<DO>",      $70 ; hiragana small do, unused
 	charmap "◀",         $6e
 	charmap "『",         $72 ; Japanese opening quote, unused
-	charmap "<ID>",      $33
-	charmap "№",         $34
+	charmap "<ID>",      $6f
+	charmap "№",         $70
 
 ; Actual characters (from other graphics files)
 
 	charmap " ",         $7f ; gfx/frames/space.png
 
 	; needed for StatsScreen_PlaceShinyIcon and PrintPartyMonPage1
-	charmap "⁂",         $3f ; gfx/stats/stats_tiles.png, tile 14
+	charmap "⁂",         $3d ; gfx/stats/stats_tiles.png
 
 ; Actual characters (from gfx/font/font.png)
 
@@ -135,7 +135,7 @@
 
 	charmap "■",         $d7
 	charmap "▲",         $d8
-	charmap "☎",         $d9
+	charmap "☎",        $d9
 	charmap "<BOLD_V>",  $da
 	charmap "<BOLD_S>",  $db
 	charmap "<COLON>",   $dc ; colon with tinier dots than ":"
