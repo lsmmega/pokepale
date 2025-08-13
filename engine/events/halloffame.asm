@@ -471,7 +471,7 @@ DisplayHOFMon:
 	cp EGG
 	jr z, .print_id_no
 	hlcoord 1, 13
-	ld a, $70
+	ld a, "№"
 	ld [hli], a
 	ld [hl], "<DOT>"
 	hlcoord 3, 13
@@ -503,9 +503,9 @@ DisplayHOFMon:
 
 .print_id_no
 	hlcoord 7, 16
-	ld a, $6f
+	ld a, "<ID>"
 	ld [hli], a
-	ld a, $70
+	ld a, "№"
 	ld [hli], a
 	ld [hl], "/"
 	hlcoord 10, 16
@@ -569,9 +569,9 @@ HOF_AnimatePlayerPic:
 	ld de, wPlayerName
 	call PlaceString
 	hlcoord 1, 6
-	ld a, $6f
+	ld a, "<ID>"
 	ld [hli], a
-	ld a, $70
+	ld a, "№"
 	ld [hli], a
 	ld [hl], "/"
 	hlcoord 4, 6

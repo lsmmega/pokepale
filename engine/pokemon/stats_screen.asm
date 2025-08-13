@@ -1049,17 +1049,17 @@ StatsScreen_AnimateEgg:
 
 StatsScreen_LoadPageIndicators:
 	hlcoord 13, 5
-	ld a, $36 ; first of 4 small square tiles
+	ld a, $34 ; first of 4 small square tiles
 	call .load_square
 	hlcoord 15, 5
-	ld a, $36 ; " " " "
+	ld a, $34 ; " " " "
 	call .load_square
 	hlcoord 17, 5
-	ld a, $36 ; " " " "
+	ld a, $34 ; " " " "
 	call .load_square
 	ld a, c
 	cp GREEN_PAGE
-	ld a, $3a ; first of 4 large square tiles
+	ld a, $38 ; first of 4 large square tiles
 	hlcoord 13, 5 ; PINK_PAGE (< GREEN_PAGE)
 	jr c, .load_square
 	hlcoord 15, 5 ; GREEN_PAGE (= GREEN_PAGE)
