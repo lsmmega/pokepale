@@ -284,64 +284,53 @@ HPBarAnim_PaletteUpdate:
 	ret
 
 HPBarAnim_BGMapUpdate:
-	ldh a, [hCGB]
-	and a
-	jr nz, .cgb
-	call DelayFrame
-	call DelayFrame
-	ret
-
-.cgb
 	ld a, [wWhichHPBar]
 	and a
 	jr z, .load_0
-	cp $1
+	dec a
 	jr z, .load_1
+
+	xor a
+	ldh [hCGBPalUpdate], a
+	inc a
+	ld b, a
+	ldh [hBGMapMode], a
+
 	ld a, [wCurPartyMon]
-	cp $3
-	jr nc, .bottom_half_of_screen
-	ld c, $0
-	jr .got_third
-
-.bottom_half_of_screen
-	ld c, $1
-.got_third
-	push af
-	cp $2
-	jr z, .skip_delay
-	cp $5
-	jr z, .skip_delay
-	ld a, $2
-	ldh [hBGMapMode], a
-	ld a, c
+	ld c, a
+	cp 4
+	jr nc, .lowerHalf
+	dec b
+.lowerHalf
+	ld a, b
 	ldh [hBGMapHalf], a
-	call DelayFrame
-.skip_delay
-	ld a, $1
-	ldh [hBGMapMode], a
 	ld a, c
-	ldh [hBGMapHalf], a
-	call DelayFrame
-	pop af
-	cp $2
-	jr z, .two_frames
-	cp $5
-	jr z, .two_frames
-	ret
-
-.two_frames
-	inc c
-	ld a, $2
-	ldh [hBGMapMode], a
-	ld a, c
-	ldh [hBGMapHalf], a
-	call DelayFrame
-	ld a, $1
-	ldh [hBGMapMode], a
-	ld a, c
-	ldh [hBGMapHalf], a
-	call DelayFrame
-	ret
+	hlbgcoord 12, 2, vBGMap2
+	ld bc, TILEMAP_WIDTH * 2
+	call AddNTimes
+	ld a, [wCurHPAnimPal]
+	inc a
+	ld b, a
+	di
+	ld a, 1
+	ldh [rVBK], a
+.waitnohb1
+	ldh a, [rSTAT]
+	and STAT_MODE ; wait until mode 1-3
+	jr z, .waitnohb1
+.waithbl1
+	ldh a, [rSTAT]
+	and STAT_MODE ; wait until mode 0
+	jr nz, .waithbl1
+	ld a, b
+	rept 7
+	ld [hli], a
+	endr
+	xor a
+	ldh [rVBK], a
+	ei
+	ld c, 2
+	jp DelayFrames
 
 .load_0
 	ld c, $0
