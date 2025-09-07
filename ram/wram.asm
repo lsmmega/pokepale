@@ -3369,10 +3369,6 @@ SECTION UNION "Attributes", WRAMX
 
 wDecompressedAttributes:: ds 256 tiles
 
-SECTION UNION "Attributes", WRAMX ;News Script RAM
-
-w4_d000:: ds $1000
-
 SECTION "GBC Video", WRAMX, ALIGN[8]
 
 ; eight 4-color palettes each
