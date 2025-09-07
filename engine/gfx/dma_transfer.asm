@@ -105,43 +105,6 @@ Mobile_HDMATransferTilemapAndAttrmap_Overworld:
 	pop af
 	ldh [rVBK], a
 	ei
-
-	ret
-
-Function1040d4: ; unreferenced
-	ld hl, .Function
-	jp CallInSafeGFXMode
-
-.Function
-	ld a, $1
-	ldh [rVBK], a
-	ld a, BANK(w3_d800)
-	ldh [rWBK], a
-	ld de, w3_d800
-	ldh a, [hBGMapAddress + 1]
-	ldh [rVDMA_SRC_HIGH], a
-	ldh a, [hBGMapAddress]
-	ldh [rVDMA_SRC_LOW], a
-	ld a, d
-	ldh [rVDMA_DEST_HIGH], a
-	ld a, e
-	ldh [rVDMA_DEST_LOW], a
-	ld a, $23
-	ldh [hDMATransfer], a
-	call WaitDMATransfer
-	ret
-
-Function1040fb: ; unreferenced
-	ld hl, .Function
-	jp CallInSafeGFXMode
-
-.Function
-	ld a, $1
-	ldh [rVBK], a
-	ld a, BANK(w3_d800)
-	ldh [rWBK], a
-	ld hl, w3_d800
-	call HDMATransferToWRAMBank3
 	ret
 
 _HDMATransferTilemapAndAttrmap_Menu::
@@ -237,7 +200,6 @@ HDMATransferToWRAMBank3:
 	ld a, $23
 	ldh [hDMATransfer], a
 
-WaitDMATransfer:
 .loop
 	call DelayFrame
 	ldh a, [hDMATransfer]

@@ -3292,11 +3292,7 @@ wPokeAnimBitmaskBuffer:: ds 7
 	ds 2
 wPokeAnimStructEnd::
 
-SECTION UNION "Metatiles", WRAMX
-
-wDecompressedMetatiles:: ds 256 tiles
-
-SECTION UNION "Metatiles", WRAMX ;Battle Tower RAM
+SECTION "Battle Tower RAM", WRAMX
 
 w3_d000:: ds 1
 w3_d001:: ds 1
@@ -3323,10 +3319,6 @@ w3_d742:: battle_tower_struct w3_d742
 
 NEXTU
 	ds $be
-w3_d800:: ds TILEMAP_WIDTH * SCREEN_HEIGHT
-
-NEXTU
-	ds $be
 wBTChoiceOfLvlGroup:: db
 	ds $1
 w3_d802:: ds 12
@@ -3334,13 +3326,11 @@ w3_d80e:: db
 	ds $1
 w3_d810::
 	ds $59
-w3_d869:: ds $17
 w3_d880:: ds 1
 w3_d881:: ds 8
 w3_d889:: ds 1
 w3_d88a:: ds 4
 w3_d88e:: ds 1
-w3_d88f:: ds 4
 w3_d893:: ds 1
 w3_d894:: ds 1
 w3_d895:: ds 11
@@ -3365,13 +3355,13 @@ NEXTU
 w3_de00:: ds $200
 ENDU
 
+SECTION UNION "Metatiles", WRAMX
+
+wDecompressedMetatiles:: ds 256 tiles
+
 SECTION UNION "Attributes", WRAMX
 
 wDecompressedAttributes:: ds 256 tiles
-
-SECTION UNION "Attributes", WRAMX ;News Script RAM
-
-w4_d000:: ds $1000
 
 SECTION "GBC Video", WRAMX, ALIGN[8]
 
