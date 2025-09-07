@@ -1440,15 +1440,12 @@ Function100970:
 	hlcoord 0, 0, wAttrmap
 	ld de, w3_dd68
 	call Function1009a5
-	call Function1009d2
-	call Function1009ae
 	ret
 
 Function100989:
 	ld hl, w3_dc00
 	decoord 0, 0
 	call Function1009a5
-	call Function1009ae
 	farcall HDMATransferTilemapAndAttrmap_Overworld
 	ld hl, w3_dd68
 	decoord 0, 0, wAttrmap
@@ -1459,57 +1456,6 @@ Function1009a5:
 	ld bc, SCREEN_AREA
 	ld a, $03
 	call FarCopyWRAM
-	ret
-
-Function1009ae:
-	ldh a, [rWBK]
-	push af
-	ld a, $03
-	ldh [rWBK], a
-
-	ld hl, w3_d800
-	decoord 0, 0, wAttrmap
-	ld c, SCREEN_WIDTH
-	ld b, SCREEN_HEIGHT
-.loop_row
-	push bc
-.loop_col
-	ld a, [hli]
-	ld [de], a
-	inc de
-	dec c
-	jr nz, .loop_col
-	ld bc, TILEMAP_WIDTH - SCREEN_WIDTH
-	add hl, bc
-	pop bc
-	dec b
-	jr nz, .loop_row
-
-	pop af
-	ldh [rWBK], a
-	ret
-
-Function1009d2:
-	ldh a, [rWBK]
-	push af
-	ld a, $03
-	ldh [rWBK], a
-
-	ldh a, [rVBK]
-	push af
-	ld a, $01
-	ldh [rVBK], a
-
-	ld hl, w3_d800
-	debgcoord 0, 0
-	lb bc, $03, $24
-	call Get2bpp
-
-	pop af
-	ldh [rVBK], a
-
-	pop af
-	ldh [rWBK], a
 	ret
 
 Function1009f3:

@@ -341,8 +341,6 @@ s5_aa8e:: ds 7 * $cc
 
 s5_b023:: ds 105
 s5_b08c:: ds 4
-s5_b090:: db
-s5_b091:: db
 s5_b092:: ds 31
 
 	ds $100
