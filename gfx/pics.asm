@@ -126,7 +126,6 @@ HeracrossFrontpic:   INCBIN "gfx/pokemon/heracross/front.animated.2bpp.lz"
 
 SECTION "Pics 6", ROMX
 
-AriadosFrontpic:     INCBIN "gfx/pokemon/ariados/front.animated.2bpp.lz"
 NoctowlFrontpic:     INCBIN "gfx/pokemon/noctowl/front.animated.2bpp.lz"
 MarshtompFrontpic:   INCBIN "gfx/pokemon/008_marshtomp/front.animated.2bpp.lz"
 LaprasFrontpic:      INCBIN "gfx/pokemon/lapras/front.animated.2bpp.lz"
@@ -779,6 +778,7 @@ GlaceonFrontpic:     INCBIN "gfx/pokemon/020_glaceon/front.animated.2bpp.lz"
 GlaceonBackpic:      INCBIN "gfx/pokemon/020_glaceon/back.2bpp.lz"
 SylveonFrontpic:     INCBIN "gfx/pokemon/021_sylveon/front.animated.2bpp.lz"
 SylveonBackpic:      INCBIN "gfx/pokemon/021_sylveon/back.2bpp.lz"
+AriadosFrontpic:     INCBIN "gfx/pokemon/ariados/front.animated.2bpp.lz"
 
 SECTION "Pics 21", ROMX
 
