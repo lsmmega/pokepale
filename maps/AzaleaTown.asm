@@ -60,31 +60,31 @@ AzaleaTownRivalBattleScript:
 	waitbutton
 	closetext
 	setevent EVENT_RIVAL_AZALEA_TOWN
-	checkevent EVENT_GOT_FROAKIE_FROM_ELM
-	iftrue .Quaxly
-	checkevent EVENT_GOT_ROWLET_FROM_ELM
-	iftrue .Turtwig
+	checkevent EVENT_GOT_MUDKIP_FROM_ELM
+	iftrue .Mudkip
+	checkevent EVENT_GOT_BULBASAUR_FROM_ELM
+	iftrue .Bulbasaur
 	winlosstext AzaleaTownRivalWinText, AzaleaTownRivalLossText
 	setlasttalked AZALEATOWN_RIVAL
-	loadtrainer RIVAL1, RIVAL1_2_FROAKIE
+	loadtrainer RIVAL1, RIVAL1_2_MUDKIP
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
 	sjump .AfterBattle
 
-.Quaxly:
+.Mudkip:
 	winlosstext AzaleaTownRivalWinText, AzaleaTownRivalLossText
 	setlasttalked AZALEATOWN_RIVAL
-	loadtrainer RIVAL1, RIVAL1_2_ROWLET
+	loadtrainer RIVAL1, RIVAL1_2_BULBASAUR
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
 	sjump .AfterBattle
 
-.Turtwig:
+.Bulbasaur:
 	winlosstext AzaleaTownRivalWinText, AzaleaTownRivalLossText
 	setlasttalked AZALEATOWN_RIVAL
-	loadtrainer RIVAL1, RIVAL1_2_CHIMCHAR
+	loadtrainer RIVAL1, RIVAL1_2_LITTEN
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle

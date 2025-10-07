@@ -1,14 +1,14 @@
 AnimationIdlePointers:
 	table_width 2
-	dw RowletAnimationIdle
-	dw DartrixAnimationIdle
-	dw DecidueyeAnimationIdle
-	dw ChimcharAnimationIdle
-	dw MonfernoAnimationIdle
-	dw InfernapeAnimationIdle
-	dw FroakieAnimationIdle
-	dw FrogadierAnimationIdle
-	dw GreninjaAnimationIdle
+	dw BulbasaurAnimationIdle
+	dw IvysaurAnimationIdle
+	dw VenusaurAnimationIdle
+	dw LittenAnimationIdle
+	dw TorracatAnimationIdle
+	dw IncineroarAnimationIdle
+	dw MudkipAnimationIdle
+	dw MarshtompAnimationIdle
+	dw SwampertAnimationIdle
 	dw PichuAnimationIdle
 	dw PikachuAnimationIdle
 	dw RaichuAnimationIdle

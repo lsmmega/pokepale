@@ -56,31 +56,31 @@ VictoryRoadRivalNext:
 	waitbutton
 	closetext
 	setevent EVENT_RIVAL_VICTORY_ROAD
-	checkevent EVENT_GOT_FROAKIE_FROM_ELM
-	iftrue .GotQuaxly
-	checkevent EVENT_GOT_ROWLET_FROM_ELM
-	iftrue .GotTurtwig
+	checkevent EVENT_GOT_MUDKIP_FROM_ELM
+	iftrue .GotMudkip
+	checkevent EVENT_GOT_BULBASAUR_FROM_ELM
+	iftrue .GotBulbasaur
 	winlosstext VictoryRoadRivalDefeatText, VictoryRoadRivalVictoryText
 	setlasttalked VICTORYROAD_RIVAL
-	loadtrainer RIVAL1, RIVAL1_5_FROAKIE
+	loadtrainer RIVAL1, RIVAL1_5_MUDKIP
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
 	sjump .AfterBattle
 
-.GotQuaxly:
+.GotMudkip:
 	winlosstext VictoryRoadRivalDefeatText, VictoryRoadRivalVictoryText
 	setlasttalked VICTORYROAD_RIVAL
-	loadtrainer RIVAL1, RIVAL1_5_ROWLET
+	loadtrainer RIVAL1, RIVAL1_5_BULBASAUR
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
 	sjump .AfterBattle
 
-.GotTurtwig:
+.GotBulbasaur:
 	winlosstext VictoryRoadRivalDefeatText, VictoryRoadRivalVictoryText
 	setlasttalked VICTORYROAD_RIVAL
-	loadtrainer RIVAL1, RIVAL1_5_CHIMCHAR
+	loadtrainer RIVAL1, RIVAL1_5_LITTEN
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle

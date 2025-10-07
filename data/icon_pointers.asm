@@ -22,6 +22,7 @@ IconPointers:
 	dw BlobIcon
 	dw SerpentIcon
 	dw VoltorbIcon
+	dw BulbasaurIcon
 	dw CaterpillarIcon
 	dw UnownIcon
 	dw GeodudeIcon

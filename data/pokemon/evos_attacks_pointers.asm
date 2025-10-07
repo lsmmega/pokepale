@@ -2,15 +2,15 @@
 
 EvosAttacksPointers::
 	table_width 2
-	dw RowletEvosAttacks
-	dw DartrixEvosAttacks
-	dw DecidueyeEvosAttacks
-	dw ChimcharEvosAttacks
-	dw MonfernoEvosAttacks
-	dw InfernapeEvosAttacks
-	dw FroakieEvosAttacks
-	dw FrogadierEvosAttacks
-	dw GreninjaEvosAttacks
+	dw BulbasaurEvosAttacks
+	dw IvysaurEvosAttacks
+	dw VenusaurEvosAttacks
+	dw LittenEvosAttacks
+	dw TorracatEvosAttacks
+	dw IncineroarEvosAttacks
+	dw MudkipEvosAttacks
+	dw MarshtompEvosAttacks
+	dw SwampertEvosAttacks
 	dw PichuEvosAttacks
 	dw PikachuEvosAttacks
 	dw RaichuEvosAttacks

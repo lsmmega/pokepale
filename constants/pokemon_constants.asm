@@ -14,15 +14,15 @@
 ; - BitmasksPointers (see gfx/pokemon/bitmask_pointers.asm)
 ; - FramesPointers (see gfx/pokemon/frame_pointers.asm)
 	const_def 1
-	const ROWLET     ; 01
-	const DARTRIX    ; 02
-	const DECIDUEYE  ; 03
-	const CHIMCHAR   ; 04
-	const MONFERNO   ; 05
-	const INFERNAPE  ; 06
-	const FROAKIE    ; 07
-	const FROGADIER  ; 08
-	const GRENINJA   ; 09
+	const BULBASAUR  ; 01
+	const IVYSAUR    ; 02
+	const VENUSAUR   ; 03
+	const LITTEN     ; 04
+	const TORRACAT   ; 05
+	const INCINEROAR ; 06
+	const MUDKIP     ; 07
+	const MARSHTOMP  ; 08
+	const SWAMPERT   ; 09
 	const PICHU      ; 0a
 	const PIKACHU    ; 0b
 	const RAICHU     ; 0c

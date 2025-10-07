@@ -10,19 +10,6 @@ SECTION "Egg Moves", ROMX
 
 INCLUDE "data/pokemon/egg_move_pointers.asm"
 
-PichuEggMoves:
-	db REVERSAL
-	db BIDE
-	db PRESENT
-	db ENCORE
-	db DOUBLESLAP
-	db -1 ; end
-
-EeveeEggMoves:
-	db FLAIL
-	db CHARM
-	db -1 ; end
-
 RattataEggMoves:
 	db SCREECH
 	db FLAME_WHEEL

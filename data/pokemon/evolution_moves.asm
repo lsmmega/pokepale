@@ -1,26 +1,26 @@
 EvolutionMoves::
 	table_width 1, EvolutionMoves
-	db NO_MOVE      ; ROWLET
-	db NO_MOVE      ; DARTRIX
-	db NO_MOVE      ; DECIDUEYE
-	db NO_MOVE      ; CHIMCHAR
-	db MACH_PUNCH   ; MONFERNO
-	db NO_MOVE      ; INFERNAPE
-	db NO_MOVE      ; FROAKIE
-	db NO_MOVE      ; FROGADIER
-	db NO_MOVE      ; GRENINJA
+	db NO_MOVE      ; BULBASAUR
+	db NO_MOVE      ; IVYSAUR
+	db NO_MOVE      ; VENUSAUR
+	db NO_MOVE      ; LITTEN
+	db NO_MOVE      ; TORRACAT
+	db NO_MOVE      ; INCINEROAR
+	db NO_MOVE      ; MUDKIP
+	db NO_MOVE      ; MARSHTOMP
+	db NO_MOVE      ; SWAMPERT
 	db NO_MOVE      ; PICHU
 	db NO_MOVE      ; PIKACHU
-	db THUNDERPUNCH ; RAICHU
+	db NO_MOVE      ; RAICHU
 	db NO_MOVE      ; EEVEE
-	db WATER_GUN    ; VAPOREON
-	db THUNDERSHOCK ; JOLTEON
-	db EMBER        ; FLAREON
-	db CONFUSION    ; ESPEON
-	db SNARL        ; UMBREON
-	db RAZOR_LEAF   ; LEAFEON
-	db ICY_WIND     ; GLACEON
-	db CHARM_VOICE  ; SYLVEON
+	db NO_MOVE      ; VAPOREON
+	db NO_MOVE      ; JOLTEON
+	db NO_MOVE      ; FLAREON
+	db NO_MOVE      ; ESPEON
+	db NO_MOVE      ; UMBREON
+	db NO_MOVE      ; LEAFEON
+	db NO_MOVE      ; GLACEON
+	db NO_MOVE      ; SYLVEON
 	db NO_MOVE      ; CATERPIE
 	db NO_MOVE      ; METAPOD
 	db NO_MOVE      ; BUTTERFREE

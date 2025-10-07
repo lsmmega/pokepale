@@ -60,31 +60,31 @@ BurnedTowerRivalBattleScript:
 	writetext BurnedTowerRival_BeforeText
 	waitbutton
 	closetext
-	checkevent EVENT_GOT_FROAKIE_FROM_ELM
-	iftrue .quaxly
-	checkevent EVENT_GOT_ROWLET_FROM_ELM
-	iftrue .turtwig
+	checkevent EVENT_GOT_MUDKIP_FROM_ELM
+	iftrue .Mudkip
+	checkevent EVENT_GOT_BULBASAUR_FROM_ELM
+	iftrue .Bulbasaur
 	winlosstext BurnedTowerRival_WinText, BurnedTowerRival_LossText
 	setlasttalked BURNEDTOWER1F_RIVAL
-	loadtrainer RIVAL1, RIVAL1_3_FROAKIE
+	loadtrainer RIVAL1, RIVAL1_3_MUDKIP
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
 	sjump .returnfrombattle
 
-.quaxly
+.Mudkip
 	winlosstext BurnedTowerRival_WinText, BurnedTowerRival_LossText
 	setlasttalked BURNEDTOWER1F_RIVAL
-	loadtrainer RIVAL1, RIVAL1_3_ROWLET
+	loadtrainer RIVAL1, RIVAL1_3_BULBASAUR
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
 	sjump .returnfrombattle
 
-.turtwig
+.Bulbasaur
 	winlosstext BurnedTowerRival_WinText, BurnedTowerRival_LossText
 	setlasttalked BURNEDTOWER1F_RIVAL
-	loadtrainer RIVAL1, RIVAL1_3_CHIMCHAR
+	loadtrainer RIVAL1, RIVAL1_3_LITTEN
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle

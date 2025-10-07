@@ -1,14 +1,14 @@
 AnimationPointers:
 	table_width 2
-	dw RowletAnimation
-	dw DartrixAnimation
-	dw DecidueyeAnimation
-	dw ChimcharAnimation
-	dw MonfernoAnimation
-	dw InfernapeAnimation
-	dw FroakieAnimation
-	dw FrogadierAnimation
-	dw GreninjaAnimation
+	dw BulbasaurAnimation
+	dw IvysaurAnimation
+	dw VenusaurAnimation
+	dw LittenAnimation
+	dw TorracatAnimation
+	dw IncineroarAnimation
+	dw MudkipAnimation
+	dw MarshtompAnimation
+	dw SwampertAnimation
 	dw PichuAnimation
 	dw PikachuAnimation
 	dw RaichuAnimation

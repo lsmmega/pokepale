@@ -26,31 +26,31 @@ MountMoonRivalBattleScript:
 	writetext MountMoonRivalTextBefore
 	waitbutton
 	closetext
-	checkevent EVENT_GOT_FROAKIE_FROM_ELM
-	iftrue .Quaxly
-	checkevent EVENT_GOT_ROWLET_FROM_ELM
-	iftrue .Turtwig
+	checkevent EVENT_GOT_MUDKIP_FROM_ELM
+	iftrue .Mudkip
+	checkevent EVENT_GOT_BULBASAUR_FROM_ELM
+	iftrue .Bulbasaur
 	winlosstext MountMoonRivalTextWin, MountMoonRivalTextLoss
 	setlasttalked MOUNTMOON_RIVAL
-	loadtrainer RIVAL2, RIVAL2_1_FROAKIE
+	loadtrainer RIVAL2, RIVAL2_1_MUDKIP
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
 	sjump .FinishBattle
 
-.Quaxly:
+.Mudkip:
 	winlosstext MountMoonRivalTextWin, MountMoonRivalTextLoss
 	setlasttalked MOUNTMOON_RIVAL
-	loadtrainer RIVAL2, RIVAL2_1_ROWLET
+	loadtrainer RIVAL2, RIVAL2_1_BULBASAUR
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
 	sjump .FinishBattle
 
-.Turtwig:
+.Bulbasaur:
 	winlosstext MountMoonRivalTextWin, MountMoonRivalTextLoss
 	setlasttalked MOUNTMOON_RIVAL
-	loadtrainer RIVAL2, RIVAL2_1_CHIMCHAR
+	loadtrainer RIVAL2, RIVAL2_1_LITTEN
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle

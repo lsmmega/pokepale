@@ -6,15 +6,15 @@ ENDM
 PokemonCries::
 ; entries correspond to constants/pokemon_constants.asm
 	table_width MON_CRY_LENGTH
-	mon_cry CRY_BULBASAUR,   128,  129 ; ROWLET
-	mon_cry CRY_BULBASAUR,    32,  256 ; DARTRIX
-	mon_cry CRY_BULBASAUR,     0,  320 ; DECIDUEYE
-	mon_cry CRY_CHARMANDER,   96,  192 ; CHIMCHAR
-	mon_cry CRY_CHARMANDER,   32,  192 ; MONFERNO
-	mon_cry CRY_CHARMANDER,    0,  256 ; INFERNAPE
-	mon_cry CRY_SQUIRTLE,     96,  192 ; FROAKIE
-	mon_cry CRY_SQUIRTLE,     32,  192 ; FROGADIER
-	mon_cry CRY_BLASTOISE,     0,  256 ; GRENINJA
+	mon_cry CRY_BULBASAUR,   128,  129 ; BULBASAUR
+	mon_cry CRY_BULBASAUR,    32,  256 ; IVYSAUR
+	mon_cry CRY_BULBASAUR,     0,  320 ; VENUSAUR
+	mon_cry CRY_CHARMANDER,   96,  192 ; LITTEN
+	mon_cry CRY_CHARMANDER,   32,  192 ; TORRACAT
+	mon_cry CRY_CHARMANDER,    0,  256 ; INCINEROAR
+	mon_cry CRY_SQUIRTLE,     96,  192 ; MUDKIP
+	mon_cry CRY_SQUIRTLE,     32,  192 ; MARSHTOMP
+	mon_cry CRY_BLASTOISE,     0,  256 ; SWAMPERT
 	mon_cry CRY_PICHU,         0,  320 ; PICHU
 	mon_cry CRY_BULBASAUR,   238,  129 ; PIKACHU
 	mon_cry CRY_RAICHU,      238,  136 ; RAICHU

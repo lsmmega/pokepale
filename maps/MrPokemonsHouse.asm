@@ -128,19 +128,19 @@ MrPokemonsHouse_OakScript:
 	setmapscene ELMS_LAB, SCENE_ELMSLAB_MEET_OFFICER
 	specialphonecall SPECIALCALL_ROBBED
 	clearevent EVENT_COP_IN_ELMS_LAB
-	checkevent EVENT_GOT_FROAKIE_FROM_ELM
-	iftrue .RivalTakesTurtwig
-	checkevent EVENT_GOT_ROWLET_FROM_ELM
-	iftrue .RivalTakesFennekin
-	setevent EVENT_FROAKIE_POKEBALL_IN_ELMS_LAB
+	checkevent EVENT_GOT_MUDKIP_FROM_ELM
+	iftrue .RivalTakesBulbasaur
+	checkevent EVENT_GOT_BULBASAUR_FROM_ELM
+	iftrue .RivalTakesLitten
+	setevent EVENT_MUDKIP_POKEBALL_IN_ELMS_LAB
 	end
 
-.RivalTakesTurtwig:
-	setevent EVENT_ROWLET_POKEBALL_IN_ELMS_LAB
+.RivalTakesBulbasaur:
+	setevent EVENT_BULBASAUR_POKEBALL_IN_ELMS_LAB
 	end
 
-.RivalTakesFennekin:
-	setevent EVENT_CHIMCHAR_POKEBALL_IN_ELMS_LAB
+.RivalTakesLitten:
+	setevent EVENT_LITTEN_POKEBALL_IN_ELMS_LAB
 	end
 
 MrPokemonsHouse_ForeignMagazines:

@@ -15,8 +15,8 @@ SECTION "Evolutions and Attacks", ROMX
 INCLUDE "data/pokemon/evolution_moves.asm"
 INCLUDE "data/pokemon/evos_attacks_pointers.asm"
 
-RowletEvosAttacks:
-	db EVOLVE_LEVEL, 17, DARTRIX
+BulbasaurEvosAttacks:
+	db EVOLVE_LEVEL, 16, IVYSAUR
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 1, GROWL
@@ -24,8 +24,8 @@ RowletEvosAttacks:
 	db 30, LEAF_BLADE
 	db 0 ; no more level-up moves
 
-DartrixEvosAttacks:
-	db EVOLVE_LEVEL, 34, DECIDUEYE
+IvysaurEvosAttacks:
+	db EVOLVE_LEVEL, 32, VENUSAUR
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 1, GROWL
@@ -33,7 +33,7 @@ DartrixEvosAttacks:
 	db 45, LEAF_BLADE
 	db 0 ; no more level-up moves
 
-DecidueyeEvosAttacks:
+VenusaurEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 1, GROWL
@@ -41,8 +41,8 @@ DecidueyeEvosAttacks:
 	db 60, LEAF_BLADE
 	db 0 ; no more level-up moves
 
-ChimcharEvosAttacks:
-	db EVOLVE_LEVEL, 14, MONFERNO
+LittenEvosAttacks:
+	db EVOLVE_LEVEL, 17, TORRACAT
 	db 0 ; no more evolutions
 	db 1, SCRATCH
 	db 1, LEER
@@ -50,8 +50,8 @@ ChimcharEvosAttacks:
 	db 30, FLAMETHROWER
 	db 0 ; no more level-up moves
 
-MonfernoEvosAttacks:
-	db EVOLVE_LEVEL, 36, INFERNAPE
+TorracatEvosAttacks:
+	db EVOLVE_LEVEL, 34, INCINEROAR
 	db 0 ; no more evolutions
 	db 1, SCRATCH
 	db 1, LEER
@@ -59,7 +59,7 @@ MonfernoEvosAttacks:
 	db 45, FLAMETHROWER
 	db 0 ; no more level-up moves
 
-InfernapeEvosAttacks:
+IncineroarEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, SCRATCH
 	db 1, LEER
@@ -67,8 +67,8 @@ InfernapeEvosAttacks:
 	db 60, FLAMETHROWER
 	db 0 ; no more level-up moves
 
-FroakieEvosAttacks:
-	db EVOLVE_LEVEL, 16, FROGADIER
+MudkipEvosAttacks:
+	db EVOLVE_LEVEL, 16, MARSHTOMP
 	db 0 ; no more evolutions
 	db 1, POUND
 	db 1, GROWL
@@ -76,8 +76,8 @@ FroakieEvosAttacks:
 	db 30, SURF
 	db 0 ; no more level-up moves
 
-FrogadierEvosAttacks:
-	db EVOLVE_LEVEL, 36, GRENINJA
+MarshtompEvosAttacks:
+	db EVOLVE_LEVEL, 36, SWAMPERT
 	db 0 ; no more evolutions
 	db 1, POUND
 	db 1, GROWL
@@ -85,7 +85,7 @@ FrogadierEvosAttacks:
 	db 45, SURF
 	db 0 ; no more level-up moves
 
-GreninjaEvosAttacks:
+SwampertEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, POUND
 	db 1, GROWL

@@ -167,31 +167,31 @@ UndergroundRivalBattleScript:
 	waitbutton
 	closetext
 	setevent EVENT_RIVAL_GOLDENROD_UNDERGROUND
-	checkevent EVENT_GOT_FROAKIE_FROM_ELM
-	iftrue .Quaxly
-	checkevent EVENT_GOT_ROWLET_FROM_ELM
-	iftrue .Turtwig
+	checkevent EVENT_GOT_MUDKIP_FROM_ELM
+	iftrue .Mudkip
+	checkevent EVENT_GOT_BULBASAUR_FROM_ELM
+	iftrue .Bulbasaur
 	winlosstext UndergroundRivalWinText, UndergroundRivalLossText
 	setlasttalked GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_RIVAL
-	loadtrainer RIVAL1, RIVAL1_4_FROAKIE
+	loadtrainer RIVAL1, RIVAL1_4_MUDKIP
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
 	sjump .FinishRivalBattle
 
-.Quaxly:
+.Mudkip:
 	winlosstext UndergroundRivalWinText, UndergroundRivalLossText
 	setlasttalked GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_RIVAL
-	loadtrainer RIVAL1, RIVAL1_4_ROWLET
+	loadtrainer RIVAL1, RIVAL1_4_BULBASAUR
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
 	sjump .FinishRivalBattle
 
-.Turtwig:
+.Bulbasaur:
 	winlosstext UndergroundRivalWinText, UndergroundRivalLossText
 	setlasttalked GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_RIVAL
-	loadtrainer RIVAL1, RIVAL1_4_CHIMCHAR
+	loadtrainer RIVAL1, RIVAL1_4_LITTEN
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle

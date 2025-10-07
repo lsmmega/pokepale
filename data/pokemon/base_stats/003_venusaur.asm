@@ -1,17 +1,17 @@
-	db FROAKIE ; 007
+	db VENUSAUR ; 003
 
-	db  41,  56,  40,  71,  62,  44
+	db  80,  82,  83,  80, 100, 100
 	;   hp  atk  def  spd  sat  sdf
 
-	db WATER, WATER ; type
+	db GRASS, POISON ; type
 	db 45 ; catch rate
-	dw 63 ; base exp
+	dw 236 ; base exp
 	db NO_ITEM, NO_ITEM ; items
 	db GENDER_F12_5 ; gender ratio
 	db 20 ; step cycles to hatch
-	INCBIN "gfx/pokemon/007_froakie/front.dimensions"
+	INCBIN "gfx/pokemon/003_venusaur/front.dimensions"
 	db GROWTH_MEDIUM_SLOW ; growth rate
-	dn EGG_WATER_1, EGG_WATER_1 ; egg groups
+	dn EGG_MONSTER, EGG_PLANT ; egg groups
 
 	; tm learnset
 	tm

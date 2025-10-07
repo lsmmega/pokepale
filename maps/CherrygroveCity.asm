@@ -113,13 +113,13 @@ CherrygroveRivalSceneNorth:
 	writetext CherrygroveRivalText_Seen
 	waitbutton
 	closetext
-	checkevent EVENT_GOT_FROAKIE_FROM_ELM
-	iftrue .Quaxly
-	checkevent EVENT_GOT_ROWLET_FROM_ELM
-	iftrue .Turtwig
+	checkevent EVENT_GOT_MUDKIP_FROM_ELM
+	iftrue .Mudkip
+	checkevent EVENT_GOT_BULBASAUR_FROM_ELM
+	iftrue .Bulbasaur
 	winlosstext RivalCherrygroveWinText, RivalCherrygroveLossText
 	setlasttalked CHERRYGROVECITY_RIVAL
-	loadtrainer RIVAL1, RIVAL1_1_FROAKIE
+	loadtrainer RIVAL1, RIVAL1_1_MUDKIP
 	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
 	startbattle
 	dontrestartmapmusic
@@ -127,10 +127,10 @@ CherrygroveRivalSceneNorth:
 	iftrue .AfterVictorious
 	sjump .AfterYourDefeat
 
-.Quaxly:
+.Mudkip:
 	winlosstext RivalCherrygroveWinText, RivalCherrygroveLossText
 	setlasttalked CHERRYGROVECITY_RIVAL
-	loadtrainer RIVAL1, RIVAL1_1_ROWLET
+	loadtrainer RIVAL1, RIVAL1_1_BULBASAUR
 	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
 	startbattle
 	dontrestartmapmusic
@@ -138,10 +138,10 @@ CherrygroveRivalSceneNorth:
 	iftrue .AfterVictorious
 	sjump .AfterYourDefeat
 
-.Turtwig:
+.Bulbasaur:
 	winlosstext RivalCherrygroveWinText, RivalCherrygroveLossText
 	setlasttalked CHERRYGROVECITY_RIVAL
-	loadtrainer RIVAL1, RIVAL1_1_CHIMCHAR
+	loadtrainer RIVAL1, RIVAL1_1_LITTEN
 	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
 	startbattle
 	dontrestartmapmusic
