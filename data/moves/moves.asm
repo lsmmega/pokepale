@@ -23,7 +23,7 @@ Moves:
 	move FIRE_PUNCH,         EFFECT_BURN_HIT,           75, FIRE,          PHYSICAL, 100, 15,  10
 	move ICE_PUNCH,          EFFECT_FREEZE_HIT,         75, ICE,           PHYSICAL, 100, 15,  10
 	move THUNDERPUNCH,       EFFECT_PARALYZE_HIT,       75, ELECTRIC,      PHYSICAL, 100, 15,  10
-	move SCRATCH,            EFFECT_NORMAL_HIT,         40, NORMAL,        PHYSICAL, 100, 35,   0
+	move SCRATCH,            EFFECT_NORMAL_HIT,         40, NORMAL,        PHYSICAL, 100, 35,   0 ;reserved
 	move VICEGRIP,           EFFECT_NORMAL_HIT,         55, NORMAL,        PHYSICAL, 100, 30,   0
 	move GUILLOTINE,         EFFECT_OHKO,                0, NORMAL,        PHYSICAL,  30,  5,   0
 	move SWORDS_DANCE,       EFFECT_ATTACK_UP_2,         0, NORMAL,        STATUS,   100, 30,   0
@@ -43,19 +43,19 @@ Moves:
 	move HORN_ATTACK,        EFFECT_NORMAL_HIT,         65, NORMAL,        PHYSICAL, 100, 25,   0
 	move FURY_ATTACK,        EFFECT_MULTI_HIT,          15, NORMAL,        PHYSICAL,  85, 20,   0
 	move HORN_DRILL,         EFFECT_OHKO,                1, NORMAL,        PHYSICAL,  30,  5,   0
-	move TACKLE,             EFFECT_NORMAL_HIT,         35, NORMAL,        PHYSICAL,  95, 35,   0
+	move TACKLE,             EFFECT_NORMAL_HIT,         40, NORMAL,        PHYSICAL, 100, 35,   0 ;reserved
 	move BODY_SLAM,          EFFECT_PARALYZE_HIT,       85, NORMAL,        PHYSICAL, 100, 15,  30
 	move WRAP,               EFFECT_TRAP_TARGET,        15, NORMAL,        PHYSICAL,  85, 20,   0
 	move TAKE_DOWN,          EFFECT_RECOIL_HIT,         90, NORMAL,        PHYSICAL,  85, 20,   0
 	move THRASH,             EFFECT_RAMPAGE,            90, NORMAL,        PHYSICAL, 100, 20,   0
 	move DOUBLE_EDGE,        EFFECT_RECOIL_HIT,        120, NORMAL,        PHYSICAL, 100, 15,   0
-	move TAIL_WHIP,          EFFECT_DEFENSE_DOWN,        0, NORMAL,        STATUS,   100, 30,   0
+	move TAIL_WHIP,          EFFECT_DEFENSE_DOWN,        0, NORMAL,        STATUS,   100, 30,   0 ;reserved
 	move POISON_STING,       EFFECT_POISON_HIT,         15, POISON,        PHYSICAL, 100, 35,  30
 	move TWINEEDLE,          EFFECT_POISON_MULTI_HIT,   25, BUG,           PHYSICAL, 100, 20,  20
 	move PIN_MISSILE,        EFFECT_MULTI_HIT,          14, BUG,           PHYSICAL,  85, 20,   0
 	move LEER,               EFFECT_DEFENSE_DOWN,        0, NORMAL,        STATUS,   100, 30,   0
 	move BITE,               EFFECT_FLINCH_HIT,         60, DARK,          PHYSICAL, 100, 25,  30
-	move GROWL,              EFFECT_ATTACK_DOWN,         0, NORMAL,        STATUS,   100, 40,   0
+	move GROWL,              EFFECT_ATTACK_DOWN,         0, NORMAL,        STATUS,   100, 40,   0 ;reserved
 	move ROAR,               EFFECT_FORCE_SWITCH,        0, NORMAL,        STATUS,   100, 20,   0
 	move SING,               EFFECT_SLEEP,               0, NORMAL,        STATUS,    55, 15,   0
 	move SUPERSONIC,         EFFECT_CONFUSE,             0, NORMAL,        STATUS,    55, 20,   0
@@ -280,5 +280,5 @@ Moves:
 	move LEAFAGE,            EFFECT_NORMAL_HIT,         40, GRASS,         PHYSICAL, 100, 25,   0
 
 ;
-	move STRUGGLE,           EFFECT_RECOIL_HIT,         50, NORMAL,        PHYSICAL, 100,  1,   0
+	move STRUGGLE,           EFFECT_RECOIL_HIT,         50, NORMAL,        PHYSICAL, 100,  1,   0 ;reserved
 	assert_table_length NUM_ATTACKS
